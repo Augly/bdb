@@ -102,7 +102,7 @@ page {
   width: 375rpx;
   height: 375rpx;
   position: relative;
-  background-color: red;
+  /* background-color: red; */
 }
 .medicine-img-btn{
   font-size:24rpx;

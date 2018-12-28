@@ -54,9 +54,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      waitIng: option.waitIng,
-    });
+    if(options.waitIng){
+      this.setData({
+        waitIng: options.waitIng,
+      });
+    }
   },
   waitIng() {
     this.setData({

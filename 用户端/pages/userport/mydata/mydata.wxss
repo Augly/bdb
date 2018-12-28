@@ -66,6 +66,10 @@
   color: rgba(153, 153, 153, 1);
   right: 0;
 }
+.detail .iconfont{
+  font-size:24rpx;
+
+}
 
 .medicnie-text {
   display: flex;

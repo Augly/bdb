@@ -11,7 +11,8 @@
 <view class='mintitle'>saqd15a151as5</view>
 
 <view class='list'>
-  <view class='item' bindtap='go_write'>
+  <!-- <view class='item' bindtap='go_write'> -->
+  <view class='item'>
     <view class='left'>
       <span class='iconfont icon-gerenyonghutouxiang'></span>
       <view class='itemTitle'>我的姓名</view>

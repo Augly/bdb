@@ -26,7 +26,7 @@
 <view class="data-list {{statusType=='waitIng'?'show':'hide'}}">
   <view class='medicine_item' bindtap='cancle'>
     <view class='detail'>
-      查看信息 >
+      查看信息 <icon class='iconfont icon-youjiantou'></icon>
     </view>
     <view class='medicine_img'>
       <image src='/images/11.png'></image>
@@ -72,9 +72,9 @@
 <view class="data-list {{statusType=='waitIng'?'hide':'show'}}">
   <left-smooth bind:del='del'>
     <view class='medicine_item' bindtap='finish'>
-      <view class='detail'>
-        查看信息 >
-      </view>
+     <view class='detail'>
+      查看信息 <icon class='iconfont icon-youjiantou'></icon>
+    </view>
       <view class='medicine_img'>
         <image src='/images/11.png'></image>
       </view>
