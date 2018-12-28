@@ -112,9 +112,9 @@ page {
 }
 
 .login_num {
-  width: 560rpx;
+  width: 400rpx;
   height: 80rpx;
-  background: #93FFE6;
+  
   border-radius: 10rpx;
   line-height: 40rpx;
   font-size: 28rpx;
@@ -123,21 +123,26 @@ page {
   color: rgba(153, 153, 153, 1);
   opacity: 0.4;
   text-align: center;
-  margin: 60rpx auto 40rpx;
+  /* margin: 60rpx auto 40rpx; */
 }
 
 .password_box {
   position: relative;
   width: 560rpx;
   height: 80rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0rpx 34rpx;
   margin: 0 auto 40rpx;
+  background: #93FFE6;
 }
 .password_box .iconfont{
-  position: absolute;
-  left: 28rpx;
-  top: 21rpx;
+  /* position: absolute; */
+  /* left: 28rpx; */
+  /* top: 21rpx; */
   color: #63DFC4;
-  z-index: 2
+  /* z-index: 2 */
 }
 
 .code_tips {
@@ -153,11 +158,11 @@ page {
 }
 
 .password {
-  width: 560rpx;
+  width: 400rpx;
   height: 80rpx;
   opacity: 0.4;
   background: rgba(147, 255, 230, 1);
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-size: 28rpx;
   text-align: center;
   font-family: PingFang-SC-Bold;
@@ -173,7 +178,7 @@ page {
   border-radius: 10rpx;
   position: absolute;
   right: 12rpx;
-  top: 12rpx;
+  /* top: 12rpx; */
   font-size: 28rpx;
   font-family: PingFang-SC-Medium;
   font-weight: 500;

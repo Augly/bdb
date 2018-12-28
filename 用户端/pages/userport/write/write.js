@@ -75,7 +75,11 @@ Page({
   onReachBottom: function () {
 
   },
-
+  out(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   /**
    * 用户点击右上角分享
    */
