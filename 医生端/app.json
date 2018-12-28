@@ -1,0 +1,22 @@
+{
+  "pages":[
+  
+    
+
+    "pages/doctor/my/my", 
+    "pages/doctor/date/date",
+    "pages/doctor/index/index",
+    "pages/doctor/dateinfo/dateinfo",
+    "pages/doctor/write/write",
+    "pages/doctor/login/login",
+    "pages/doctor/message/message",
+ 
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#63DFC5",
+    "navigationBarTextStyle": "",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}

@@ -1,0 +1,48 @@
+<view class='container'>
+  <view class='mask {{mask?"show":"hide"}}'>
+    <view class='del-popup {{info_popup?"show":"hide"}}'>
+      <view class='pic-nav'></view>
+      <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
+      <view class='del-tit'>请完成信息填写</view>
+      <view class='del-details'>你还未填写重要信息，请前往个人中心填写重要信息</view>
+      <view class='del-btn' bindtap='del_submit'>确 认</view>
+    </view>
+    <view class='del-success {{del_success?"show":"hide"}}'>
+      <image src='/images/tuichu.png' class='tuichu' bindtap='close_success'></image>
+      <view class='del-success-text'>删除成功</view>
+    </view>
+  </view>
+
+
+  <view class='seachGroup'>
+    <view class="banner-inform" bindtap='toMessges'></view>
+  </view>
+
+  <view class='index-tit'>扫码看诊一步到位</view>
+
+  <view class='content'>
+    <view class='person-head'>
+      <image src='{{avtar}}'></image>
+    </view>
+    <view class='person-name'>医务护士：王晶</view>
+    <view class='person-id'>ID:saqd15a151as5</view>
+    <view class='person-code'></view>
+    <view class='person-tips'>我以真心、关心、耐心、换您放心、安心、舒心、</view>
+  </view>
+  <view class='tips'>
+    <view class='line'></view>
+    <view class='container-tips'>蛋 白 医 务</view>
+    <view class='line'></view>
+
+  </view>
+  <view class='footer-nav'>
+    <view class='footer-nav-item'>
+      <view class='footer-img'></view>
+      <view class='footer-text'>首页</view>
+    </view>
+    <view class='footer-nav-item' bindtap='my'>
+      <view class='footer-img'></view>
+      <view class='footer-text'>我的</view>
+    </view>
+  </view>
+</view>

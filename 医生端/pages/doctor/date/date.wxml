@@ -1,0 +1,21 @@
+<view class='nav'>
+  <block wx:for='{{nav_text}}' wx:key=''>
+    <view class='nav-item {{nav==index?"active":""}}' data-index='{{index}}' bindtap='tab'>{{item}}</view>
+  </block>
+</view>
+
+<view class='person-list'>
+  <view class='person-item active' bindtap='details'>
+    <view class='person-img'>
+      <image src='{{avtar}}'></image>
+    </view>
+    <view class='text'>
+      <view class='name'>王陆</view>
+      <view class='age'>年龄：5岁</view>
+      <view class='age'>状态：未就诊</view>
+    </view>
+    <view class='detail'>
+      查看信息 >
+    </view>
+  </view>
+</view>
