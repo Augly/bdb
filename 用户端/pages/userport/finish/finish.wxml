@@ -1,0 +1,43 @@
+<view class='cancle-detail'>
+  <view class='cancle-img'>
+    <image src='/images/1.png'></image>
+  </view>
+  <view class='cancle-text'>
+    <view class='cancle-tit'><text>￥</text>666</view>
+    <view class='cancle-tips'>原装正品，医药科技</view>
+  </view>
+</view>
+
+<view class='cancle-item'>
+  <span class='iconfont icon-riqi'></span>
+  <view class='cancle-deta'>预约日期</view>
+  <view class='cancle-data-detail'>2016-04-28  10:00</view>
+</view>
+
+<view class='cancle-item'>
+  <span class='iconfont icon-xiaozhensuo'></span>
+  <view class='cancle-deta'>预约诊所</view>
+  <view class='cancle-data-detail'>天津市儿童医院</view>
+</view>
+
+<view class='cancle-item'>
+  <span class='iconfont icon-yaoping'></span>
+  <view class='cancle-deta'>预约药品</view>
+  <view class='cancle-data-detail'>免疫球蛋白</view>
+</view>
+
+<view class='cancle-item'>
+  <span class='iconfont icon-jiliang'></span>
+  <view class='cancle-deta'>预约剂量</view>
+  <view class='cancle-data-detail'>2016-04-28  10:00</view>
+</view>
+
+<view class='cancle-item'>
+  <span class='iconfont icon-shuliang'></span>
+  <view class='cancle-deta'>预约数量</view>
+  <view class='cancle-data-detail'>X3</view>
+</view>
+
+<view class='cancle-btn'>
+预约已完成
+</view>

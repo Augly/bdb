@@ -1,0 +1,105 @@
+<view class='mask {{mask?"show":"hide"}}'>
+  <view class='del-popup {{del?"show":"hide"}}'>
+    <view class='pic-nav'></view>
+    <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
+    <view class='del-tit'>删除已完成预约</view>
+    <view class='del-details'>您确认要删除已完成预约么？删除之后将无法恢复。</view>
+    <view class='del-btn' bindtap='del_submit'>确 认</view>
+  </view>
+  <view class='del-success {{del_success?"show":"hide"}}'>
+    <image src='/images/tuichu.png' class='tuichu' bindtap='close_success'></image>
+    <view class='del-success-text'>删除成功</view>
+  </view>
+</view>
+
+<view class='headGroup'>
+  <view class='tabBar'>
+    <view class="tabItem {{statusType=='waitIng'?'tabActive':''}}" bindtap='waitIng'>
+      已预约
+    </view>
+    <view class='line'></view>
+    <view class="tabItem {{statusType=='waitIng'?'':'tabActive'}}" bindtap='patiented'>
+      已完成
+    </view>
+  </view>
+</view>
+<view class="data-list {{statusType=='waitIng'?'show':'hide'}}">
+  <view class='medicine_item' bindtap='cancle'>
+    <view class='detail'>
+      查看信息 >
+    </view>
+    <view class='medicine_img'>
+      <image src='/images/11.png'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='name-data'>
+        <view class='medicine-tit'>免疫球蛋白</view>
+        <view class='medicine-data'>2018-04-06 10:00</view>
+      </view>
+      <!-- <view class='dis-flex'>
+        <view class='style-item'>
+          <view class='medicine-tips'>剂量：</view>
+          <view class='style-detail'>5ml</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>剂量：</view>
+          <view class='style-detail'>5ml</view>
+        </view>
+      </view> -->
+      <view class='style-item'>
+        <view class='medicine-tips'>联系方式</view>
+        <view class='style-detail add_detail'>188888888</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约药品：</view>
+        <view class='style-detail add_detail'>免疫球蛋白</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约诊所：</view>
+        <view class='style-detail add_detail'>天津市儿童医院</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约时间：</view>
+        <view class='style-detail add_detail'>2018-09-06 </view>
+      </view>
+    </view>
+    <view class='qianw'>
+      <image src='/images/icon_qianw.png'></image>
+    </view>
+  </view>
+</view>
+
+<view class="data-list {{statusType=='waitIng'?'hide':'show'}}">
+  <left-smooth bind:del='del'>
+    <view class='medicine_item' bindtap='finish'>
+      <view class='detail'>
+        查看信息 >
+      </view>
+      <view class='medicine_img'>
+        <image src='/images/11.png'></image>
+      </view>
+      <view class='medicnie-text'>
+        <view class='name-data'>
+          <view class='medicine-tit'>免疫球蛋白</view>
+          <view class='medicine-data'>2018-04-06 10:00</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>联系方式</view>
+          <view class='style-detail add_detail'>188888888</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约药品：</view>
+          <view class='style-detail add_detail'>免疫球蛋白</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约诊所：</view>
+          <view class='style-detail add_detail'>天津市儿童医院</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约时间：</view>
+          <view class='style-detail add_detail'>2018-09-06 </view>
+        </view>
+      </view>
+    </view>
+  </left-smooth>
+</view>

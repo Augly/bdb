@@ -1,0 +1,102 @@
+<view class='notitle'>
+  <!-- <i class='iconfont icon-gerenyonghutouxiang' bindtap='changesA'></i> -->
+</view>
+<view class='avtarWrap'>
+  <image src='{{avtar}}' class='avater'></image>
+</view>
+
+<view class='title'>
+  请输入您的姓名
+</view>
+<view class='mintitle'>saqd15a151as5</view>
+
+<view class='list'>
+  <view class='item' bindtap='go_write'>
+    <view class='left'>
+      <span class='iconfont icon-gerenyonghutouxiang'></span>
+      <view class='itemTitle'>个人信息</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+      <!-- <view class='itemmintitle'></view> -->
+    </view>
+  </view>
+  <!-- <view class='item'>
+    <view class='left'>
+      <span class='iconfont icon-phone'></span>
+      <view class='itemTitle'>性别</view>
+    </view>
+    <view class='right'>
+      <view class='sex {{sex==1?"selectSex":""}}' data-sex='1' bindtap='select_sex'>男</view>
+      <view class='sex {{sex==2?"selectSex":""}}' data-sex='2' bindtap='select_sex'>女</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <span class='iconfont icon-phone'></span>
+      <view class='itemTitle'>我的手机</view>
+    </view>
+    <view class='right'>
+      <view class='itemmintitle'>17633369350</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <span class='iconfont icon-phone'></span>
+      <view class='itemTitle'>我的年龄</view>
+    </view>
+    <view class='right'>
+      <input class='itemmintitle' placeholder='请输入您的年龄（岁）'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <span class='iconfont icon-phone'></span>
+      <view class='itemTitle'>我的邮箱</view>
+    </view>
+    <view class='right'>
+      <input class='itemmintitle' placeholder='请输入您的邮箱'></input>
+    </view>
+  </view> -->
+
+  <view class='item' bindtap='mydata'>
+    <view class='left'>
+      <span class='iconfont icon-shuliang'></span>
+      <view class='itemTitle'>我的预约</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+  <view class='item' bindtap='toMessges'>
+    <view class='left'>
+      <span class='iconfont icon-lingdang'></span>
+      <view class='itemTitle'>信息通知</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+</view>
+
+<!-- <view class='submit' bindtap='out'>
+  保 存 修 改 信 息
+</view> -->
+<view class='exit' bindtap='out'>
+  退 出 登 录
+</view>
+
+<!-- <view class='footer-nav'>
+  <view class='footer-nav-item' bindtap='index'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>首页</view>
+  </view>
+  <view class='footer-nav-item' bindtap='tointroduce'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>医务中心</view>
+  </view>
+  <view class='footer-nav-item'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>我的</view>
+  </view>
+</view> -->

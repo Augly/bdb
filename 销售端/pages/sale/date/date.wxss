@@ -1,0 +1,138 @@
+page{
+  padding-bottom: 120rpx;
+}
+
+.nav {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 28rpx;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.06);
+}
+
+.nav-item {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(153, 153, 153, 1);
+  position: relative;
+}
+
+.nav .active {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+}
+
+.nav .active::before {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 97rpx;
+  height: 4rpx;
+  background: rgba(228, 84, 135, 1);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -2rpx;
+}
+
+.person-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.person-item {
+  width: 630rpx;
+  height: 170rpx;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.person-img {
+  width: 82rpx;
+  height: 82rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.text {
+  margin-left: 40rpx;
+}
+
+.text .name {
+  font-size: 30rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(51, 51, 51, 1);
+  display: flex;
+  align-items: baseline;
+  width: 500rpx;
+  justify-content: space-between;
+}
+
+.text .age {
+  font-size: 24rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(102, 102, 102, 1);
+}
+
+.detail {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.person-list .active::before {
+  display: block;
+  content: '';
+  width: 7rpx;
+  height: 97rpx;
+  background: rgba(228, 84, 135, 1);
+  position: absolute;
+  left: -60rpx;
+  top: 50%;
+  transform: translateY(-48rpx);
+}
+
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-top: 2rpx solid #ccc;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-nav-item {
+  display: flex;
+  width: 25%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-img {
+  margin-top: 10rpx;
+  width: 56rpx;
+  height: 56rpx;
+  background-color: red;
+}
+
+.footer-text {
+  margin-top: 8rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+}

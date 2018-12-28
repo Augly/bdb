@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/sale/login/login",
+    "pages/sale/index/index",
+    "pages/sale/clinic/clinic",
+    "pages/sale/flow/flow",
+    "pages/sale/salelist/salelist",
+    "pages/sale/date/date",
+    "pages/sale/dateinfo/dateinfo",
+    "pages/sale/message/message",
+    "pages/sale/my/my"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#63DFC5",
+    "navigationBarTextStyle": "",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#63DFC4",
+    "borderStyle": "write",
+    "list": [
+      {
+        "selectedIconPath": "/images/room.png",
+        "iconPath": "/images/@room.png",
+        "pagePath": "pages/sale/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/images/notification.png",
+        "iconPath": "/images/@notification.png",
+        "pagePath": "pages/sale/message/message",
+        "text": "信息通知"
+      },
+      {
+        "selectedIconPath": "/images/matters.png",
+        "iconPath": "/images/@matters.png",
+        "pagePath": "pages/sale/date/date",
+        "text": "下属医生"
+      },
+      {
+        "selectedIconPath": "/images/personage.png",
+        "iconPath": "/images/@personage.png",
+        "pagePath": "pages/sale/my/my",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

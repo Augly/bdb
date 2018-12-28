@@ -1,0 +1,43 @@
+{
+  "pages":[
+    "pages/clinic/login/login",
+    "pages/clinic/search/search",
+    "pages/clinic/clinic_info/clinic_info",
+    "pages/clinic/password/password",
+    "pages/clinic/center/center",
+    "pages/clinic/order_detail/order_detail",
+    "pages/clinic/message/message"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#63DFC5",
+    "navigationBarTextStyle": "",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#63DFC4",
+    "borderStyle": "write",
+    "list": [
+      {
+        "selectedIconPath": "/images/inform.png",
+        "iconPath": "/images/@inform.png",
+        "pagePath": "pages/clinic/message/message",
+        "text": "消息通知"
+      },
+      {
+        "selectedIconPath": "/images/appointment.png",
+        "iconPath": "/images/@appointment.png",
+        "pagePath": "pages/clinic/search/search",
+        "text": "预约列表"
+      },
+      {
+        "selectedIconPath": "/images/house.png",
+        "iconPath": "/images/@house.png",
+        "pagePath": "pages/clinic/center/center",
+        "text": "诊所信息"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+<view class='person-list'>
+  <view class='person-item' bindtap='details'>
+    <view class='person-img'>
+      <image src='{{avtar}}'></image>
+    </view>
+    <view class='text'>
+      <view class='name'>
+        <text>王陆</text>
+        <view class='detail'>
+          入职时间：2018.11.26
+        </view>
+      </view>
+      <view class='age'>年龄：5岁</view>
+      <view class='age'>状态：未就诊</view>
+    </view>
+
+  </view>
+</view>
+

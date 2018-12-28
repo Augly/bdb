@@ -1,0 +1,23 @@
+<view class='list'>
+  <view class='item' bindtap='go_clinic'>
+    <view class='left'>
+      <span class='iconfont icon-yiliaohangyedeICON-'></span>
+      <view class='itemTitle'>诊所信息</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+  <view class='item' bindtap='go_password'>
+    <view class='left'>
+      <span class='iconfont icon-suo'></span>
+      <view class='itemTitle'>修改密码</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+</view>
+
+<view class='sing-out'>退 出 登 录</view>
+

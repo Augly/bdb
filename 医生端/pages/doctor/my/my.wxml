@@ -1,0 +1,45 @@
+<view class='notitle'>
+  <i class='iconfont icon-xiangjipaizhao' bindtap='changesA'></i>
+</view>
+<view class='avtarWrap'>
+  <image src='{{avtar}}' class='avater'></image>
+</view>
+
+<view class='title'>
+  请输入您的姓名
+</view>
+<view class='mintitle'>saqd15a151as5</view>
+
+<view class='list'>
+  <view class='item' bindtap='info'>
+    <view class='left'>
+      <span class='iconfont icon-gerenyonghutouxiang'></span>
+      <view class='itemTitle'>个人信息</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+  <view class='item' bindtap='mydata'>
+    <view class='left'>
+      <span class='iconfont icon-yaoqing'></span>
+      <view class='itemTitle'>邀请的预约</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+  <view class='item' bindtap='go_message'>
+    <view class='left'>
+      <span class='iconfont icon-lingdang'></span>
+      <view class='itemTitle'>信息通知</view>
+    </view>
+    <view class='right'>
+      <span class='iconfont icon-youjiantou'></span>
+    </view>
+  </view>
+</view>
+
+<view class='exit' bindtap='out'>
+  退 出 登 录
+</view>

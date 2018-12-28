@@ -1,0 +1,13 @@
+<view class='head'>
+  <image src='{{avtar}}'></image>
+</view>
+<view class='name'>王陆</view>
+<view class='id'>ID:5521547621547</view>
+
+<view class='info-list'>
+<view class='info-item'>患者姓名：王陆</view>
+<view class='info-item'>患者性别：男</view>
+<view class='info-item'>患者年龄：12</view>
+<view class='info-item'>微信：16859541245</view>
+<view class='info-item'>患者邮箱：wzf18546218@163.com</view>
+</view>

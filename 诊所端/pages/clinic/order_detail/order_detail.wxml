@@ -1,0 +1,44 @@
+<view class='mask {{mask?"show":"hide"}}'>
+  <view class='popup'>
+    <view class='popup-tit'>确认完成预约</view>
+    <view class='popup-text'>请核实好预约信息点击确认后将无法修改！</view>
+    <view class='btn-list'>
+      <view class='btn-sunbmit' bindtap='go_search'>确认</view>
+      <view class='btn-cancle' bindtap='cancle'>取消</view>
+    </view>
+  </view>
+</view>
+
+
+<view class='info-img'>
+  <image src='/images/test.jpg'></image>
+</view>
+
+<view class='info-item'>
+<view class='info-tit'>患者姓名：</view>
+<view class='info-text'>王陆</view>
+</view>
+<view class='info-item'>
+<view class='info-tit'>患者性别：</view>
+<view class='info-text'>男性</view>
+</view>
+<view class='info-item'>
+<view class='info-tit'>患者电话：</view>
+<view class='info-text'>18698541248</view>
+</view>
+<view class='info-item'>
+<view class='info-tit'>患者姓名：</view>
+<view class='info-box'>免疫球蛋白</view>
+</view>
+<view class='info-item'>
+<view class='info-tit'>患者姓名：</view>
+<view class='info-box'>5ml</view>
+</view>
+<view class='info-item'>
+<view class='info-tit'>患者姓名：</view>
+<view class='info-box'>6</view>
+</view>
+
+<view class='sunbimt' bindtap='submit'>
+  确 认 预 约
+</view>

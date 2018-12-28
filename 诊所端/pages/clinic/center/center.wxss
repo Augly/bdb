@@ -1,0 +1,129 @@
+page {
+}
+
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-top: 2rpx solid #ccc;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-nav-item {
+  display: flex;
+  width: 33.3%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-img {
+  margin-top: 10rpx;
+  width: 56rpx;
+  height: 56rpx;
+  background-color: red;
+}
+
+.footer-text {
+  margin-top: 8rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+}
+
+.list {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx;
+  /* margin-top: 100rpx; */
+  margin-top: 40rpx;
+}
+
+.item {
+  width: 100%;
+  height: 100rpx;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.left, .right {
+  width: 50%;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.name {
+  width: 100%;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  text-align: right;
+}
+
+.icon-youjiantou {
+  font-size: 28rpx;
+  color: #9B9B9B;
+}
+
+.icon-man-copy {
+  color: #20c070;
+}
+.icon-suo{
+  color: #19A8E1;
+}
+.icon-yiliaohangyedeICON-{
+  color: #2CC378;
+}
+.itemTitle {
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  text-indent: 30rpx;
+}
+
+.itemmintitle {
+  width: 100%;
+  text-align: right;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+
+.sing-out {
+  width: 690rpx;
+  height: 80rpx;
+  background: rgba(255, 72, 102, 1);
+  border-radius: 10rpx;
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(241, 241, 241, 1);
+  margin: 200rpx auto 0;
+}

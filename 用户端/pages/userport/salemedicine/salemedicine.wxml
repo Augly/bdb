@@ -1,0 +1,150 @@
+<!-- popup -->
+<view class='mask {{mask?"show":"hide"}}'>
+  <!-- 预约成功 -->
+  <view class='success-popup {{success?"show":"hide"}}'>
+    <view class='time-close' bindtap='close'>
+      <image src='/images/tuichu.png'></image>
+    </view>
+    <view class='success-text'>预约成功</view>
+    <view class='success-tips'>您已预约成功会有护士和您及时联系</view>
+  </view>
+
+  <!-- 药品参数弹层 -->
+  <view class='popup {{infoPopup?"show":"hide"}}'>
+    <view class='close_popup' bindtap='close'>
+      <image src='/images/1.png'></image>
+    </view>
+    <view class='popup_tit'>药品参数</view>
+    <view class='medicine-info-item'>
+      <view class='info-tit'>
+        药品名称
+      </view>
+      <view class='info-texg'>
+        免疫球蛋白
+      </view>
+    </view>
+    <view class='medicine-info-item'>
+      <view class='info-tit'>
+        生产厂家
+      </view>
+      <view class='info-texg'>
+        实药集团美意药业有限公司
+      </view>
+    </view>
+  </view>
+
+  <!-- 预约时间弹层 -->
+  <view class='date-popup {{data_popup?"show":"hide"}}'>
+    <view class='time-close' bindtap='close'>
+      <image src='/images/tuichu.png'></image>
+    </view>
+    <view class='popup_tit'>选择时间</view>
+    <view class='data-list'>
+      <view class='data-item'>
+        <view>周一</view>
+        <view>9.26</view>
+      </view>
+      <view class='data-item'>
+        <view>周二</view>
+        <view>9.27</view>
+      </view>
+      <view class='data-item'>
+        <view>周三</view>
+        <view>9.28</view>
+      </view>
+      <view class='data-item'>
+        <view>周四</view>
+        <view>9.29</view>
+      </view>
+      <view class='data-item'>
+        <view>周五</view>
+        <view>9.30</view>
+      </view>
+      <view class='data-item no-active'>
+        <view>周六</view>
+        <view>已约满</view>
+      </view>
+      <view class='data-item active'>
+        <view>周日</view>
+        <view>10.02</view>
+      </view>
+    </view>
+
+    <view class='data-time'>
+      <block wx:for='{{time}}' wx:key=''>
+        <view class='time-item'>
+          {{item}}
+        </view>
+      </block>
+    </view>
+
+    <view class='time-submit' bindtap='submit_data'>确认</view>
+  </view>
+
+  <!-- 选择规格弹层 -->
+  <view class='choose-popup {{show_choose?"show":"hide"}}'>
+    <view class='time-close' bindtap='close'>
+      <image src='/images/tuichu.png'></image>
+    </view>
+    <view class='goods-info'>
+      <view class='goods-img'>
+        <image src='/images/1.png'></image>
+      </view>
+      <view class='goods-num'>
+        <view class='goods-price'>
+          <text>￥</text>600.0
+        </view>
+        <view class='goods-tips'>
+          原装正品，医药科技
+        </view>
+      </view>
+    </view>
+    <view class='choost-tit'>选择计量</view>
+    <view class='ml-list'>
+      <block wx:for='{{ml}}' wx:key=''>
+        <text class='ml {{ml_num==index?"ml-active":""}}'  data-ml="{{index}}" bindtap='choose_ml'>{{item}}</text>
+      </block>
+    </view>
+    <view class='choose-num'>
+      <view class='choost-tit'>选择规格</view>
+      <view class='stepper'>
+        <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
+        <input bindinput='bindManual' value='{{num}}'></input>
+        <text bindtap='bindPlus'>+</text>
+      </view>
+    </view>
+    <view class='submit-choose'>
+     确认选择
+    </view>
+  </view>
+</view>
+
+
+<view class='medicine-pic'>
+  <image src='/images/1.png'></image>
+</view>
+
+<view class='style_item' bindtap='show_data'>
+  <view class='style_tit'>预约时间</view>
+  <view class='style_text'>请选择预约时间“整点预约”</view>
+  <view class='iconfont icon-youjiantou'></view>
+</view>
+
+<view class='style_item' bindtap='show_choose'>
+  <view class='style_tit'>选择规格</view>
+  <view class='style_text'>还未选定规格</view>
+  <view class='iconfont icon-youjiantou'></view>
+</view>
+
+<view class='style_item' bindtap='info_popup'>
+  <view class='style_tit'>药品参数</view>
+  <view class='style_text'>品牌 生产厂家</view>
+  <view class='iconfont icon-youjiantou'></view>
+</view>
+
+
+
+<view class='btn_wrap' bindtap='submit'>
+  <view class='money'><text>￥</text>666</view>
+  <view class='btn'>确 认 预 约</view>
+</view>

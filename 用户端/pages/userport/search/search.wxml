@@ -1,0 +1,31 @@
+<view class="banner-search">
+  <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
+</view>
+
+<view class='choose'>
+  <view class='choose-add {{choose?"active":""}}'>
+    区域选择 <i class='iconfont icon-xiala'></i>
+  </view>
+  <view class='line'>
+
+  </view>
+  <view class='choose-add'>
+    离我最近
+  </view>
+</view>
+
+<block wx:for='{{medicine_list}}' wx:key=''>
+  <view class='medicine_item' bindtap='sale_medicine'>
+    <view class='medicine_img'>
+      <image src='/images/6.png'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='medicine-tit'>免疫球蛋白</view>
+      <view class='medicine-tips'>022-23147100</view>
+      <view class='medicine-tips'>地址：天津市津南区台儿庄南路261号</view>
+    </view>
+    <view class='qianw'>
+      <image src='/images/icon_qianw.png'></image>
+    </view>
+  </view>
+</block>

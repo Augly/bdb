@@ -1,0 +1,231 @@
+.headGroup {
+  width: 100%;
+  height: 114rpx;
+  position: fixed;
+  top: 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
+}
+
+.tabBar {
+  width: 380rpx;
+  height: 64rpx;
+  border: 2rpx solid rgba(99, 223, 197, 1);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabItem {
+  width: 189rpx;
+  height: 100%;
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  line-height: 64rpx;
+}
+
+.tabActive {
+  color: rgba(99, 223, 197, 1);
+}
+
+.data-list {
+  margin-top: 130rpx;
+}
+
+.medicine_item {
+  width: 690rpx;
+  border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
+  padding: 17rpx 0;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.medicine_img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.detail {
+  position: absolute;
+  font-size: 24rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(153, 153, 153, 1);
+  right: 0;
+}
+
+.medicnie-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.medicine-tit {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.medicine-tips {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.medicine-data {
+  font-size: 22rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(153, 153, 153, 1);
+}
+
+.name-data {
+  width: 430rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.dis-flex {
+  display: flex;
+}
+
+.style-item {
+  display: flex;
+  margin-bottom: 8rpx;
+}
+
+.style-detail {
+  font-size: 24rpx;
+  color: #666 !important;
+}
+
+.add_detail {
+  width: 300rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.code {
+  width: 64rpx;
+  height: 59rpx;
+  position: absolute;
+  right: 0;
+  bottom: 30rpx;
+  background-color: red;
+}
+
+.finish {
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 73, 115, 1);
+  position: absolute;
+  right: 0;
+  bottom: 18rpx;
+}
+
+/* popuo */
+
+.del-popup {
+  position: relative;
+  width: 500rpx;
+  height: 430rpx;
+  z-index: 3;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 408rpx auto 0;
+  overflow: hidden;
+}
+
+.tuichu {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+
+.pic-nav {
+  width: 100%;
+  height: 65rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fd4978;
+}
+
+.del-tit {
+  font-size: 36rpx;
+  font-family: PingFang-SC-Bold;
+  margin-top: 116rpx;
+  text-align: center;
+  font-weight: bold;
+  color: rgba(102, 102, 102, 1);
+}
+
+.del-details {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  width: 320rpx;
+  margin: 28rpx auto 0;
+}
+
+.del-btn {
+  width: 150rpx;
+  height: 60rpx;
+  margin: 50rpx auto 0;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(241, 241, 241, 1);
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #fd4978;
+  border-radius: 10rpx;
+}
+
+/* 删除成功弹窗
+ */
+
+.del-success {
+  width: 500rpx;
+  height: 230rpx;
+  background-color: #fff;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 500rpx;
+  margin: 0 auto;
+  box-shadow: 0px 3rpx 18rpx 3rpx rgba(0, 0, 0, 0.09);
+  border-radius: 10rpx;
+  overflow: hidden
+}
+.del-success-text{
+  font-size:50rpx;
+  font-family:Adobe Heiti Std R;
+  font-weight:bold;
+  color:rgba(253,73,120,1);
+  text-align: center;
+  margin-top: 90rpx;
+}
