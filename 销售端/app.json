@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/sale/index/index",
+    "pages/sale/clinic/clinic",
+    "pages/sale/flow/flow",
+    "pages/sale/salelist/salelist",
+    "pages/sale/date/date",
+    "pages/sale/dateinfo/dateinfo",
+    "pages/sale/message/message",
+    "pages/sale/my/my",
+    "pages/sale/login/login",
+    
+
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#63DFC5",
+    "navigationBarTextStyle": "",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}

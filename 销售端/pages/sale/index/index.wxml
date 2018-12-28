@@ -1,0 +1,68 @@
+<view class='mask {{mask?"show":"hide"}}'>
+  <view class='del-popup'>
+    <view class='pic-nav'></view>
+    <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
+    <view class='del-tit'>请完成信息填写</view>
+    <view class='del-details'>你还未填写重要信息，请前往个人中心填写重要信息</view>
+    <view class='del-btn' bindtap='del_submit'>确 认</view>
+  </view>
+</view>
+
+<view class='index-item' bindtap='go_flow'>
+  <view class='index-text'>
+    <view class='index-tit'>流向统计报表</view>
+    <view class='index-tips'>Flow statistics</view>
+  </view>
+  <view class='index-img'>
+    <image src='/images/test.jpg'></image>
+  </view>
+</view>
+
+<view class='index-item' bindtap='go_clinic'>
+  <view class='index-text'>
+    <view class='index-tit'>诊所销量统计表</view>
+    <view class='index-tips'>Clinic sales statistics</view>
+  </view>
+  <view class='index-img'>
+    <image src='/images/test.jpg'></image>
+  </view>
+</view>
+
+<view class='index-item' bindtap='go_saleinfo'>
+  <view class='index-text'>
+    <view class='index-tit'>医生销量统计表</view>
+    <view class='index-tips'>Doctor sales statistics</view>
+  </view>
+  <view class='index-img'>
+    <image src='/images/test.jpg'></image>
+  </view>
+</view>
+
+<view class='index-item'>
+  <view class='index-text'>
+    <view class='index-tit'>邀请二维码</view>
+    <view class='index-tips'>Invitation qr code</view>
+  </view>
+  <view class='index-img'>
+    <image src='/images/test.jpg'></image>
+  </view>
+</view>
+
+<view class='footer-nav'>
+  <view class='footer-nav-item'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>首页</view>
+  </view>
+  <view class='footer-nav-item' bindtap='go_message'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>信息通知</view>
+  </view>
+  <view class='footer-nav-item' bindtap='go_date'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>下属医生</view>
+  </view>
+  <view class='footer-nav-item' bindtap='go_my'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>个人中心</view>
+  </view>
+</view>

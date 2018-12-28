@@ -1,0 +1,47 @@
+<view class='sale-nav'>
+  <view class='nav-item'>
+    2018年 >
+  </view>
+  <view class='nav-item nav-center'>
+    9月 >
+  </view>
+  <view class='nav-item'>
+    请选择药品 >
+  </view>
+</view>
+
+<view class='list'>
+  <view class='list-tit'>
+    <view class='tit-item text-left'>
+      药品名称
+    </view>
+    <view class='tit-item text-center'>
+      患者
+    </view>
+    <view class='tit-item  text-right'>
+      数量
+    </view>
+  </view>
+  <block wx:for='{{list}}' wx:key=''>
+    <view class='list-item'>
+      <view class='name text-left'>
+        {{item.name}}
+      </view>
+      <view class='details text-center'>
+        {{item.medicine}}
+      </view>
+      <view class='details  text-right'>
+        {{item.num}}
+      </view>
+    </view>
+  </block>
+  <view class='{{null_list?"show":"hide"}}'>
+    <view class='null '>
+      <view class='null-img'>
+
+      </view>
+      当前还没有任何信息哦~
+    </view>
+  </view>
+
+</view>

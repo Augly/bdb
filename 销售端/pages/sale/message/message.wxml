@@ -1,0 +1,55 @@
+<view class='container'>
+
+  <view class='message'>
+    <view class='message-item'>
+      <view class='message-icon'>
+        <view class='messgae-img'></view>
+        <view class='message-tit'>预约成功信息通知</view>
+      </view>
+      <view class='message-detail'>
+        <view class='message-detail-tit'>
+          诊所：
+        </view>
+        <view class='message-detail-text'>
+          天津市儿童医院
+        </view>
+      </view>
+      <view class='message-detail'>
+        <view class='message-detail-tit'>
+          看诊医生：
+        </view>
+        <view class='message-detail-text'>
+          王晶
+        </view>
+      </view>
+      <view class='message-detail'>
+        <view class='message-detail-tit'>
+          看诊日期：
+        </view>
+        <view class='message-detail-text'>
+          2018-6-29
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<view class='footer-nav'>
+  <view class='footer-nav-item' bindtap='go_index'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>首页</view>
+  </view>
+  <view class='footer-nav-item'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>信息通知</view>
+  </view>
+  <view class='footer-nav-item' bindtap='go_date'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>下属医生</view>
+  </view>
+  <view class='footer-nav-item' bindtap='go_my'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>个人中心</view>
+  </view>
+</view>
