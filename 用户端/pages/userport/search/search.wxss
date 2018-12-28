@@ -47,6 +47,9 @@
   font-weight:400;
   color:rgb(183, 79, 115);
 }
+.icon-xiala{
+  font-size: 24rpx;
+}
 
 
 .medicine_item{

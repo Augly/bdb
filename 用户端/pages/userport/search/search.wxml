@@ -4,7 +4,7 @@
 
 <view class='choose'>
   <view class='choose-add {{choose?"active":""}}'>
-    区域选择
+    区域选择 <i class='iconfont icon-xiala'></i>
   </view>
   <view class='line'>
 

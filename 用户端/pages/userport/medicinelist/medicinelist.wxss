@@ -1,36 +1,70 @@
-.medicine_list{
-  /* display: flex; */
-  /* justify-content: center; */
+.banner-search {
+  width: 480rpx;
+  height: 60rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0rpx 6rpx 17rpx 3rpx rgba(0, 0, 0, 0.14);
+  border-radius: 30rpx;
+  background-image: url(https://lingyiil.dazhu-ltd.cn/public/static/program/images/qie02.png);
+  background-repeat: no-repeat;
+  background-size: 23rpx 30rpx;
+  background-position: 24rpx 17rpx;
+  margin: 18rpx auto 40rpx;
+}
+
+.banner-input {
+  width: 330rpx;
+  height: 60rpx;
+  padding-left: 86rpx;
+  font-size: 20rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(153, 153, 153, 1);
+}
+
+.medicine_list {
+  /* display: flex; *//* justify-content: center; */
   padding-top: 8rpx;
 }
-.medicine_item{
+
+.medicine_item {
   width: 690rpx;
-  height: 168rpx;
   border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
   padding: 17rpx 0;
   display: flex;
   position: relative;
   margin: 0 auto;
 }
-.medicine_img{
+
+.medicine_img {
   width: 178rpx;
   height: 138rpx;
   margin-right: 68rpx;
 }
-.medicnie-text{
+
+.medicnie-text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
-.medicine-tit{
-  font-size:30rpx;
-  color:rgba(51,51,51,1);
+
+.medicine-tit {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
 }
-.medicine-tips{
-  font-size:24rpx;
-  color:rgba(153,153,153,1);
+
+.medicine-tips {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  margin-top: 27rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  width: 400rpx;
 }
-.qianw{
+
+.qianw {
   position: absolute;
   right: 0;
   top: 0;

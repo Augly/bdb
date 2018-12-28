@@ -14,12 +14,10 @@ Page({
       pic_code_wrap: false
     })
   },
-  index_page(res){
-    wx.navigateTo({
+  index_page(){
+    console.log(1)
+    wx.switchTab({
       url: '/pages/userport/index/index',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
     })
   },
   login_btn(res) {

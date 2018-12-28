@@ -18,7 +18,7 @@
   <view class='password_box'>
     <i class='iconfont icon-dianhua'></i>
     <input type='text' class='login_num' placeholder='请输入手机号'></input>
-  </view>
+  </view> 
   <view class='password_box'>
     <i class='iconfont icon-mima'></i>
     <input type='text' class='password' placeholder='请输入验证码'></input>
