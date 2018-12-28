@@ -35,14 +35,4 @@
     <view class='line'></view>
 
   </view>
-  <view class='footer-nav'>
-    <view class='footer-nav-item'>
-      <view class='footer-img'></view>
-      <view class='footer-text'>首页</view>
-    </view>
-    <view class='footer-nav-item' bindtap='my'>
-      <view class='footer-img'></view>
-      <view class='footer-text'>我的</view>
-    </view>
-  </view>
 </view>

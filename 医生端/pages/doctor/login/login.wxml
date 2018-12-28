@@ -11,14 +11,18 @@
       <view class='pic_btn' bindtap='index_page'>提交</view>
     </view>
   </view>
-  <view class='titpic'>
-
+   <view class='titpic'>
+    <view class='tip-text'>登陆诊所</view>
+    <view class='tip'>The hospital</view>
   </view>
-  <input type='text' class='login_num' placeholder='请输入手机号'></input>
   <view class='password_box'>
-    <input type='text' class='password' placeholder='请输入验证码'></input>
-    <view class='send_num' bindtap="SendCode">{{code}}</view>
+    <i class='iconfont icon-dianhua'></i>
+    <input type='text' class='login_num' placeholder='请输入手机号'></input>
+  </view> 
+  <view class='password_box'>
+    <i class='iconfont icon-mima'></i>
+    <input type='text' class='password' placeholder='请输入密码'></input>
   </view>
-  <view class='code_tips hide{{code_tips?"show":""}}'>验证码已发送请注意查收</view>
+  <view class='code_tips hide{{code_tips?"show":""}}'>用户名密码错误！</view>
   <view class='login_btn' bindtap='login_btn'>登陆</view>
 </view>

@@ -13,44 +13,33 @@
 <view class='list'>
   <view class='item' bindtap='info'>
     <view class='left'>
-      <span class='iconfont icon-man-copy'></span>
+      <span class='iconfont icon-gerenyonghutouxiang'></span>
       <view class='itemTitle'>个人信息</view>
     </view>
     <view class='right'>
-      <span class='iconfont icon-jiantou'></span>
+      <span class='iconfont icon-youjiantou'></span>
     </view>
   </view>
   <view class='item' bindtap='mydata'>
     <view class='left'>
-      <span class='iconfont icon-gerenxinxi'></span>
+      <span class='iconfont icon-yaoqing'></span>
       <view class='itemTitle'>邀请的预约</view>
     </view>
     <view class='right'>
-      <span class='iconfont icon-jiantou'></span>
+      <span class='iconfont icon-youjiantou'></span>
     </view>
   </view>
-  <view class='item' bindtap='toMessges'>
+  <view class='item' bindtap='go_message'>
     <view class='left'>
-      <span class='iconfont icon-yisheng'></span>
+      <span class='iconfont icon-lingdang'></span>
       <view class='itemTitle'>信息通知</view>
     </view>
     <view class='right'>
-      <span class='iconfont icon-jiantou'></span>
+      <span class='iconfont icon-youjiantou'></span>
     </view>
   </view>
 </view>
 
 <view class='exit' bindtap='out'>
   退 出 登 录
-</view>
-
-<view class='footer-nav'>
-  <view class='footer-nav-item' bindtap='index'>
-    <view class='footer-img'></view>
-    <view class='footer-text'>首页</view>
-  </view>
-  <view class='footer-nav-item' bindtap='my'>
-    <view class='footer-img'></view>
-    <view class='footer-text'>我的</view>
-  </view>
 </view>

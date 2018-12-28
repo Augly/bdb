@@ -14,7 +14,7 @@
 </view>
 
 <view class='notitle'>
-  <i class='iconfont icon-xiangjipaizhao' bindtap='changesA'></i>
+  <i class='iconfont icon-xiangji' bindtap='changesA'></i>
 </view>
 <view class='avtarWrap'>
   <image src='{{avtar}}' class='avater'></image>
@@ -28,7 +28,7 @@
 <view class='list'>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-man-copy'></span>
+      <span class='iconfont icon-gerenyonghutouxiang'></span>
       <view class='itemTitle'>我的姓名</view>
     </view>
     <view class='right'>
@@ -47,7 +47,7 @@
   </view>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-phone'></span>
+      <span class='iconfont icon-weixin'></span>
       <view class='itemTitle'>我的微信</view>
     </view>
     <view class='right'>
@@ -57,7 +57,7 @@
   </view>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-phone'></span>
+      <span class='iconfont icon-shengribirthday16'></span>
       <view class='itemTitle'>我的年龄</view>
     </view>
     <view class='right'>
@@ -67,13 +67,24 @@
 
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-gerenxinxi'></span>
+      <span class='iconfont icon-youxiang'></span>
       <view class='itemTitle'>我的邮箱</view>
     </view>
     <view class='right'>
       <input class='itemmintitle' placeholder='请输入您的邮箱'></input>
     </view>
   </view>
+   <view class='item'>
+    <view class='left'>
+      <span class='iconfont icon-tijianxingbiefenxi'></span>
+      <view class='itemTitle'>性别</view>
+    </view>
+    <view class='right'>
+      <view class='sex {{sex==1?"selectSex":""}}' data-sex='1' bindtap='select_sex'>男</view>
+      <view class='sex {{sex==2?"selectSex":""}}' data-sex='2' bindtap='select_sex'>女</view>
+    </view>
+  </view>
+  
 </view>
 
 <view class='submit' bindtap='save'>

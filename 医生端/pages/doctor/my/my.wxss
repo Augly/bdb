@@ -1,8 +1,5 @@
 /* pages/case/case.wxss */
 
-page {
-  padding: 0 0 60rpx 0;
-}
 
 .notitle {
   position: relative;
@@ -130,8 +127,17 @@ iconfont {
   color: #49a0e5;
 }
 
-.icon-jiantou {
+.icon-youjiantou {
   color: #dcdbde;
+}
+.icon-gerenyonghutouxiang{
+  color: #20C070;
+}
+.icon-yaoqing{
+  color: #FEC940;
+}
+.icon-lingdang{
+  color: #EDAE2B;
 }
 
 .itemTitle {

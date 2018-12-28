@@ -102,21 +102,3 @@
 <view class='tuichu' bindtap=''>
 退 出 登 陆
 </view>
-<view class='footer-nav'>
-  <view class='footer-nav-item' bindtap='go_index'>
-    <view class='footer-img'></view>
-    <view class='footer-text'>首页</view>
-  </view>
-  <view class='footer-nav-item' bindtap='go_message'>
-    <view class='footer-img'></view>
-    <view class='footer-text'>信息通知</view>
-  </view>
-  <view class='footer-nav-item' bindtap='go_data'>
-    <view class='footer-img'></view>
-    <view class='footer-text'>下属医生</view>
-  </view>
-  <view class='footer-nav-item' bindtap='my'>
-    <view class='footer-img'></view>
-    <view class='footer-text'>个人中心</view>
-  </view>
-</view>

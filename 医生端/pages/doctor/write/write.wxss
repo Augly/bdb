@@ -7,8 +7,15 @@ page {
 .notitle {
   position: relative;
   width: 100%;
-  height: 180rpx;
+  height: 220rpx;
   background-color: #63dfc5;
+}
+.icon-xiangji{
+  position: absolute;
+  right: 220rpx;
+  font-size: 44rpx;
+  bottom: 50rpx;
+  color: #fff;
 }
 
 .avtarWrap {
@@ -36,6 +43,11 @@ page {
   /* border: 10rpx solid rgba(255, 255, 255, 1); */
   box-shadow: 0rpx 0rpx 20rpx 4rpx rgba(0, 0, 0, 0.22);
 }
+.selectSex{
+  background-color: #FD4978;
+  color: #FFFFFF;
+}
+
 
 .title {
   text-align: center;
@@ -46,6 +58,21 @@ page {
   color: rgba(51, 51, 51, 1);
 }
 
+.icon-gerenyonghutouxiang{
+  color: #25C173;
+}
+.icon-weixin{
+  color: #1AFA29;
+}
+.icon-shengribirthday16{
+  color: #528EC8;
+}
+.icon-youxiang{
+  color: #FEC635;
+}
+.icon-tijianxingbiefenxi{
+  color: #EEAEC9;
+}
 .mintitle {
   text-align: center;
   font-size: 24rpx;

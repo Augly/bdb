@@ -27,6 +27,13 @@ Page({
     })
 
   },
+
+  // 选择性别
+  select_sex(e) {
+    this.setData({
+      sex: e.currentTarget.dataset.sex
+    })
+  },
   nameinput(e){
     this.setData({
       name: e.detail.value

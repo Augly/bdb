@@ -24,7 +24,16 @@ Page({
     })
 
   },
-  
+  mydata(){
+    wx.navigateTo({
+      url: '/pages/doctor/date/date',
+    })
+  },
+  go_message(){
+    wx.navigateTo({
+      url: '/pages/doctor/message/message',
+    })
+  },
   index(){
     wx.navigateTo({
       url: '/pages/doctor/index/index',

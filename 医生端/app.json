@@ -1,16 +1,12 @@
 {
-  "pages":[
-  
-    
-
-    "pages/doctor/my/my", 
-    "pages/doctor/date/date",
-    "pages/doctor/index/index",
-    "pages/doctor/dateinfo/dateinfo",
-    "pages/doctor/write/write",
+  "pages": [
     "pages/doctor/login/login",
+    "pages/doctor/write/write",
+    "pages/doctor/date/date",
+    "pages/doctor/dateinfo/dateinfo",
+    "pages/doctor/index/index",
     "pages/doctor/message/message",
- 
+    "pages/doctor/my/my"
   ],
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",
@@ -18,5 +14,24 @@
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#63DFC4",
+    "borderStyle": "write",
+    "list": [
+      {
+        "selectedIconPath": "/images/home.png",
+        "iconPath": "/images/@home.png",
+        "pagePath": "pages/doctor/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/images/personage.png",
+        "iconPath": "/images/@personage.png",
+        "pagePath": "pages/doctor/my/my",
+        "text": "我的"
+      }
+    ]
   }
 }

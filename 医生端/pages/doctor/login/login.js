@@ -15,7 +15,7 @@ Page({
     })
   },
   index_page(res){
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/doctor/index/index',
       success: function(res) {},
       fail: function(res) {},
