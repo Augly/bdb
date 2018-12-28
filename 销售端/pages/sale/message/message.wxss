@@ -35,7 +35,6 @@ page {
 .messgae-img{
   width: 68rpx;
   height: 60rpx;
-  background-color: red;
   margin-right: 22rpx;
 }
 .message-tit{

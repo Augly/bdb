@@ -1,22 +1,29 @@
 <view class='sale-nav'>
   <view class='nav-item'>
-    2018年 >
+    2018-11-01  <i class='iconfont icon-xiala'></i>
   </view>
+  <view class='and'>至</view>
   <view class='nav-item nav-center'>
-    9月 >
+    2018-11-01  <i class='iconfont icon-xiala'></i>
   </view>
   <view class='nav-item'>
-    请选择药品 >
+    请选择药品 <i class='iconfont icon-xiala'></i>
   </view>
 </view>
 
 <view class='list'>
   <view class='list-tit'>
     <view class='tit-item text-left'>
-      药品名称
+      药品名称 
     </view>
     <view class='tit-item text-center'>
-      患者
+      患者姓名
+    </view>
+    <view class='tit-item  text-center'>
+      药品名称
+    </view>
+    <view class='tit-item  text-center'>
+      剂量
     </view>
     <view class='tit-item  text-right'>
       数量
@@ -24,11 +31,17 @@
   </view>
   <block wx:for='{{list}}' wx:key=''>
     <view class='list-item'>
-      <view class='name text-left'>
-        {{item.name}}
+      <view class='details text-left'>
+        {{item.medicine}}
       </view>
       <view class='details text-center'>
         {{item.medicine}}
+      </view>
+      <view class=' name text-center'>
+        {{item.name}}
+      </view>
+      <view class='details  text-center'>
+        {{item.num}}
       </view>
       <view class='details  text-right'>
         {{item.num}}

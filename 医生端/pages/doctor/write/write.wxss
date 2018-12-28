@@ -1,7 +1,7 @@
 /* pages/case/case.wxss */
 
 page {
-  padding: 0 0 120rpx 0;
+  padding: 0 0 20rpx 0;
 }
 
 .notitle {

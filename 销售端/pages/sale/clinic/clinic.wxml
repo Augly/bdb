@@ -1,12 +1,13 @@
 <view class='sale-nav'>
   <view class='nav-item'>
-    2018年 >
+    2018-11-01  <i class='iconfont icon-xiala'></i>
   </view>
+  <view class='and'>至</view>
   <view class='nav-item nav-center'>
-    9月 >
+    2018-11-01  <i class='iconfont icon-xiala'></i>
   </view>
   <view class='nav-item'>
-    请选择药品 >
+    请选择药品 <i class='iconfont icon-xiala'></i>
   </view>
 </view>
 

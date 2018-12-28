@@ -15,7 +15,7 @@
 
 
 <view class='notitle'>
-  <i class='iconfont icon-xiangjipaizhao' bindtap='changesA'></i>
+  <i class='iconfont icon-xiangji' bindtap='changesA'></i>
 </view>
 <view class='avtarWrap'>
   <image src='{{avtar}}' class='avater'></image>
@@ -29,7 +29,7 @@
 <view class='list'>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-man-copy'></span>
+      <span class='iconfont icon-gerenyonghutouxiang'></span>
       <view class='itemTitle'>我的昵称</view>
     </view>
     <view class='right'>
@@ -39,7 +39,7 @@
   </view>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-phone'></span>
+      <span class='iconfont icon-tijianxingbiefenxi'></span>
       <view class='itemTitle'>性别</view>
     </view>
     <view class='right'>
@@ -58,7 +58,7 @@
   </view>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-phone'></span>
+      <span class='iconfont icon-shengribirthday16'></span>
       <view class='itemTitle'>我的年龄</view>
     </view>
     <view class='right'>
@@ -67,7 +67,7 @@
   </view>
   <view class='item'>
     <view class='left'>
-      <span class='iconfont icon-phone'></span>
+      <span class='iconfont icon-youxiang'></span>
       <view class='itemTitle'>我的邮箱</view>
     </view>
     <view class='right'>
@@ -75,22 +75,14 @@
     </view>
   </view>
 
-  <view class='item' bindtap='mydata'>
+  <view class='item' bindtap=''>
     <view class='left'>
-      <span class='iconfont icon-gerenxinxi'></span>
-      <view class='itemTitle'>我的预约</view>
+      <span class='iconfont icon-weixin'></span>
+      <view class='itemTitle'>我的微信</view>
     </view>
     <view class='right'>
-      <span class='iconfont icon-jiantou'></span>
-    </view>
-  </view>
-  <view class='item' bindtap='toMessges'>
-    <view class='left'>
-      <span class='iconfont icon-yisheng'></span>
-      <view class='itemTitle'>信息通知</view>
-    </view>
-    <view class='right'>
-      <span class='iconfont icon-jiantou'></span>
+      <!-- <span class='iconfont icon-jiantou'></span> -->
+      <input class='itemmintitle' placeholder='请输入您的微信'></input>
     </view>
   </view>
 </view>

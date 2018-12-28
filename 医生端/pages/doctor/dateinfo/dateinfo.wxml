@@ -11,7 +11,8 @@
 <view class='info-item'>看诊状态：已预约</view>
 <view class='info-item'>所属医生：王晶</view>
 <view class='info-item'>患者电话：1368545128</view>
-<view class='info-item'>患者邮箱：wzf18546218@163.com</view>
+<view class='info-item'>预约时间：2018-09-06 10:00</view>
+<view class='info-item'>下单时间：2018-09-06 10:00</view>
 <view class='info-item'>看诊诊所：天津市儿童医院</view>
 <view class='info-item'>预约药品：免疫球蛋白</view>
 </view>
