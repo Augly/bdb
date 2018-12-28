@@ -30,6 +30,14 @@
           2018-6-29
         </view>
       </view>
+       <view class='message-detail'>
+        <view class='message-detail-tit'>
+          预约药品：
+        </view>
+        <view class='message-detail-text'>
+          免疫球蛋白
+        </view>
+      </view>
     </view>
   </view>
 

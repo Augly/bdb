@@ -106,6 +106,7 @@ page {
   /* background-color: red; */
   margin: 220rpx auto 0;
   text-align: center;
+  padding-top:8rpx;
 }
 
 .titpic .tip-text {

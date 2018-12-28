@@ -74,6 +74,7 @@ page{
   align-items: baseline;
   width: 500rpx;
   justify-content: space-between;
+  margin-bottom: 30rpx;
 }
 
 .text .age {

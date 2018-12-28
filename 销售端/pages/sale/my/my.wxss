@@ -10,7 +10,21 @@ page {
   height: 220rpx;
   background-color: #63dfc5;
 }
-
+.icon-gerenyonghutouxiang{
+  color: #25C173;
+}
+.icon-weixin{
+  color: #1AFA29;
+}
+.icon-shengribirthday16{
+  color: #528EC8;
+}
+.icon-youxiang{
+  color: #FEC635;
+}
+.icon-tijianxingbiefenxi{
+  color: #EEAEC9;
+}
 .avtarWrap {
   width: 200rpx;
   height: 200rpx;
@@ -55,7 +69,7 @@ page {
   color: rgba(153, 153, 153, 1);
 }
 
-.icon-xiangjipaizhao {
+.icon-xiangji {
   color: rgba(255, 255, 255, 1);
   position: absolute;
   right: 200rpx;
