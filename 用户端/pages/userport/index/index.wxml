@@ -1,0 +1,87 @@
+<view class='container'>
+  <view class="banner">
+    <swiper class="banner-swiper" indicator-dots="true" indicator-color="#EEEEEE" indicator-active-color="#63DFC5" autoplay="true" circular="true">
+      <block wx:for="{{banner_list}}" wx:key=''>
+        <swiper-item>
+          <image class="banner-img" src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='seachGroup'>
+      <view class="banner-inform" bindtap='toMessges'></view>
+    </view>
+  </view>
+
+  <view class='medicine'>
+    <view class='medicine-tit'>
+      <view class='medicine-tit-yuyue'>药品预约</view>
+      <view class='medicine-line'></view>
+      <view class='medicine-tit-life'>极致生活</view>
+      <view class='medicine-more' bindtap='more_medicine'>更多
+        <span class='iconfont icon-youjiantou'></span>
+      </view>
+    </view>
+    <view class='medicine-imgs'>
+      <view class='medicine-img'>
+        <image src='/images/5.png'></image>
+        <view class='medicine-img-btn'>
+          预约人形球蛋白
+        </view>
+      </view>
+      <view class='medicine-img'>
+        <image src='/images/6.png'></image>
+        <view class='medicine-img-btn'>
+          预约人形球蛋白
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='history'>
+    <view class='medicine-tit'>
+      <view class='medicine-tit-yuyue'>历史预约</view>
+      <view class='medicine-line'></view>
+      <view class='medicine-tit-life'>健康相随</view>
+      <view class='medicine-more' bindtap='go_list'>更多
+        <span class='iconfont icon-youjiantou'></span>
+      </view>
+    </view>
+
+    <view class='history-imgs'>
+      <block wx:for="{{banner_list}}" wx:key=''>
+        <view class='history-img'>
+          <image class='history-img-item' src='/images/3.png'></image>
+          <view class='history-tit'>人形球蛋白</view>
+          <view class='history-tit-sub'>天津儿童医院</view>
+        </view>
+      </block>
+      <!-- 列表如果未空显示下面 -->
+      <view class='hide'>
+        <view class='history-null'>
+          <view class='history-null-img'>
+            <i class='iconfont icon-kong'></i>
+          </view>
+          <view class='history-null-text'>您还没有历史预约哦~</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class='footer-nav'>
+    <view class='footer-nav-item'>
+      <view class='footer-img'>
+        <image></image>
+      </view>
+      <view class='footer-text'>首页</view>
+    </view>
+    <view class='footer-nav-item' bindtap='tointroduce'>
+      <view class='footer-img'></view>
+      <view class='footer-text'>医务中心</view>
+    </view>
+    <view class='footer-nav-item' bindtap='my'>
+      <view class='footer-img'></view>
+      <view class='footer-text'>我的</view>
+    </view>
+  </view> -->
+
+</view>

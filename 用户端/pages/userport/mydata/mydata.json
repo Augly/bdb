@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "药品列表",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "backgroundColor": "#eeeeee",
+  "usingComponents": {
+    "left-smooth": "/components/left-smooth/left-smooth"
+  }
+}

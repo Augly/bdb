@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/userport/login/login",
+    "pages/userport/index/index",
+    "pages/userport/my/my",
+    "pages/userport/write/write",
+    "pages/userport/introduce/introduce",
+    "pages/userport/medicinelist/medicinelist",
+    "pages/userport/search/search",
+    "pages/userport/mydata/mydata",
+    "pages/userport/cancle/cancle",
+    "pages/userport/finish/finish",
+    "pages/userport/salemedicine/salemedicine",
+    "pages/userport/message/message"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#63DFC5",
+    "navigationBarTextStyle": "",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#63DFC4",
+    "borderStyle": "write",
+    "list": [
+      {
+        "selectedIconPath": "/images/4@2x.png",
+        "iconPath": "/images/4.4@2x.png",
+        "pagePath": "pages/userport/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/images/33@2x.png",
+        "iconPath": "/images/3@2x.png",
+        "pagePath": "pages/userport/introduce/introduce",
+        "text": "医务中心"
+      },
+      {
+        "selectedIconPath": "/images/user.png",
+        "iconPath": "/images/users.png",
+        "pagePath": "pages/userport/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='slide-image'>
+  <block wx:for="{{imgUrls}}" wx:key=''>
+    <swiper-item class='slide-image'>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class='res'>
+  <view class='res_list'>
+    <span class='iconfont icon-yiyuan1'></span>{{hosRes.name}}
+  </view>
+  <view class='res_list'>
+    <span class='iconfont icon-dianhua'></span>联系电话（手机）：{{hosRes.tel}}
+  </view>
+  <view class='res_list'>
+    <span class='iconfont icon-weizhi'></span>{{hosRes.adder}}
+  </view>
+</view>
+
+
+
+
+<view class='ks'>
+  <view class='title'>医院简介</view>
+  <view class='produce'>
+    {{product}}
+  </view>
+</view>
+
+<!-- <view class='footer-nav'>
+  <view class='footer-nav-item' bindtap='index'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>首页</view>
+  </view>
+  <view class='footer-nav-item'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>医务中心</view>
+  </view>
+  <view class='footer-nav-item' bindtap='my'>
+    <view class='footer-img'></view>
+    <view class='footer-text'>我的</view>
+  </view>
+</view> -->
