@@ -1,0 +1,149 @@
+
+.list {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0rpx 30rpx;
+  /* margin-top: 100rpx; */
+  margin-top: 40rpx;
+}
+
+.item {
+  width: 100%;
+  height: 100rpx;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left, .right {
+  width: 50%;
+  height: 100%;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.name {
+  width: 100%;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  text-align: right;
+}
+
+iconfont {
+  font-size: 28rpx;
+}
+
+.icon-man-copy {
+  color: #20c070;
+}
+
+.icon-phone {
+  color: #8796f2;
+}
+
+.icon-wendang {
+  color: #fa7b51;
+}
+
+.icon-gerenxinxi {
+  color: #fec535;
+}
+
+.icon-yisheng {
+  color: #49a0e5;
+}
+
+.icon-jiantou {
+  color: #dcdbde;
+}
+
+.itemTitle {
+  font-size: 28rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  text-indent: 30rpx;
+}
+
+.itemmintitle {
+  width: 100%;
+  text-align: right;
+  color: rgba(153, 153, 153, 1);
+  font-size:24rpx;
+font-family:MicrosoftYaHei;
+font-weight:400;
+}
+
+.star {
+  font-size: 24rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(219, 99, 155, 1);
+  float: right;
+  line-height: 10rpx;
+  margin-left: 10rpx;
+}
+.submit {
+  width: 670rpx;
+  height: 74rpx;
+  border-radius: 10rpx;
+  background-color: #8897f1;
+  font-size: 34rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 74rpx;
+  margin: 160rpx auto 0;
+}
+
+
+.must-popup {
+  width: 500rpx;
+  height: 230rpx;
+  background: rgba(252, 252, 252, 1);
+  box-shadow: 0px 3rpx 18rpx 3rpx rgba(0, 0, 0, 0.09);
+  border-radius: 10rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-115rpx);
+  margin: 0 auto;
+}
+
+.close{
+  width: 39rpx;
+  height: 39rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.must-texf{
+  font-size:50rpx;
+font-family:Adobe Heiti Std R;
+font-weight:bold;
+margin-top: 90rpx;
+color:rgba(253,73,120,1);
+text-align: center;
+}
+.success-texf{
+  font-size:50rpx;
+font-family:Adobe Heiti Std R;
+font-weight:bold;
+text-align: center;
+margin-top: 90rpx;
+color:rgba(99,223,197,1);
+}

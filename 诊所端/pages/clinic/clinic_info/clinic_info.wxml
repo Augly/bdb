@@ -1,0 +1,61 @@
+<view class='mask {{mask?"show":"hide"}}'>
+  <view class='must-popup {{must?"show":"hide"}}'>
+    <view class='close' bindtap='close'>
+      <image src='/images/tuichu.png'></image>
+    </view>
+    <view class='must-texf'>请输入必填项</view>
+  </view>
+  <view class='must-popup {{success?"show":"hide"}}'>
+    <view class='close' bindtap='close'>
+      <image src='/images/tuichu.png'></image>
+    </view>
+    <view class='success-texf'>保存成功</view>
+  </view>
+</view>
+
+
+<view class='list'>
+<view class='item'>
+  <view class='left'>
+    <span class='iconfont icon-gerenyonghutouxiang'></span>
+    <view class='itemTitle'>联系人</view>
+  </view>
+  <view class='right'>
+    <input class='itemmintitle' bindinput='nameinput' placeholder='请输入您的微信号'></input>
+    <text class='star'>*</text>
+  </view>
+</view>
+<view class='item'>
+  <view class='left'>
+    <span class='iconfont icon-phone'></span>
+    <view class='itemTitle'>联系方式</view>
+  </view>
+  <view class='right'>
+    <input class='itemmintitle' bindinput='wxchat' placeholder='请输入诊所联系方式'></input>
+    <text class='star'>*</text>
+  </view>
+</view>
+<view class='item'>
+  <view class='left'>
+    <span class='iconfont icon-yiliaohangyedeICON-'></span>
+    <view class='itemTitle'>诊所名称</view>
+  </view>
+  <view class='right'>
+    <input class='itemmintitle' placeholder='请输入您的微信号'></input>
+  </view>
+</view>
+<view class='item'>
+  <view class='left'>
+    <span class='iconfont icon-dizhi'></span>
+    <view class='itemTitle'>详细地址</view>
+  </view>
+  <view class='right'>
+    <input class='itemmintitle'  placeholder='请输入您的微信号'></input>
+  </view>
+</view>
+</view>
+
+
+<view class='submit' bindtap='save'>
+  保 存 修 改 信 息
+</view>

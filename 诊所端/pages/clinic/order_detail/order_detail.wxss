@@ -1,0 +1,111 @@
+.info-img {
+  width: 198rpx;
+  height: 198rpx;
+  margin: 40rpx auto 50rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.info-tit {
+  color: #999;
+}
+
+.info-text {
+  color: #333;
+}
+
+.info-item {
+  font-size: 32rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  padding: 0 42rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.info-box {
+  width: 503rpx;
+  height: 60rpx;
+  border: 2rpx solid rgba(153, 153, 153, 1);
+  opacity: 0.2;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 24rpx;
+}
+
+.sunbimt {
+  width: 670rpx;
+  height: 74rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  background-color: #ff4866;
+  margin: 68rpx auto 0;
+  border-radius: 10rpx;
+}
+
+.popup {
+  width: 482rpx;
+  height: 380rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-190rpx);
+  border-radius: 10rpx;
+  background: #fff;
+}
+
+.popup-tit {
+  font-size: 36rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(102, 102, 102, 1);
+  margin-top: 70rpx;
+  text-align: center;
+}
+
+.popup-text {
+  width: 304rpx;
+  margin: 28rpx auto 0;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+}
+
+.btn-list {
+  display: flex;
+  width: 330rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(241, 241, 241, 1);
+  margin: 50rpx auto 0;
+}
+
+.btn-sunbmit,.btn-cancle {
+  width: 150px;
+  height: 60rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sunbmit {
+  background: rgba(117, 187, 38, 1);
+  margin-right: 30rpx;
+}
+
+.btn-cancle {
+  background: rgba(253, 73, 120, 1);
+}
