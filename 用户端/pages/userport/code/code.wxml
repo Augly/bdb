@@ -3,5 +3,7 @@
   <view class='text-tit'>药品信息</view>
   <view class='text-tips'>Invitation qr code</view>
 </view>
-  <view class='code'></view>
+  <view class='code'>
+    <image src='/images/code.png'></image>
+  </view>
 </view>

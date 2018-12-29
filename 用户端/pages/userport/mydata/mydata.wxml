@@ -60,7 +60,7 @@
 
 <view class="data-list {{statusType=='waitIng'?'hide':'show'}}">
   <left-smooth bind:del='del'>
-    <view class='medicine_item' bindtap='cancle'>
+    <view class='medicine_item' bindtap='finish'>
       <view class='detail'>
         已完成
       </view>
