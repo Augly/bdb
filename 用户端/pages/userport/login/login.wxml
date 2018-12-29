@@ -7,23 +7,23 @@
       <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
       <view class='pic_code_tit'>请输入下面的图形验证码</view>
       <image class='pic_code_pic' src='{{imgUrl}}/code.png'></image>
-      <input class='pic_code_input' type='text'></input>
-      <view class='pic_tips'>请输入正确的验证码</view>
+      <input class='pic_code_input' type='text' maxlength='6' bindinput='getPicCode' value='{{picCode}}'></input>
+      <view class='pic_tips' >{{picCode==""?erroCode==true?'验证码不正确请重新输入':'请输入图片验证码':'验证码区分大小写'}}</view>
       <view class='pic_btn' bindtap='index_page'>提交</view>
     </view>
   </view>
   <view class='titpic'>
-    <view class='text'>蛋白免疫</view>
+    <view class='text'>免疫蛋白</view>
     <view class='tips'>T h e h o s p i t a l</view>
   </view>
   <view class='password_box'>
     <i class='iconfont icon-dianhua'></i>
-    <input type='text' class='login_num' placeholder='请输入手机号' maxlength='11'></input>
+    <input type='text' class='login_num' placeholder='请输入手机号' maxlength='11' bindinput='getPhone' value='{{phone}}'></input>
   </view> 
   <view class='password_box'>
     <i class='iconfont icon-mima'></i>
-    <input type='text' class='login_num' placeholder='请输入验证码' maxlength='6'></input>
-    <view class='send_num' bindtap="SendCode">{{code}}</view>
+    <input type='text' class='login_num' placeholder='请输入验证码' maxlength='6' bindinput='getCode'  value='{{code}}'></input>
+    <view class='send_num' bindtap="SendCode">{{codeStatua}}</view>
   </view>
   <view class='code_tips hide{{code_tips?"show":""}}'>验证码已发送请注意查收</view>
   <view class='login_btn' bindtap='login_btn'>登陆</view>

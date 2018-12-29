@@ -3,7 +3,7 @@
 page {
   position: relative;
   height: 100%;
-  background-color: #0ACBB0;
+  background-color: #0acbb0;
 }
 
 .container {
@@ -70,6 +70,10 @@ page {
 .pic_code_input {
   width: 323rpx;
   height: 61rpx;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  text-align: center;
+  color: rgba(102, 102, 102, 1);
   border: 2rpx solid rgba(153, 153, 153, 1);
   border-radius: 6rpx;
   margin: 12rpx auto 0;
@@ -147,7 +151,7 @@ page {
   padding: 0rpx 34rpx;
   margin: 0 auto 40rpx;
   background: #93ffe6;
-  border-radius:10rpx; 
+  border-radius: 10rpx;
 }
 
 .password_box .iconfont {

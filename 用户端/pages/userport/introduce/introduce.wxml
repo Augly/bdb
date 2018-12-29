@@ -11,10 +11,10 @@
     <span class='iconfont icon-yiyuan1'></span>{{hosRes.name}}
   </view>
   <view class='res_list'>
-    <span class='iconfont icon-dianhua'></span>联系电话（手机）：{{hosRes.tel}}
+    <span class='iconfont icon-dianhua1'></span>联系电话（手机）：{{hosRes.tel}}
   </view>
   <view class='res_list'>
-    <span class='iconfont icon-weizhi'></span>{{hosRes.adder}}
+    <span class='iconfont icon-weizhi1'></span>{{hosRes.adder}}
   </view>
 </view>
 

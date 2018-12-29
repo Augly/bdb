@@ -1,4 +1,5 @@
 // pages/userport/login/login.js
+const app = getApp()
 Page({
 
   /**
@@ -6,10 +7,30 @@ Page({
    */
   data: {
     code_tips: false,
-    pic_code_wrap:false,
+    phone:'',  //手机号
+    password:''  //密码
   },
-  
+  getPhone(e) {
+    //获取手机号
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  getPassWord(e) {
+    //获取图片验证码输入
+    this.setData({
+      password: e.detail.value
+    })
+  },
   login_btn(){
+    if(this.data.phone==''){
+      app.config.mytoast('请输入正确的手机号')
+      return false
+    }
+    if (this.data.password == '') {
+      app.config.mytoast('请输入密码')
+      return false
+    }
     wx.switchTab ({
       url: '/pages/clinic/search/search',
     })
