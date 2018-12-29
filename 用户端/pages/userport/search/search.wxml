@@ -3,8 +3,9 @@
 </view>
 
 <view class='choose'>
-  <view class='choose-add {{choose?"active":""}}'>
-    区域选择 <i class='iconfont icon-xiala'></i>
+  <view class='choose-add {{choose?"active":""}}' bindtap='showMask'>
+    区域选择
+    <i class='iconfont icon-xiala'></i>
   </view>
   <view class='line'>
 
@@ -29,3 +30,21 @@
     </view>
   </view>
 </block>
+
+<view class='mask' style='height:{{myHeight}}px;bottom:0;' wx:if="{{choose}}">
+<view class='maskWrap'>
+    <scroll-view scroll-y class='firstItem'>
+    <view class='item itemActive'>
+      天津
+    </view>
+  </scroll-view>
+  <scroll-view scroll-y class='secondItem'>
+    <view class="itemTwo {{otherIndex==index?'itemActive':''}}" wx:for="{{otherList}}" wx:for-index="index" wx:for-item="item" bindtap='changes' data-index='{{index}}'>
+        {{item}}
+    </view>
+    
+  </scroll-view>
+</view>
+
+
+</view>

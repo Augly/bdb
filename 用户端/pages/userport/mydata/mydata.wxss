@@ -121,7 +121,6 @@
   position: absolute;
   right: 0rpx;
   bottom: 30rpx;
-  background: red;
 }
 
 .style-detail {
@@ -240,4 +239,7 @@
   color:rgba(253,73,120,1);
   text-align: center;
   margin-top: 90rpx;
+}
+.icon-saoma{
+  font-size: 50rpx;
 }

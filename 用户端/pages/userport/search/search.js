@@ -5,21 +5,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choose:true,
-    medicine_list:3
+    choose:false,
+    medicine_list:3,
+    otherList:["南开区","西青区"],
+    otherIndex:0
   },
   sale_medicine(){
     wx.navigateTo({
-      url: '/pages/userport/salemedicine/salemedicine',
+      url: '/pages/userport/medicinelist/medicinelist',
+    })
+  },
+  changes(e){
+    this.setData({
+      otherIndex:e.currentTarget.dataset.index,
+      choose:false
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getSystemInfo({
+      success: res=>{
+        console.log(res.windowWidth)
+        this.setData({
+          myHeight: res.windowHeight - (res.windowWidth/750*188)
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
-
+  showMask(){
+    this.setData({
+      choose:!this.data.choose
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

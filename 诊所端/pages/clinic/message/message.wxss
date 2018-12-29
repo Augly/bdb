@@ -16,9 +16,11 @@ page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10rpx;
 }
 .message-item{
-  margin-top: 20rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
   width:690rpx;
   height:278rpx;
   background:rgba(255,255,255,1);

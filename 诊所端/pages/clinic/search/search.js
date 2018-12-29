@@ -31,6 +31,15 @@ Page({
       del: false
     })
   },
+  saoCode(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      scanType: [],
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   del_submit() {
     this.setData({
       mask: true,

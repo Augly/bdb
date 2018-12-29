@@ -1,11 +1,13 @@
 // pages/clinic/order_detail/order_detail.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mask: false
+    mask: false,
+    imgUrl: app.ImageHost
   },
   submit() {
     this.setData({
@@ -19,9 +21,16 @@ Page({
     })
   },
   go_search() {
-    wx.navigateTo({
-      url: '/pages/clinic/search/search',
+    this.setData({
+      mask: false
     })
+    wx.navigateBack({
+      delta: 1,
+    })
+
+    // wx.navigateTo({
+    //   url: '/pages/clinic/search/search',
+    // })
   },
   /**
    * 生命周期函数--监听页面加载

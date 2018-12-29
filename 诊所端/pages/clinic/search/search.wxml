@@ -12,11 +12,14 @@
   </view>
 </view>
 
-
-<view class="banner-search">
-  <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
-  <view class='ercode'></view>
+<view class='searchGroup'>
+  <view class="banner-search">
+    <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
+    <!-- <images class='ercode'></images> -->
+  </view>
+  <icon class='iconfont icon-saoma' bindtap='saoCode'></icon>
 </view>
+
 
 <view class='nav'>
   <view class='nav-wrap'>
@@ -127,4 +130,3 @@
     </left-smooth>
   </view>
 </block>
-

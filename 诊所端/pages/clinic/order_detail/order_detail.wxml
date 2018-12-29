@@ -11,12 +11,13 @@
 
 
 <view class='info-img'>
-  <image src='/images/test.jpg'></image>
+  <image src='{{imgUrl}}head.png'></image>
 </view>
 
 <view class='info-item'>
 <view class='info-tit'>患者姓名：</view>
-<view class='info-text'>王陆</view>
+<view >王陆</view>
+<!-- <input class='info-text'></input> -->
 </view>
 <view class='info-item'>
 <view class='info-tit'>患者性别：</view>
@@ -27,16 +28,23 @@
 <view class='info-text'>18698541248</view>
 </view>
 <view class='info-item'>
-<view class='info-tit'>患者姓名：</view>
-<view class='info-box'>免疫球蛋白</view>
+<view class='info-tit'>预约时间：</view>
+<view class='info-text'>2018-09-06	10:00</view>
 </view>
 <view class='info-item'>
-<view class='info-tit'>患者姓名：</view>
-<view class='info-box'>5ml</view>
+<view class='info-tit'>预约药品：</view>
+<!-- <view class='info-box'>免疫球蛋白</view> -->
+<input class='info-box' placeholder='免疫球蛋白'></input>
 </view>
 <view class='info-item'>
-<view class='info-tit'>患者姓名：</view>
-<view class='info-box'>6</view>
+<view class='info-tit'>药品规格：</view>
+<!-- <view class='info-box'>5ml</view> -->
+<input class='info-box' placeholder='5ml'></input>
+</view>
+<view class='info-item'>
+<view class='info-tit'>药品数量：</view>
+<!-- <view class='info-box'>6</view> -->
+<input class='info-box' placeholder='6'></input>
 </view>
 
 <view class='sunbimt' bindtap='submit'>

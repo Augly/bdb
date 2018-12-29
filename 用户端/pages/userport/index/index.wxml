@@ -24,13 +24,13 @@
     <view class='medicine-imgs'>
       <view class='medicine-img'>
         <image src='/images/5.png'></image>
-        <view class='medicine-img-btn'>
+        <view class='medicine-img-btn' bindtap='tores'>
           预约人形球蛋白
         </view>
       </view>
       <view class='medicine-img'>
         <image src='/images/6.png'></image>
-        <view class='medicine-img-btn'>
+        <view class='medicine-img-btn' bindtap='tores'>
           预约人形球蛋白
         </view>
       </view>
@@ -48,8 +48,8 @@
     </view>
 
     <view class='history-imgs'>
-      <block wx:for="{{banner_list}}" wx:key=''>
-        <view class='history-img'>
+      <block wx:for="{{banner_list}}" wx:key='' >
+        <view class='history-img' bindtap="toyyed">
           <image class='history-img-item' src='/images/3.png'></image>
           <view class='history-tit'>人形球蛋白</view>
           <view class='history-tit-sub'>天津儿童医院</view>

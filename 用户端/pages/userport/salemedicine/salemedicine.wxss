@@ -84,14 +84,14 @@ page {
 
 .btn {
   width: 450rpx;
-  height: 81rpx;
+  height: 88rpx;
   background: rgba(99, 223, 197, 1);
   font-size: 28rpx;
   font-family: PingFang-SC-Bold;
   font-weight: bold;
   color: rgba(249, 249, 249, 1);
   text-align: center;
-  line-height: 81rpx;
+  line-height: 88rpx;
 }
 
 /* popup*/
@@ -177,7 +177,7 @@ page {
   font-size: 26rpx;
   flex-direction: column;
   font-family: PingFang-SC-Bold;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: rgba(153, 153, 153, 1);
 }
 
@@ -393,4 +393,8 @@ page {
   color: rgba(153, 153, 153, 1);
   text-align: center;
   margin-top: 90rpx;
+}
+.timeActive{
+  border: 1rpx solid rgba(252, 120, 154, 1);
+  background-color: rgba(251, 227, 234, 1);
 }

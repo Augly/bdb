@@ -2,7 +2,7 @@
 App({
   lanhu: 'http://www.kiss-me.top/user/',
   RequestHost: 'https://lingyiil.dazhu-ltd.cn/program',
-  ImageHost: 'https://lingyiil.dazhu-ltd.cn/public/static/program/images',
+  ImageHost: 'http://www.kiss-me.top/',
   clinic_id: '',
   clinic_name: '',
   clinic_laboratory: '',

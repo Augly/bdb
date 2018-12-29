@@ -1,6 +1,13 @@
 page {
   padding-bottom: 120rpx;
 }
+.searchGroup{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17rpx;
+}
 
 .banner-search {
   width: 480rpx;
@@ -12,7 +19,7 @@ page {
   background-repeat: no-repeat;
   background-size: 23rpx 30rpx;
   background-position: 24rpx 17rpx;
-  margin: 18rpx auto 0;
+  margin: 18rpx 21rpx 18rpx 0rpx;
   position: relative;
 }
 
@@ -43,9 +50,13 @@ page {
   font-family: MicrosoftYaHei;
   font-weight: 400;
   border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
-  margin-top: 37rpx;
+  /* margin-top: 37rpx; */
   color: rgba(153, 153, 153, 1);
   padding-bottom: 30rpx;
+}
+.icon-saoma{
+  font-size: 50rpx;
+  color: RGBA(163, 163, 163, 1);
 }
 
 .nav-wrap {
