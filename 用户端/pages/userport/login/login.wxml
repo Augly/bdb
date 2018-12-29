@@ -6,7 +6,7 @@
       </view>
       <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
       <view class='pic_code_tit'>请输入下面的图形验证码</view>
-      <view class='pic_code_pic'></view>
+      <image class='pic_code_pic' src='{{imgUrl}}/code.png'></image>
       <input class='pic_code_input' type='text'></input>
       <view class='pic_tips'>请输入正确的验证码</view>
       <view class='pic_btn' bindtap='index_page'>提交</view>

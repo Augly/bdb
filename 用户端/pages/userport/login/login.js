@@ -1,4 +1,5 @@
 // pages/userport/login/login.js
+const app=getApp()
 Page({
 
   /**
@@ -7,7 +8,8 @@ Page({
   data: {
     code: '发送',
     code_tips: false,
-    pic_code_wrap:false
+    pic_code_wrap:false,
+    imgUrl: app.ImageHost
   },
   close_code(){
     this.setData({
