@@ -94,3 +94,4 @@
     </view>
   </left-smooth>
 </view>
+<!-- <toast wrap="{{mask}}" title="删除已完成预约" minTitle="您确认要删除已完成预约么？删除之后将无法恢复。" notice="删除成功"></toast> -->

@@ -119,7 +119,7 @@ page {
 .titpic {
   width: 400rpx;
   height: 150rpx;
-  margin: 220rpx auto 60rpx;
+  margin: 256rpx auto 60rpx;
   text-align: center;
 }
 
