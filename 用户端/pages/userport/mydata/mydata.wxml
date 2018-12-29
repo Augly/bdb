@@ -25,10 +25,11 @@
 </view>
 <view class="data-list {{statusType=='waitIng'?'show':'hide'}}">
   <view class='medicine_item' bindtap='cancle'>
-    <view class='er-code' bindtap='go_code'></view>
+    <!-- <view class='er-code' ></view> -->
     <!-- <view class='detail'>
       已完成
     </view> -->
+    <icon class='iconfont icon-saoma er-code' bindtap='go_code'></icon>
     <view class='medicine_img'>
       <image src='/images/11.png'></image>
     </view>
