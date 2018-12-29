@@ -18,7 +18,29 @@ Page({
       medicine: '免疫球蛋白',
       num: '2'
     }],
-    null_list:false
+    null_list:false,
+    array: ['免疫球蛋白', '免疫球蛋白', '免疫球蛋白', '免疫球蛋白'],
+    index: 0,
+    date: '2016-09-01',
+    datetwo: '2016-09-01',
+  },
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  bindTwoDateChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      datetwo: e.detail.value
+    })
   },
 
   /**

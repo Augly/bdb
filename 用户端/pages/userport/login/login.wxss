@@ -147,6 +147,7 @@ page {
   padding: 0rpx 34rpx;
   margin: 0 auto 40rpx;
   background: #93ffe6;
+  border-radius:10rpx; 
 }
 
 .password_box .iconfont {

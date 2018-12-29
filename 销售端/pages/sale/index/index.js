@@ -13,6 +13,14 @@ Page({
       url: '/pages/sale/code/code',
     })
   },
+  sure(){
+    wx.switchTab({
+      url: '/pages/sale/my/my',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   // 诊所统计
   go_clinic() {
     wx.navigateTo({

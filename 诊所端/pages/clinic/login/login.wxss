@@ -3,13 +3,14 @@
 page {
   position: relative;
   height: 100%;
+  background-color: #0ACBB0;
 }
 
 .container {
   width: 100%;
   min-height: 100%;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 100% auto;
   background-position: 0 0;
   margin-top: 0rpx;
   overflow: hidden;
@@ -104,7 +105,7 @@ page {
   width: 400rpx;
   height: 150rpx;
   /* background-color: red; */
-  margin: 220rpx auto 0;
+  margin: 260rpx auto 0;
   margin-bottom: 60rpx;
   text-align: center;
 }

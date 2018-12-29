@@ -51,6 +51,11 @@ Page({
         mask: true,
         success: true
       })
+      // setTimeout(()=>{
+      //   wx.navigateBack({
+      //     delta: 1,
+      //   })
+      // },1000)
     }
   },
   close() {
