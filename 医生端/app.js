@@ -1,8 +1,8 @@
 //app.js
 App({
-  lanhu: 'http://www.kiss-me.top/lingyi/',
+  imgUrl: 'http://www.kiss-me.top/lingyi/',
   RequestHost: 'https://lingyiil.dazhu-ltd.cn/program',
-  ImageHost: 'https://lingyiil.dazhu-ltd.cn/public/static/program/images',
+  ImageHost: 'http://www.kiss-me.top/user',
   clinic_id: '',
   clinic_name: '',
   clinic_laboratory: '',

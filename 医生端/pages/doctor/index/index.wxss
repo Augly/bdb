@@ -99,10 +99,9 @@ page {
 .tips {
   display: flex;
   justify-content: space-between;
-  margin-top: 45rpx;
   align-items: center;
   width: 700rpx;
-  margin: 45rpx auto 0;
+  margin: 25rpx auto 0;
 }
 
 .container-tips {

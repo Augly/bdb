@@ -21,7 +21,6 @@ page {
 .message-item{
   margin-top: 20rpx;
   width:690rpx;
-  height:278rpx;
   background:rgba(255,255,255,1);
   box-shadow:0px 3px 10px 0px rgba(0, 0, 0, 0.12);
   border-radius:10rpx;
@@ -33,9 +32,8 @@ page {
   align-items: center;
 }
 .messgae-img{
-  width: 68rpx;
+  width: 60rpx;
   height: 60rpx;
-  background-color: red;
   margin-right: 22rpx;
 }
 .message-tit{
