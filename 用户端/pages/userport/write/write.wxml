@@ -37,7 +37,7 @@
       <view class='itemTitle'>我的手机</view>
     </view>
     <view class='right'>
-      <view class='itemmintitle'>17633369350</view>
+      <input class='itemmintitle' placeholder='请输入您的手机号'></input>
     </view>
   </view>
   <view class='item'>

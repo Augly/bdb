@@ -1,0 +1,50 @@
+page {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 0 0;
+  margin-top: 0rpx;
+  overflow: hidden;
+  background-image: url("http://www.kiss-me.top/user/banner.png");
+}
+
+.text-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 220rpx;
+  align-items: center;
+}
+
+.text-tit {
+  font-size: 70rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+.text-tips {
+  font-size: 40rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
+}
+
+.code {
+  width: 480rpx;
+  height: 480rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-items: center;
+  align-items:  center;
+  background: #fff;
+  margin-top: 28rpx;
+}

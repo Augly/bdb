@@ -10,6 +10,12 @@ Page({
     del: false,
     del_success:false
   },
+  // 二维码
+  go_code(){
+    wx.navigateTo({
+      url: '/pages/userport/code/code',
+    })
+  },
   // 已完成详情
   finish(){
     wx.navigateTo({
