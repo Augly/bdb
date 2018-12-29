@@ -24,13 +24,13 @@
     <view class='medicine-imgs'>
       <view class='medicine-img'>
         <image src='/images/5.png'></image>
-        <view class='medicine-img-btn' bindtap='tores'>
+        <view class='medicine-img-btn' bindtap='more_medicine'>
           预约人形球蛋白
         </view>
       </view>
       <view class='medicine-img'>
         <image src='/images/6.png'></image>
-        <view class='medicine-img-btn' bindtap='tores'>
+        <view class='medicine-img-btn' bindtap='more_medicine'>
           预约人形球蛋白
         </view>
       </view>

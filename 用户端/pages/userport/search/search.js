@@ -6,7 +6,36 @@ Page({
    */
   data: {
     choose:false,
-    medicine_list:3,
+    medicine_list: [{
+      img: '/images/4.png',
+      name: '天津市胸科医院',
+      tel: '022-23147100',
+      address: '天津市津南区台儿庄南路261号'
+    },
+      { 
+        img: '/images/5.png',
+        name: '天津儿童医院',
+        tel: '022-58916019',
+        address: '天津市河西区马场道225号'
+      },
+      {
+        img: '/images/6.png',
+        name: '天津市第三中心医院',
+        tel: '022-84112114',
+        address: '天津市河东区津塘路83号'
+      },
+      {
+        img: '/images/7.png',
+        name: '天津市天津医院',
+        tel: '022-84112114',
+        address: '天津市河西区解放南路406号'
+      },
+      {
+        img: '/images/14.png',
+        name: '天津中医学院第一附属医院',
+        tel: '022-27432299',
+        address: '天津市南开区鞍山西道314号'
+      }],
     otherList:["南开区","西青区"],
     otherIndex:0
   },
