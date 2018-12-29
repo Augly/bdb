@@ -13,7 +13,8 @@
     </view>
   </view>
   <view class='titpic'>
-    蛋白免疫
+    <view class='text'>蛋白免疫</view>
+    <view class='tips'>The hospital</view>
   </view>
   <view class='password_box'>
     <i class='iconfont icon-dianhua'></i>

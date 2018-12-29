@@ -6,7 +6,11 @@ page {
   width: 100%;
   height: 687rpx;
 }
-
+.medicine-wrap{
+  padding-bottom: 28rpx;
+  box-shadow:0px 3rpx 18rpx 3rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 20rpx;
+}
 .style_item {
   display: flex;
   height: 99rpx;
@@ -18,6 +22,26 @@ page {
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
   font-weight: bold;
+}
+
+.tit {
+  font-size: 28rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  line-height: 44rpx;
+  width: 670rpx;
+  margin: 54rpx auto 0;
+}
+
+.details {
+  font-size: 24rpx;
+  font-family: PingFang-SC-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 41rpx;
+  width: 670rpx;
+  margin: 44rpx auto 0;
 }
 
 .style_tit {
@@ -45,16 +69,19 @@ page {
   display: flex;
   justify-content: flex-end;
 }
-.money{
-  color: #6FE1C9;
+
+.money {
+  color: #6fe1c9;
   font-size: 44rpx;
   width: 300rpx;
   text-align: center;
   line-height: 81rpx;
 }
-.money text{
+
+.money text {
   font-size: 22rpx;
 }
+
 .btn {
   width: 450rpx;
   height: 81rpx;

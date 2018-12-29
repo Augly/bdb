@@ -60,15 +60,12 @@
 
 .detail {
   position: absolute;
-  font-size: 24rpx;
-  font-family: Adobe Heiti Std R;
-  font-weight: normal;
-  color: rgba(153, 153, 153, 1);
+  font-size:22rpx;
+  font-family:PingFang-SC-Medium;
+  font-weight:500;
+  color:rgba(255,73,115,1);
+  bottom: 30rpx;
   right: 0;
-}
-.detail .iconfont{
-  font-size:24rpx;
-
 }
 
 .medicnie-text {
@@ -101,7 +98,7 @@
 }
 
 .name-data {
-  width: 430rpx;
+  width: 550rpx;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -114,6 +111,17 @@
 .style-item {
   display: flex;
   margin-bottom: 8rpx;
+}
+.style-num{
+  margin-right: 10rpx;
+}
+.er-code{
+  width: 64rpx;
+  height: 59rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 30rpx;
+  background: red;
 }
 
 .style-detail {

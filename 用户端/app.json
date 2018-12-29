@@ -10,7 +10,8 @@
     "pages/userport/mydata/mydata",
     "pages/userport/cancle/cancle",
     "pages/userport/finish/finish",
-    "pages/userport/salemedicine/salemedicine",
+    "pages/userport/salemedicine/salemedicine", 
+    "pages/userport/code/code",
     "pages/userport/message/message"
   ],
   "window": {

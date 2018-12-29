@@ -12,7 +12,7 @@
   <!-- 药品参数弹层 -->
   <view class='popup {{infoPopup?"show":"hide"}}'>
     <view class='close_popup' bindtap='close'>
-      <image src='/images/1.png'></image>
+      <image src='/images/tuichu.png'></image>
     </view>
     <view class='popup_tit'>药品参数</view>
     <view class='medicine-info-item'>
@@ -102,7 +102,7 @@
     <view class='choost-tit'>选择计量</view>
     <view class='ml-list'>
       <block wx:for='{{ml}}' wx:key=''>
-        <text class='ml {{ml_num==index?"ml-active":""}}'  data-ml="{{index}}" bindtap='choose_ml'>{{item}}</text>
+        <text class='ml {{ml_num==index?"ml-active":""}}' data-ml="{{index}}" bindtap='choose_ml'>{{item}}</text>
       </block>
     </view>
     <view class='choose-num'>
@@ -114,14 +114,19 @@
       </view>
     </view>
     <view class='submit-choose'>
-     确认选择
+      确认选择
     </view>
   </view>
 </view>
 
-
-<view class='medicine-pic'>
-  <image src='/images/1.png'></image>
+  <view class='medicine-pic'>
+    <image src='/images/1.png'></image>
+  </view>
+<view class='medicine-wrap'>
+  <view class='tit'>
+    升级版大含量福欣宝免疫球蛋白元大牌标淳针剂5ml/瓶6瓶装免疫球蛋白
+  </view>
+  <view class='details'>免疫疗法已成为治疗癌症和其他免疫系统疾病的有前景的方法。免疫检查点阻断和过继细胞转移是两种常用的方法。R＆d Systems提供的蛋白质，抗体，酶联免疫吸附</view>
 </view>
 
 <view class='style_item' bindtap='show_data'>
@@ -145,6 +150,7 @@
 
 
 <view class='btn_wrap' bindtap='submit'>
-  <view class='money'><text>￥</text>666</view>
+  <view class='money'>
+    <text>￥</text>666</view>
   <view class='btn'>确 认 预 约</view>
 </view>
