@@ -2,6 +2,7 @@
   "pages":[
     "pages/sale/login/login",
     "pages/sale/index/index",
+    "pages/sale/code/code",
     "pages/sale/clinic/clinic",
     "pages/sale/flow/flow",
     "pages/sale/salelist/salelist",

@@ -36,6 +36,7 @@
       <input class='name' placeholder='zero' bindinput='nameinput'></input>
       <!-- <view class='itemmintitle'></view> -->
     </view>
+    <view class='star'>*</view>
   </view>
   <view class='item'>
     <view class='left'>
@@ -83,6 +84,7 @@
     <view class='right'>
       <!-- <span class='iconfont icon-jiantou'></span> -->
       <input class='itemmintitle' placeholder='请输入您的微信'></input>
+    <view class='star'>*</view>
     </view>
   </view>
 </view>

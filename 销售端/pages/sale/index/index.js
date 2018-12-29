@@ -7,6 +7,12 @@ Page({
   data: {
     mask:true,
   },
+  // 二维码
+  go_code(){
+    wx.navigateTo({
+      url: '/pages/sale/code/code',
+    })
+  },
   // 诊所统计
   go_clinic() {
     wx.navigateTo({

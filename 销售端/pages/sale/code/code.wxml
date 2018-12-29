@@ -1,0 +1,7 @@
+<view class='container'>
+<view class='text-list'>
+  <view class='text-tit'>邀请扫码</view>
+  <view class='text-tips'>Invitation qr code</view>
+</view>
+  <view class='code'></view>
+</view>

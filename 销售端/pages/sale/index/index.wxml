@@ -38,7 +38,7 @@
   </view>
 </view>
 
-<view class='index-item'>
+<view class='index-item' bindtap='go_code'>
   <view class='index-text'>
     <view class='index-tit'>邀请二维码</view>
     <view class='index-tips'>Invitation qr code</view>

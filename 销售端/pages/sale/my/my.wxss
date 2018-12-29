@@ -10,6 +10,11 @@ page {
   height: 220rpx;
   background-color: #63dfc5;
 }
+
+.star{
+  font-size: 32rpx;
+  color: #DB639B;
+}
 .icon-gerenyonghutouxiang{
   color: #25C173;
 }
@@ -159,6 +164,7 @@ iconfont {
   text-align: right;
   font-size: 24rpx;
   color: rgba(153, 153, 153, 1);
+  padding-right: 10rpx;
 }
 
 .go {
