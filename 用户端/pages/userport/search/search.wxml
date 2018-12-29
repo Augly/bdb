@@ -32,7 +32,8 @@
 </block>
 
 <view class='mask' style='height:{{myHeight}}px;bottom:0;' wx:if="{{choose}}">
-  <scroll-view scroll-y class='firstItem'>
+<view class='maskWrap'>
+    <scroll-view scroll-y class='firstItem'>
     <view class='item itemActive'>
       天津
     </view>
@@ -43,5 +44,7 @@
     </view>
     
   </scroll-view>
+</view>
+
 
 </view>
