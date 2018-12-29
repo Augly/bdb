@@ -85,7 +85,6 @@ page {
   width: 333rpx;
   height: 308rpx;
   margin-top: 45rpx;
-  background-color: red;
 }
 
 .person-tips {

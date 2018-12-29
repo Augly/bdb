@@ -90,10 +90,8 @@
   width: 7rpx;
   height: 97rpx;
   background: rgba(228, 84, 135, 1);
-  position: absolute;
-  left: -30rpx;
-  top: 50%;
-  transform: translate Y(-48rpx);
+  margin-left: -30rpx;
+  margin-right: 30rpx;
 }
 
 .medicine_item {

@@ -17,7 +17,6 @@ Page({
     })
   },
   index_page(){
-    console.log(1)
     wx.switchTab({
       url: '/pages/userport/index/index',
     })
