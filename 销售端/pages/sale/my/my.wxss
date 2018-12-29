@@ -79,6 +79,7 @@ page {
   position: absolute;
   right: 200rpx;
   bottom: 20rpx;
+  font-size: 50rpx;
 }
 
 .list {

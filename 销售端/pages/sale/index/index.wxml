@@ -4,17 +4,18 @@
     <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
     <view class='del-tit'>请完成信息填写</view>
     <view class='del-details'>你还未填写重要信息，请前往个人中心填写重要信息</view>
-    <view class='del-btn' bindtap='del_submit'>确 认</view>
+    <view class='del-btn' bindtap='del_submit' bindtap='sure'>确 认</view>
   </view>
 </view>
 
 <view class='index-item' bindtap='go_flow'>
   <view class='index-text'>
     <view class='index-tit'>流向统计报表</view>
+
     <view class='index-tips'>Flow statistics</view>
   </view>
   <view class='index-img'>
-    <image src='/images/test.jpg'></image>
+    <icon class='iconfont icon-zijinliuxiang'></icon>
   </view>
 </view>
 
@@ -24,7 +25,7 @@
     <view class='index-tips'>Clinic sales statistics</view>
   </view>
   <view class='index-img'>
-    <image src='/images/test.jpg'></image>
+    <icon class='iconfont icon-xiaoliang'></icon>
   </view>
 </view>
 
@@ -34,7 +35,7 @@
     <view class='index-tips'>Doctor sales statistics</view>
   </view>
   <view class='index-img'>
-    <image src='/images/test.jpg'></image>
+    <icon class='iconfont icon-tongji'></icon>
   </view>
 </view>
 
@@ -44,7 +45,6 @@
     <view class='index-tips'>Invitation qr code</view>
   </view>
   <view class='index-img'>
-    <image src='/images/test.jpg'></image>
+    <icon class='iconfont  icon-erweima'></icon>
   </view>
 </view>
-

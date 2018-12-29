@@ -1,14 +1,24 @@
 <view class='sale-nav'>
-  <view class='nav-item'>
-    2018-11-01  <i class='iconfont icon-xiala'></i>
-  </view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class='nav-item'>
+      {{date}}
+      <i class='iconfont icon-xiala'></i>
+    </view>
+  </picker>
+
   <view class='and'>至</view>
-  <view class='nav-item nav-center'>
-    2018-11-01  <i class='iconfont icon-xiala'></i>
-  </view>
-  <view class='nav-item'>
-    请选择药品 <i class='iconfont icon-xiala'></i>
-  </view>
+  <picker mode="date" value="{{datetwo}}" start="{{date}}" end="2017-09-01" bindchange="bindTwoDateChange">
+    <view class='nav-item'>
+      {{datetwo}}
+      <i class='iconfont icon-xiala'></i>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class='nav-item'>
+      {{array[index]}}
+      <i class='iconfont icon-xiala'></i>
+    </view>
+  </picker>
 </view>
 
 <view class='list'>

@@ -5,9 +5,9 @@
     </view>
     <view class='text'>
       <view class='name'>
-        <text>王陆</text>
+        <text>医生：王陆</text>
         <view class='detail'>
-          入职时间：2018.11.26
+          注册时间：2018.11.26
         </view>
       </view>
       <view class='age'>电话：16859541245</view>

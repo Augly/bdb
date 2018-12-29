@@ -132,3 +132,18 @@ page {
   background-color: #fd4978;
   border-radius: 10rpx;
 }
+.icon-zijinliuxiang, .icon-xiaoliang, .icon-tongji,.icon-erweima{
+  font-size: 177rpx;
+}
+.icon-zijinliuxiang{
+  color: RGBA(0, 160, 233, 1)
+}
+.icon-xiaoliang{
+  color: RGBA(99, 223, 197, 1)
+}
+.icon-tongji{
+  color: RGBA(197, 146, 192, 1)
+}
+.icon-erweima{
+  color: rgba(23, 171, 227, 1);
+}

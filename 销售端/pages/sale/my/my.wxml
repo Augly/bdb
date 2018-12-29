@@ -33,7 +33,7 @@
       <view class='itemTitle'>我的昵称</view>
     </view>
     <view class='right'>
-      <input class='name' placeholder='zero' bindinput='nameinput'></input>
+      <input class='name' placeholder='请输入你的手机号' bindinput='nameinput'></input>
       <!-- <view class='itemmintitle'></view> -->
     </view>
     <view class='star'>*</view>
@@ -54,8 +54,9 @@
       <view class='itemTitle'>我的手机</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle'  bindinput='wxchat' placeholder='17633369350'></input>
+      <input class='itemmintitle'  bindinput='wxchat' placeholder='请输入手机号'></input>
     </view>
+    <view class='star'>*</view>
   </view>
   <view class='item'>
     <view class='left'>
