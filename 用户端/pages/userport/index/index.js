@@ -11,10 +11,27 @@ Page({
       '/images/14.png'
     ],
   },
+  toyyed(){
+    console.log(1)
+    wx.navigateTo({
+      url: '/pages/userport/cancle/cancle',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   // 历史列表
   go_list(){
     wx.navigateTo({
       url: '/pages/userport/mydata/mydata?waitIng=' + false,
+    })
+  },
+  tores(){
+    wx.navigateTo({
+      url: '/pages/userport/salemedicine/salemedicine',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
   // 跳转我的

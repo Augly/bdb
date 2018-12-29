@@ -14,13 +14,53 @@ Page({
     ml: ['50ml', '50ml', '50ml'],
     num: 1,
     minusStatus: 'disable',
-    ml_num:0
+    ml_num:0,
+    dataIndex:0,
+    timeIndex:0
+  },
+  selectData(e){
+    console.log(e)
+    this.setData({
+      dataIndex:e.currentTarget.dataset.index
+    })
+  },
+  selectTime(e){
+    this.setData({
+      timeIndex: e.currentTarget.dataset.index
+    })
   },
   // 确认预约
   submit(){
     this.setData({
       mask:true,
-      success: true
+      success: true,
+      infoPopup: false
+    })
+  },
+  GetDateStr(AddDayCount) {
+    var dd = new Date();
+    dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
+    let y = dd.getFullYear();
+    let m = dd.getMonth() + 1;//获取当前月份的日期
+    let d = dd.getDate();
+    let w = dd.getDay();
+    let s = dd.getTime();
+    let week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+    return {
+      mon: week[w],
+      date: `${m}.${d}`,
+      value: s,
+      more: `${y}-${m}-${d}`
+    }
+  },
+  //获取今天为起点得往后七天日期星期
+  gitData() {
+    let datalist = []
+    for (let s = 0; s < 7; s++) {
+      datalist.push(this.GetDateStr(s))
+    }
+    this.setData({
+      dataList: datalist
     })
   },
   // 选择计量
@@ -64,7 +104,8 @@ Page({
   info_popup(){
     this.setData({
       mask:true,
-      infoPopup:true
+      infoPopup:true,
+      success:false
     })
   },
   // 时间参数
@@ -77,7 +118,8 @@ Page({
   submit_data(){
     this.setData({
       mask: true,
-      data_popup: true
+      data_popup: true,
+      
     })
   },
   // 选择规格
@@ -101,7 +143,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.gitData()
   },
 
   /**

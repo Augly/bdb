@@ -16,6 +16,14 @@ Page({
       url: '/pages/userport/write/write',
     })
   },
+  out(){
+    wx.redirectTo({
+      url: '/pages/userport/login/login',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   // 跳转医务中心
   tointroduce() {
     wx.navigateTo({

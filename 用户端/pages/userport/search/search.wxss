@@ -21,38 +21,41 @@
   color: rgba(153, 153, 153, 1);
 }
 
-.choose{
+.choose {
   margin-top: 58rpx;
   display: flex;
   justify-content: center;
   border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
   padding-bottom: 24rpx;
 }
-.choose-add{
-  font-size:22rpx;
-  font-family:MicrosoftYaHei;
-  font-weight:400;
-  color:rgba(153,153,153,1);
+
+.choose-add {
+  font-size: 22rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
   line-height: 26rpx;
 }
-.line{
-  width:2rpx;
-  height:26rpx;
-  background:rgba(153,153,153,1);
+
+.line {
+  width: 2rpx;
+  height: 26rpx;
+  background: rgba(153, 153, 153, 1);
   margin: 0 131rpx;
 }
-.choose .active{
-  font-size:22rpx;
-  font-family:MicrosoftYaHei;
-  font-weight:400;
-  color:rgb(183, 79, 115);
+
+.choose .active {
+  font-size: 22rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgb(183, 79, 115);
 }
-.icon-xiala{
+
+.icon-xiala {
   font-size: 24rpx;
 }
 
-
-.medicine_item{
+.medicine_item {
   width: 690rpx;
   height: 168rpx;
   border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
@@ -61,29 +64,82 @@
   position: relative;
   margin: 0 auto;
 }
-.medicine_img{
+
+.medicine_img {
   width: 178rpx;
   height: 138rpx;
   margin-right: 68rpx;
 }
-.medicnie-text{
+
+.medicnie-text {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.medicine-tit{
-  font-size:30rpx;
-  color:rgba(51,51,51,1);
+
+.medicine-tit {
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 1);
   width: 430rpx;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
-.medicine-tips{
-  font-size:24rpx;
-  color:rgba(153,153,153,1);
+
+.medicine-tips {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
   width: 430rpx;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.mask {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.firstItem {
+  width: 188rpx;
+  height: 80%;
+  border-right: 1rpx solid #f1f1f1;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.secondItem {
+  width: 560rpx;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  font-size: 26rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.itemTwo{
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 26rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.itemActive{
+  color: rgba(228, 84, 135, 1)
 }
