@@ -18,12 +18,12 @@
 <block wx:for='{{medicine_list}}' wx:key=''>
   <view class='medicine_item' bindtap='sale_medicine'>
     <view class='medicine_img'>
-      <image src='/images/6.png'></image>
+      <image src='{{item.img}}'></image>
     </view>
     <view class='medicnie-text'>
-      <view class='medicine-tit'>免疫球蛋白</view>
-      <view class='medicine-tips'>022-23147100</view>
-      <view class='medicine-tips'>地址：天津市津南区台儿庄南路261号</view>
+      <view class='medicine-tit'>{{item.name}}</view>
+      <view class='medicine-tips'>电话：{{item.tel}}</view>
+      <view class='medicine-tips'>地址：{{item.address}}</view>
     </view>
     <view class='qianw'>
       <image src='/images/icon_qianw.png'></image>
