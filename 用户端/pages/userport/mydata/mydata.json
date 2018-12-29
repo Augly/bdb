@@ -4,6 +4,7 @@
   "onReachBottomDistance": 50,
   "backgroundColor": "#eeeeee",
   "usingComponents": {
-    "left-smooth": "/components/left-smooth/left-smooth"
+    "left-smooth": "/components/left-smooth/left-smooth",
+    "toast": "/components/toast/toast"
   }
 }
