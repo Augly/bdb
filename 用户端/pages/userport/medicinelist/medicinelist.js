@@ -10,7 +10,7 @@ Page({
   // 跳转搜索页面
   choose_search(){
     wx.navigateTo({
-      url: '/pages/userport/search/search',
+      url: '/pages/userport/salemedicine/salemedicine',
     })
   },
   /**

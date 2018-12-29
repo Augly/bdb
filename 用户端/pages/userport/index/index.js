@@ -26,7 +26,7 @@ Page({
   // 跳转更多药品
   more_medicine(){
     wx.navigateTo({
-      url: '/pages/userport/medicinelist/medicinelist',
+      url: '/pages/userport/search/search',
     })
   },  
   // 跳转医务中心

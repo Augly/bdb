@@ -48,7 +48,12 @@ iconfont {
 .icon-man-copy {
   color: #20c070;
 }
-
+.icon-gerenyonghutouxiang,.icon-yiliaohangyedeICON-{
+  color: RGBA(32, 192, 112, 1)
+}
+.icon-dizhi{
+  color: RGBA(125, 197, 235, 1)
+}
 .icon-phone {
   color: #8796f2;
 }

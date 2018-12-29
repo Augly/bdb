@@ -12,7 +12,7 @@
   <!-- 药品参数弹层 -->
   <view class='popup {{infoPopup?"show":"hide"}}'>
     <view class='close_popup' bindtap='close'>
-      <image src='/images/1.png'></image>
+      <image src='/images/tuichu.png'></image>
     </view>
     <view class='popup_tit'>药品参数</view>
     <view class='medicine-info-item'>
@@ -64,7 +64,7 @@
         <view>周六</view>
         <view>已约满</view>
       </view>
-      <view class='data-item active'>
+      <view class='data-item'>
         <view>周日</view>
         <view>10.02</view>
       </view>

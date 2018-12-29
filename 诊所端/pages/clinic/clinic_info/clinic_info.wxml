@@ -21,7 +21,7 @@
     <view class='itemTitle'>联系人</view>
   </view>
   <view class='right'>
-    <input class='itemmintitle' bindinput='nameinput' placeholder='请输入您的微信号'></input>
+    <input class='itemmintitle' bindinput='nameinput' placeholder='请输入诊所联系人'></input>
     <text class='star'>*</text>
   </view>
 </view>
@@ -41,7 +41,7 @@
     <view class='itemTitle'>诊所名称</view>
   </view>
   <view class='right'>
-    <input class='itemmintitle' placeholder='请输入您的微信号'></input>
+    <input class='itemmintitle' placeholder='请输入诊所名称'></input>
   </view>
 </view>
 <view class='item'>
@@ -50,7 +50,7 @@
     <view class='itemTitle'>详细地址</view>
   </view>
   <view class='right'>
-    <input class='itemmintitle'  placeholder='请输入您的微信号'></input>
+    <input class='itemmintitle'  placeholder='请输入诊所地址'></input>
   </view>
 </view>
 </view>

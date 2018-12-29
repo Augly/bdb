@@ -10,7 +10,7 @@ Page({
   },
   sale_medicine(){
     wx.navigateTo({
-      url: '/pages/userport/salemedicine/salemedicine',
+      url: '/pages/userport/medicinelist/medicinelist',
     })
   },
   /**
