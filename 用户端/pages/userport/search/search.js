@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choose:true,
+    choose:false,
     medicine_list:3
   },
   sale_medicine(){
