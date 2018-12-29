@@ -1,11 +1,16 @@
 // pages/userport/write/write.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    sex:1
+    name: '测试',  //姓名
+    phone: '17633369350',  //手机号
+    age: '',  //年龄
+    email: '', //邮箱 
+    sex: 1
   },
   changesA() {
     wx.chooseImage({
@@ -25,6 +30,30 @@ Page({
   select_sex(e) {
     this.setData({
       sex: e.currentTarget.dataset.sex
+    })
+  },
+  //输入姓名
+  getName(e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  //输入手机号
+  getPhone(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  //输入年龄
+  getAge(e) {
+    this.setData({
+      age: e.detail.value
+    })
+  },
+  //输入邮箱
+  getEmail(e) {
+    this.setData({
+      email: e.detail.value
     })
   },
   /**
@@ -75,7 +104,24 @@ Page({
   onReachBottom: function () {
 
   },
-  out(){
+  //保存个人信息
+  save() {
+    if (this.data.name == '') {
+      app.config.mytoast('请输入您的姓名')
+      return false
+    }
+    if (this.data.phone == '') {
+      app.config.mytoast('请输入您的手机号')
+      return false
+    }
+    if (this.data.age == '') {
+      app.config.mytoast('请输入您的年龄')
+      return false
+    }
+    if (this.data.email == '') {
+      app.config.mytoast('请输入您的邮箱')
+      return false
+    }
     wx.navigateBack({
       delta: 1,
     })

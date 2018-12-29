@@ -138,6 +138,9 @@ Page({
       success: false,
       data_popup:false
     })
+    wx.reLaunch({
+      url: '/pages/userport/mydata/mydata',
+    })
   },
   /**
    * 生命周期函数--监听页面加载

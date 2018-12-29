@@ -3,7 +3,7 @@
 page {
   position: relative;
   height: 100%;
-  background-color: #0ACBB0;
+  background-color: #0acbb0;
 }
 
 .container {
@@ -14,7 +14,22 @@ page {
   background-position: 0 0;
   margin-top: 0rpx;
   overflow: hidden;
-  background-image: url('http://www.kiss-me.top/user/banner.png');
+  background-image: url("http://www.kiss-me.top/user/banner.png");
+}
+
+.text {
+  font-size: 70rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+.tips {
+  font-size: 40rpx;
+  font-family: PingFang-SC-Bold;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  line-height: 40rpx;
 }
 
 .pic_code_wrap {
@@ -22,7 +37,7 @@ page {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 
 .pic-nav {
@@ -49,12 +64,16 @@ page {
   width: 200rpx;
   height: 92rpx;
   margin: 21rpx auto 0;
-  background-color: red;
+  display: block;
 }
 
 .pic_code_input {
   width: 323rpx;
   height: 61rpx;
+  font-size: 32rpx;
+  font-family: PingFang-SC-Bold;
+  text-align: center;
+  color: rgba(102, 102, 102, 1);
   border: 2rpx solid rgba(153, 153, 153, 1);
   border-radius: 6rpx;
   margin: 12rpx auto 0;
@@ -81,7 +100,7 @@ page {
   width: 150rpx;
   height: 60rpx;
   background-color: #0acbb0;
-  font-size: 20px;
+  font-size: 20rpx;
   font-family: PingFang-SC-Bold;
   font-weight: bold;
   color: rgba(241, 241, 241, 1);
@@ -104,31 +123,13 @@ page {
 .titpic {
   width: 400rpx;
   height: 150rpx;
-  /* background-color: red; */
-  margin: 260rpx auto 0;
-  margin-bottom: 60rpx;
+  margin: 256rpx auto 60rpx;
   text-align: center;
 }
 
-.titpic .tip-text {
-  font-size: 70rpx;
-  font-family: PingFang-SC-Bold;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 1);
-}
-
-.titpic .tip {
-  font-size: 40rpx;
-  font-family: PingFang-SC-Bold;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 1);
-  line-height: 40rpx;
-}
-
 .login_num {
-  width: 560rpx;
+  width: 400rpx;
   height: 80rpx;
-  background: rgba(147, 255, 230, 1);
   border-radius: 10rpx;
   line-height: 40rpx;
   font-size: 28rpx;
@@ -137,17 +138,26 @@ page {
   color: rgba(153, 153, 153, 1);
   opacity: 0.4;
   text-align: center;
-  
+  /* margin: 60rpx auto 40rpx; */
 }
 
 .password_box {
   position: relative;
   width: 560rpx;
   height: 80rpx;
-  background-color: #93FFE6;
-  border-radius:10rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0rpx 34rpx;
   margin: 0 auto 40rpx;
-  /* margin: 60rpx auto 40rpx; */
+  background: #93ffe6;
+  border-radius: 10rpx;
+}
+
+.password_box .iconfont {
+  /* position: absolute; *//* left: 28rpx; *//* top: 21rpx; */
+  color: #63dfc4;
+  /* z-index: 2 */
 }
 
 .code_tips {
@@ -158,23 +168,16 @@ page {
   font-weight: bold;
   color: rgba(228, 84, 135, 1);
   position: absolute;
-  text-align: center;
   left: 0;
   right: 0;
 }
-.password_box .iconfont{
-  position: absolute;
-  left: 28rpx;
-  top: 21rpx;
-  color: #63DFC4;
-  z-index: 2
-}
+
 .password {
-  width: 560rpx;
+  width: 400rpx;
   height: 80rpx;
   opacity: 0.4;
   background: rgba(147, 255, 230, 1);
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-size: 28rpx;
   text-align: center;
   font-family: PingFang-SC-Bold;
@@ -190,7 +193,7 @@ page {
   border-radius: 10rpx;
   position: absolute;
   right: 12rpx;
-  top: 12rpx;
+  /* top: 12rpx; */
   font-size: 28rpx;
   font-family: PingFang-SC-Medium;
   font-weight: 500;
