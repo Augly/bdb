@@ -48,7 +48,6 @@ page {
   width: 200rpx;
   height: 92rpx;
   margin: 21rpx auto 0;
-  background-color: red;
 }
 
 .pic_code_input {

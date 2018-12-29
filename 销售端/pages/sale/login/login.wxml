@@ -5,15 +5,17 @@
       <view class='pic-nav'></view>
       <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
       <view class='pic_code_tit'>请输入下面的图形验证码</view>
-      <view class='pic_code_pic'></view>
+      <view class='pic_code_pic'>
+        <image src='{{imgUrl}}/code.png'></image>
+      </view>
       <input class='pic_code_input' type='text'></input>
       <view class='pic_tips'>请输入正确的验证码</view>
       <view class='pic_btn' bindtap='index_page'>提交</view>
     </view>
   </view>
    <view class='titpic'>
-    <view class='tip-text'>登陆诊所</view>
-    <view class='tip'>The hospital</view>
+    <view class='tip-text'>免疫蛋白</view>
+    <view class='tip'>T h e h o s p i t a l</view>
   </view>
   <view class='password_box'>
     <i class='iconfont icon-dianhua'></i>
