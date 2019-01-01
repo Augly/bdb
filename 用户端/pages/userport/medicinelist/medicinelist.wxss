@@ -36,32 +36,45 @@
 }
 
 .medicine_img {
-  width: 178rpx;
-  height: 138rpx;
-  margin-right: 68rpx;
+  width: 145rpx;
+  height: 145rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40rpx;
 }
+/* .medicine_img image{
+  display: block;
+  width: 145rpx;
+  height: auto;
+} */
 
 .medicnie-text {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  padding-top: 22rpx;
   justify-content: flex-start;
 }
 
 .medicine-tit {
-  font-size: 30rpx;
+  font-size: 28rpx;
   color: rgba(51, 51, 51, 1);
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 
 .medicine-tips {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: rgba(153, 153, 153, 1);
-  margin-top: 27rpx;
+  margin-top: 16rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  width: 400rpx;
+  width: 486rpx;
 }
 
 .qianw {

@@ -25,13 +25,13 @@
       <view class='medicine-img'>
         <image src='/images/5.png'></image>
         <view class='medicine-img-btn' bindtap='more_medicine'>
-          预约人形球蛋白
+          预约人血白蛋白
         </view>
       </view>
       <view class='medicine-img'>
         <image src='/images/6.png'></image>
         <view class='medicine-img-btn' bindtap='more_medicine'>
-          预约人形球蛋白
+          预约免疫球蛋白
         </view>
       </view>
     </view>
@@ -39,7 +39,7 @@
 
   <view class='history'>
     <view class='medicine-tit'>
-      <view class='medicine-tit-yuyue'>历史预约</view>
+      <view class='medicine-tit-yuyue'>我的预约</view>
       <view class='medicine-line'></view>
       <view class='medicine-tit-life'>健康相随</view>
       <view class='medicine-more' bindtap='go_list'>更多

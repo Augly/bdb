@@ -14,21 +14,29 @@
 }
 
 .cancle-tit {
-  font-size: 44rpx;
+  font-size: 32rpx;
   margin-top: 25rpx;
   font-family: MicrosoftYaHei;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #69E0C7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .cancle-tit text{
   font-size: 22rpx;
 }
 .cancle-tips {
-  margin-top: 40rpx;
+  width: 430rpx;
+  margin-top: 20rpx;
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: rgba(153, 153, 153, 1);
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
 }
 
 .cancle-item {
@@ -52,14 +60,14 @@
 .cancle-data-detail {
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: rgba(153, 153, 153, 1);
 }
 
 .cancle-btn {
   width: 623rpx;
   height: 82rpx;
-  background: rgba(153, 153, 153, 1);
+  background: rgba(253, 73, 120, 1);
   border-radius: 41px;
   display: flex;
   justify-content: center;
@@ -75,6 +83,7 @@
   margin: 0 auto;
 }
 
+
 .del-success {
   width: 500rpx;
   height: 230rpx;
@@ -86,18 +95,16 @@
   margin: 0 auto;
   box-shadow: 0px 3rpx 18rpx 3rpx rgba(0, 0, 0, 0.09);
   border-radius: 10rpx;
-  overflow: hidden;
+  overflow: hidden
 }
-
-.del-success-text {
-  font-size: 50rpx;
-  font-family: Adobe Heiti Std R;
-  font-weight: bold;
-  color: rgba(253, 73, 120, 1);
+.del-success-text{
+  font-size:50rpx;
+  font-family:Adobe Heiti Std R;
+  font-weight:bold;
+  color:rgba(253,73,120,1);
   text-align: center;
   margin-top: 90rpx;
 }
-
 .tuichu {
   width: 50rpx;
   height: 50rpx;
@@ -105,9 +112,14 @@
   right: 10rpx;
   top: 10rpx;
 }
+.title{
+  font-size:32rpx;
+font-family:MicrosoftYaHei;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
 
-
-.icon-riqi{
+/* .icon-riqi{
   color: #92CDC9;
 }
 .icon-xiaozhensuo{
@@ -121,4 +133,11 @@
 }
 .icon-shuliang{
   color: #F4EA2E;
+} */
+.iconfont{
+  color: rgba(153, 153, 153, 1);
+  font-size: 32rpx;
+}
+.success{
+  background-color: rgba(153, 153, 153, 1);
 }

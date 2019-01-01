@@ -14,21 +14,29 @@
 }
 
 .cancle-tit {
-  font-size: 44rpx;
+  font-size: 32rpx;
   margin-top: 25rpx;
   font-family: MicrosoftYaHei;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #69E0C7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .cancle-tit text{
   font-size: 22rpx;
 }
 .cancle-tips {
-  margin-top: 40rpx;
+  width: 430rpx;
+  margin-top: 20rpx;
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: rgba(153, 153, 153, 1);
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
 }
 
 .cancle-item {
@@ -52,7 +60,7 @@
 .cancle-data-detail {
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: rgba(153, 153, 153, 1);
 }
 
@@ -104,8 +112,14 @@
   right: 10rpx;
   top: 10rpx;
 }
+.title{
+  font-size:32rpx;
+font-family:MicrosoftYaHei;
+font-weight:bold;
+color:rgba(51,51,51,1);
+}
 
-.icon-riqi{
+/* .icon-riqi{
   color: #92CDC9;
 }
 .icon-xiaozhensuo{
@@ -119,4 +133,8 @@
 }
 .icon-shuliang{
   color: #F4EA2E;
+} */
+.iconfont{
+  color: rgba(153, 153, 153, 1);
+  font-size: 32rpx;
 }

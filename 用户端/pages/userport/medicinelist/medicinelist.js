@@ -5,7 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    medicine_list:3
+    medicine_list:[
+      {
+        title:'升级版大含量福欣宝免疫球蛋白元大牌',
+        
+      },
+      {
+        title: '升级版大含量福欣宝免疫球蛋白元大牌',
+
+      },
+      {
+        title: '升级版大含量福欣宝免疫球蛋白元大牌',
+
+      }
+    ]
   },
   // 跳转搜索页面
   choose_search(){
