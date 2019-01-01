@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    statusType: 'waitIng',
+    statusType: 'ready',
     mask:false,
     del: false,
     del_success:false
@@ -17,15 +17,9 @@ Page({
     })
   },
   // 已完成详情
-  finish(){
+  tofinish(e){
     wx.navigateTo({
-      url: '/pages/userport/finish/finish',
-    })
-  },
-  // 详情页面
-  cancle(){
-    wx.navigateTo({
-      url: '/pages/userport/cancle/cancle',
+      url: '/pages/userport/finish/finish?type=' + e.currentTarget.dataset.type,
     })
   },
 
@@ -66,14 +60,19 @@ Page({
       });
     }
   },
+  ready() {
+    this.setData({
+      statusType: 'ready'
+    })
+  },
+  finish() {
+    this.setData({
+      statusType: 'finish'
+    })
+  },
   waitIng() {
     this.setData({
       statusType: 'waitIng'
-    })
-  },
-  patiented() {
-    this.setData({
-      statusType: 'patiented'
     })
   },
   /**

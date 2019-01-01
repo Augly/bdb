@@ -11,7 +11,7 @@
 }
 
 .tabBar {
-  width: 380rpx;
+  width: 568rpx;
   height: 64rpx;
   border: 2rpx solid rgba(99, 223, 197, 1);
   border-radius: 10rpx;
@@ -22,14 +22,15 @@
 }
 
 .tabItem {
-  width: 189rpx;
+  width: 188rpx;
   height: 100%;
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
-  text-align: center;
-  line-height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tabActive {
@@ -41,51 +42,69 @@
 }
 
 .medicine_item {
-  width: 690rpx;
+  width: 706rpx;
   border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
-  padding: 17rpx 0;
+  padding: 30rpx 0rpx;
   display: flex;
-  position: relative;
   margin: 0 auto;
   align-items: center;
+  /* justify-content: space-between; */
 }
 
 .medicine_img {
-  width: 120rpx;
-  height: 120rpx;
-  margin-right: 20rpx;
-  border-radius: 50%;
+  width: 178rpx;
+  height: 138rpx;
+  margin-right: 40rpx;
+  /* border-radius: 50%; */
   overflow: hidden;
 }
 
 .detail {
   position: absolute;
-  font-size:22rpx;
-  font-family:PingFang-SC-Medium;
-  font-weight:500;
-  color:rgba(255,73,115,1);
+  font-size: 22rpx;
+  font-family: PingFang-SC-Medium;
+  font-weight: 500;
+  color: rgba(255, 73, 115, 1);
   bottom: 30rpx;
   right: 0;
 }
 
 .medicnie-text {
+  /* width:300rpx; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.qianw {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.sq{
+  height: 180rpx;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
 .medicine-tit {
   font-size: 30rpx;
+  font-weight: normal;
   color: rgba(51, 51, 51, 1);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  margin-bottom: 4rpx;
 }
 
 .medicine-tips {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: rgba(153, 153, 153, 1);
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
   overflow: hidden;
   white-space: nowrap;
 }
@@ -110,26 +129,36 @@
 
 .style-item {
   display: flex;
-  margin-bottom: 8rpx;
+  margin-bottom: 4rpx;
 }
-.style-num{
-  margin-right: 10rpx;
+
+.style-num {
+  margin-right: 40rpx;
 }
-.er-code{
-  width: 64rpx;
+
+.er-code {
+  justify-self: self-end;
+  /* width: 64rpx;
   height: 59rpx;
   position: absolute;
   right: 0rpx;
-  bottom: 30rpx;
+  bottom: 30rpx; */
+}
+
+.date {
+  font-size: 22rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(153, 153, 153, 1);
 }
 
 .style-detail {
-  font-size: 24rpx;
+  font-size: 22rpx;
   color: #666 !important;
 }
 
 .add_detail {
-  width: 300rpx;
+  /* width: 300rpx; */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -230,16 +259,33 @@
   margin: 0 auto;
   box-shadow: 0px 3rpx 18rpx 3rpx rgba(0, 0, 0, 0.09);
   border-radius: 10rpx;
-  overflow: hidden
+  overflow: hidden;
 }
-.del-success-text{
-  font-size:50rpx;
-  font-family:Adobe Heiti Std R;
-  font-weight:bold;
-  color:rgba(253,73,120,1);
+
+.del-success-text {
+  font-size: 50rpx;
+  font-family: Adobe Heiti Std R;
+  font-weight: bold;
+  color: rgba(253, 73, 120, 1);
   text-align: center;
   margin-top: 90rpx;
 }
-.icon-saoma{
+
+.icon-saoma {
   font-size: 50rpx;
+  padding-top: 30rpx;
+}
+
+.line {
+  width: 2rpx;
+  height: 44rpx;
+  background: rgba(220, 219, 222, 0.4);
+  border-radius: 1rpx;
+}
+.textR{
+  text-align: right;
+  font-size:22rpx;
+font-family:PingFang-SC-Medium;
+font-weight:500;
+color:rgba(255,73,115,1);
 }

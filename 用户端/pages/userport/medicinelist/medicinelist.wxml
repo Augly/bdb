@@ -4,13 +4,13 @@
 </view>
 
   <view class='medicine_list'>
-    <block wx:for='{{medicine_list}}' wx:key=''>
+    <block wx:for='{{medicine_list}}' wx:key='' wx:for-item="item" wx:for-index="index">
     <view class='medicine_item' bindtap='choose_search'>
       <view class='medicine_img'>
         <image src='/images/4.png'></image>
       </view>
       <view class='medicnie-text'>
-        <view class='medicine-tit'>免疫球蛋白</view>
+        <view class='medicine-tit'>{{item.title}}</view>
         <view class='medicine-tips'>简介：免疫疗法已成为治疗癌症和其他免疫系统疾病的有前景的方法。</view>
       </view>
       <view class='qianw'>
