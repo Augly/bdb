@@ -41,7 +41,7 @@ Page({
   },
   sale_medicine(){
     wx.navigateTo({
-      url: '/pages/userport/medicinelist/medicinelist',
+      url: '/pages/userport/salemedicine/salemedicine',
     })
   },
   changes(e){

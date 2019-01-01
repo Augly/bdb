@@ -4,37 +4,153 @@
   </block>
 </view>
 
-<view class="data-list {{statusType=='waitIng'?'hide':'show'}}">
-  <left-smooth bind:del='del'>
-    <view class='medicine_item active' bindtap='details'>
-     <view class='detail'>
-      查看信息 <icon class='iconfont icon-youjiantou'></icon>
+<view class="data-list" wx:if="{{nav==0}}">
+  <!-- <left-smooth bind:del='del'> -->
+  <view class='medicine_item active' bindtap='details'>
+    <view class='detail'>
+      查看信息
+      <icon class='iconfont icon-youjiantou'></icon>
     </view>
-      <view class='medicine_img'>
-        <image src='/images/11.png'></image>
+    <view class='medicine_img'>
+      <image src='/images/11.png'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='name-data'>
+        <view class='medicine-tit'>王陆
+          <icon class='iconfont icon-nan'></icon>
+        </view>
+        <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
       </view>
-      <view class='medicnie-text'>
-        <view class='name-data'>
-          <view class='medicine-tit'>免疫球蛋白</view>
-          <view class='medicine-data'>2018-04-06 10:00</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>联系方式</view>
-          <view class='style-detail add_detail'>188888888</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>预约药品：</view>
-          <view class='style-detail add_detail'>免疫球蛋白</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>预约诊所：</view>
-          <view class='style-detail add_detail'>天津市儿童医院</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>预约时间：</view>
-          <view class='style-detail add_detail'>2018-09-06 </view>
-        </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>联系方式：</view>
+        <view class='style-detail add_detail'>188888888</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约药品：</view>
+        <view class='style-detail add_detail'>免疫球蛋白</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品剂量：</view>
+        <view class='style-detail add_detail'>5ml</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品数量：</view>
+        <view class='style-detail add_detail'>药品数量：</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约诊所：</view>
+        <view class='style-detail add_detail'>天津市儿童医院</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约时间：</view>
+        <view class='style-detail add_detail'>2018-09-06 </view>
       </view>
     </view>
-  </left-smooth>
+  </view>
+  <!-- </left-smooth> -->
+</view>
+<view class="data-list" wx:if="{{nav==2}}">
+  <!-- <left-smooth bind:del='del'> -->
+  <view class='medicine_item active' bindtap='details'>
+    <view class='del' catchtap='del'>删 除</view>
+    <view class='detail'>
+      查看信息
+      <icon class='iconfont icon-youjiantou'></icon>
+    </view>
+    <view class='medicine_img'>
+      <image src='/images/11.png'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='name-data'>
+        <view class='medicine-tit'>王陆
+          <icon class='iconfont icon-nan'></icon>
+        </view>
+        <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>联系方式：</view>
+        <view class='style-detail add_detail'>188888888</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约药品：</view>
+        <view class='style-detail add_detail'>免疫球蛋白</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品剂量：</view>
+        <view class='style-detail add_detail'>5ml</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品数量：</view>
+        <view class='style-detail add_detail'>药品数量：</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约诊所：</view>
+        <view class='style-detail add_detail'>天津市儿童医院</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约时间：</view>
+        <view class='style-detail add_detail'>2018-09-06 </view>
+      </view>
+    </view>
+  </view>
+  <!-- </left-smooth> -->
+</view>
+<view class="data-list" wx:if="{{nav==1}}">
+  <!-- <left-smooth bind:del='del'> -->
+  <view class='medicine_item active' bindtap='details'>
+    <view class='detail'>
+      查看信息
+      <icon class='iconfont icon-youjiantou'></icon>
+    </view>
+    <view class='medicine_img'>
+      <image src='/images/11.png'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='name-data'>
+        <view class='medicine-tit'>王陆
+          <icon class='iconfont icon-nan'></icon>
+        </view>
+        <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>联系方式：</view>
+        <view class='style-detail add_detail'>188888888</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约药品：</view>
+        <view class='style-detail add_detail'>免疫球蛋白</view>
+      </view>
+      <!-- <view class='style-item'>
+          <view class='medicine-tips'>药品剂量：</view>
+          <view class='style-detail add_detail'>5ml</view>
+        </view>
+         <view class='style-item'>
+          <view class='medicine-tips'>药品数量：</view>
+          <view class='style-detail add_detail'>药品数量：</view>
+        </view> -->
+      <view class='style-item'>
+        <view class='medicine-tips'>预约诊所：</view>
+        <view class='style-detail add_detail'>天津市儿童医院</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约时间：</view>
+        <view class='style-detail add_detail'>2018-09-06 </view>
+      </view>
+    </view>
+  </view>
+  <!-- </left-smooth> -->
+</view>
+
+<view class='mask' wx:if="{{mask}}">
+    <view class='maskWrap'>
+      <view class='wrapHead'></view>
+      <view class='wrapContent'>
+        <view class='wrapTitle'>是否删除已取消预约</view>
+        <view class='wrapMain'></view>
+      </view>
+      <view class='wrapFoot'>
+        <view class='foot_sure' bindtap='del'>确  认</view>
+        <view class='foot_cendel' bindtap='del'>取  消</view>
+      </view>
+    </view>
 </view>

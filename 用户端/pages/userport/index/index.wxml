@@ -23,14 +23,16 @@
     </view>
     <view class='medicine-imgs'>
       <view class='medicine-img'>
+      <view class='mskt'></view>
         <image src='/images/5.png'></image>
-        <view class='medicine-img-btn' bindtap='more_medicine'>
+        <view class='medicine-img-btn' bindtap='toclic'>
           预约人血白蛋白
         </view>
       </view>
       <view class='medicine-img'>
+      <view class='mskt'></view>
         <image src='/images/6.png'></image>
-        <view class='medicine-img-btn' bindtap='more_medicine'>
+        <view class='medicine-img-btn' bindtap='toclic'>
           预约免疫球蛋白
         </view>
       </view>

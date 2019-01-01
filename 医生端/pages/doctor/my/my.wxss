@@ -1,10 +1,13 @@
 /* pages/case/case.wxss */
 
+page {
+  
+}
 
 .notitle {
   position: relative;
   width: 100%;
-  height: 180rpx;
+  height: 220rpx;
   background-color: #63dfc5;
 }
 
@@ -16,7 +19,7 @@
   position: absolute;
   box-sizing: border-box;
   padding: 12rpx;
-  top: 80rpx;
+  top: 120rpx;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -80,6 +83,7 @@
 }
 
 .left, .right {
+  position: relative;
   width: 50%;
   height: 100%;
 }
@@ -88,6 +92,15 @@
   display: flex;
   align-items: center;
   justify-content: start;
+}
+.dit{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius:50%;
+  background-color: rgba(230, 0, 18, 1);
+  position: absolute;
+   top: 29rpx;
+   left: 16rpx;
 }
 
 .right {
@@ -126,20 +139,18 @@ iconfont {
 .icon-yisheng {
   color: #49a0e5;
 }
-
-.icon-youjiantou {
-  color: #dcdbde;
-}
 .icon-gerenyonghutouxiang{
   color: #20C070;
 }
-.icon-yaoqing{
-  color: #FEC940;
+.icon-youjiantou {
+  color: #dcdbde;
+}
+.icon-shuliang{
+  color: #DA649B;
 }
 .icon-lingdang{
-  color: #EDAE2B;
+  color: #EDAD29;
 }
-
 .itemTitle {
   font-size: 28rpx;
   font-family: MicrosoftYaHei;
@@ -168,7 +179,7 @@ iconfont {
   background: rgba(241, 147, 180, 1);
   border-radius: 10rpx;
   margin: 0 auto;
-  margin-top: 200rpx;
+  margin-top: 60rpx;
   text-align: center;
   line-height: 74rpx;
   font-size: 34rpx;

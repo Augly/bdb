@@ -6,7 +6,8 @@
       </view>
       <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
       <view class='pic_code_tit'>请输入下面的图形验证码</view>
-      <image class='pic_code_pic' src='{{imgUrl}}/code.png'></image>
+      <!-- <image class='pic_code_pic' src='{{imgUrl}}/code.png'></image> -->
+      <canvas canvas-id="canvas" bindtap='change' class='pic_code_pic'></canvas>
       <input class='pic_code_input' type='text' maxlength='6' bindinput='getPicCode' value='{{picCode}}'></input>
       <view class='pic_tips' >{{picCode==""?erroCode==true?'验证码不正确请重新输入':'请输入图片验证码':'验证码区分大小写'}}</view>
       <view class='pic_btn' bindtap='index_page'>提交</view>

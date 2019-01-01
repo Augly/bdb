@@ -15,7 +15,7 @@
   <view class='item'>
     <view class='left'>
       <span class='iconfont icon-gerenyonghutouxiang'></span>
-      <view class='itemTitle'>姓名</view>
+      <view class='itemTitle'>我的姓名</view>
     </view>
     <view class='right'>
       <input class='itemmintitle' placeholder='请输入姓名' bindinput='getName' value='{{name}}'></input>
@@ -24,7 +24,7 @@
   <view class='item'>
     <view class='left'>
       <span class='iconfont icon-tijianxingbiefenxi'></span>
-      <view class='itemTitle'>性别</view>
+      <view class='itemTitle'>我的性别</view>
     </view>
     <view class='right'>
       <view class='sex {{sex==1?"selectSex":""}}' data-sex='1' bindtap='select_sex'>男</view>

@@ -23,7 +23,7 @@
   <view class='item' bindtap='mydata'>
     <view class='left'>
       <span class='iconfont icon-yaoqing'></span>
-      <view class='itemTitle'>邀请的预约</view>
+      <view class='itemTitle'>邀约患者</view>
     </view>
     <view class='right'>
       <span class='iconfont icon-youjiantou'></span>
@@ -31,6 +31,7 @@
   </view>
   <view class='item' bindtap='go_message'>
     <view class='left'>
+        <view class='dit'></view>
       <span class='iconfont icon-lingdang'></span>
       <view class='itemTitle'>信息通知</view>
     </view>

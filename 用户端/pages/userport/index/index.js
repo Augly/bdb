@@ -14,7 +14,15 @@ Page({
   toyyed(){
     console.log(1)
     wx.navigateTo({
-      url: '/pages/userport/cancle/cancle',
+      url: '/pages/userport/finish/finish?type=finish',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  toclic(){
+    wx.navigateTo({
+      url: '/pages/userport/search/search',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
@@ -23,7 +31,7 @@ Page({
   // 历史列表
   go_list(){
     wx.navigateTo({
-      url: '/pages/userport/mydata/mydata?waitIng=' + false,
+      url: '/pages/userport/mydata/mydata?type=finish',
     })
   },
   tores(){
@@ -43,7 +51,7 @@ Page({
   // 跳转更多药品
   more_medicine(){
     wx.navigateTo({
-      url: '/pages/userport/search/search',
+      url: '/pages/userport/medicinelist/medicinelist',
     })
   },  
   // 跳转医务中心

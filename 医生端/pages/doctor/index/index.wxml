@@ -24,7 +24,7 @@
     <view class='person-head'>
       <image src='{{avtar}}'></image>
     </view>
-    <view class='person-name'>医务护士：王晶</view>
+    <view class='person-name'>医生姓名：王晶</view>
     <view class='person-id'>ID:saqd15a151as5</view>
     <view class='person-code'>
       <image src='/images/code.png'></image>
