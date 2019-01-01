@@ -46,7 +46,7 @@
   <view class='cancle-data-detail'>X3</view>
 </view>
 <view class='cancle-item'>
-  <span class='iconfont icon-shuliang'></span>
+  <span class='iconfont icon-dingdan'></span>
   <view class='cancle-deta'>订单状态</view>
   <view class='cancle-data-detail'>已完成</view>
 </view>
@@ -56,7 +56,7 @@
   <view class='cancle-data-detail'>2016-04-28 10:00</view>
 </view>
 <view class='cancle-item'>
-  <span class='iconfont icon-riqi'></span>
+  <span class='iconfont icon-xiadan'></span>
   <view class='cancle-deta'>下单日期</view>
   <view class='cancle-data-detail'>2016-04-28 10:00</view>
 </view>

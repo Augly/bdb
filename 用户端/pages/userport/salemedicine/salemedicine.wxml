@@ -54,7 +54,7 @@
       </block>
     </view>
 
-    <view class='time-submit' bindtap='submit_data' bindtap='close'>确认</view>
+    <view class='time-submit' bindtap='close'>确认</view>
   </view>
 
   <!-- 选择规格弹层 -->
@@ -67,8 +67,11 @@
         <image src='/images/1.png'></image>
       </view>
       <view class='goods-num'>
-        <view class='goods-price'>
-          <text>￥</text>600.0
+        <view class='goods_title'>
+          <view class='title'>免疫球蛋白</view>
+          <view class='goods-price'>
+            <text>￥</text>600.0
+          </view>
         </view>
         <view class='goods-tips'>
           原装正品，医药科技
@@ -95,9 +98,9 @@
   </view>
 </view>
 
-  <view class='medicine-pic'>
-    <image src='/images/1.png'></image>
-  </view>
+<view class='medicine-pic'>
+  <image src='/images/1.png'></image>
+</view>
 <view class='medicine-wrap'>
   <view class='tit'>
     升级版大含量福欣宝免疫球蛋白元大牌标淳针剂5ml/瓶6瓶装免疫球蛋白
@@ -107,13 +110,13 @@
 
 <view class='style_item' bindtap='show_data'>
   <view class='style_tit'>预约时间</view>
-  <view class='style_text'>请选择预约时间“整点预约”</view>
+  <view class='style_text'>已选择 "{{dataList[dataIndex].more}} {{time[timeIndex]}}"</view>
   <view class='iconfont icon-youjiantou'></view>
 </view>
 
 <view class='style_item' bindtap='show_choose'>
   <view class='style_tit'>选择规格</view>
-  <view class='style_text'>还未选定规格</view>
+  <view class='style_text'>已选择 "{{ml[ml_num]}} X{{num}}"</view>
   <view class='iconfont icon-youjiantou'></view>
 </view>
 
@@ -125,7 +128,7 @@
 
 
 
-<view class='btn_wrap' >
+<view class='btn_wrap'>
   <view class='money'>
     <text>￥</text>666</view>
   <view class='btn' bindtap='submit'>确 认 预 约</view>

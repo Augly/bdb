@@ -54,9 +54,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(options.waitIng){
+    if(options.type){
       this.setData({
-        waitIng: options.waitIng,
+        statusType: options.type,
       });
     }
   },

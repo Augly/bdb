@@ -18,12 +18,13 @@ Page({
     dataIndex:0,
     timeIndex:0
   },
+  //选择星期
   selectData(e){
-    console.log(e)
     this.setData({
       dataIndex:e.currentTarget.dataset.index
     })
   },
+  //选择时间
   selectTime(e){
     this.setData({
       timeIndex: e.currentTarget.dataset.index
@@ -50,7 +51,7 @@ Page({
       mon: week[w],
       date: `${m}.${d}`,
       value: s,
-      more: `${y}-${m}-${d}`
+      more: `${y}-${m < 10 ? '0' + m : m}-${d < 10 ? '0' + d : d}`
     }
   },
   //获取今天为起点得往后七天日期星期
@@ -119,7 +120,6 @@ Page({
     this.setData({
       mask: true,
       data_popup: true,
-      
     })
   },
   // 选择规格
@@ -138,9 +138,9 @@ Page({
       success: false,
       data_popup:false
     })
-    wx.reLaunch({
-      url: '/pages/userport/mydata/mydata',
-    })
+    // wx.reLaunch({
+    //   url: '/pages/userport/mydata/mydata',
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
