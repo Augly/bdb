@@ -15,7 +15,7 @@ Page({
       medicine: '李露',
       num: '20'
     }, {
-      name: '免疫球蛋白',
+      name: '人形球蛋白',
       medicine: '王迪',
       num: '30'
     }],

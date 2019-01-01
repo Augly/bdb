@@ -24,26 +24,63 @@
   <view class='info-text'>男性</view>
 </view>
 <view class='info-item'>
+  <view class='info-tit'>患者年龄：</view>
+  <view class='info-text'>12岁</view>
+</view>
+<view class='info-item'>
   <view class='info-tit'>患者电话：</view>
   <view class='info-text'>18698541248</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>所属医生：</view>
+  <view class='info-text'>王晶</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>下单时间：</view>
+  <view class='info-text'>2018-09-05 10:00</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>预约时间：</view>
   <view class='info-text'>2018-09-06 10:00</view>
 </view>
-<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+<!-- 已取消进入显示完成时间 -->
+<view class='{{!style?"show":"hide"}}'>
+<view class='info-item '>
+  <view class='info-tit'>{{time_text}}：</view>
+  <view class='info-text'>2018-09-06 10:00</view>
+</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>订单状态：</view>
+  <view class='info-text'>已完成</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>药品名称：</view>
+  <view class='info-text'>免疫球蛋白</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>药品规格：</view>
+  <view class='info-text'>5ml</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>药品数量：</view>
+  <view class='info-text'>6</view>
+</view>
+<view class='info-item'>
+  <view class='info-tit'>总价金额：</view>
+  <view class='info-text'>600元</view>
+</view>
+<!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
   <view class='info-item'>
     <view class='info-tit'>预约药品：</view>
-    <!-- <view class='info-box'>免疫球蛋白</view> -->
     <view class='info-box'>{{array[index]}}</view>
   </view>
-</picker>
+</picker> -->
 
 
-<picker bindchange="bindPickerChangetwo" value="{{indextwo}}" range="{{arraytwo}}">
+<!-- <picker bindchange="bindPickerChangetwo" value="{{indextwo}}" range="{{arraytwo}}">
   <view class='info-item'>
     <view class='info-tit'>药品规格：</view>
-    <!-- <view class='info-box'>免疫球蛋白</view> -->
     <view class='info-box'>{{arraytwo[indextwo]}}</view>
   </view>
 </picker>
@@ -51,10 +88,20 @@
 <picker bindchange="bindPickerChangetwo" value="{{indexthree}}" range="{{arraythree}}">
   <view class='info-item'>
     <view class='info-tit'>药品数量：</view>
-    <!-- <view class='info-box'>免疫球蛋白</view> -->
     <view class='info-box'>{{arraythree[indexthree]}}</view>
   </view>
-</picker>
-<view class='sunbimt' bindtap='submit'>
+</picker> -->
+<!-- <view class='sunbimt' bindtap='submit'>
   确 认 预 约
+</view> -->
+<view class='{{style?"show":"hide"}}'>
+  <view class='footer '>
+    <view class='icon'>
+      <icon class='iconfont icon-dingdan'></icon>
+      <text>修改预约时间</text>
+    </view>
+    <view class='btn'>
+      立即预约
+    </view>
+  </view>
 </view>

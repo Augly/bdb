@@ -8,7 +8,10 @@
         </view>
         <view class='message-tit'>预约成功信息通知</view>
       </view>
-      <view class='message-detail'>
+      <view class='finish'>预约通知：用户卢小兵在天津市北辰医院预约的免疫球蛋白已经预约成功；请尽快与其联系！联系方 式：18659854164
+      </view>
+      <view class='time'>2018-6-29</view>
+      <!-- <view class='message-detail'>
         <view class='message-detail-tit'>
           诊所：
         </view>
@@ -31,7 +34,7 @@
         <view class='message-detail-text'>
           2018-6-29
         </view>
-      </view>
+      </view> -->
     </view>
   </view>
 

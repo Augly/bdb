@@ -1,18 +1,19 @@
 <view class='person-list'>
-  <view class='person-item' bindtap='details'>
-    <view class='person-img'>
-      <image src='{{avtar}}'></image>
-    </view>
-    <view class='text'>
-      <view class='name'>
-        <text>医生：王陆</text>
-        <view class='detail'>
-          注册时间：2018.11.26
-        </view>
+  <left-smooth bind:del='del'>
+    <view class='person-item' bindtap='details'>
+      <view class='person-img'>
+        <image src='{{avtar}}'></image>
       </view>
-      <view class='age'>电话：16859541245</view>
+      <view class='text'>
+        <view class='name'>
+          <text>医生：王陆</text>
+          <view class='detail'>
+            注册时间：2018.11.26
+          </view>
+        </view>
+        <view class='age'>电话：16859541245</view>
+      </view>
+
     </view>
-
-  </view>
+  </left-smooth>
 </view>
-

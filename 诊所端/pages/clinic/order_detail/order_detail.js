@@ -13,7 +13,9 @@ Page({
     arraytwo: ['50ml', '100ml'],
     indextwo: 0,
     arraythree: [1, 2,3,4,5,6,7,8,9,10],
-    indexthree: 0
+    indexthree: 0,
+    style:true,
+    time_text:''
   },
   submit() {
     this.setData({
@@ -22,19 +24,16 @@ Page({
 
   },
   bindPickerChange(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       index: e.detail.value
     })
   },
   bindPickerChangetwo(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       indextwo: e.detail.value
     })
   },
   bindPickerChangethree(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       indexthree: e.detail.value
     })
@@ -60,7 +59,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 根据页面传值判断是否显示底部按钮
+    var styles  = options.style
+    if(styles==0){
+      this.setData({
+        style:true,
+        time_text:''
+      })
+    } else if (styles == 1) {
+      this.setData({
+        style: false,
+        time_text: '完成时间'
+      })
+    } else if (styles == 2) {
+      this.setData({
+        style: false,
+        time_text: '取消时间'
+      })
+    }
   },
 
   /**

@@ -109,3 +109,35 @@
 .btn-cancle {
   background: rgba(253, 73, 120, 1);
 }
+
+
+.btn{
+  width:430rpx;
+height:94rpx;
+background:rgba(255,73,115,1);
+font-size:32rpx;
+font-family:PingFang-SC-Bold;
+font-weight:bold;
+color:rgba(219,222,231,1);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+}
+.icon{
+  width: 319rpx;
+  display: flex;
+  flex-direction: column;
+  font-size:24rpx;
+  font-family:PingFang-SC-Bold;
+  font-weight:bold;
+  align-items: center;
+  color:rgba(102,102,102,1);
+  justify-content: space-around;
+}
+.icon .iconfont {
+  font-size: 40rpx;
+}

@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/clinic/login/login",
     "pages/clinic/search/search",
+    "pages/clinic/login/login",
     "pages/clinic/clinic_info/clinic_info",
     "pages/clinic/password/password",
     "pages/clinic/center/center",
