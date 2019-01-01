@@ -10,28 +10,12 @@
       </view>
       <view class='message-detail'>
         <view class='message-detail-tit'>
-          诊所：
-        </view>
-        <view class='message-detail-text'>
-          天津市儿童医院
-        </view>
-      </view>
-      <view class='message-detail'>
-        <view class='message-detail-tit'>
-          看诊医生：
-        </view>
-        <view class='message-detail-text'>
-          王晶
+          预约提示：用户您在天津市北辰医院预约的免疫球
+蛋白已经预约成功，稍后会有门诊医生和您联系~请准
+时到达诊所哦！
         </view>
       </view>
-      <view class='message-detail'>
-        <view class='message-detail-tit'>
-          看诊日期：
-        </view>
-        <view class='message-detail-text'>
-          2018-6-29
-        </view>
-      </view>
+      <view class='date'>2018-6-29</view>
     </view>
   </view>
 

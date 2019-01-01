@@ -10,39 +10,12 @@
       </view>
       <view class='message-detail'>
         <view class='message-detail-tit'>
-          诊所：
-        </view>
-        <view class='message-detail-text'>
-          天津市儿童医院
+         预约通知：您好用户卢小兵在天津市北辰医院预约
+的免疫球蛋白已经预约成功！
         </view>
       </view>
-      <view class='message-detail'>
-        <view class='message-detail-tit'>
-          看诊医生：
-        </view>
-        <view class='message-detail-text'>
-          王晶
-        </view>
-      </view>
-      <view class='message-detail'>
-        <view class='message-detail-tit'>
-          看诊日期：
-        </view>
-        <view class='message-detail-text'>
-          2018-6-29
-        </view>
-      </view>
-       <view class='message-detail'>
-        <view class='message-detail-tit'>
-          预约药品：
-        </view>
-        <view class='message-detail-text'>
-          免疫球蛋白
-        </view>
-      </view>
+      <view class='date'>2018-6-29</view>
     </view>
   </view>
-
-
 
 </view>

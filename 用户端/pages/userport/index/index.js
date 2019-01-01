@@ -14,7 +14,15 @@ Page({
   toyyed(){
     console.log(1)
     wx.navigateTo({
-      url: '/pages/userport/cancle/cancle',
+      url: '/pages/userport/finish/finish?type=finish',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  toclic(){
+    wx.navigateTo({
+      url: '/pages/userport/search/search',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},

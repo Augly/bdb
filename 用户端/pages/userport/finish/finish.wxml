@@ -48,7 +48,9 @@
 <view class='cancle-item'>
   <span class='iconfont icon-dingdan'></span>
   <view class='cancle-deta'>订单状态</view>
-  <view class='cancle-data-detail'>已完成</view>
+  <view class='cancle-data-detail' wx:if="{{type=='ready'}}">已预约</view>
+  <view class='cancle-data-detail' wx:if="{{type=='finish'}}">已完成</view>
+  <view class='cancle-data-detail' wx:if="{{type=='waitIng'}}">已取消</view>
 </view>
 <view class='cancle-item'>
   <span class='iconfont icon-riqi'></span>

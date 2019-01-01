@@ -7,13 +7,37 @@ Page({
    */
   data: {
     mask: false,
-    imgUrl: app.ImageHost
+    imgUrl: app.ImageHost,
+    array: ['人血白蛋白', '免疫球蛋白'],
+    index:0,
+    arraytwo: ['50ml', '100ml'],
+    indextwo: 0,
+    arraythree: [1, 2,3,4,5,6,7,8,9,10],
+    indexthree: 0
   },
   submit() {
     this.setData({
       mask: true
     })
 
+  },
+  bindPickerChange(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindPickerChangetwo(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      indextwo: e.detail.value
+    })
+  },
+  bindPickerChangethree(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      indexthree: e.detail.value
+    })
   },
   cancle() {
     this.setData({

@@ -6,7 +6,7 @@
       <image src='/images/tuichu.png'></image>
     </view>
     <view class='success-text'>预约成功</view>
-    <view class='success-tips'>您已预约成功会有护士和您及时联系</view>
+    <view class='success-tips'>您已预约成功会有看诊医生和您及时联系</view>
   </view>
 
   <!-- 药品参数弹层 -->

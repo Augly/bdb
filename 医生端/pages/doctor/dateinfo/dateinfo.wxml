@@ -2,7 +2,7 @@
   <image src='{{avtar}}'></image>
 </view>
 <view class='name'>王陆</view>
-<view class='id'>ID:5521547621547</view>
+<!-- <view class='id'>ID:5521547621547</view> -->
 
 <view class='info-list'>
 <view class='info-item'>患者姓名：王陆</view>

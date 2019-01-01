@@ -83,6 +83,7 @@ page {
 }
 
 .left, .right {
+  position: relative;
   width: 50%;
   height: 100%;
 }
@@ -91,6 +92,15 @@ page {
   display: flex;
   align-items: center;
   justify-content: start;
+}
+.dit{
+  width: 16rpx;
+  height: 16rpx;
+  border-radius:50%;
+  background-color: rgba(230, 0, 18, 1);
+  position: absolute;
+   top: 29rpx;
+   left: 16rpx;
 }
 
 .right {
