@@ -89,6 +89,7 @@ iconfont {
   font-size:28rpx;
 font-family:MicrosoftYaHei;
 font-weight:400;
+  
 }
 
 .star {

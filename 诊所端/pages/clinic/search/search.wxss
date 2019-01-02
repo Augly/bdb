@@ -110,7 +110,7 @@ page {
   font-size:22rpx;
 font-family:Adobe Heiti Std R;
 font-weight:normal;
-color:rgba(153,153,153,1);
+color:rgba(255,73,115,1);
 position: absolute;
 right: 0;
 top: 30rpx;
@@ -124,7 +124,12 @@ bottom: 40rpx;
 right: 0;
 position: absolute;
 }
-
+.tel-num{
+  font-size:28rpx;
+font-family:Adobe Heiti Std R;
+font-weight:normal;
+color:rgba(20,150,217,1);
+}
 .item-img {
   width: 82rpx;
   height: 82rpx;

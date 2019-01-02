@@ -3,9 +3,9 @@
     "pages/clinic/login/login",
     "pages/clinic/search/search",
     "pages/clinic/clinic_info/clinic_info",
+    "pages/clinic/order_detail/order_detail",
     "pages/clinic/password/password",
     "pages/clinic/center/center",
-    "pages/clinic/order_detail/order_detail",
     "pages/clinic/message/message"
   ],
   "window": {

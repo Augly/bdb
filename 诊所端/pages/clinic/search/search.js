@@ -10,7 +10,8 @@ Page({
     nav:1,
     mask: false,
     del: false,
-    del_success: false
+    del_success: false,
+    del_text:'完成'
   },
   // 诊所中心
   go_center(){
@@ -22,7 +23,15 @@ Page({
   del() {
     this.setData({
       mask: true,
-      del: true
+      del: true,
+      del_text: '取消',
+    })
+  },
+  del_cancle(){
+    this.setData({
+      mask: true,
+      del: true,
+      del_text: '完成',
     })
   },
   close_code() {
@@ -59,9 +68,10 @@ Page({
       url: '/pages/clinic/message/message',
     })
   },
-  go_groder(){
+  go_groder(e){
+    // console.log(e.currentTarget.dataset.style)
     wx.navigateTo({
-      url: '/pages/clinic/order_detail/order_detail',
+      url: '/pages/clinic/order_detail/order_detail?style='+e.currentTarget.dataset.style,
     })
   },
   dataed(){
@@ -72,6 +82,11 @@ Page({
   finish() {
     this.setData({
       nav: 2
+    })
+  },
+  cancle(){
+    this.setData({
+      nav: 3
     })
   },
   /**

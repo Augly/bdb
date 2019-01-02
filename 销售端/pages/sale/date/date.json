@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "下属医生"
+  "navigationBarTitleText": "下属医生",
+  "usingComponents": {
+    "left-smooth": "/components/left-smooth/left-smooth"
+  }
 }
