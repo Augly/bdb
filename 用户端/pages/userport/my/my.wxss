@@ -187,6 +187,9 @@ iconfont {
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
 }
+.iconfont{
+  font-size: 28rpx;
+}
 
 .icon-xiangjipaizhao{
   color: rgba(255, 255, 255, 1);

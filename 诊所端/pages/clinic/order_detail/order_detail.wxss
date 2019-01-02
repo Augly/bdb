@@ -21,7 +21,7 @@
   padding: 0 42rpx;
   display: flex;
   align-items: center;
-  margin-bottom: 30rpx;
+  margin-bottom: 24rpx;
 }
 
 .info-box {
@@ -111,7 +111,7 @@
 }
 
 .btn {
-  width: 430rpx;
+  width: 432rpx;
   height: 94rpx;
   background: rgba(255, 73, 115, 1);
   font-size: 32rpx;
@@ -124,6 +124,8 @@
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
 }

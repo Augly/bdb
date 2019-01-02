@@ -14,7 +14,7 @@ Page({
     indextwo: 0,
     arraythree: [1, 2,3,4,5,6,7,8,9,10],
     indexthree: 0,
-    style:true,
+    style:false,
     time_text:'',
     btn_list: ['人血白蛋白', '免疫球蛋白', '人血白蛋白', '免疫球蛋白'],
     num_list: ['50ml', '100ml', '150ml', '200ml'],

@@ -36,7 +36,9 @@ page {
   /* border: 10rpx solid rgba(255, 255, 255, 1); */
   box-shadow: 0rpx 0rpx 20rpx 4rpx rgba(0, 0, 0, 0.22);
 }
-
+.iconfont{
+  font-size: 28rpx;
+}
 .title {
   text-align: center;
   margin-top: 120rpx;

@@ -1,0 +1,10 @@
+<view class='mask' wx:if="{{wrap}}">
+  <view class='del-popup'>
+    <view class='del-tit'>{{title}}</view>
+    <view class='del-details'>{{minTitle}}</view>
+    <view class='del_foot'>
+      <view class='del-btn' bindtap='sure'>确 认</view>
+      <view class='del-cendel' bindtap='cendel'>取 消</view>
+    </view>
+  </view>
+</view>

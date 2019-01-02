@@ -83,7 +83,9 @@ page {
   color: rgba(153, 153, 153, 1);
   text-align: right;
 }
-
+.iconfont{
+  font-size: 28rpx;
+}
 .icon-youjiantou {
   font-size: 28rpx;
   color: #9B9B9B;
