@@ -62,7 +62,7 @@
   <view class='{{null_list?"show":"hide"}}'>
     <view class='null '>
       <view class='null-img'>
-
+      <image src='/images/null.png'></image>
       </view>
       当前还没有任何信息哦~
     </view>

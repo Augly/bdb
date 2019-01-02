@@ -93,8 +93,7 @@
 }
 
 .null-img {
-  width: 87rpx;
-  height: 64rpx;
+  width: 128rpx;
+  height: 108rpx;
   margin-bottom: 10rpx;
-  background-color: red;
 }
