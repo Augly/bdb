@@ -1,6 +1,9 @@
 {
   "navigationBarTitleText": "预约列表",
-  "usingComponents": {
-    "left-smooth": "/components/left-smooth/left-smooth"
-  }
+    "usingComponents": {
+      "left-smooth": "/components/left-smooth/left-smooth",
+      "toast": "/components/toast/toast",
+      "success": "/components/success/success",
+      "finishToast": "/components/finishToast/finishToast"
+    }
 }

@@ -1,13 +1,3 @@
-<view class='mask {{mask?"show":"hide"}}'>
-  <view class='del-popup'>
-    <view class='pic-nav'></view>
-    <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
-    <view class='del-tit'>请完成信息填写</view>
-    <view class='del-details'>你还未填写重要信息，请前往个人中心填写重要信息</view>
-    <view class='del-btn' bindtap='del_submit' bindtap='sure'>确 认</view>
-  </view>
-</view>
-
 <view class='index-item' bindtap='go_flow'>
   <view class='index-text'>
     <view class='index-tit'>流向统计报表</view>
@@ -48,3 +38,4 @@
     <icon class='iconfont  icon-erweima'></icon>
   </view>
 </view>
+<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='前 往'></toast>

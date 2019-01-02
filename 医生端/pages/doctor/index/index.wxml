@@ -1,17 +1,5 @@
 <view class='container'>
-  <view class='mask {{mask?"show":"hide"}}'>
-    <view class='del-popup {{info_popup?"show":"hide"}}'>
-      <view class='pic-nav'></view>
-      <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
-      <view class='del-tit'>请完成信息填写</view>
-      <view class='del-details'>你还未填写重要信息，请前往个人中心填写重要信息</view>
-      <view class='del-btn' bindtap='del_submit'>确 认</view>
-    </view>
-    <view class='del-success {{del_success?"show":"hide"}}'>
-      <image src='/images/tuichu.png' class='tuichu' bindtap='close_success'></image>
-      <view class='del-success-text'>删除成功</view>
-    </view>
-  </view>
+
 
 
   <view class='seachGroup'>
@@ -38,3 +26,5 @@
 
   </view>
 </view>
+
+<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='前 往'></toast>

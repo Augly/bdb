@@ -54,18 +54,15 @@ Page({
     wx.navigateTo({
       url: '/pages/sale/date/date',
     })
-  },
-  del_submit(){
-    wx.navigateTo({
+  }, 
+  sure() {
+    wx.switchTab({
       url: '/pages/sale/my/my',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  close_code(){
-    this.setData({
-      mask:false
-    })
-  },
- 
   /**
    * 生命周期函数--监听页面加载
    */

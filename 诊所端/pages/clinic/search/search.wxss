@@ -1,16 +1,28 @@
 page {
-  padding-bottom: 120rpx;
+  /* padding-bottom: 120rpx; */
+}
+.seach{
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 1);
 }
 .searchGroup{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 17rpx;
+  justify-content: flex-end;
+  padding: 17rpx 30rpx;
 }
-
+.itemWrap{
+  width: 100%;
+  overflow: hidden;
+  padding-top: 224rpx;
+}
 .banner-search {
-  width: 480rpx;
+  width: 520rpx;
   height: 60rpx;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0rpx 6rpx 17rpx 3rpx rgba(0, 0, 0, 0.14);
@@ -19,12 +31,12 @@ page {
   background-repeat: no-repeat;
   background-size: 23rpx 30rpx;
   background-position: 24rpx 17rpx;
-  margin: 18rpx 21rpx 18rpx 0rpx;
+  margin: 18rpx 28rpx 18rpx 0rpx;
   position: relative;
 }
 
 .banner-input {
-  width: 330rpx;
+  width: 410rpx;
   height: 60rpx;
   padding-left: 86rpx;
   font-size: 20rpx;
@@ -55,12 +67,12 @@ page {
   padding-bottom: 30rpx;
 }
 .icon-saoma{
-  font-size: 50rpx;
+  font-size: 54rpx;
   color: RGBA(163, 163, 163, 1);
 }
 
 .nav-wrap {
-  width: 380rpx;
+  width: 550rpx;
   height: 64rpx;
   border: 2rpx solid rgba(99, 223, 197, 1);
   border-radius: 10rpx;
@@ -125,10 +137,15 @@ right: 0;
 position: absolute;
 }
 .tel-num{
+  display: flex;
+  align-items: center;
   font-size:28rpx;
 font-family:Adobe Heiti Std R;
 font-weight:normal;
 color:rgba(20,150,217,1);
+}
+.tel-num .iconfont{
+  font-size: 28rpx;
 }
 .item-img {
   width: 82rpx;

@@ -8,10 +8,9 @@ Page({
     choose:true,
     medicine_list:3,
     nav:1,
-    mask: false,
-    del: false,
-    del_success: false,
-    del_text:'完成'
+     mask: false,
+    cendelmask:false,
+    delSuccess: false,
   },
   // 诊所中心
   go_center(){
@@ -22,22 +21,27 @@ Page({
   // 删除
   del() {
     this.setData({
-      mask: true,
-      del: true,
-      del_text: '取消',
+      mask: true
     })
   },
   del_cancle(){
     this.setData({
-      mask: true,
-      del: true,
-      del_text: '完成',
+      cendelmask: true
     })
   },
-  close_code() {
+  //确认删除
+  sure(e) {
+    console.log(e.detail.id)
     this.setData({
       mask: false,
-      del: false
+      delSuccess: true
+    })
+  },
+  surecendel(e) {
+    console.log(e.detail.id)
+    this.setData({
+      cendelmask: false,
+      delSuccess: true
     })
   },
   saoCode(){
@@ -49,20 +53,8 @@ Page({
       complete: function(res) {},
     })
   },
-  del_submit() {
-    this.setData({
-      mask: true,
-      del: false,
-      del_success: true
-    })
-  },
-  close_success() {
-    this.setData({
-      mask: false,
-      del: false,
-      del_success: false
-    })
-  },
+
+
   go_message(){
     wx.navigateTo({
       url: '/pages/clinic/message/message',

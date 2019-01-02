@@ -141,7 +141,7 @@
   <!-- </left-smooth> -->
 </view>
 
-<view class='mask' wx:if="{{mask}}">
+<!-- <view class='mask' wx:if="{{mask}}">
     <view class='maskWrap'>
       <view class='wrapHead'></view>
       <view class='wrapContent'>
@@ -153,4 +153,7 @@
         <view class='foot_cendel' bindtap='del'>取  消</view>
       </view>
     </view>
-</view>
+</view> -->
+
+<finishToast wrap="{{mask}}" title="是否删除已取消预约" minTitle="是否删除预约信息点击确认后将无法修改！" bind:sure='surecendel'></finishToast>
+<success wrap="{{delSuccess}}" notice="删除成功"></success>

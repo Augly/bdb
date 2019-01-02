@@ -1,35 +1,24 @@
-<view class='mask {{mask?"show":"hide"}}'>
-  <view class='del-popup {{del?"show":"hide"}}'>
-    <view class='pic-nav'></view>
-    <image src='/images/tuichu.png' class='tuichu' bindtap='close_code'></image>
-    <view class='del-tit'>删除已{{del_text}}预约</view>
-    <view class='del-details'>您确认要删除已{{del_text}}预约么？删除之后将无法恢复。</view>
-    <view class='del-btn' bindtap='del_submit'>确 认</view>
+<view class='seach'>
+  <view class='searchGroup'>
+    <view class="banner-search">
+      <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
+      <!-- <images class='ercode'></images> -->
+    </view>
+    <icon class='iconfont icon-saoma' bindtap='saoCode'></icon>
   </view>
-  <view class='del-success {{del_success?"show":"hide"}}'>
-    <image src='/images/tuichu.png' class='tuichu' bindtap='close_success'></image>
-    <view class='del-success-text'>删除成功</view>
+
+
+  <view class='nav'>
+    <view class='nav-wrap'>
+      <view class='nav-item {{nav==1?"active":""}}' bindtap='dataed'>已预约</view>
+      <view class='line'></view>
+      <view class='nav-item {{nav==2?"active":""}}' bindtap='finish'>已完成</view>
+      <view class='line'></view>
+      <view class='nav-item {{nav==3?"active":""}}' bindtap='cancle'>已取消</view>
+    </view>
   </view>
 </view>
 
-<view class='searchGroup'>
-  <view class="banner-search">
-    <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
-    <!-- <images class='ercode'></images> -->
-  </view>
-  <icon class='iconfont icon-saoma' bindtap='saoCode'></icon>
-</view>
-
-
-<view class='nav'>
-  <view class='nav-wrap'>
-    <view class='nav-item {{nav==1?"active":""}}' bindtap='dataed'>已预约</view>
-    <view class='line'></view>
-    <view class='nav-item {{nav==2?"active":""}}' bindtap='finish'>已完成</view>
-    <view class='line'></view>
-    <view class='nav-item {{nav==3?"active":""}}' bindtap='cancle'>已取消</view>
-  </view>
-</view>
 <view class='hide'>
   <view class='null hide'>
     <view class='null-img'></view>
@@ -42,149 +31,155 @@
   <view class='null-text'>搜索结果为空~~</view>
 </view>
 
-<!-- 已预约 -->
-<block wx:for='{{medicine_list}}' wx:key=''>
-  <view class='{{nav==1?"show":"hide"}}'>
-    <view class='data-item' data-style='0' bindtap='go_groder'>
-      <view class='item-img'>
-        <image src='/images/11.png'></image>
-      </view>
-      <view class='text'>
-        <view class='text-item'>
-          <view class='text-tit'>
-            患者：
-          </view>
-          <view class='text-detail'>
-            王陆
-          </view>
+
+<view class='itemWrap'>
+  <!-- 已预约 -->
+  <block wx:for='{{medicine_list}}' wx:key=''>
+    <view class='{{nav==1?"show":"hide"}}'>
+      <view class='data-item' data-style='0' bindtap='go_groder'>
+        <view class='item-img'>
+          <image src='/images/11.png'></image>
         </view>
-        <view class='text-item'>
-          <view class='item-sub'>
-            <view class='num-tit'>剂量：</view>
-            <view class='num-detail'>5ml</view>
+        <view class='text'>
+          <view class='text-item'>
+            <view class='text-tit'>
+              患者：
+            </view>
+            <view class='text-detail'>
+              王陆
+            </view>
           </view>
-          <view class='item-sub'>
-            <view class='num-tit'>数量：</view>
-            <view class='num-detail'>X3</view>
+          <view class='text-item'>
+            <view class='item-sub'>
+              <view class='num-tit'>剂量：</view>
+              <view class='num-detail'>5ml</view>
+            </view>
+            <view class='item-sub'>
+              <view class='num-tit'>数量：</view>
+              <view class='num-detail'>X3</view>
+            </view>
           </view>
-        </view>
-        <view class='text-item'>
-          <view class='item-sub'>
-            <view class='num-tit'>预约药品：</view>
-            <view class='num-detail'>免疫球蛋白</view>
+          <view class='text-item'>
+            <view class='item-sub'>
+              <view class='num-tit'>预约药品：</view>
+              <view class='num-detail'>免疫球蛋白</view>
+            </view>
           </view>
-        </view>
-        <view class='text-item'>
-          <view class='item-sub'>
-            <view class='num-tit'>修改预约时间：</view>
-            <view class='num-detail'>2018-04-06 10:00</view>
+          <view class='text-item'>
+            <view class='item-sub'>
+              <view class='num-tit'>修改预约时间：</view>
+              <view class='num-detail'>2018-04-06 10:00</view>
+            </view>
           </view>
-        </view>
-        <view class='text-item tel-num'>
-          <i class='iconfont icon-dianhua1'></i>
-          <text>15698542346</text>
+          <view class='text-item tel-num'>
+            <i class='iconfont icon-dianhua1'></i>
+            <text>15698542346</text>
+          </view>
         </view>
       </view>
     </view>
-  </view>
-</block>
-<!-- 已完成 -->
-<block wx:for='{{medicine_list}}' wx:key=''>
-  <view class='{{nav==2?"show":"hide"}}'>
-    <left-smooth bind:del='del_cancle'>
-      <view class='data-item' data-style='1' bindtap='go_groder'>
-        <view class='time'>已完成</view>
-        <!-- <view class='item-finish'>已完成</view  > -->
-        <view class='item-img'>
-          <image src='/images/11.png'></image>
-        </view>
-        <view class='text'>
-          <view class='text-item'>
-            <view class='text-tit'>
-              患者：
-            </view>
-            <view class='text-detail'>
-              王陆111
-            </view>
+  </block>
+  <!-- 已完成 -->
+  <block wx:for='{{medicine_list}}' wx:key=''>
+    <view class='{{nav==2?"show":"hide"}}'>
+      <left-smooth bind:del='del_cancle'>
+        <view class='data-item' data-style='1' bindtap='go_groder'>
+          <view class='time'>已完成</view>
+          <!-- <view class='item-finish'>已完成</view  > -->
+          <view class='item-img'>
+            <image src='/images/11.png'></image>
           </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>剂量：</view>
-              <view class='num-detail'>5ml</view>
+          <view class='text'>
+            <view class='text-item'>
+              <view class='text-tit'>
+                患者：
+              </view>
+              <view class='text-detail'>
+                王陆111
+              </view>
             </view>
-            <view class='item-sub'>
-              <view class='num-tit'>数量：</view>
-              <view class='num-detail'>X3</view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>剂量：</view>
+                <view class='num-detail'>5ml</view>
+              </view>
+              <view class='item-sub'>
+                <view class='num-tit'>数量：</view>
+                <view class='num-detail'>X3</view>
+              </view>
             </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>预约药品：</view>
-              <view class='num-detail'>免疫球蛋白</view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>预约药品：</view>
+                <view class='num-detail'>免疫球蛋白</view>
+              </view>
             </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>修改预约时间：</view>
-              <view class='num-detail'>2018-04-06 10:00</view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>修改预约时间：</view>
+                <view class='num-detail'>2018-04-06 10:00</view>
+              </view>
             </view>
-          </view>
-          <view class='text-item tel-num'>
-            <i class='iconfont icon-dianhua1'></i>
-            <text>15698542346</text>
-          </view>
-        </view>
-      </view>
-    </left-smooth>
-  </view>
-</block>
-<!-- 已取消 -->
-<block wx:for='{{medicine_list}}' wx:key=''>
-  <view class='{{nav==3?"show":"hide"}}'>
-    <left-smooth bind:del='del'>
-      <view class='data-item' data-style='2' bindtap='go_groder'>
-        <view class='time'>已取消</view>
-        <!-- <view class='item-finish'>已完成</view> -->
-        <view class='item-img'>
-          <image src='/images/11.png'></image>
-        </view>
-        <view class='text'>
-          <view class='text-item'>
-            <view class='text-tit'>
-              患者：
+            <view class='text-item tel-num'>
+              <i class='iconfont icon-dianhua1'></i>
+              <text>15698542346</text>
             </view>
-            <view class='text-detail'>
-              王陆111
-            </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>剂量：</view>
-              <view class='num-detail'>5ml</view>
-            </view>
-            <view class='item-sub'>
-              <view class='num-tit'>数量：</view>
-              <view class='num-detail'>X3</view>
-            </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>预约药品：</view>
-              <view class='num-detail'>免疫球蛋白</view>
-            </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>修改预约时间：</view>
-              <view class='num-detail'>2018-04-06 10:00</view>
-            </view>
-          </view>
-          <view class='text-item tel-num'>
-            <i class='iconfont icon-dianhua1'></i>
-            <text>15698542346</text>
           </view>
         </view>
-      </view>
-    </left-smooth>
-  </view>
-</block>
+      </left-smooth>
+    </view>
+  </block>
+  <!-- 已取消 -->
+  <block wx:for='{{medicine_list}}' wx:key=''>
+    <view class='{{nav==3?"show":"hide"}}'>
+      <left-smooth bind:del='del'>
+        <view class='data-item' data-style='2' bindtap='go_groder'>
+          <view class='time'>已取消</view>
+          <!-- <view class='item-finish'>已完成</view> -->
+          <view class='item-img'>
+            <image src='/images/11.png'></image>
+          </view>
+          <view class='text'>
+            <view class='text-item'>
+              <view class='text-tit'>
+                患者：
+              </view>
+              <view class='text-detail'>
+                王陆111
+              </view>
+            </view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>剂量：</view>
+                <view class='num-detail'>5ml</view>
+              </view>
+              <view class='item-sub'>
+                <view class='num-tit'>数量：</view>
+                <view class='num-detail'>X3</view>
+              </view>
+            </view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>预约药品：</view>
+                <view class='num-detail'>免疫球蛋白</view>
+              </view>
+            </view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>修改预约时间：</view>
+                <view class='num-detail'>2018-04-06 10:00</view>
+              </view>
+            </view>
+            <view class='text-item tel-num'>
+              <i class='iconfont icon-dianhua1'></i>
+              <text>15698542346</text>
+            </view>
+          </view>
+        </view>
+      </left-smooth>
+    </view>
+  </block>
+</view>
+<toast wrap="{{mask}}" title="删除取消预约" minTitle="您确认要删除已完成预约么？删除之后将无法恢复。" bind:sure='sure' sureTitle='确定'></toast>
+<finishToast wrap="{{cendelmask}}" title="确认删除预约" minTitle="是否删除预约信息点击确认后将无法修改！" bind:sure='surecendel'></finishToast>
+<success wrap="{{delSuccess}}" notice="删除成功"></success>
