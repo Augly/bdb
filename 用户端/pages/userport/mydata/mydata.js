@@ -7,8 +7,7 @@ Page({
   data: {
     statusType: 'ready',
     mask:false,
-    del: false,
-    del_success:false
+    delSuccess:false,
   },
   // 二维码
   go_code(){
@@ -22,14 +21,6 @@ Page({
       url: '/pages/userport/finish/finish?type=' + e.currentTarget.dataset.type,
     })
   },
-
-  close_success(){
-    this.setData({
-      mask: false,
-      del: false,
-      del_success: false
-    })
-  },
   // 删除
   del(){
     this.setData({
@@ -37,17 +28,12 @@ Page({
       del: true
     })
   },
-  close_code(){
+  //确认删除
+  sure(e){
+    console.log(e.detail.id)
     this.setData({
-      mask: false,
-      del: false
-    })
-  },
-  del_submit(){
-    this.setData({
-      mask: true,
-      del: false,
-      del_success:true
+      mask:false,
+      delSuccess:true
     })
   },
   /**

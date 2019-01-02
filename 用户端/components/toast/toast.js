@@ -16,6 +16,10 @@ Component({
       type: String,
       value: ''
     },
+    sureTitle:{
+      type:String,
+      value:''
+    },
     notice: {
       type: String,
       value: ''
@@ -38,16 +42,14 @@ Component({
     closeAll(){
       this.setData({
         wrap: false,
-        showToast: false,
-        showdel: false
       })
     },
     sure(){
-      this.setData({
-        wrap: true,
-        showToast: false,
-        showdel: true
-      })
+      const myEventDetail = {
+        id:'2'
+      } // detail对象，提供给事件监听函数
+      const myEventOption = {} // 触发事件的选项
+      this.triggerEvent('sure', myEventDetail, myEventOption)
     }
   }
 })
