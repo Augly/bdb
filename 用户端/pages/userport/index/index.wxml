@@ -23,14 +23,14 @@
     </view>
     <view class='medicine-imgs'>
       <view class='medicine-img'>
-      <view class='mskt'></view>
+        <view class='mskt'></view>
         <image src='/images/5.png'></image>
         <view class='medicine-img-btn' bindtap='toclic'>
           预约人血白蛋白
         </view>
       </view>
       <view class='medicine-img'>
-      <view class='mskt'></view>
+        <view class='mskt'></view>
         <image src='/images/6.png'></image>
         <view class='medicine-img-btn' bindtap='toclic'>
           预约免疫球蛋白
@@ -50,7 +50,7 @@
     </view>
 
     <view class='history-imgs'>
-      <block wx:for="{{banner_list}}" wx:key='' >
+      <block wx:for="{{banner_list}}" wx:key=''>
         <view class='history-img' bindtap="toyyed">
           <image class='history-img-item' src='/images/3.png'></image>
           <view class='history-tit'>人形球蛋白</view>
@@ -68,22 +68,5 @@
       </view>
     </view>
   </view>
-
-  <!-- <view class='footer-nav'>
-    <view class='footer-nav-item'>
-      <view class='footer-img'>
-        <image></image>
-      </view>
-      <view class='footer-text'>首页</view>
-    </view>
-    <view class='footer-nav-item' bindtap='tointroduce'>
-      <view class='footer-img'></view>
-      <view class='footer-text'>医务中心</view>
-    </view>
-    <view class='footer-nav-item' bindtap='my'>
-      <view class='footer-img'></view>
-      <view class='footer-text'>我的</view>
-    </view>
-  </view> -->
-
 </view>
+<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='确定'></toast>

@@ -5,6 +5,7 @@
   "backgroundColor": "#eeeeee",
   "usingComponents": {
     "left-smooth": "/components/left-smooth/left-smooth",
-    "toast": "/components/toast/toast"
+    "toast": "/components/toast/toast",
+    "success": "/components/success/success"
   }
 }

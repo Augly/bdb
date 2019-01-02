@@ -10,6 +10,15 @@ Page({
       '/images/14.png',
       '/images/14.png'
     ],
+    mask:true
+  },
+  sure(){
+    wx.switchTab({
+      url: '/pages/userport/my/my',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   toyyed(){
     console.log(1)
