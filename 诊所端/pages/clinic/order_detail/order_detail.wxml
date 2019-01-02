@@ -1,10 +1,60 @@
 <view class='mask {{mask?"show":"hide"}}'>
-  <view class='popup'>
+  <view class='choose {{choose_popup?"show":"hide"}}'>
+    <view class='choose-tit'>请确认预约信息</view>
+    <view class='choose-item'>
+      <view class='item-tit'>
+        选择药品
+      </view>
+      <view class='item-list'>
+        <view class='itme-btn {{classify === index ?"active": ""}}' bindtap='item_btn' data-classify="{{index}}" wx:for='{{btn_list}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='choose-item'>
+      <view class='item-tit'>
+        选择药品
+      </view>
+      <view class='item-list'>
+        <view class='itme-btn {{num_nav === index ?"numactive": ""}}' bindtap='num_btn' data-classify="{{index}}" wx:for='{{num_list}}'>{{item}}</view>
+      </view>
+    </view>
+    <view class='choose-num'>
+      <view class='item-tit'>选择规格</view>
+      <view class='stepper'>
+        <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
+        <input bindinput='bindManual' value='{{num}}'></input>
+        <text bindtap='bindPlus'>+</text>
+      </view>
+    </view>
+    <view class='submit-list'> 
+      <view class='submit' bindtap='submit_date'>确 认 预 约</view>
+      <view class='cancle' bindtap='choose_cancle'>取 消</view>
+    </view>
+  </view>
+
+  <view class='popup {{success_popup?"show":"hide"}}'>
     <view class='popup-tit'>确认完成预约</view>
     <view class='popup-text'>请核实好预约信息点击确认后将无法修改！</view>
     <view class='btn-list'>
       <view class='btn-sunbmit' bindtap='go_search'>确认</view>
       <view class='btn-cancle' bindtap='cancle'>取消</view>
+    </view>
+  </view>
+
+  <!-- 选择时间 -->
+  <view class='time {{time_popup?"show":"hide"}}'>
+    <view class='choose-item'>
+      <view class='item-tit'>
+        选择预约时间
+      </view>
+      <view class='item-list'>
+        <view class='itme-btn ' bindtap='item_btn'>2018-09-06</view>
+        <view class='itme-btn ' bindtap='item_btn'> 10:00</view>
+      </view>
+    </view>
+    <view class='bnt_wrap'>
+      <view class='time-submit' bindtap='time_btn'>
+        <icon class='iconfont icon-chenggong'></icon>
+        确认选择</view>
     </view>
   </view>
 </view>
@@ -45,10 +95,10 @@
 </view>
 <!-- 已取消进入显示完成时间 -->
 <view class='{{!style?"show":"hide"}}'>
-<view class='info-item '>
-  <view class='info-tit'>{{time_text}}：</view>
-  <view class='info-text'>2018-09-06 10:00</view>
-</view>
+  <view class='info-item '>
+    <view class='info-tit'>{{time_text}}：</view>
+    <view class='info-text'>2018-09-06 10:00</view>
+  </view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>订单状态：</view>
@@ -96,11 +146,11 @@
 </view> -->
 <view class='{{style?"show":"hide"}}'>
   <view class='footer '>
-    <view class='icon'>
+    <view class='icon' bindtap='change_time'>
       <icon class='iconfont icon-dingdan'></icon>
       <text>修改预约时间</text>
     </view>
-    <view class='btn'>
+    <view class='btn' bindtap='submit'>
       立即预约
     </view>
   </view>

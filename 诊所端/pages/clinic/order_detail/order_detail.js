@@ -15,13 +15,92 @@ Page({
     arraythree: [1, 2,3,4,5,6,7,8,9,10],
     indexthree: 0,
     style:true,
-    time_text:''
+    time_text:'',
+    btn_list: ['人血白蛋白', '免疫球蛋白', '人血白蛋白', '免疫球蛋白'],
+    num_list: ['50ml', '100ml', '150ml', '200ml'],
+    classify:'',
+    num_nav:'',
+    num:1,
+    success_popup:false,
+    choose_popup:false,
+    time_popup:false,
   },
+  // 弹层
   submit() {
     this.setData({
-      mask: true
+      mask: true,
+      choose_popup:true 
     })
-
+  },
+  choose_cancle(){
+    this.setData({
+      mask: false,
+      choose_popup: false,
+      success_popup:false,
+    })
+  },
+  submit_date(){
+    this.setData({
+      mask: true,
+      success_popup: true,
+      choose_popup: false
+    })
+  },
+  time_btn(){
+    this.setData({
+      mask: true,
+      success_popup: true,
+      time_popup: false,
+      choose_popup: false
+    })
+  },
+  change_time(){
+    this.setData({
+      mask: true,
+      time_popup: true,
+    })
+  },
+  // 选择药品等
+  item_btn(e){
+    this.setData({
+      classify: e.currentTarget.dataset.classify,  
+    })
+  },
+  num_btn(e) {
+    this.setData({
+      num_nav: e.currentTarget.dataset.classify,  
+    })
+  },
+  /*点击减号*/
+  bindMinus: function () {
+    var num = this.data.num;
+    if (num > 1) {
+      num--;
+    }
+    var minusStatus = num > 1 ? 'normal' : 'disable';
+    this.setData({
+      num: num,
+      minusStatus: minusStatus
+    })
+  },
+  /*点击加号*/
+  bindPlus: function () {
+    var num = this.data.num;
+    num++;
+    var minusStatus = num > 1 ? 'normal' : 'disable';
+    this.setData({
+      num: num,
+      minusStatus: minusStatus
+    })
+  },
+  /*输入框事件*/
+  bindManual: function (e) {
+    var num = e.detail.value;
+    var minusStatus = num > 1 ? 'normal' : 'disable';
+    this.setData({
+      num: num,
+      minusStatus: minusStatus
+    })
   },
   bindPickerChange(e) {
     this.setData({
@@ -40,12 +119,15 @@ Page({
   },
   cancle() {
     this.setData({
-      mask: false
+      mask: false,
+      success_popup: false,
     })
   },
   go_search() {
     this.setData({
-      mask: false
+      mask: false,
+      success_popup: false,
+
     })
     wx.navigateBack({
       delta: 1,
