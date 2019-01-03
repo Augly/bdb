@@ -117,6 +117,20 @@ function rem(height, successData) {
     complete: function (res) { },
   })
 }
+function remW(height, successData) {
+  wx.getSystemInfo({
+    success: (res) => {
+      if (height != null && height != undefined && height != '') {
+        var myheight = res.windowWidth / 750 * height
+      } else {
+        var myheight = res.windowHeight
+      }
+      successData(myheight)
+    },
+    fail: function (res) { },
+    complete: function (res) { },
+  })
+}
 
 function chooseLocation() {
   wx.openLocation({
@@ -219,7 +233,7 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "https://lingyiil.dazhu-ltd.cn/index.php/api/"
+  var https = "http://lingyistore.dazhu-ltd.cn/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
@@ -310,6 +324,7 @@ module.exports = {
   https: https,
   ajax: ajax,
   rem: rem,
+  remW: remW,
   chooseImage: chooseImage,
   getData: getData,
   mytoast: mytoast,

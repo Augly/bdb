@@ -1,4 +1,5 @@
 // pages/userport/index/index.js
+const app=getApp()
 Page({
 
   /**
@@ -10,6 +11,9 @@ Page({
       '/images/14.png',
       '/images/14.png'
     ],
+    goodsList:[],
+    history:[],
+    unread:0,
     mask:true
   },
   sure(){
@@ -82,7 +86,46 @@ Page({
   onLoad: function (options) {
 
   },
-
+  //获取首页轮播图
+  gitBanner(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'user/index/banner_list', res => {
+      this.setData({
+        banner_list: res.data
+      })
+    })
+  },
+  //获取我的预约
+  gitHistorySubscribe() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'user/index/history_subscribe', res => {
+      this.setData({
+        history: res.data
+      })
+    })
+  },
+  //获取首页药品
+  gitGoods() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'user/index/goods_list', res => {
+      this.setData({
+        goodsList: res.data
+      })
+    })
+  },
+  //获取未读消息
+  gitUnread(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'user/index/goods_list', res => {
+      this.setData({
+        unread: res.data.unread
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
