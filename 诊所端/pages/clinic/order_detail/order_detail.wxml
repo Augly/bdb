@@ -25,7 +25,7 @@
         <text bindtap='bindPlus'>+</text>
       </view>
     </view>
-    <view class='submit-list'> 
+    <view class='submit-list'>
       <view class='submit' bindtap='submit_date'>确 认 预 约</view>
       <view class='cancle' bindtap='choose_cancle'>取 消</view>
     </view>
@@ -91,7 +91,7 @@
 </view>
 <view class='info-item'>
   <view class='info-tit'>预约时间：</view>
-  <view class='info-text'>2018-09-06 10:00</view>
+  <view class='info-text'>{{data_time}}</view>
 </view>
 <!-- 已取消进入显示完成时间 -->
 <view class='{{!style?"show":"hide"}}'>
@@ -145,13 +145,17 @@
   确 认 预 约
 </view> -->
 <view class='{{style?"show":"hide"}}'>
-  <view class='footer '>
-    <view class='icon' bindtap='change_time'>
-      <icon class='iconfont icon-dingdan'></icon>
-      <text>修改预约时间</text>
-    </view>
+  <view class='footer'>
+    <picker bindchange="bindPickerChange" data-value="{{array[index]}}" range="{{array}}">
+      <view class='icon'>
+        <icon class='iconfont icon-dingdan'></icon>
+        <text>修改预约时间</text>
+      </view>
+    </picker>
+
     <view class='btn' bindtap='submit'>
       立即预约
     </view>
   </view>
 </view>
+<success wrap="{{delSuccess}}" notice="删除成功"></success>

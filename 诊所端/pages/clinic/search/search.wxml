@@ -1,7 +1,7 @@
 <view class='seach'>
   <view class='searchGroup'>
     <view class="banner-search">
-      <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
+      <input class="banner-input" placeholder="请输入您要搜索的患者姓名" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
       <!-- <images class='ercode'></images> -->
     </view>
     <icon class='iconfont icon-saoma' bindtap='saoCode'></icon>
@@ -41,13 +41,12 @@
           <image src='/images/11.png'></image>
         </view>
         <view class='text'>
-          <view class='text-item'>
-            <view class='text-tit'>
-              患者：
+          <view class='text-money'>
+            <view class='finish_money'>
+              <view class='text-tit'>患者：</view>
+              <view class='text-detail'>王陆111</view>
             </view>
-            <view class='text-detail'>
-              王陆
-            </view>
+            <view class='money'>￥600</view>
           </view>
           <view class='text-item'>
             <view class='item-sub'>
@@ -71,7 +70,7 @@
               <view class='num-detail'>2018-04-06 10:00</view>
             </view>
           </view>
-          <view class='text-item tel-num'>
+          <view class='text-item tel-num' catchtap='telnum'>
             <i class='iconfont icon-dianhua1'></i>
             <text>15698542346</text>
           </view>
@@ -91,12 +90,8 @@
           </view>
           <view class='text'>
             <view class='text-item'>
-              <view class='text-tit'>
-                患者：
-              </view>
-              <view class='text-detail'>
-                王陆111
-              </view>
+              <view class='text-tit'>患者：</view>
+              <view class='text-detail'>王陆111</view>
             </view>
             <view class='text-item'>
               <view class='item-sub'>
@@ -120,7 +115,7 @@
                 <view class='num-detail'>2018-04-06 10:00</view>
               </view>
             </view>
-            <view class='text-item tel-num'>
+            <view class='text-item tel-num' catchtap='telnum'>
               <i class='iconfont icon-dianhua1'></i>
               <text>15698542346</text>
             </view>
@@ -141,12 +136,8 @@
           </view>
           <view class='text'>
             <view class='text-item'>
-              <view class='text-tit'>
-                患者：
-              </view>
-              <view class='text-detail'>
-                王陆111
-              </view>
+              <view class='text-tit'>患者：</view>
+              <view class='text-detail'>王陆111</view>
             </view>
             <view class='text-item'>
               <view class='item-sub'>
@@ -170,7 +161,7 @@
                 <view class='num-detail'>2018-04-06 10:00</view>
               </view>
             </view>
-            <view class='text-item tel-num'>
+            <view class='text-item tel-num' catchtap='telnum'>
               <i class='iconfont icon-dianhua1'></i>
               <text>15698542346</text>
             </view>
