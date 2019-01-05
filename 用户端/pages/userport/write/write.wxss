@@ -13,9 +13,9 @@ page {
 }
 .icon-xiangji{
   position: absolute;
-  right: 220rpx;
+  right: 180rpx;
   font-size: 44rpx;
-  bottom: 50rpx;
+  bottom: 20rpx;
   color: #fff;
 }
 .avtarWrap {
@@ -170,7 +170,8 @@ color:#E99ABE
   width: 100%;
   text-align: right;
   font-size: 28rpx;
-  color: rgba(153, 153, 153, 1);
+  color: #999999;
+  /* color: rgba(153, 153, 153, 1); */
 }
 
 .go {

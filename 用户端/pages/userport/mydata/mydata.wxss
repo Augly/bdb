@@ -48,13 +48,13 @@
   display: flex;
   margin: 0 auto;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 
 .medicine_img {
   width: 178rpx;
   height: 138rpx;
-  margin-right: 40rpx;
+  /* margin-right: 40rpx; */
   /* border-radius: 50%; */
   overflow: hidden;
 }
@@ -131,6 +131,7 @@
 .style-item {
   display: flex;
   margin-bottom: 4rpx;
+  line-height: 30rpx;
 }
 
 .style-num {

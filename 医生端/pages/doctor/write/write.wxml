@@ -2,13 +2,16 @@
   <view class='must-popup {{must?"show":"hide"}}'>
     <view class='close' bindtap='close'>
       <image src='/images/tuichu.png'></image>
+     
     </view>
+     <span class='iconfont icon-cuo'></span>
     <view class='must-texf'>请输入必填项</view>
   </view>
   <view class='must-popup {{success?"show":"hide"}}'>
     <view class='close' bindtap='close'>
       <image src='/images/tuichu.png'></image>
     </view>
+    <span class='iconfont icon-chenggong'></span>
     <view class='success-texf'>保存成功</view>
   </view>
 </view>
@@ -32,7 +35,7 @@
       <view class='itemTitle'>我的姓名</view>
     </view>
     <view class='right'>
-      <input class='name' placeholder='zero' bindinput='nameinput'></input>
+      <input class='name' placeholder='请输入您的姓名' placeholder-class='hc' bindinput='nameinput'></input>
       <text class='star'>*</text>
     </view>
   </view>
@@ -51,7 +54,7 @@
       <view class='itemTitle'>我的微信</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle'  bindinput='wxchat' placeholder='请输入您的微信号'></input>
+      <input class='itemmintitle' placeholder-class='hc' bindinput='wxchat' placeholder='请输入您的微信号'></input>
       <text class='star'>*</text>
     </view>
   </view>
@@ -61,7 +64,7 @@
       <view class='itemTitle'>我的年龄</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder='请输入您的年龄'></input>
+      <input class='itemmintitle' placeholder-class='hc' placeholder='请输入您的年龄'></input>
     </view>
   </view>
 
@@ -71,7 +74,7 @@
       <view class='itemTitle'>我的邮箱</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder='请输入您的邮箱'></input>
+      <input class='itemmintitle' placeholder-class='hc' placeholder='请输入您的邮箱'></input>
     </view>
   </view>
    <view class='item'>

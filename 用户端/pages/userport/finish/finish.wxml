@@ -58,11 +58,17 @@
   <view class='cancle-data-detail'>2016-04-28 10:00</view>
 </view>
 <view class='cancle-item'>
+  <span class='iconfont icon-riqi'></span>
+  <view class='cancle-deta'>{{type=='waitIng'?'取消时间':'完成时间'}}</view>
+  <view class='cancle-data-detail'>2016-04-28 10:00</view>
+</view>
+<view class='cancle-item'>
   <span class='iconfont icon-xiadan'></span>
   <view class='cancle-deta'>下单日期</view>
   <view class='cancle-data-detail'>2016-04-28 10:00</view>
 </view>
-<view class='cancle-btn' bindtap='cancle' wx:if="{{type=='ready'}}">
+<view class='cancleWrap'>
+  <view class='cancle-btn' bindtap='cancle' wx:if="{{type=='ready'}}">
   撤 销 预 约
 </view>
 <view class='cancle-btn success'  wx:if="{{type=='finish'}}">
@@ -70,4 +76,5 @@
 </view>
 <view class='cancle-btn success'  wx:if="{{type=='waitIng'}}">
   预约已取消
+</view>
 </view>

@@ -7,10 +7,7 @@
 <view class="data-list" wx:if="{{nav==0}}">
   <!-- <left-smooth bind:del='del'> -->
   <view class='medicine_item active' bindtap='details'>
-    <view class='detail'>
-      查看信息
-      <icon class='iconfont icon-youjiantou'></icon>
-    </view>
+    
     <view class='medicine_img'>
       <image src='/images/11.png'></image>
     </view>
@@ -35,7 +32,7 @@
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>药品数量：</view>
-        <view class='style-detail add_detail'>药品数量：</view>
+        <view class='style-detail add_detail'>X1</view>
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>预约诊所：</view>
@@ -45,6 +42,10 @@
         <view class='medicine-tips'>预约时间：</view>
         <view class='style-detail add_detail'>2018-09-06 </view>
       </view>
+    </view>
+    <view class='detail'>
+      查看信息
+      <icon class='iconfont icon-youjiantou'></icon>
     </view>
   </view>
   <!-- </left-smooth> -->
@@ -53,10 +54,7 @@
   <!-- <left-smooth bind:del='del'> -->
   <view class='medicine_item active' bindtap='details'>
     <view class='del' catchtap='del'>删 除</view>
-    <view class='detail'>
-      查看信息
-      <icon class='iconfont icon-youjiantou'></icon>
-    </view>
+    
     <view class='medicine_img'>
       <image src='/images/11.png'></image>
     </view>
@@ -81,7 +79,7 @@
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>药品数量：</view>
-        <view class='style-detail add_detail'>药品数量：</view>
+        <view class='style-detail add_detail'>X1</view>
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>预约诊所：</view>
@@ -92,16 +90,17 @@
         <view class='style-detail add_detail'>2018-09-06 </view>
       </view>
     </view>
+    <view class='detail'>
+      查看信息
+      <icon class='iconfont icon-youjiantou'></icon>
+    </view>
   </view>
   <!-- </left-smooth> -->
 </view>
 <view class="data-list" wx:if="{{nav==1}}">
   <!-- <left-smooth bind:del='del'> -->
   <view class='medicine_item active' bindtap='details'>
-    <view class='detail'>
-      查看信息
-      <icon class='iconfont icon-youjiantou'></icon>
-    </view>
+    
     <view class='medicine_img'>
       <image src='/images/11.png'></image>
     </view>
@@ -120,14 +119,14 @@
         <view class='medicine-tips'>预约药品：</view>
         <view class='style-detail add_detail'>免疫球蛋白</view>
       </view>
-      <!-- <view class='style-item'>
-          <view class='medicine-tips'>药品剂量：</view>
-          <view class='style-detail add_detail'>5ml</view>
-        </view>
-         <view class='style-item'>
-          <view class='medicine-tips'>药品数量：</view>
-          <view class='style-detail add_detail'>药品数量：</view>
-        </view> -->
+      <view class='style-item'>
+        <view class='medicine-tips'>药品剂量：</view>
+        <view class='style-detail add_detail'>5ml</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品数量：</view>
+        <view class='style-detail add_detail'>X1</view>
+      </view>
       <view class='style-item'>
         <view class='medicine-tips'>预约诊所：</view>
         <view class='style-detail add_detail'>天津市儿童医院</view>
@@ -136,6 +135,10 @@
         <view class='medicine-tips'>预约时间：</view>
         <view class='style-detail add_detail'>2018-09-06 </view>
       </view>
+    </view>
+    <view class='detail'>
+      查看信息
+      <icon class='iconfont icon-youjiantou'></icon>
     </view>
   </view>
   <!-- </left-smooth> -->

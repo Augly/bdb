@@ -5,49 +5,49 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choose:false,
+    choose: false,
     medicine_list: [{
       img: '/images/4.png',
       name: '天津市胸科医院',
       tel: '022-23147100',
       address: '天津市津南区台儿庄南路261号'
     },
-      { 
-        img: '/images/5.png',
-        name: '天津儿童医院',
-        tel: '022-58916019',
-        address: '天津市河西区马场道225号'
-      },
-      {
-        img: '/images/6.png',
-        name: '天津市第三中心医院',
-        tel: '022-84112114',
-        address: '天津市河东区津塘路83号'
-      },
-      {
-        img: '/images/7.png',
-        name: '天津市天津医院',
-        tel: '022-84112114',
-        address: '天津市河西区解放南路406号'
-      },
-      {
-        img: '/images/14.png',
-        name: '天津中医学院第一附属医院',
-        tel: '022-27432299',
-        address: '天津市南开区鞍山西道314号'
-      }],
-    otherList:["南开区","西青区"],
-    otherIndex:0
+    {
+      img: '/images/5.png',
+      name: '天津儿童医院',
+      tel: '022-58916019',
+      address: '天津市河西区马场道225号'
+    },
+    {
+      img: '/images/6.png',
+      name: '天津市第三中心医院',
+      tel: '022-84112114',
+      address: '天津市河东区津塘路83号'
+    },
+    {
+      img: '/images/7.png',
+      name: '天津市天津医院',
+      tel: '022-84112114',
+      address: '天津市河西区解放南路406号'
+    },
+    {
+      img: '/images/14.png',
+      name: '天津中医学院第一附属医院',
+      tel: '022-27432299',
+      address: '天津市南开区鞍山西道314号'
+    }],
+    otherList: ["南开区", "西青区"],
+    otherIndex: 0
   },
-  sale_medicine(){
+  sale_medicine() {
     wx.navigateTo({
-      url: '/pages/userport/salemedicine/salemedicine',
+      url: '/pages/userport/introduce/introduce',
     })
   },
-  changes(e){
+  changes(e) {
     this.setData({
-      otherIndex:e.currentTarget.dataset.index,
-      choose:false
+      otherIndex: e.currentTarget.dataset.index,
+      choose: false
     })
   },
   /**
@@ -55,22 +55,22 @@ Page({
    */
   onLoad: function (options) {
     wx.getSystemInfo({
-      success: res=>{
+      success: res => {
         console.log(res.windowWidth)
         this.setData({
-          myHeight: res.windowHeight - (res.windowWidth/750*188)
+          myHeight: res.windowHeight - (res.windowWidth / 750 * 188)
         })
       },
-      fail: function(res) {},
-      complete: function(res) {},
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
-  showMask(){
+  showMask() {
     this.setData({
-      choose:!this.data.choose
+      choose: !this.data.choose
     })
   },
-  hideMask(){
+  hideMask() {
     this.setData({
       choose: false
     })

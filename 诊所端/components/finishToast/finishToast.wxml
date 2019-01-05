@@ -1,5 +1,6 @@
 <view class='mask' wx:if="{{wrap}}">
   <view class='del-popup'>
+  <view class='pic-nav'></view>
     <view class='del-tit'>{{title}}</view>
     <view class='del-details'>{{minTitle}}</view>
     <view class='del_foot'>

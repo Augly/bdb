@@ -12,7 +12,8 @@
     "pages/userport/finish/finish",
     "pages/userport/salemedicine/salemedicine", 
     "pages/userport/code/code",
-    "pages/userport/message/message"
+    "pages/userport/message/message",
+    "pages/clic/clic"
   ],
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",
@@ -35,7 +36,9 @@
       {
         "selectedIconPath": "/images/33@2x.png",
         "iconPath": "/images/3@2x.png",
-        "pagePath": "pages/userport/introduce/introduce",
+        
+        "pagePath": "pages/clic/clic",
+        
         "text": "医务中心"
       },
       {

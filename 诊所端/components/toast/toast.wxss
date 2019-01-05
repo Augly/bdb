@@ -43,7 +43,7 @@
   color: rgba(153, 153, 153, 1);
   width: 320rpx;
   margin: 28rpx auto 0;
-  line-height: 44rpx;
+  line-height: 40rpx;
 }
 
 .del-btn {

@@ -191,9 +191,8 @@ page {
   height: 56rpx;
   background: rgba(255, 72, 102, 1);
   border-radius: 10rpx;
-  /* margin-left: 20rpx; */
   /* position: absolute; */
-  /* right: 12rpx; */
+  right: 12rpx;
   /* top: 12rpx; */
   font-size: 28rpx;
   font-family: PingFang-SC-Medium;
