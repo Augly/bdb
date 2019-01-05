@@ -3,12 +3,14 @@
     <view class='close' bindtap='close'>
       <image src='/images/tuichu.png'></image>
     </view>
+    <span class='iconfont icon-cuo'></span>
     <view class='must-texf'>请输入必填项</view>
   </view>
   <view class='must-popup {{success?"show":"hide"}}'>
     <view class='close' bindtap='close'>
       <image src='/images/tuichu.png'></image>
     </view>
+    <span class='iconfont icon-chenggong'></span>
     <view class='success-texf'>保存成功</view>
   </view>
 </view>

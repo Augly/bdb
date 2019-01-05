@@ -44,15 +44,14 @@
       </view>
     </view>
     <view class='detail'>
-      查看信息
-      <icon class='iconfont icon-youjiantou'></icon>
+      查看信息<span class='iconfont icon-youjiantou'></span>
     </view>
   </view>
   <!-- </left-smooth> -->
 </view>
 <view class="data-list" wx:if="{{nav==2}}">
   <!-- <left-smooth bind:del='del'> -->
-  <view class='medicine_item active' bindtap='details'>
+  <view class='medicine_item active' bindtap='details' data-type='cendel'>
     <view class='del' catchtap='del'>删 除</view>
     
     <view class='medicine_img'>
@@ -91,15 +90,14 @@
       </view>
     </view>
     <view class='detail'>
-      查看信息
-      <icon class='iconfont icon-youjiantou'></icon>
+      查看信息<span class='iconfont icon-youjiantou'></span>
     </view>
   </view>
   <!-- </left-smooth> -->
 </view>
 <view class="data-list" wx:if="{{nav==1}}">
   <!-- <left-smooth bind:del='del'> -->
-  <view class='medicine_item active' bindtap='details'>
+  <view class='medicine_item active' bindtap='details' data-type='finish'>
     
     <view class='medicine_img'>
       <image src='/images/11.png'></image>
@@ -137,8 +135,7 @@
       </view>
     </view>
     <view class='detail'>
-      查看信息
-      <icon class='iconfont icon-youjiantou'></icon>
+      查看信息<span class='iconfont icon-youjiantou'></span>
     </view>
   </view>
   <!-- </left-smooth> -->

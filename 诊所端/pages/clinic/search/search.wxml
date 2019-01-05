@@ -175,6 +175,6 @@
     </view>
   </block>
 </view>
-<toast wrap="{{mask}}" title="删除取消预约" minTitle="您确认要删除已完成预约么？删除之后将无法恢复。" bind:sure='sure' sureTitle='确定'></toast>
+<toast wrap="{{mask}}" title="{{nav==2?'是否删除已完成的预约':'是否删除已取消的预约'}}" minTitle="{{nav==2?'您确定要删除已完成的预约么？删除之后将无法恢复':'您确定要删除已取消的预约么？删除之后将无法恢复'}}" bind:sure='sure' sureTitle='确定'></toast>
 <finishToast wrap="{{cendelmask}}" title="确认删除预约" minTitle="是否删除预约信息点击确认后将无法修改！" bind:sure='surecendel'></finishToast>
 <success wrap="{{delSuccess}}" notice="删除成功"></success>

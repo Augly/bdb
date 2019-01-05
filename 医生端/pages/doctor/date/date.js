@@ -29,9 +29,9 @@ Page({
       delSuccess: true
     })
   },
-  details(){
+  details(e){
     wx.navigateTo({
-      url: '/pages/doctor/dateinfo/dateinfo',
+      url: '/pages/doctor/dateinfo/dateinfo?type=' + e.currentTarget.dataset.type,
     })
   },
   /**

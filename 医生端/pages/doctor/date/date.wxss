@@ -75,14 +75,14 @@
   color: rgba(102, 102, 102, 1);
 }
 
-.detail {
+/* .detail {
   position: absolute;
   font-size: 24rpx;
   font-family: Adobe Heiti Std R;
   font-weight: normal;
   color: rgba(153, 153, 153, 1);
   right: 0;
-}
+} */
 
 .data-list .active::before {
   display: block;
@@ -102,6 +102,7 @@
   position: relative;
   margin: 0 auto;
   align-items: center;
+  /* justify-content: space-between; */
 }
 
 .medicine_img {
@@ -118,7 +119,13 @@
   font-family: Adobe Heiti Std R;
   font-weight: normal;
   color: rgba(153, 153, 153, 1);
+  display: flex;
+  align-items: center;
+  margin-left: auto;
   /* right: 0; */
+}
+.detail .iconfont{
+  font-size: 24rpx;
 }
 
 .detail .iconfont {
@@ -178,7 +185,7 @@
 }
 
 .add_detail {
-  width: 300rpx;
+  /* width: 300rpx; */
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
