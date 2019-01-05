@@ -11,12 +11,12 @@ page {
   height: 100rpx;
   background-color: #fff;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; 
 }
 
 .footer-nav-item {
   display: flex;
-  width: 33.3%;
+  width: 33.3%; 
   justify-content: center;
   align-items: center;
   flex-direction: column;
