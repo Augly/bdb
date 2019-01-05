@@ -10,7 +10,20 @@ Page({
     phone: '17633369350',  //手机号
     age: '',  //年龄
     email: '', //邮箱 
-    sex: 1
+    sex: 1,
+    // bol:false,
+    height:0,
+  },
+  getHeight(e){
+    console.log(e.detail.height)
+    this.setData({
+      height: 20
+    })
+  },
+  burHeight(){
+    this.setData({
+      height: 0
+    })
   },
   changesA() {
     wx.chooseImage({

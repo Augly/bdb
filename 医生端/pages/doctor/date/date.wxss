@@ -113,12 +113,12 @@
 }
 
 .detail {
-  position: absolute;
+  /* position: absolute; */
   font-size: 24rpx;
   font-family: Adobe Heiti Std R;
   font-weight: normal;
   color: rgba(153, 153, 153, 1);
-  right: 0;
+  /* right: 0; */
 }
 
 .detail .iconfont {
@@ -156,7 +156,7 @@
 }
 
 .name-data {
-  width: 430rpx;
+  /* width: 430rpx; */
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -169,6 +169,7 @@
 .style-item {
   display: flex;
   margin-bottom: 4rpx;
+  line-height: 35rpx;
 }
 
 .style-detail {

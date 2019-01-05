@@ -1,17 +1,17 @@
 <view class='container'>
 <view class="banner-search">
-  <input class="banner-input" placeholder="搜索 医生 / 科室" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
+  <input class="banner-input"  placeholder-class='banner-input'  placeholder="请输入您要搜索的药品" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
 </view>
 
   <view class='medicine_list'>
-    <block wx:for='{{list}}' wx:key='' wx:for-item="item" wx:for-index="index">
+    <block wx:for='{{medicine_list}}' wx:key='' wx:for-item="item" wx:for-index="index">
     <view class='medicine_item' bindtap='choose_search'>
       <view class='medicine_img'>
-        <image src='{{item.goods_surface}}'></image>
+        <image src='/images/4.png'></image>
       </view>
       <view class='medicnie-text'>
-        <view class='medicine-tit'>{{item.goods_name}}</view>
-        <view class='medicine-tips'>简介：{{item.goods_brief}}</view>
+        <view class='medicine-tit'>{{item.title}}</view>
+        <view class='medicine-tips'>简介：免疫疗法已成为治疗癌症和其他免疫系统疾病的有前景的方法。</view>
       </view>
       <view class='qianw'>
         <!-- <image src='/images/icon_qianw.png'></image> -->

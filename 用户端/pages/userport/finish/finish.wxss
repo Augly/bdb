@@ -1,3 +1,6 @@
+page{
+  padding-bottom:210rpx; 
+}
 .cancle-detail {
   display: flex;
   padding: 12rpx 25rpx;
@@ -63,7 +66,16 @@ overflow: hidden;
   /* font-weight: bold; */
   color: rgba(153, 153, 153, 1);
 }
-
+.cancleWrap{
+  width: 100%;
+  position: fixed;
+  background-color: rgba(255,255,255,1);
+  padding: 60rpx 0rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+}
 .cancle-btn {
   width: 623rpx;
   height: 82rpx;
@@ -76,11 +88,11 @@ overflow: hidden;
   font-family: MicrosoftYaHei;
   font-weight: bold;
   color: rgba(241, 241, 241, 1);
-  position: fixed;
-  bottom: 60rpx;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  /* position: fixed; */
+  /* bottom: 60rpx; */
+  /* left: 0; */
+  /* right: 0; */
+
 }
 
 

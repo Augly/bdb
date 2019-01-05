@@ -8,12 +8,15 @@ page {
 }
 
 .medicine-wrap {
-  padding-bottom: 28rpx;
+  padding-bottom: 48rpx;
   box-shadow: 0px 3rpx 18rpx 3rpx rgba(0, 0, 0, 0.06);
   margin-bottom: 20rpx;
 }
 
 .style_item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0rpx 0rpx 10rpx 0rpx;
   display: flex;
   height: 99rpx;
   align-items: center;
@@ -32,8 +35,11 @@ page {
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
   line-height: 44rpx;
-  width: 670rpx;
-  margin: 54rpx auto 0;
+  width:670rpx;
+  box-sizing: border-box;
+  padding: 29rpx 0rpx;
+  margin: 0 auto;
+  border-bottom: 3rpx solid rgba(241, 241, 241, 1);
 }
 
 .details {
@@ -43,7 +49,7 @@ page {
   color: rgba(51, 51, 51, 1);
   line-height: 41rpx;
   width: 670rpx;
-  margin: 44rpx auto 0;
+  margin: 29rpx auto 0;
 }
 
 .style_tit {
@@ -58,8 +64,10 @@ page {
 .style_item .icon-youjiantou {
   font-size: 22rpx;
   color: rgba(153, 153, 153, 1);
-  position: absolute;
-  right: 22rpx;
+  justify-self: flex-end;
+  margin-left: auto;
+  /* position: absolute; */
+  /* right: 22rpx; */
 }
 
 .btn_wrap {
@@ -197,7 +205,7 @@ page {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0 60rpx;
+  padding: 0 23rpx;
   margin-top: 60rpx;
 }
 
@@ -213,7 +221,7 @@ page {
   color: rgba(51, 51, 51, 1);
   border: 3rpx solid rgba(194, 194, 194, 1);
   border-radius: 6rpx;
-  margin-bottom: 50rpx;
+  margin:0rpx 37rpx 50rpx 37rpx;
 }
 
 .time-submit {

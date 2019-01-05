@@ -15,4 +15,6 @@
 <view class='info-item'>下单时间：2018-09-06 10:00</view>
 <view class='info-item'>看诊诊所：天津市儿童医院</view>
 <view class='info-item'>预约药品：免疫球蛋白</view>
+<view class='info-item'>药品计量：50ml</view>
+<view class='info-item'>药品数量：1</view>
 </view>

@@ -1,5 +1,4 @@
 // pages/userport/medicinelist/medicinelist.js
-const app=getApp()
 Page({
 
   /**
@@ -19,24 +18,7 @@ Page({
         title: '升级版大含量福欣宝免疫球蛋白元大牌',
 
       }
-    ],
-    key:''
-  },
-  //获取搜索内容
-  getValue(e){
-    this.setData({
-      key:e.detail.value
-    })
-  },
-  //获取药品列表
-  gitlist(){
-    app.config.ajax('POST', {
-      token: app.globalData.user_token,
-    }, 'user/goods/goods_list', res => {
-      this.setData({
-        list:res.data
-      })
-    }) 
+    ]
   },
   // 跳转搜索页面
   choose_search(){

@@ -1,3 +1,6 @@
+<view >
+
+
 <view class='notitle'>
   <i class='iconfont icon-xiangji' bindtap='changesA'></i>
 </view>
@@ -10,7 +13,7 @@
 </view>
 <view class='mintitle'>{{phone}}</view>
 
-<view class='list'>
+<view class='list' style='margin-top:{{-height}}px'>
   <!-- <view class='item' bindtap='go_write'> -->
   <view class='item'>
     <view class='left'>
@@ -18,7 +21,7 @@
       <view class='itemTitle'>我的姓名</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder='请输入姓名' bindinput='getName' value='{{name}}'></input>
+      <input class='itemmintitle' placeholder-class='itemmintitle' placeholder='请输入姓名' bindinput='getName' value='{{name}}'></input>
     </view>
   </view>
   <view class='item'>
@@ -37,7 +40,7 @@
       <view class='itemTitle'>我的手机</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' type='number' placeholder='请输入您的手机号' bindinput='getPhone' value='{{phone}}'></input>
+      <input class='itemmintitle' type='number' placeholder-class='itemmintitle' placeholder='请输入您的手机号' bindinput='getPhone' value='{{phone}}'></input>
     </view>
   </view>
   <view class='item'>
@@ -46,7 +49,7 @@
       <view class='itemTitle'>我的年龄</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' type='number' placeholder='请输入您的年龄(岁)' bindinput='getAge' value='{{age}}'></input>
+      <input class='itemmintitle' type='number' placeholder-class='itemmintitle' placeholder='请输入您的年龄(岁)' bindinput='getAge' value='{{age}}'></input>
     </view>
   </view>
   <view class='item'>
@@ -55,10 +58,11 @@
       <view class='itemTitle'>我的邮箱</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder='请输入您的邮箱' bindinput='getEmail' value='{{email}}'></input>
+      <input class='itemmintitle' placeholder-class='itemmintitle' placeholder='请输入您的邮箱' bindinput='getEmail' value='{{email}}'  bindfocus="getHeight" bindblur='burHeight'></input>
     </view>
   </view>
 </view>
 <view class='submit' bindtap='save'>
   保 存 修 改 信 息
+</view>
 </view>

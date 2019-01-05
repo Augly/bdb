@@ -31,8 +31,5 @@ App({
    */
   onError: function (msg) {
 
-  },
-  globalData:{
-    user_token:''
   }
 })
