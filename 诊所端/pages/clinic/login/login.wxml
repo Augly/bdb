@@ -5,7 +5,7 @@
     <view class='tips'>T h e h o s p i t a l</view>
   </view>
   <view class='password_box'>
-    <i class='iconfont icon-dianhua'></i>
+    <i class='iconfont icon-gerenyonghutouxiang'></i>
     <input type='text' class='login_num' placeholder='请 输 入 用 户 名' maxlength='11' bindinput='getPhone' value='{{phone}}'></input>
   </view> 
   <view class='password_box'>

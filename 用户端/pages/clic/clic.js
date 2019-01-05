@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    choosed: false,
     choose: false,
     medicine_list: [{
       img: '/images/4.png',
@@ -47,7 +48,8 @@ Page({
   changes(e) {
     this.setData({
       otherIndex: e.currentTarget.dataset.index,
-      choose: false
+      choose: false,
+
     })
   },
   /**
@@ -67,12 +69,14 @@ Page({
   },
   showMask() {
     this.setData({
+      choosed: true,
       choose: !this.data.choose
     })
   },
   hideMask() {
     this.setData({
-      choose: false
+      choose: false,
+      choosed: false,
     })
   },
   /**

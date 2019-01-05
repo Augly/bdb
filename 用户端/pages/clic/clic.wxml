@@ -3,14 +3,14 @@
 </view>
 
 <view class='choose'>
-  <view class='choose-add {{choose?"active":""}}' bindtap='showMask'>
+  <view class='choose-add {{choosed?"active":""}}' bindtap='showMask'>
     区域选择
     <i class='iconfont icon-xiala'></i>
   </view>
   <view class='line'>
 
   </view>
-  <view class='choose-add {{choose?"":"active"}}' bindtap='hideMask'>
+  <view class='choose-add {{choosed?"":"active"}}' bindtap='hideMask'>
     离我最近
   </view>
 </view>

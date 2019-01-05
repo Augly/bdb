@@ -332,3 +332,27 @@ iconfont {
   margin-top: 90rpx;
   color: rgba(99, 223, 197, 1);
 }
+.icon-chenggong{
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -112.5rpx;
+  top: 50%;
+  margin-top: -116.5rpx;
+  /* margin: 0 auto; */
+  z-index: 0;
+  color: rgba(99,223,197,0.2);
+  font-size: 225rpx;
+}
+.icon-cuo{
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -112.5rpx;
+  top: 50%;
+  margin-top: -120.5rpx;
+  /* margin: 0 auto; */
+  z-index: 0;
+  color: rgba(253, 73, 120, 0.2);
+  font-size: 225rpx;
+}

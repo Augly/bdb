@@ -128,7 +128,7 @@ page {
 }
 
 .login_num {
-  width: 400rpx;
+  width: 380rpx;
   height: 80rpx;
   border-radius: 10rpx;
   line-height: 40rpx;
@@ -173,7 +173,7 @@ page {
 }
 
 .password {
-  width: 400rpx;
+  width: 380rpx;
   height: 80rpx;
   opacity: 0.4;
   background: rgba(147, 255, 230, 1);

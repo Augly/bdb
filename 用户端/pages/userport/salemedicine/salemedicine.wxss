@@ -66,6 +66,7 @@ page {
   color: rgba(153, 153, 153, 1);
   justify-self: flex-end;
   margin-left: auto;
+  margin-right: 10rpx;
   /* position: absolute; */
   /* right: 22rpx; */
 }

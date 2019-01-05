@@ -128,7 +128,7 @@ page {
 }
 
 .login_num {
-  width: 400rpx;
+  width: 380rpx;
   height: 80rpx;
   border-radius: 10rpx;
   line-height: 40rpx;

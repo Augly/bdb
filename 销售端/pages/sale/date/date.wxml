@@ -1,5 +1,5 @@
 <view class='person-list'>
-  <left-smooth bind:del='del'>
+  <!-- <left-smooth bind:del='del'> -->
     <view class='person-item' bindtap='details'>
       <view class='person-img'>
         <image src='{{avtar}}'></image>
@@ -15,5 +15,5 @@
       </view>
 
     </view>
-  </left-smooth>
+  <!-- </left-smooth> -->
 </view>

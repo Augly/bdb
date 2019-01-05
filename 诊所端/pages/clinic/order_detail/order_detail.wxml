@@ -158,4 +158,4 @@
     </view>
   </view>
 </view>
-<success wrap="{{delSuccess}}" notice="删除成功"></success>
+<success wrap="{{delSuccess}}" notice="预约成功"></success>
