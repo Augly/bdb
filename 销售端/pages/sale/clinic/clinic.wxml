@@ -35,15 +35,9 @@
   </view>
   <block wx:for='{{list}}' wx:key=''>
     <view class='list-item'>
-      <view class='name text-left'>
-        {{item.name}}
-      </view>
-      <view class='details text-center'>
-        {{item.medicine}}
-      </view>
-      <view class='details  text-right'>
-        {{item.num}}
-      </view>
+      <view class='name text-left'>{{item.name}}</view>
+      <view class='details text-center'>{{item.medicine}}</view>
+      <view class='details  text-right'>{{item.num}}</view>
     </view>
   </block>
    <view class='{{null_list?"show":"hide"}}'>

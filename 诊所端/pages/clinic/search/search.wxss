@@ -20,6 +20,9 @@ page {
   width: 100%;
   overflow: hidden;
   padding-top: 224rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .banner-search {
   width: 520rpx;
@@ -36,6 +39,7 @@ page {
 }
 
 .banner-input {
+  text-align: center;
   width: 410rpx;
   height: 60rpx;
   padding-left: 86rpx;
@@ -110,8 +114,7 @@ page {
 
 .data-item {
   width: 690rpx;
-  margin: 0 auto;
-  padding: 30rpx;
+  padding: 30rpx 0;
   display: flex;
   border-bottom: 3rpx solid rgba(0, 0, 0, 0.06);
   align-items: center;
@@ -152,10 +155,21 @@ color:rgba(20,150,217,1);
   height: 82rpx;
   margin-right: 29rpx;
 }
-
+.text{
+  width: 580rpx;
+}
 .text-item {
+  text-align: left;
   display: flex;
   margin-bottom: 8rpx;
+  justify-content: start;
+}
+.text-money{
+  text-align: left;
+  display: flex;
+  margin-bottom: 8rpx;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 .text-tit {
@@ -163,6 +177,7 @@ color:rgba(20,150,217,1);
   font-family: Adobe Heiti Std R;
   font-weight: normal;
   color: #999;
+  text-align: left;
 }
 
 .text-detail {
@@ -331,4 +346,13 @@ color:rgba(20,150,217,1);
   color:rgba(253,73,120,1);
   text-align: center;
   margin-top: 90rpx;
+}
+.finish_money{
+  display: flex;
+}
+.money{
+  font-size:32rpx;
+font-family:PingFang-SC-Bold;
+font-weight:bold;
+color:rgba(51,51,51,1);
 }

@@ -59,7 +59,7 @@
 .list-item {
   display: flex;
   padding: 33rpx 28rpx;
-  height: 55rpx;
+  height: 75rpx;
 }
 
 .name {

@@ -33,7 +33,7 @@
       <view class='itemTitle'>我的昵称</view>
     </view>
     <view class='right'>
-      <input class='name' placeholder='请输入你的手机号' bindinput='nameinput'></input>
+      <input class='name' placeholder='请输入您的姓名' placeholder-style="color:#999999;" bindinput='nameinput'></input>
       <!-- <view class='itemmintitle'></view> -->
     </view>
     <view class='star'>*</view>
@@ -54,7 +54,7 @@
       <view class='itemTitle'>我的手机</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle'  bindinput='wxchat' placeholder='请输入手机号'></input>
+      <input type='number' class='itemmintitle'  bindinput='wxchat'  placeholder-style="color:#999999;"  placeholder='请输入手机号'></input>
     </view>
     <view class='star'>*</view>
   </view>
@@ -64,7 +64,7 @@
       <view class='itemTitle'>我的年龄</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder='请输入您的年龄（岁）'></input>
+      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的年龄（岁）'></input>
     </view>
   </view>
   <view class='item'>
@@ -73,7 +73,7 @@
       <view class='itemTitle'>我的邮箱</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder='请输入您的邮箱'></input>
+      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的邮箱'></input>
     </view>
   </view>
 
@@ -84,7 +84,7 @@
     </view>
     <view class='right'>
       <!-- <span class='iconfont icon-jiantou'></span> -->
-      <input class='itemmintitle' placeholder='请输入您的微信'></input>
+      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的微信'></input>
     <view class='star'>*</view>
     </view>
   </view>

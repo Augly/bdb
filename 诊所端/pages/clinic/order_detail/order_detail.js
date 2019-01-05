@@ -8,7 +8,7 @@ Page({
   data: {
     mask: false,
     imgUrl: app.ImageHost,
-    array: ['人血白蛋白', '免疫球蛋白'],
+    array: ['2018-10-11 10:00', '2018-10-11 10:00','2018-10-11 10:00'],
     index:0,
     arraytwo: ['50ml', '100ml'],
     indextwo: 0,
@@ -24,6 +24,9 @@ Page({
     success_popup:false,
     choose_popup:false,
     time_popup:false,
+    data_time:'2018-09-06 10:00',
+    delSuccess: false,
+
   },
   // 弹层
   submit() {
@@ -41,15 +44,15 @@ Page({
   },
   submit_date(){
     this.setData({
-      mask: true,
-      success_popup: true,
+      mask: false,
+      delSuccess: true,
       choose_popup: false
     })
   },
   time_btn(){
     this.setData({
-      mask: true,
-      success_popup: true,
+      mask: false,
+      success_popup: false,
       time_popup: false,
       choose_popup: false
     })
@@ -103,8 +106,9 @@ Page({
     })
   },
   bindPickerChange(e) {
+    console.log(e)
     this.setData({
-      index: e.detail.value
+      data_time: e.currentTarget.dataset.value
     })
   },
   bindPickerChangetwo(e) {

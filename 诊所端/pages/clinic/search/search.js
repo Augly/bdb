@@ -8,9 +8,15 @@ Page({
     choose:true,
     medicine_list:3,
     nav:1,
-     mask: false,
+    mask: false,
     cendelmask:false,
     delSuccess: false,
+  },
+  // 拨打电话
+  telnum(){
+    wx.makePhoneCall({
+      phoneNumber: '15698542346',
+    })
   },
   // 诊所中心
   go_center(){
@@ -26,7 +32,7 @@ Page({
   },
   del_cancle(){
     this.setData({
-      cendelmask: true
+      mask: true
     })
   },
   //确认删除
