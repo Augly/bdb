@@ -1,3 +1,7 @@
 {
-  "navigationBarTitleText": "选择诊所"
+  "navigationBarTitleText": "选择诊所",
+    "usingComponents": {
+      "left-smooth": "/components/left-smooth/left-smooth",
+      "nodata": "/components/nodata/nodata"
+    }
 }

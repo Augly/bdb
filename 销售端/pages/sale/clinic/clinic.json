@@ -1,3 +1,8 @@
 {
-  "navigationBarTitleText": "诊所销量报表"
+  "navigationBarTitleText": "诊所销量报表",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+    "usingComponents": {
+      "nodata": "/components/nodata/nodata"
+    }
 }

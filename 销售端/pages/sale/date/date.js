@@ -1,4 +1,5 @@
 // pages/doctor/date/date.js
+const app=getApp()
 Page({
 
   /**
@@ -12,9 +13,9 @@ Page({
       url: '/pages/sale/index/index',
     })
   },
-  details(){
+  details(e){
     wx.navigateTo({
-      url: '/pages/sale/dateinfo/dateinfo',
+      url: '/pages/sale/dateinfo/dateinfo?id=' + e.currentTarget.dataset.id,
     })
   },
   go_message() {
@@ -31,9 +32,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData()
   },
-
+  getData(){
+    app.config.ajax('POST',{
+      token:app.globalData.user_token
+    },'sell/user/my_doctor',res=>{
+      this.setData({
+        doctorlist:res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

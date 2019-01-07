@@ -365,3 +365,7 @@ font-family:PingFang-SC-Bold;
 font-weight:bold;
 color:rgba(51,51,51,1);
 }
+.allwrap{
+  width: 100%;
+  overflow: hidden;
+}

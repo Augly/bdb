@@ -1,20 +1,25 @@
 {
   "pages": [
-    "pages/userport/login/login",
     "pages/userport/index/index",
-    "pages/userport/my/my",
-    "pages/userport/write/write",
-    "pages/userport/introduce/introduce",
-    "pages/userport/medicinelist/medicinelist",
-    "pages/userport/search/search",
-    "pages/userport/mydata/mydata",
-    "pages/userport/cancle/cancle",
-    "pages/userport/finish/finish",
-    "pages/userport/salemedicine/salemedicine", 
-    "pages/userport/code/code",
+    "pages/userport/login/login",
     "pages/userport/message/message",
+    "pages/userport/code/code",
+    "pages/userport/salemedicine/salemedicine",
+    "pages/userport/finish/finish",
+    "pages/userport/cancle/cancle",
+    "pages/userport/mydata/mydata",
+    "pages/userport/medicinelist/medicinelist",
+    "pages/userport/introduce/introduce",
+    "pages/userport/write/write",
+    "pages/userport/my/my",
+    "pages/userport/search/search",
     "pages/clic/clic"
   ],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "将通过您的地理为止给您推荐最近的诊所列表"
+      }
+    },
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",
     "navigationBarTextStyle": "",

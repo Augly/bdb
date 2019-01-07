@@ -1,16 +1,27 @@
 // pages/sale/index/index.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mask:true,
+    mask:false,
   },
   // 二维码
   go_code(){
     wx.navigateTo({
       url: '/pages/sale/code/code',
+    })
+  },
+  //获取个人信息
+  getUserInfo() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+    }, 'sell/user/sell_info', res => {
+      this.setData({
+        mask: res.data.data.sell_sex==0?true:false,
+      })
     })
   },
   sure(){
@@ -67,14 +78,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.getStorage({
+      key: 'user_token',
+      success: res => {
+        app.globalData.user_token = res.data
+        this.getUserInfo()
+      },
+      fail: res => {
+        app.globalData.user_token = ''
+        wx.redirectTo({
+          url: '/pages/sale/login/login',
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      },
+      complete: function (res) { },
+    })
+   
   },
 
   /**

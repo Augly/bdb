@@ -1,12 +1,19 @@
 {
   "pages": [
-    "pages/doctor/login/login",
-    "pages/doctor/write/write",
-    "pages/doctor/date/date",
-    "pages/doctor/dateinfo/dateinfo",
     "pages/doctor/index/index",
+   "pages/doctor/my/my",
+    "pages/doctor/date/date",
+    
+    "pages/doctor/login/login",
+    
     "pages/doctor/message/message",
-    "pages/doctor/my/my"
+    "pages/doctor/dateinfo/dateinfo",
+    
+    "pages/doctor/write/write"
+    
+    
+    
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",

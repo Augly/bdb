@@ -1,4 +1,5 @@
 // pages/userport/cancle/cancle.js
+const app=getApp()
 Page({
 
   /**
@@ -7,7 +8,17 @@ Page({
   data: {
     del_success:false,
   },
-  
+  //我的预约详情
+  getData(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      subscribe_id: ''   //预约id
+    }, 'user/user/subscribe_info', res => {
+      this.setData({
+        info: res.data.data
+      })
+    })
+  },
   cancle(){
     this.setData({
       del_success:true

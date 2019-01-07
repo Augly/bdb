@@ -4,6 +4,7 @@
         "left-smooth": "/components/left-smooth/left-smooth",
         "toast": "/components/toast/toast",
         "success": "/components/success/success",
+        "nodata": "/components/nodata/nodata",
         "finishToast": "/components/finishToast/finishToast"
       }
 }

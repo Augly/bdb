@@ -22,6 +22,17 @@ Page({
       password: e.detail.value
     })
   },
+  login() {
+    app.config.ajax('POST', {
+      username: this.data.phone,
+      password: this.data.password
+    }, 'hospital/login/hospital_login', res => {
+      console.log(res)
+      wx.switchTab({
+        url: '/pages/clinic/search/search',
+      })
+    })
+  },
   login_btn(){
     if(this.data.phone==''){
       app.config.mytoast('请输入正确的手机号')
@@ -31,9 +42,8 @@ Page({
       app.config.mytoast('请输入密码')
       return false
     }
-    wx.switchTab ({
-      url: '/pages/clinic/search/search',
-    })
+    this.login()
+    
   },
   /**
    * 生命周期函数--监听页面加载

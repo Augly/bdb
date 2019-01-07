@@ -6,13 +6,46 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imhUrl: app.ImageHost,
+    user_portrait:'',
     name: '测试',  //姓名
     phone: '17633369350',  //手机号
     age: '',  //年龄
     email: '', //邮箱 
     sex: 1,
-    // bol:false,
     height:0,
+  },
+  //获取个人信息
+  getUserInfo() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+    }, 'user/user/user_info', res => {
+      this.setData({
+        name: res.data.data.user_realname,
+        phone: res.data.data.user_phone,
+        sex: res.data.data.user_sex,
+        age: res.data.data.user_age,
+        email: res.data.data.user_email,
+        user_portrait: res.data.data.user_portrait
+      })
+    })
+  },
+  //修改个人信息
+  saveUserInfo(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      realname: this.data.name,
+      age: this.data.age,
+      sex:this.data.sex,
+      email: this.data.email,
+      portrait: this.data.user_portrait,
+    }, 'user/user/user_info_update', res => {
+      app.config.mytoast('修改资料成功，即将返回',res=>{
+        wx.navigateBack({
+          delta: 1,
+        })
+      })
+    })
   },
   getHeight(e){
     console.log(e.detail.height)
@@ -32,10 +65,21 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: (res) => {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        // var tempFilePaths = res.tempFilePaths
-        this.setData({
-          avtar: res.tempFilePaths[0]
-        })
+       app.config.ajax(
+          'img',
+          {
+            token:app.globalData.user_token
+          },
+          'user/user/upload_img',
+          res => {
+            this.setData({
+              user_portrait: res.data.path
+            })
+          },
+          res => { },
+          res => { },
+          res.tempFilePaths[0]
+        )
       }
     })
   },
@@ -73,7 +117,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getUserInfo()
   },
 
   /**
@@ -135,9 +179,7 @@ Page({
       app.config.mytoast('请输入您的邮箱')
       return false
     }
-    wx.navigateBack({
-      delta: 1,
-    })
+    this.saveUserInfo()
   },
   /**
    * 用户点击右上角分享

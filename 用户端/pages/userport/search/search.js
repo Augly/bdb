@@ -1,61 +1,53 @@
 // pages/userport/search/search.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imgUrl: app.ImageHost,
     choosed:false,
     choose:false,
-    medicine_list: [{
-      img: '/images/4.png',
-      name: '天津市胸科医院',
-      tel: '022-23147100',
-      address: '天津市津南区台儿庄南路261号'
-    },
-      { 
-        img: '/images/5.png',
-        name: '天津儿童医院',
-        tel: '022-58916019',
-        address: '天津市河西区马场道225号'
-      },
-      {
-        img: '/images/6.png',
-        name: '天津市第三中心医院',
-        tel: '022-84112114',
-        address: '天津市河东区津塘路83号'
-      },
-      {
-        img: '/images/7.png',
-        name: '天津市天津医院',
-        tel: '022-84112114',
-        address: '天津市河西区解放南路406号'
-      },
-      {
-        img: '/images/14.png',
-        name: '天津中医学院第一附属医院',
-        tel: '022-27432299',
-        address: '天津市南开区鞍山西道314号'
-      }],
-    otherList:["南开区","西青区"],
-    otherIndex:0
+    key:'',
+    id:'',
+    disId:'',
+    cityIndex:-1,
+    citylist:[],
+    otherList:[],
+    otherIndex:-1,
+    medicine_list: [],
   },
-  sale_medicine(){
+  sale_medicine(e){
     wx.navigateTo({
-      url: '/pages/userport/salemedicine/salemedicine',
+      url: `/pages/userport/salemedicine/salemedicine?medicine=${this.data.id}&hosId=${e.currentTarget.dataset.id}`,
     })
   },
+  //选择二级
   changes(e){
     this.setData({
+      disId: e.currentTarget.dataset.id,
       otherIndex:e.currentTarget.dataset.index,
       choose:false,
-
     })
+    this.getList()
+  },
+  //选择一级
+  citySelect(e){
+    this.setData({
+      cityIndex: e.currentTarget.dataset.index,
+      disId: e.currentTarget.dataset.id,
+      otherList: this.data.citylist[e.currentTarget.dataset.index].second
+    })
+    this.getList()
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      id:options.id
+    })
     wx.getSystemInfo({
       success: res=>{
         console.log(res.windowWidth)
@@ -66,6 +58,39 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
+    this.getdis()
+    this.getList()
+  },
+  //获取区域
+  getdis(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'user/hospital/district_list', res => {
+      console.log(res)
+      this.setData({
+        citylist:res.data.data,
+        otherList: res.data.data[0].second
+      })
+    })  
+  },
+  //获取诊所列表
+  getList(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      key: this.data.key,
+      longitude: app.globalData.user_Location.longitude,
+      latitude: app.globalData.user_Location.latitude,
+      district_id: this.data.disId
+    }, 'user/hospital/hospital_list', res => {
+      this.setData({
+        medicine_list:res.data.data
+      })
+    })  
+  },
+  getValue(e){
+    this.setData({
+      key:e.detail.value
+    })
   },
   showMask(){
     this.setData({
@@ -74,6 +99,12 @@ Page({
     })
   },
   hideMask(){
+    this.setData({
+      disId:'',
+      cityIndex: -1,
+      otherIndex: -1,
+    })
+    this.getList()
     this.setData({
       choose: false,
       choosed:false,

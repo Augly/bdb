@@ -1,4 +1,5 @@
 // pages/doctor/dateinfo/dateinfo.js
+const app=getApp()
 Page({
 
   /**
@@ -15,9 +16,18 @@ Page({
   onLoad: function (options) {
     if(options.type){
       this.setData({
-        type:options.type
+        type:options.type,
+        id:options.id
       })
     }
+    app.config.ajax('POST',{
+      token:app.globalData.user_token,
+      subscribe_id: options.id
+    },'doctor/user/my_subscribe_info',res=>{
+      this.setData({
+        info:res.data.data
+      })
+    })
   },
 
   /**

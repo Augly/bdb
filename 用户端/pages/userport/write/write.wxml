@@ -5,15 +5,16 @@
   <i class='iconfont icon-xiangji' bindtap='changesA'></i>
 </view>
 <view class='avtarWrap'>
-  <image src='{{avtar}}' class='avater'></image>
+  <image src='{{imhUrl}}{{user_portrait}}' class='avater'></image>
 </view>
 
 <view class='title'>
-  {{name}}
+  {{name==''?'请填写姓名':name}}
 </view>
 <view class='mintitle'>{{phone}}</view>
 
-<view class='list' style='margin-top:{{-height}}px'>
+<!-- <view class='list' style='margin-top:{{-height}}px'> -->
+<view class='list'>
   <!-- <view class='item' bindtap='go_write'> -->
   <view class='item'>
     <view class='left'>
@@ -40,7 +41,7 @@
       <view class='itemTitle'>我的手机</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' type='number' placeholder-class='itemmintitle' placeholder='请输入您的手机号' bindinput='getPhone' value='{{phone}}'></input>
+      <view class='itemmintitle'  placeholder='请输入您的手机号' >{{phone}}</view>
     </view>
   </view>
   <view class='item'>

@@ -1,4 +1,5 @@
 // pages/clinic/clinic_info/clinic_info.js
+const app=getApp()
 Page({
 
   /**
@@ -10,6 +11,8 @@ Page({
     success: false,
     name: '',
     wxchat: '',
+    hname:'',
+    adder:''
   },
   close() {
     this.setData({
@@ -25,10 +28,7 @@ Page({
         must: true
       })
     } else {
-      this.setData({
-        mask: true,
-        success: true
-      })
+      this.saveuserInfo()
     }
   },
   // 数据绑定是否为空
@@ -37,7 +37,7 @@ Page({
       name: e.detail.value
     })
   },
-  wxchat(e) {
+  getwxchat(e) {
     this.setData({
       wxchat: e.detail.value
     })
@@ -46,9 +46,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData()
   },
-
+  getData(){
+    app.config.ajax('POST',{
+      token:app.globalData.user_token
+    },'hospital/user/hospital_info',res=>{
+        this.setData({
+          name: res.data.data.hospital_linkman,
+          wxchat: res.data.data.hospital_phone,
+          hname: res.data.data.hospital_name,
+          adder: res.data.data.hospital_address
+        })
+    })
+  },
+  saveuserInfo(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      linkman: this.data.name,
+      phone: this.data.wxchat
+    }, 'hospital/user/user_info_update', res => {
+      this.setData({
+        mask: true,
+        success: true
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

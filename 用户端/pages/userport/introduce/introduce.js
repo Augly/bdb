@@ -1,4 +1,5 @@
 // pages/introduce/introduce.js
+const app=getApp()
 Page({
 
   /**
@@ -9,18 +10,12 @@ Page({
       '/images/4.png',
       '/images/5.png'
     ],
+    imgUrl: app.ImageHost,
     indicatorDots: false,
     autoplay: false,
     interval: 1000,
     duration: 800,
-    hosRes: {
-      adder: '北京市朝阳区高碑店乡惠河南街1001号B座',
-      tel: '010-87706680',
-      name: '北京市领医创造科技发展有限公司'
-    },
-    ks: ["儿科", "儿科"],
-    product: `领医是以社会办医—华润医疗的创始团队为班底，经过与中国人寿、招商蛇口、联想弘毅、国药五色和泰和诚全域等大型机构的长期紧密合作，推动了领医的高速发展，现在已经形成自主运营医院、输出管理与系统两大业务体系，是国内为数不多的可独立发展，不依赖外部融资的医疗管理企业，领医还可为聚焦医疗服务的各公司、企业、集团等提供定制化的管理输出和顾问服务。
-领医不仅拥有四大业务体系，还在发展过程中积累了包括“自主投资设立的领医中心”、“自主开发的连锁医疗信息系统”、“3条特色专科产品线”、“5大运营管理体系”在内的商业模式。`
+    info:null
   },
 
   // 首页
@@ -39,14 +34,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      hosId: options.hosId
+    })
+    this.getInfo()
   },
-
+  //获取诊所详情
+  getInfo(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      hospital_id: this.data.hosId   //诊所id
+    }, 'user/hospital/hospital_info', res => {
+      this.setData({
+        imgUrls: [res.data.data.hospital_patternmaking],
+        info:res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**

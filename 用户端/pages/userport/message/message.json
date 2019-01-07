@@ -1,3 +1,9 @@
 {
-  "navigationBarTitleText": "信息通知"
+  "navigationBarTitleText": "信息通知",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "left-smooth": "/components/left-smooth/left-smooth",
+    "nodata": "/components/nodata/nodata"
+  }
 }

@@ -6,8 +6,6 @@
     </view>
     <icon class='iconfont icon-saoma' bindtap='saoCode'></icon>
   </view>
-
-
   <view class='nav'>
     <view class='nav-wrap'>
       <view class='nav-item {{nav==1?"active":""}}' bindtap='dataed'>已预约</view>
@@ -34,146 +32,158 @@
 
 <view class='itemWrap'>
   <!-- 已预约 -->
-  <block wx:for='{{medicine_list}}' wx:key=''>
-    <view class='{{nav==1?"show":"hide"}}'>
-      <view class='data-item' data-style='0' bindtap='go_groder'>
-        <view class='item-img'>
-          <image src='/images/11.png'></image>
-        </view>
-        <view class='text'>
-          <view class='text-money'>
-            <view class='finish_money'>
-              <view class='text-tit'>患者：</view>
-              <view class='text-detail'>王陆111</view>
-            </view>
-            <view class='money'>￥600</view>
+  <view class='{{nav==1?"show":"hide"}} allwrap'>
+    <block wx:for='{{readylist}}' wx:key=''>
+      <view>
+        <view class='data-item' data-style='0' bindtap='go_groder'>
+          <view class='item-img'>
+            <image src='{{imgUrl}}{{item.user_portrait}}'></image>
           </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>剂量：</view>
-              <view class='num-detail'>5ml</view>
+          <view class='text'>
+            <view class='text-money'>
+              <view class='finish_money'>
+                <view class='text-tit'>患者：</view>
+                <view class='text-detail'>{{item.user_realname}}</view>
+              </view>
+              <view class='money'>￥{{item.subscribe_amount}}</view>
             </view>
-            <view class='item-sub'>
-              <view class='num-tit'>数量：</view>
-              <view class='num-detail'>X3</view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>剂量：</view>
+                <view class='num-detail'>{{item.goods_metering_name}}</view>
+              </view>
+              <view class='item-sub'>
+                <view class='num-tit'>数量：</view>
+                <view class='num-detail'>X{{item.subscribe_goodsnum}}</view>
+              </view>
             </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>预约药品：</view>
-              <view class='num-detail'>免疫球蛋白</view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>预约药品：</view>
+                <view class='num-detail'>{{item.goods_name}}</view>
+              </view>
             </view>
-          </view>
-          <view class='text-item'>
-            <view class='item-sub'>
-              <view class='num-tit'>修改预约时间：</view>
-              <view class='num-detail'>2018-04-06 10:00</view>
+            <view class='text-item'>
+              <view class='item-sub'>
+                <view class='num-tit'>预约时间：</view>
+                <view class='num-detail'>{{item.subscribe_reservetime}}</view>
+              </view>
             </view>
-          </view>
-          <view class='text-item tel-num' catchtap='telnum'>
-            <i class='iconfont icon-dianhua1'></i>
-            <text>15698542346</text>
+            <view class='text-item tel-num' catchtap='telnum' data-tel='{{item.user_phone}}'>
+              <i class='iconfont icon-dianhua1'></i>
+              <text>{{item.user_phone}}</text>
+            </view>
           </view>
         </view>
       </view>
-    </view>
-  </block>
+    </block>
+    <nodata title='暂无已预约列表' wx:if="{{readylist.length==0}}"></nodata>
+  </view>
+
   <!-- 已完成 -->
-  <block wx:for='{{medicine_list}}' wx:key=''>
-    <view class='wrap_width'>
-      <view class='{{nav==2?"show":"hide"}} width_one '>
-        <left-smooth bind:del='del_cancle'>
-          <view class='data-item' data-style='1' bindtap='go_groder'>
-            <view class='time'>已完成</view>
-            <!-- <view class='item-finish'>已完成</view  > -->
-            <view class='item-img'>
-              <image src='/images/11.png'></image>
+  <view class='{{nav==2?"show":"hide"}} allwrap'>
+    <block wx:for='{{finishlist}}' wx:key=''>
+      <view class='wrap_width'>
+        <view class='width_one'>
+          <left-smooth bind:del='del_cancle'>
+            <view class='data-item' data-style='1' bindtap='go_groder'>
+              <view class='time'>已完成</view>
+              <!-- <view class='item-finish'>已完成</view  > -->
+              <view class='item-img'>
+                <image src='{{imgUrl}}{{item.user_portrait}}'></image>
+              </view>
+              <view class='text'>
+                <view class='text-item'>
+                  <view class='text-tit'>患者：</view>
+                  <view class='text-detail'>{{item.user_realname}}</view>
+                </view>
+                <view class='text-item'>
+                  <view class='item-sub'>
+                    <view class='num-tit'>剂量：</view>
+                    <view class='num-detail'>{{item.goods_metering_name}}</view>
+                  </view>
+                  <view class='item-sub'>
+                    <view class='num-tit'>数量：</view>
+                    <view class='num-detail'>{{item.subscribe_goodsnum}}</view>
+                  </view>
+                </view>
+                <view class='text-item'>
+                  <view class='item-sub'>
+                    <view class='num-tit'>预约药品：</view>
+                    <view class='num-detail'>{{item.goods_name}}</view>
+                  </view>
+                </view>
+                <view class='text-item'>
+                  <view class='item-sub'>
+                    <view class='num-tit'>预约时间：</view>
+                    <view class='num-detail'>{{item.subscribe_reservetime}}</view>
+                  </view>
+                </view>
+                <view class='text-item tel-num' catchtap='telnum'>
+                  <i class='iconfont icon-dianhua1'></i>
+                  <text>{{item.user_phone}}</text>
+                </view>
+              </view>
             </view>
-            <view class='text'>
-              <view class='text-item'>
-                <view class='text-tit'>患者：</view>
-                <view class='text-detail'>王陆111</view>
-              </view>
-              <view class='text-item'>
-                <view class='item-sub'>
-                  <view class='num-tit'>剂量：</view>
-                  <view class='num-detail'>5ml</view>
-                </view>
-                <view class='item-sub'>
-                  <view class='num-tit'>数量：</view>
-                  <view class='num-detail'>X3</view>
-                </view>
-              </view>
-              <view class='text-item'>
-                <view class='item-sub'>
-                  <view class='num-tit'>预约药品：</view>
-                  <view class='num-detail'>免疫球蛋白</view>
-                </view>
-              </view>
-              <view class='text-item'>
-                <view class='item-sub'>
-                  <view class='num-tit'>修改预约时间：</view>
-                  <view class='num-detail'>2018-04-06 10:00</view>
-                </view>
-              </view>
-              <view class='text-item tel-num' catchtap='telnum'>
-                <i class='iconfont icon-dianhua1'></i>
-                <text>15698542346</text>
-              </view>
-            </view>
-          </view>
-        </left-smooth>
+          </left-smooth>
+        </view>
       </view>
-    </view>
-  </block>
+    </block>
+    <nodata title='暂无已完成列表' wx:if="{{finishlist.length==0}}"></nodata>
+  </view>
+
   <!-- 已取消 -->
-  <block wx:for='{{medicine_list}}' wx:key=''>
-    <view class='wrap_width'>
-      <view class='{{nav==3?"show":"hide"}} width_one'>
-        <left-smooth bind:del='del'>
-          <view class='data-item' data-style='2' bindtap='go_groder'>
-            <view class='time'>已取消</view>
-            <!-- <view class='item-finish'>已完成</view> -->
-            <view class='item-img'>
-              <image src='/images/11.png'></image>
+  <view class='{{nav==3?"show":"hide"}} allwrap'>
+    <block wx:for='{{cendellist}}' wx:key=''>
+      <view class='wrap_width'>
+        <view class='width_one'>
+          <left-smooth bind:del='del'>
+            <view class='data-item' data-style='2' bindtap='go_groder'>
+              <view class='time'>已取消</view>
+              <!-- <view class='item-finish'>已完成</view> -->
+              <view class='item-img'>
+                <image src='{{imgUrl}}{{item.user_portrait}}'></image>
+              </view>
+              <view class='text'>
+                <view class='text-item'>
+                  <view class='text-tit'>患者：</view>
+                  <view class='text-detail'>{{item.user_realname}}</view>
+                </view>
+                <view class='text-item'>
+                  <view class='item-sub'>
+                    <view class='num-tit'>剂量：</view>
+                    <view class='num-detail'>{{item.goods_metering_name}}</view>
+                  </view>
+                  <view class='item-sub'>
+                    <view class='num-tit'>数量：</view>
+                    <view class='num-detail'>X{{item.subscribe_goodsnum}}</view>
+                  </view>
+                </view>
+                <view class='text-item'>
+                  <view class='item-sub'>
+                    <view class='num-tit'>预约药品：</view>
+                    <view class='num-detail'>{{item.goods_name}}</view>
+                  </view>
+                </view>
+                <view class='text-item'>
+                  <view class='item-sub'>
+                    <view class='num-tit'>预约时间：</view>
+                    <view class='num-detail'>{{item.subscribe_reservetime}}</view>
+                  </view>
+                </view>
+                <view class='text-item tel-num' catchtap='telnum'>
+                  <i class='iconfont icon-dianhua1'></i>
+                  <text>{{item.user_phone}}</text>
+                </view>
+              </view>
             </view>
-            <view class='text'>
-              <view class='text-item'>
-                <view class='text-tit'>患者：</view>
-                <view class='text-detail'>王陆111</view>
-              </view>
-              <view class='text-item'>
-                <view class='item-sub'>
-                  <view class='num-tit'>剂量：</view>
-                  <view class='num-detail'>5ml</view>
-                </view>
-                <view class='item-sub'>
-                  <view class='num-tit'>数量：</view>
-                  <view class='num-detail'>X3</view>
-                </view>
-              </view>
-              <view class='text-item'>
-                <view class='item-sub'>
-                  <view class='num-tit'>预约药品：</view>
-                  <view class='num-detail'>免疫球蛋白</view>
-                </view>
-              </view>
-              <view class='text-item'>
-                <view class='item-sub'>
-                  <view class='num-tit'>修改预约时间：</view>
-                  <view class='num-detail'>2018-04-06 10:00</view>
-                </view>
-              </view>
-              <view class='text-item tel-num' catchtap='telnum'>
-                <i class='iconfont icon-dianhua1'></i>
-                <text>15698542346</text>
-              </view>
-            </view>
-          </view>
-        </left-smooth>
+          </left-smooth>
+        </view>
       </view>
-    </view>
-  </block>
+    </block>
+    <nodata title='暂无已取消列表' wx:if="{{cendellist.length==0}}"></nodata>
+  </view>
+
 </view>
 <toast wrap="{{mask}}" title="{{nav==2?'是否删除已完成的预约':'是否删除已取消的预约'}}" minTitle="{{nav==2?'您确定要删除已完成的预约么？删除之后将无法恢复':'您确定要删除已取消的预约么？删除之后将无法恢复'}}" bind:sure='sure' sureTitle='确定'></toast>
 <finishToast wrap="{{cendelmask}}" title="确认删除预约" minTitle="是否删除预约信息点击确认后将无法修改！" bind:sure='surecendel'></finishToast>

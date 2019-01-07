@@ -1,15 +1,15 @@
 <view class='head'>
-  <image src='{{avtar}}'></image>
+  <image src='{{imgUrl}}{{info.doctor_portrait}}'></image>
 </view>
-<view class='name'>王陆</view>
-<view class='id'>ID:5521547621547</view>
+<view class='name'>{{info.doctor_realname}}</view>
+<view class='id'>ID:{{info.doctor_id}}</view>
 
 <view class='info-list'>
-<view class='info-item'>医生姓名：<text>王陆</text></view>
-<view class='info-item'>医生性别：<text>男</text></view>
-<view class='info-item'>医生年龄：<text>12</text></view>
-<view class='info-item'>微信：<text>16859541245</text></view>
-<view class='info-item'>手机号：<text>16859541245</text></view>
-<view class='info-item'>注册时间：<text>2018-09-06 10:00</text></view>
-<view class='info-item'>邮箱：<text>wzf18546218@163.com</text></view>
+<view class='info-item'>医生姓名：<text>{{info.doctor_realname}}</text></view>
+<view class='info-item'>医生性别：<text>{{info.doctor_sex==1?'男':'女'}}</text></view>
+<view class='info-item'>医生年龄：<text>{{info.doctor_age}}</text></view>
+<view class='info-item'>微信：<text>{{info.doctor_wechat}}</text></view>
+<view class='info-item'>手机号：<text>{{info.doctor_phone}}</text></view>
+<view class='info-item'>注册时间：<text>{{info.doctor_createtime}}</text></view>
+<view class='info-item'>邮箱：<text>{{info.doctor_email}}</text></view>
 </view>

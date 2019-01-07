@@ -1,4 +1,5 @@
 // pages/userport/search/search.js
+const app=getApp()
 Page({
 
   /**
@@ -11,6 +12,10 @@ Page({
     mask: false,
     cendelmask:false,
     delSuccess: false,
+    imgUrl: app.ImageHost,
+    cendellist:[],
+    finishlist:[],
+    readylist:[]
   },
   // 拨打电话
   telnum(){
@@ -76,22 +81,25 @@ Page({
     this.setData({
       nav:1
     })
+    this.getreadylist()
   },
   finish() {
     this.setData({
       nav: 2
     })
+    this.getfinishlist()
   },
   cancle(){
     this.setData({
       nav: 3
     })
+    this.getcendellist()
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getreadylist()
   },
 
   /**
@@ -121,7 +129,33 @@ Page({
   onUnload: function () {
 
   },
-
+  getreadylist(){
+    app.config.ajax('POST',{
+      token:app.globalData.user_token
+    },'hospital/index/my_subscribe',res=>{
+      this.setData({
+        readylist:res.data.data
+      })
+    })
+  },
+  getfinishlist(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'hospital/index/my_subscribe_complete', res => {
+      this.setData({
+        finishlist: res.data.data
+      })
+    })
+  },
+  getcendellist(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'hospital/index/my_subscribe_cancel', res => {
+      this.setData({
+        cendellist: res.data.data
+      })
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

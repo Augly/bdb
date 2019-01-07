@@ -1,10 +1,12 @@
 // pages/doctor/dateinfo/dateinfo.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imgUrl: app.ImageHost,
     avtar: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
   },
 
@@ -12,9 +14,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      doctor_id: options.id
+    }, 'sell/user/my_doctor_info', res => {
+      this.setData({
+        info: res.data.data[0]
+      })
+    })
   },
-
+  getData() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      doctor_id:options.id
+    }, 'sell/user/my_doctor_info', res => {
+      this.setData({
+        info: res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,22 +1,22 @@
 <view class='container'>
-<view class="banner-search">
-  <input class="banner-input"  placeholder-class='banner-input'  placeholder="请输入您要搜索的药品" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
-</view>
-
+  <view class="banner-search">
+    <input class="banner-input" placeholder-class='banner-input' placeholder="请输入您要搜索的药品" placeholder-class="banner-input-placeholder" type='text' bindinput='getValue' confirm-type='search' bindconfirm="gitlist"></input>
+  </view>
   <view class='medicine_list'>
-    <block wx:for='{{medicine_list}}' wx:key='' wx:for-item="item" wx:for-index="index">
-    <view class='medicine_item' bindtap='choose_search'>
-      <view class='medicine_img'>
-        <image src='/images/4.png'></image>
+    <block wx:for='{{list}}' wx:key='' wx:for-item="item" wx:for-index="index">
+      <view class='medicine_item' bindtap='choose_search' data-id='{{item.goods_id}}'>
+        <view class='medicine_img'>
+          <image src='{{imgUrl}}{{item.goods_surface}}'></image>
+        </view>
+        <view class='medicnie-text'>
+          <view class='medicine-tit'>{{item.goods_name}}</view>
+          <view class='medicine-tips'>简介：{{item.goods_brief}}</view>
+        </view>
+        <view class='qianw'>
+          <!-- <image src='/images/icon_qianw.png'></image> -->
+        </view>
       </view>
-      <view class='medicnie-text'>
-        <view class='medicine-tit'>{{item.title}}</view>
-        <view class='medicine-tips'>简介：免疫疗法已成为治疗癌症和其他免疫系统疾病的有前景的方法。</view>
-      </view>
-      <view class='qianw'>
-        <!-- <image src='/images/icon_qianw.png'></image> -->
-      </view>
-    </view>
     </block>
   </view>
 </view>
+<nodata title='当前暂无药品信息'  wx:if="{{list.length==0}}"></nodata>

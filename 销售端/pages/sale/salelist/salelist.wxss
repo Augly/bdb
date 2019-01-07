@@ -1,8 +1,15 @@
 .sale-nav {
+  position: fixed;
+  top: 0;
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
   display: flex;
   align-items: center;
   height: 87rpx;
   border-bottom: 3rpx solid rgba(99, 223, 197, 1);
+}
+.list{
+  margin-top: 87rpx;
 }
 
 .nav-item {
@@ -10,11 +17,19 @@
   height: 32rpx;
   text-align: center;
   font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: PingFang-SC-Bold;
   font-weight: bold;
   color: rgba(102, 102, 102, 1);
 }
-
+.item_mintitle{
+  width: 130rpx;
+ white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+}
 .and {
   font-size: 28rpx;
   font-family: PingFang-SC-Bold;
@@ -57,7 +72,7 @@
 
 .list-item {
   display: flex;
-  padding: 33rpx 28rpx;
+  padding: 15rpx 28rpx;
   height: 55rpx;
 }
 
@@ -66,7 +81,7 @@
   font-family: PingFang-SC-Bold;
   font-weight: bold;
   color: rgba(31, 123, 255, 1);
-  line-height: 26rpx;
+  line-height: 35rpx;
   width: 246rpx;
 }
 

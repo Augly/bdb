@@ -6,6 +6,7 @@
   "usingComponents": {
     "left-smooth": "/components/left-smooth/left-smooth",
     "toast": "/components/toast/toast",
+    "nodata": "/components/nodata/nodata",
     "success": "/components/success/success"
   }
 }

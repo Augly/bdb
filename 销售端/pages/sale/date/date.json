@@ -1,6 +1,8 @@
 {
   "navigationBarTitleText": "下属医生",
   "usingComponents": {
+    "nodata": "/components/nodata/nodata",
     "left-smooth": "/components/left-smooth/left-smooth"
   }
+      
 }

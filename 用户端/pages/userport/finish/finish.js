@@ -1,4 +1,5 @@
 // pages/userport/cancle/cancle.js
+const app=getApp()
 Page({
 
   /**
@@ -6,11 +7,32 @@ Page({
    */
   data: {
     del_success: false,
+    imgUrl: app.ImageHost
   },
-
+  //我的预约详情
+  getData() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      subscribe_id:this.data.id   //预约id
+    }, 'user/user/subscribe_info', res => {
+      res.data.data.subscribe_canceltime = app.config.timeForm(res.data.data.subscribe_canceltime).btTime
+      res.data.data.subscribe_createtime = app.config.timeForm(res.data.data.subscribe_createtime).btTime
+      res.data.data.subscribe_reservetime = app.config.timeForm(res.data.data.subscribe_reservetime).btTime
+      res.data.data.subscribe_paytime = app.config.timeForm(res.data.data.subscribe_paytime).btTime
+      this.setData({
+        info: res.data.data
+      })
+    })
+  },
   cancle() {
-    this.setData({
-      del_success: true
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      subscribe_id: this.data.id   //预约id
+    }, 'user/reserve/cancel', res => {
+      this.setData({
+        del_success: true,
+        type:'waitIng'
+      })
     })
   },
   close_success() {
@@ -26,7 +48,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      type:options.type
+      type:options.type,
+      id:options.id
     })
   },
 
@@ -34,7 +57,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getData()
   },
 
   /**

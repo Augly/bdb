@@ -66,28 +66,28 @@
 
 <view class='info-item'>
   <view class='info-tit'>患者姓名：</view>
-  <view>王陆</view>
+  <view>{{info.user_realname}}</view>
   <!-- <input class='info-text'></input> -->
 </view>
 <view class='info-item'>
   <view class='info-tit'>患者性别：</view>
-  <view class='info-text'>男性</view>
+  <view class='info-text'>{{info.user_sex==1?'男性':'女性'}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>患者年龄：</view>
-  <view class='info-text'>12岁</view>
+  <view class='info-text'>{{info.user_age}}岁</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>患者电话：</view>
-  <view class='info-text'>18698541248</view>
+  <view class='info-text'>{{info.user_phone}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>所属医生：</view>
-  <view class='info-text'>王晶</view>
+  <view class='info-text'>{{info.doctor_realname}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>下单时间：</view>
-  <view class='info-text'>2018-09-05 10:00</view>
+  <view class='info-text'>{{info.subscribe_createtime}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>预约时间：</view>

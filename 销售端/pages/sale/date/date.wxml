@@ -1,19 +1,20 @@
 <view class='person-list'>
   <!-- <left-smooth bind:del='del'> -->
-    <view class='person-item' bindtap='details'>
+    <view class='person-item' bindtap='details' wx:for="{{doctorlist}}" wx:for-item="item" wx:for-index="index" data-id="{{item.doctor_id}}">
       <view class='person-img'>
-        <image src='{{avtar}}'></image>
+        <image src='{{item.doctor_portrait}}'></image>
       </view>
       <view class='text'>
         <view class='name'>
-          <text>医生：王陆</text>
+          <text>医生：{{item.doctor_realname}}</text>
           <view class='detail'>
-            注册时间：2018.11.26
+            注册时间：{{item.doctor_createtime}}
           </view>
         </view>
-        <view class='age'>电话：16859541245</view>
+        <view class='age'>电话：{{item.doctor_phone}}</view>
       </view>
 
     </view>
   <!-- </left-smooth> -->
 </view>
+  <nodata title='当前暂无任何医生消息'  wx:if="{{doctorlist.length==0}}"></nodata>

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mask: false,
+    mask: true,
     imgUrl: app.ImageHost,
     array: ['2018-10-11 10:00', '2018-10-11 10:00','2018-10-11 10:00'],
     index:0,
@@ -163,8 +163,21 @@ Page({
         time_text: '取消时间'
       })
     }
+    this.setData({
+      id:options.id
+    })
+    
   },
-
+  getData(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      subscribe_id: this.data.id
+    }, 'hospital/index/subscribe_info', res => {
+      this.setData({
+        info:res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

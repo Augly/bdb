@@ -1,4 +1,5 @@
 // pages/userport/salemedicine/salemedicine.js
+const app=getApp()
 Page({
 
   /**
@@ -10,13 +11,15 @@ Page({
     data_popup:false,
     show_choose:false,
     success:false,
-    time: ['09:00', '09:00', '09:00', '09:00', '09:00', '09:00'],
-    ml: ['50ml', '50ml', '50ml'],
+    time: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
+    ml: [],
     num: 1,
     minusStatus: 'disable',
     ml_num:0,
     dataIndex:0,
-    timeIndex:0
+    timeIndex:0,
+    price:0,
+    params:null,
   },
   //选择星期
   selectData(e){
@@ -32,11 +35,27 @@ Page({
   },
   // 确认预约
   submit(){
-    this.setData({
-      mask:true,
-      success: true,
-      infoPopup: false
+    var time = this.data.dataList[this.data.dataIndex].more +'-'+ this.data.time[this.data.timeIndex]
+    time = time.replace(/-/g, ':').replace(' ', ':');
+    time = time.split(':');
+    var time1 = new Date(parseInt(time[0]), (parseInt(time[1]) - 1), parseInt(time[2]), parseInt(time[3]), parseInt(time[4]), 0);
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      hospital_id: this.data.hosId,
+      goods_id: this.data.goods_id,
+      doctor_id:1,
+      goods_metering_id: this.data.ml[this.data.ml_num].goods_metering_id,
+      reservetime: time1.getTime(),
+      goodsnum:this.data.num
+    }, 'user/reserve/reserve', res => {
+      console.log(res)
+      this.setData({
+        mask: true,
+        success: true,
+        infoPopup: false
+      })
     })
+    
   },
   GetDateStr(AddDayCount) {
     var dd = new Date();
@@ -67,8 +86,9 @@ Page({
   // 选择计量
   choose_ml(e){
     this.setData({
-      ml_num:e.currentTarget.dataset.ml
+      ml_num:e.currentTarget.dataset.index
     })
+    this.getPrice()
   },
   /*点击减号*/
   bindMinus: function () {
@@ -81,6 +101,7 @@ Page({
       num: num,
       minusStatus: minusStatus
     })
+    this.getPrice()
   },
   /*点击加号*/
   bindPlus: function () {
@@ -91,6 +112,7 @@ Page({
       num: num,
       minusStatus: minusStatus
     })
+    this.getPrice()
   },
   /*输入框事件*/
   bindManual: function (e) {
@@ -100,8 +122,32 @@ Page({
       num: num,
       minusStatus: minusStatus
     })
+    this.getPrice()
+  },
+  // 药品计量
+  getmetering(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      goods_id: this.data.goods_id
+    }, 'user/goods/goods_metering', res => {
+      this.setData({
+        ml: res.data.data
+      })
+      this.getPrice()
+    })
+    
   },
   // 药品参数
+  getParams() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      goods_id: this.data.goods_id
+    }, 'user/goods/goods_parameter', res => {
+      this.setData({
+        params: res.data.data
+      })
+    })
+  },
   info_popup(){
     this.setData({
       mask:true,
@@ -146,16 +192,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      goods_id: options.medicine,
+      hosId: options.hosId
+    })
     this.gitData()
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.getmetering()
+    this.getParams()
   },
-
+  getPrice(){
+    let s = Number(this.data.ml[this.data.ml_num].goods_metering_price)
+    this.setData({
+      price: s * this.data.num
+    })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -14,122 +14,127 @@
   </view>
 </view>
 <view class="data-list {{statusType=='ready'?'show':'hide'}}">
-  <view class='medicine_item' bindtap='tofinish' data-type='ready'>
+  <view class='medicine_item' bindtap='tofinish' data-type='ready' wx:for="{{readylist}}" wx:for-item="item" wx:for-inde="index" data-id='{{item.subscribe_id}}'>
     <view class='medicine_img'>
-      <image src='/images/4.png'></image>
+      <image src='{{item.goods_surface}}'></image>
     </view>
     <view class='medicnie-text'>
-      <view class='medicine-tit'>免疫球蛋白</view>
+      <view class='medicine-tit'>{{item.goods_name}}</view>
       <view class='style-item'>
         <view class='style-item style-num'>
           <view class='medicine-tips'>剂量：</view>
-          <view class='style-detail'>5ml</view>
+          <view class='style-detail'>{{item.goods_metering_name}}</view>
         </view>
         <view class='style-item'>
           <view class='medicine-tips'>数量：</view>
-          <view class='style-detail'>X3</view>
+          <view class='style-detail'>X{{item.subscribe_goodsnum}}</view>
         </view>
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>诊所：</view>
-        <view class='style-detail add_detail'>天津市儿童医院</view>
+        <view class='style-detail add_detail'>{{item.hospital_name}}</view>
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>预约时间：</view>
-        <view class='style-detail add_detail'>2018-04-06 10:00</view>
+        <view class='style-detail add_detail'>{{item.subscribe_reservetime}}</view>
       </view>
       <view class='style-item'>
         <view class='medicine-tips'>药品总价：</view>
-        <view class='style-detail add_detail'>600元</view>
+        <view class='style-detail add_detail'>{{item.subscribe_amount}}元</view>
       </view>
     </view>
     <view class='qianw'>
       <view class='date'>
-        2018-04-06 10:00
+        {{item.subscribe_createtime}}
       </view>
       <icon class='iconfont icon-saoma' catchtap='go_code'></icon>
     </view>
   </view>
+  <nodata title='当前暂无已预约订单'  wx:if="{{readylist.length==0}}"></nodata>
 </view>
+
 <view class="data-list {{statusType=='finish'?'show':'hide'}}">
-  <left-smooth bind:del='del'>
-    <view class='medicine_item' bindtap='tofinish' data-type='finish'>
-      <view class='medicine_img'>
-        <image src='/images/4.png'></image>
-      </view>
-      <view class='medicnie-text'>
-        <view class='medicine-tit'>免疫球蛋白</view>
-        <view class='style-item'>
-          <view class='style-item style-num'>
-            <view class='medicine-tips'>剂量：</view>
-            <view class='style-detail'>5ml</view>
-          </view>
-          <view class='style-item'>
-            <view class='medicine-tips'>数量：</view>
-            <view class='style-detail'>X3</view>
-          </view>
+  <left-smooth bind:del='finishdel' wx:for="{{finishlist}}" wx:for-item="item" wx:for-inde="index"  myid="{{item.subscribe_id}}">
+    <view class='medicine_item' bindtap='tofinish' data-type='finish' data-id='{{item.subscribe_id}}'>
+    <view class='medicine_img'>
+      <image src='{{item.goods_surface}}'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='medicine-tit'>{{item.goods_name}}</view>
+      <view class='style-item'>
+        <view class='style-item style-num'>
+          <view class='medicine-tips'>剂量：</view>
+          <view class='style-detail'>{{item.goods_metering_name}}</view>
         </view>
         <view class='style-item'>
-          <view class='medicine-tips'>诊所：</view>
-          <view class='style-detail add_detail'>天津市儿童医院</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>预约时间：</view>
-          <view class='style-detail add_detail'>2018-04-06 10:00</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>药品总价：</view>
-          <view class='style-detail add_detail'>600元</view>
+          <view class='medicine-tips'>数量：</view>
+          <view class='style-detail'>X{{item.subscribe_goodsnum}}</view>
         </view>
       </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>诊所：</view>
+        <view class='style-detail add_detail'>{{item.hospital_name}}</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约时间：</view>
+        <view class='style-detail add_detail'>{{item.subscribe_reservetime}}</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品总价：</view>
+        <view class='style-detail add_detail'>{{item.subscribe_amount}}元</view>
+      </view>
+    </view>
       <view class='sq'>
         <view class='date'>
-          2018-04-06 10:00
+          {{item.subscribe_createtime}}
         </view>
         <view class='textR'>已完成</view>
       </view>
     </view>
   </left-smooth>
+  <nodata title='当前暂无已完成订单'  wx:if="{{finishlist.length==0}}"></nodata>
 </view>
+
 <view class="data-list {{statusType=='waitIng'?'show':'hide'}}">
-  <left-smooth bind:del='del'>
-    <view class='medicine_item' bindtap='tofinish' data-type='waitIng'>
-      <view class='medicine_img'>
-        <image src='/images/4.png'></image>
-      </view>
-      <view class='medicnie-text'>
-        <view class='medicine-tit'>免疫球蛋白</view>
-        <view class='style-item'>
-          <view class='style-item style-num'>
-            <view class='medicine-tips'>剂量：</view>
-            <view class='style-detail'>5ml</view>
-          </view>
-          <view class='style-item'>
-            <view class='medicine-tips'>数量：</view>
-            <view class='style-detail'>X3</view>
-          </view>
+  <!-- <left-smooth bind:del='waitIngdel' wx:for="{{warnList}}" wx:for-item="item" wx:for-inde="index" myid="{{item.subscribe_id}}"> -->
+    <view class='medicine_item' bindtap='tofinish' data-type='waitIng' wx:for="{{warnList}}" wx:for-item="item" wx:for-inde="index" data-id='{{item.subscribe_id}}'>
+    <view class='medicine_img'>
+      <image src='{{item.goods_surface}}'></image>
+    </view>
+    <view class='medicnie-text'>
+      <view class='medicine-tit'>{{item.goods_name}}</view>
+      <view class='style-item'>
+        <view class='style-item style-num'>
+          <view class='medicine-tips'>剂量：</view>
+          <view class='style-detail'>{{item.goods_metering_name}}</view>
         </view>
         <view class='style-item'>
-          <view class='medicine-tips'>诊所：</view>
-          <view class='style-detail add_detail'>天津市儿童医院</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>预约时间：</view>
-          <view class='style-detail add_detail'>2018-04-06 10:00</view>
-        </view>
-        <view class='style-item'>
-          <view class='medicine-tips'>药品总价：</view>
-          <view class='style-detail add_detail'>600元</view>
+          <view class='medicine-tips'>数量：</view>
+          <view class='style-detail'>X{{item.subscribe_goodsnum}}</view>
         </view>
       </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>诊所：</view>
+        <view class='style-detail add_detail'>{{item.hospital_name}}</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>预约时间：</view>
+        <view class='style-detail add_detail'>{{item.subscribe_reservetime}}</view>
+      </view>
+      <view class='style-item'>
+        <view class='medicine-tips'>药品总价：</view>
+        <view class='style-detail add_detail'>{{item.subscribe_amount}}元</view>
+      </view>
+    </view>
       <view class='sq'>
         <view class='date'>
-          2018-04-06 10:00
+          {{item.subscribe_createtime}}
         </view>
         <view class='textR'>已取消</view>
       </view>
     </view>
-  </left-smooth>
+  <!-- </left-smooth> -->
+  <nodata title='当前暂无已取消订单'  wx:if="{{warnList.length==0}}"></nodata>
 </view>
 <toast wrap="{{mask}}" title="删除已完成预约" minTitle="您确认要删除已完成预约么？删除之后将无法恢复。" bind:sure='sure' sureTitle='确定'></toast>
 <success wrap="{{delSuccess}}" notice="删除失败"></success>

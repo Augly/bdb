@@ -1,22 +1,22 @@
 <view class='head'>
-  <image src='{{avtar}}'></image>
+  <image src='{{info.user_portrait}}'></image>
 </view>
-<view class='name'>王陆</view>
+<view class='name'>{{info.user_realname}}</view>
 <!-- <view class='id'>ID:5521547621547</view> -->
 
 <view class='info-list'>
-<view class='info-item'>患者姓名：王陆</view>
-<view class='info-item'>患者性别：男</view>
-<view class='info-item'>患者年龄：12</view>
-<view class='info-item'>看诊状态：已预约</view>
-<view class='info-item'>所属医生：王晶</view>
-<view class='info-item'>患者电话：1368545128</view>
-<view class='info-item'>预约时间：2018-09-06 10:00</view>
-<view class='info-item'>下单时间：2018-09-06 10:00</view>
-<view class='info-item' wx:if="{{type=='finish'}}">完成时间：2018-09-06 10:00</view>
-<view class='info-item' wx:if="{{type=='cendel'}}">取消时间：2018-09-06 10:00</view>
-<view class='info-item'>看诊诊所：天津市儿童医院</view>
-<view class='info-item'>预约药品：免疫球蛋白</view>
-<view class='info-item'>药品计量：50ml</view>
-<view class='info-item'>药品数量：1</view>
+<view class='info-item'>患者姓名：{{info.user_realname}}</view>
+<view class='info-item'>患者性别：{{info.user_sex==1?'男':'女'}}</view>
+<view class='info-item'>患者年龄：{{info.user_age}}</view>
+<view class='info-item'>看诊状态：{{type==''?'已预约':type=='finish'?'已完成':'已取消'}}</view>
+<view class='info-item'>所属医生：{{info.doctor_realname}}</view>
+<view class='info-item'>患者电话：{{info.user_phone}}</view>
+<view class='info-item'>预约时间：{{info.subscribe_reservetime}}</view>
+<view class='info-item'>下单时间：{{info.subscribe_createtime}}</view>
+<view class='info-item' wx:if="{{type=='finish'}}">完成时间：{{info.subscribe_paytime}}</view>
+<view class='info-item' wx:if="{{type=='cendel'}}">取消时间：{{info.subscribe_canceltime}}</view>
+<view class='info-item'>看诊诊所：{{info.hospital_name}}</view>
+<view class='info-item'>预约药品：{{info.goods_name}}</view>
+<view class='info-item'>药品计量：{{info.goods_metering_name}}</view>
+<view class='info-item'>药品数量：{{info.subscribe_goodsnum}}</view>
 </view>

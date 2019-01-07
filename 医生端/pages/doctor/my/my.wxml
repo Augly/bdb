@@ -2,13 +2,13 @@
   <i class='iconfont icon-xiangjipaizhao' bindtap='changesA'></i>
 </view>
 <view class='avtarWrap'>
-  <image src='{{avtar}}' class='avater'></image>
+  <image src='{{imgUrl}}{{userInfo.doctor_portrait}}' class='avater'></image>
 </view>
 
 <view class='title'>
-  请输入您的姓名
+  {{userInfo.doctor_realname}}
 </view>
-<view class='mintitle'>saqd15a151as5</view>
+<view class='mintitle'>{{userInfo.doctor_wechat}}</view>
 
 <view class='list'>
   <view class='item' bindtap='info'>
@@ -31,7 +31,7 @@
   </view>
   <view class='item' bindtap='go_message'>
     <view class='left'>
-        <view class='dit'></view>
+        <view class='dit' wx:if="{{unread==0}}"></view>
       <span class='iconfont icon-lingdang'></span>
       <view class='itemTitle'>信息通知</view>
     </view>

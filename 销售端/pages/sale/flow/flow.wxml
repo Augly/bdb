@@ -1,5 +1,5 @@
 <view class='sale-nav'>
-  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+  <picker mode="date" value="{{date}}"   bindchange="bindDateChange">
     <view class='nav-item'>
       {{date}}
       <i class='iconfont icon-xiala'></i>
@@ -7,15 +7,16 @@
   </picker>
 
   <view class='and'>至</view>
-  <picker mode="date" value="{{datetwo}}" start="{{date}}" end="2017-09-01" bindchange="bindTwoDateChange">
+  <picker mode="date" value="{{datetwo}}" start="{{date}}"  bindchange="bindTwoDateChange">
     <view class='nav-item'>
       {{datetwo}}
       <i class='iconfont icon-xiala'></i>
     </view>
   </picker>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='goods_name'>
     <view class='nav-item'>
-      {{array[index]}}
+      <view class='item_mintitle'>{{array[index].goods_name}}</view>
+      
       <i class='iconfont icon-xiala'></i>
     </view>
   </picker>
@@ -25,7 +26,7 @@
 <view class='list'>
   <view class='list-tit'>
     <view class='tit-item text-left'>
-      药品名称
+      医生姓名
     </view>
     <view class='tit-item text-center'>
       患者姓名
@@ -43,29 +44,29 @@
   <block wx:for='{{list}}' wx:key=''>
     <view class='list-item'>
       <view class='details text-left'>
-        {{item.medicine}}
+        {{item.doctor_realname}}
       </view>
       <view class='details text-center'>
-        {{item.medicine}}
+        {{item.doctor_realname}}
       </view>
       <view class=' name text-center'>
-        {{item.name}}
+        {{item.goods_name}}
       </view>
       <view class='details  text-center'>
-        {{item.num}}
+        {{item.goods_metering_name}}
       </view>
       <view class='details  text-right'>
-        {{item.num}}
+        {{item.subscribe_goodsnum}}
       </view>
     </view>
   </block>
-  <view class='{{null_list?"show":"hide"}}'>
+  <!-- <view class='{{null_list?"show":"hide"}}'>
     <view class='null '>
       <view class='null-img'>
       <image src='/images/null.png'></image>
       </view>
       当前还没有任何信息哦~
     </view>
-  </view>
-
+  </view> -->
+  <nodata title='当前暂无任何信息'  wx:if="{{list.length==0}}"></nodata>
 </view>

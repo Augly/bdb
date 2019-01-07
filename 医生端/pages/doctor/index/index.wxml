@@ -3,17 +3,22 @@
 
 
   <view class='seachGroup'>
-    <view class="banner-inform" bindtap='toMessges'></view>
+    <view class="banner-inform" bindtap='toMessges'>
+        <view class='banner-inform bannerActive'>
+          <span class='iconfont icon-lingdang'></span>
+        </view>
+        <view class='aother' wx:if="{{unread!=0}}"></view>
+      </view>
   </view>
 
   <view class='index-tit'>扫码看诊一步到位</view>
 
   <view class='content'>
     <view class='person-head'>
-      <image src='{{avtar}}'></image>
+      <image src='{{imgurl}}{{userInfo.doctor_portrait}}'></image>
     </view>
-    <view class='person-name'>医生姓名：王晶</view>
-    <view class='person-id'>ID:saqd15a151as5</view>
+    <view class='person-name'>医生姓名：{{userInfo.doctor_realname==''?'暂未填写姓名':userInfo.doctor_realname}}</view>
+    <view class='person-id'>ID:{{userInfo.doctor_wechat==''?'暂未填写微信号':userInfo.doctor_wechat}}</view>
     <view class='person-code'>
       <image src='/images/code.png'></image>
     </view>

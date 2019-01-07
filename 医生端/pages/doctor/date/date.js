@@ -1,4 +1,5 @@
 // pages/doctor/date/date.js
+const app=getApp()
 Page({
 
   /**
@@ -8,19 +9,46 @@ Page({
     mask:false,
     delSuccess:false,
     nav:0,
+    page:1,
+    list:[],
+    finishlist:[],
+    cendellist:[],
     nav_text:['已预约','已完成','已取消'],
     avtar: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
   },
   tab(e){
     console.log(e.currentTarget.dataset.index)
     this.setData({
-      nav: e.currentTarget.dataset.index
+      nav: e.currentTarget.dataset.index,
+      page:1
     })
+    if (e.currentTarget.dataset.index==0){
+      this.getData()
+    } else if (e.currentTarget.dataset.index == 1){
+      this.getfinish()
+    }else{
+      this.getcendel()
+    }
   },
-  del(){
+  del(e){
     this.setData({
-      mask:!this.data.mask
+      mask:!this.data.mask,
+      id: e.currentTarget.dataset.id
     })
+    //缺删除接口
+    // app.config.ajax('POST', {
+    //   token: app.globalData.user_token,
+    //   page: this.data.page
+    // }, 'doctor/user/my_subscribe', res => {
+    //   if (res.data.data.length > 0) {
+    //     this.setData({
+    //       list: res.data.data,
+    //       page: 1 + this.data.page
+    //     })
+    //   } else {
+    //     app.config.mytoast('暂无更多数据')
+    //   }
+    // })
   },
   surecendel(e) {
     console.log(e.detail.id)
@@ -28,10 +56,11 @@ Page({
       mask: false,
       delSuccess: true
     })
+    this.getcendel()
   },
   details(e){
     wx.navigateTo({
-      url: '/pages/doctor/dateinfo/dateinfo?type=' + e.currentTarget.dataset.type,
+      url: '/pages/doctor/dateinfo/dateinfo?type=' + e.currentTarget.dataset.type + '&id=' + e.currentTarget.dataset.id,
     })
   },
   /**
@@ -40,7 +69,54 @@ Page({
   onLoad: function (options) {
 
   },
-
+  //预约列表
+  getData(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      page: this.data.page
+    }, 'doctor/user/my_subscribe', res => {
+      if (res.data.data.length > 0) {
+        this.setData({
+          list: res.data.data,
+          page: 1 + this.data.page
+        })
+      } else {
+        app.config.mytoast('暂无更多数据')
+      }
+    })
+  },
+  //已完成预约列表
+  getfinish() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      page: this.data.page
+    }, 'doctor/user/my_subscribe_complete', res => {
+      if (res.data.data.length > 0) {
+        this.setData({
+          finishlist: res.data.data,
+          page: 1 + this.data.page
+        })
+      } else {
+        app.config.mytoast('暂无更多数据')
+      }
+    })
+  },
+  //已取消预约列表
+  getcendel() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      page: this.data.page
+    }, 'doctor/user/my_subscribe_cancel', res => {
+      if (res.data.data.length > 0) {
+        this.setData({
+          cendellist: res.data.data,
+          page: 1 + this.data.page
+        })
+      } else {
+        app.config.mytoast('暂无更多数据')
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -73,6 +149,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    if (this.data.nav == 0) {
+      this.getData()
+    } else if (this.data.nav == 1) {
+      this.getfinish()
+    } else {
+      this.getcendel()
+    }
+    wx.hideNavigationBarLoading()
+    // 停止下拉动作
+    wx.stopPullDownRefresh()
 
   },
 

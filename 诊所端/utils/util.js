@@ -1,6 +1,5 @@
 //主域名
 const https = "https://lingyiil.dazhu-ltd.cn/index.php/api/"
-
 /**
  * 时间转换
  */
@@ -15,15 +14,20 @@ function timeForm(time) {
     curYear = curDate.getFullYear(),
     curHour = curDate.getHours(),
     timeStr, btTimeStr;
+
   if (minute < 10) {
     minute = '0' + minute
   }
-  if (day < 10) {
-    day = '0' + minute
+  if (month < 10) {
+    month = '0' + month
   }
+  if (day < 10) {
+    day = '0' + day
+  }
+  btTimeStr = year + '-' + month + '-' + day
   if (year < curYear) {
     timeStr = year + '-' + month + '-' + day;
-    btTimeStr = year + '-' + month + '-' + day
+
   } else {
     var pastTime = curDate - date,
       pastH = pastTime / 3600000;
@@ -108,6 +112,21 @@ function rem(height, successData) {
     success: (res) => {
       if (height != null && height != undefined && height != '') {
         var myheight = res.windowHeight - res.windowWidth / 750 * height
+      } else {
+        var myheight = res.windowHeight
+      }
+      successData(myheight)
+    },
+    fail: function (res) { },
+    complete: function (res) { },
+  })
+}
+
+function remW(height, successData) {
+  wx.getSystemInfo({
+    success: (res) => {
+      if (height != null && height != undefined && height != '') {
+        var myheight = res.windowWidth / 750 * height
       } else {
         var myheight = res.windowHeight
       }
@@ -219,7 +238,7 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "https://lingyiil.dazhu-ltd.cn/index.php/api/"
+  var https = "http://lingyistore.dazhu-ltd.cn/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
@@ -252,9 +271,8 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
           mytoast(res.data.msg)
           if (res.data.code == -1) {
             wx.clearStorage('user_token')
-            myapp.globalData.user_token = ''
             wx.redirectTo({
-              url: '/pages/login/index',
+              url: '/pages/sale/login/login',
               success: function (res) { },
               fail: function (res) { },
               complete: function (res) { },
@@ -278,7 +296,7 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
       wx.uploadFile({
         url: https + url,
         filePath: imgurl,
-        name: 'file',
+        name: 'image',
         formData: params,
         success: (res) => {
           wx.hideLoading()
@@ -310,6 +328,7 @@ module.exports = {
   https: https,
   ajax: ajax,
   rem: rem,
+  remW: remW,
   chooseImage: chooseImage,
   getData: getData,
   mytoast: mytoast,

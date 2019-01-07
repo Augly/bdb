@@ -15,20 +15,12 @@
       <image src='/images/tuichu.png'></image>
     </view>
     <view class='popup_tit'>药品参数</view>
-    <view class='medicine-info-item'>
-      <view class='info-tit'>
-        药品名称
+    <view class='medicine-info-item' wx:for="{{params}}" wx:for-index="index" wx:for-item="item">
+      <view class='info-tit' >
+        {{item.goods_parameter_name}}
       </view>
       <view class='info-texg'>
-        免疫球蛋白
-      </view>
-    </view>
-    <view class='medicine-info-item'>
-      <view class='info-tit'>
-        生产厂家
-      </view>
-      <view class='info-texg'>
-        实药集团美意药业有限公司
+        {{item.goods_parameter_value}}
       </view>
     </view>
   </view>
@@ -81,14 +73,14 @@
     <view class='choost-tit'>选择计量</view>
     <view class='ml-list'>
       <block wx:for='{{ml}}' wx:key=''>
-        <text class='ml {{ml_num==index?"ml-active":""}}' data-ml="{{index}}" bindtap='choose_ml'>{{item}}</text>
+        <text class='ml {{ml_num==index?"ml-active":""}}' data-ml="{{index}}" bindtap='choose_ml' data-index='{{index}}'>{{item.goods_metering_name}}</text>
       </block>
     </view>
     <view class='choose-num'>
       <view class='choost-tit'>选择规格</view>
       <view class='stepper'>
         <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
-        <input bindinput='bindManual' value='{{num}}'></input>
+        <input bindinput='bindManual' value='{{num}}' type='number'></input>
         <text bindtap='bindPlus'>+</text>
       </view>
     </view>
@@ -116,7 +108,7 @@
 
 <view class='style_item' bindtap='show_choose'>
   <view class='style_tit'>选择规格</view>
-  <view class='style_text'>已选择 "{{ml[ml_num]}} X{{num}}"</view>
+  <view class='style_text'>已选择 "{{ml[ml_num].goods_metering_name}} X{{num}}"</view>
   <view class='iconfont icon-youjiantou'></view>
 </view>
 
@@ -130,6 +122,6 @@
 
 <view class='btn_wrap'>
   <view class='money'>
-    <text>￥</text>666</view>
+    <text>￥</text>{{price}}</view>
   <view class='btn' bindtap='submit'>确 认 预 约</view>
 </view>

@@ -2,13 +2,13 @@
   <!-- <i class='iconfont icon-gerenyonghutouxiang' bindtap='changesA'></i> -->
 </view>
 <view class='avtarWrap'>
-  <image src='{{avtar}}' class='avater'></image>
+  <image src='{{imgUrl}}{{userInfo.user_portrait}}' class='avater'></image>
 </view>
 
 <view class='title'>
-  请输入您的姓名
+  {{userInfo.user_realname}}
 </view>
-<view class='mintitle'>saqd15a151as5</view>
+<!-- <view class='mintitle'>saqd15a151as5</view> -->
 
 <view class='list'>
   <view class='item' bindtap='go_write'>
@@ -70,7 +70,7 @@
   </view>
   <view class='item' bindtap='toMessges'>
     <view class='left'>
-    <view class='dit'></view>
+    <view class='dit' wx:if="{{unread>0}}"></view>
       <span class='iconfont icon-lingdang'></span>
       <view class='itemTitle'>信息通知</view>
     </view>

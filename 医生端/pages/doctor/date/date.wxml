@@ -3,142 +3,151 @@
     <view class='nav-item {{nav==index?"active":""}}' data-index='{{index}}' bindtap='tab'>{{item}}</view>
   </block>
 </view>
+<view class='content'>
+  <view class="data-list" wx:if="{{nav==0}}">
+    <!-- <left-smooth bind:del='del'> -->
+    <view class='medicine_item active' bindtap='details' data-id='{{item.subscribe_id}}' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+      <view class='medicine_img'>
+        <image src='{{item.user_portrait}}'></image>
+      </view>
+      <view class='medicnie-text'>
+        <view class='name-data'>
+          <view class='medicine-tit'>{{item.user_realname}}
+            <icon class='iconfont icon-nan'></icon>
+          </view>
+          <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>联系方式：</view>
+          <view class='style-detail add_detail'>{{item.user_phone}}</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约药品：</view>
+          <view class='style-detail add_detail'>{{item.goods_name}}</view>
+        </view>
+        <!-- <view class='style-item'>
+          <view class='medicine-tips'>药品剂量：</view>
+          <view class='style-detail add_detail'>{{item.}}</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>药品数量：</view>
+          <view class='style-detail add_detail'>X1</view> -->
+        <!-- </view> -->
+        <view class='style-item'>
+          <view class='medicine-tips'>预约诊所：</view>
+          <view class='style-detail add_detail'>{{item.hospital_name}}</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约时间：</view>
+          <view class='style-detail add_detail'>{{item.subscribe_reservetime}}</view>
+        </view>
+      </view>
 
-<view class="data-list" wx:if="{{nav==0}}">
-  <!-- <left-smooth bind:del='del'> -->
-  <view class='medicine_item active' bindtap='details'>
-    
-    <view class='medicine_img'>
-      <image src='/images/11.png'></image>
-    </view>
-    <view class='medicnie-text'>
-      <view class='name-data'>
-        <view class='medicine-tit'>王陆
-          <icon class='iconfont icon-nan'></icon>
-        </view>
-        <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>联系方式：</view>
-        <view class='style-detail add_detail'>188888888</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约药品：</view>
-        <view class='style-detail add_detail'>免疫球蛋白</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>药品剂量：</view>
-        <view class='style-detail add_detail'>5ml</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>药品数量：</view>
-        <view class='style-detail add_detail'>X1</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约诊所：</view>
-        <view class='style-detail add_detail'>天津市儿童医院</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约时间：</view>
-        <view class='style-detail add_detail'>2018-09-06 </view>
+      <view class='detail'>
+        查看信息
+        <span class='iconfont icon-youjiantou'></span>
       </view>
     </view>
-    <view class='detail'>
-      查看信息<span class='iconfont icon-youjiantou'></span>
-    </view>
+    <nodata title='当前暂无已预约订单' wx:if="{{cendellist.length==0}}"></nodata>
   </view>
   <!-- </left-smooth> -->
-</view>
-<view class="data-list" wx:if="{{nav==2}}">
-  <!-- <left-smooth bind:del='del'> -->
-  <view class='medicine_item active' bindtap='details' data-type='cendel'>
-    <view class='del' catchtap='del'>删 除</view>
-    
-    <view class='medicine_img'>
-      <image src='/images/11.png'></image>
-    </view>
-    <view class='medicnie-text'>
-      <view class='name-data'>
-        <view class='medicine-tit'>王陆
-          <icon class='iconfont icon-nan'></icon>
+
+  <view class="data-list" wx:if="{{nav==2}}">
+    <!-- <left-smooth bind:del='del'> -->
+    <view class='medicine_item active' bindtap='details' data-type='cendel' data-id='{{item.subscribe_id}}' wx:for="{{cendellist}}" wx:for-item="item" wx:for-index="index">
+      <view class='del' catchtap='del' data-id='{{item.subscribe_id}}'>删 除</view>
+
+      <view class='medicine_img'>
+        <image src='{{item.user_portrait}}'></image>
+      </view>
+      <view class='medicnie-text'>
+        <view class='name-data'>
+          <view class='medicine-tit'>{{item.user_realname}}
+            <icon class='iconfont icon-nan'></icon>
+          </view>
+          <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
         </view>
-        <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>联系方式：</view>
-        <view class='style-detail add_detail'>188888888</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约药品：</view>
-        <view class='style-detail add_detail'>免疫球蛋白</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>药品剂量：</view>
-        <view class='style-detail add_detail'>5ml</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>药品数量：</view>
-        <view class='style-detail add_detail'>X1</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约诊所：</view>
-        <view class='style-detail add_detail'>天津市儿童医院</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约时间：</view>
-        <view class='style-detail add_detail'>2018-09-06 </view>
-      </view>
-    </view>
-    <view class='detail'>
-      查看信息<span class='iconfont icon-youjiantou'></span>
-    </view>
-  </view>
-  <!-- </left-smooth> -->
-</view>
-<view class="data-list" wx:if="{{nav==1}}">
-  <!-- <left-smooth bind:del='del'> -->
-  <view class='medicine_item active' bindtap='details' data-type='finish'>
-    
-    <view class='medicine_img'>
-      <image src='/images/11.png'></image>
-    </view>
-    <view class='medicnie-text'>
-      <view class='name-data'>
-        <view class='medicine-tit'>王陆
-          <icon class='iconfont icon-nan'></icon>
+        <view class='style-item'>
+          <view class='medicine-tips'>联系方式：</view>
+          <view class='style-detail add_detail'>{{item.user_phone}}</view>
         </view>
-        <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
+        <view class='style-item'>
+          <view class='medicine-tips'>预约药品：</view>
+          <view class='style-detail add_detail'>{{item.goods_name}}</view>
+        </view>
+        <!-- <view class='style-item'>
+          <view class='medicine-tips'>药品剂量：</view>
+          <view class='style-detail add_detail'>5ml</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>药品数量：</view>
+          <view class='style-detail add_detail'>X1</view>
+        </view> -->
+        <view class='style-item'>
+          <view class='medicine-tips'>预约诊所：</view>
+          <view class='style-detail add_detail'>{{item.hospital_name}}</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约时间：</view>
+          <view class='style-detail add_detail'>{{item.subscribe_reservetime}}</view>
+        </view>
       </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>联系方式：</view>
-        <view class='style-detail add_detail'>188888888</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约药品：</view>
-        <view class='style-detail add_detail'>免疫球蛋白</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>药品剂量：</view>
-        <view class='style-detail add_detail'>5ml</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>药品数量：</view>
-        <view class='style-detail add_detail'>X1</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约诊所：</view>
-        <view class='style-detail add_detail'>天津市儿童医院</view>
-      </view>
-      <view class='style-item'>
-        <view class='medicine-tips'>预约时间：</view>
-        <view class='style-detail add_detail'>2018-09-06 </view>
+      <view class='detail'>
+        查看信息
+        <span class='iconfont icon-youjiantou'></span>
       </view>
     </view>
-    <view class='detail'>
-      查看信息<span class='iconfont icon-youjiantou'></span>
-    </view>
+    <nodata title='当前暂无已取消订单' wx:if="{{cendellist.length==0}}"></nodata>
+    <!-- </left-smooth> -->
   </view>
-  <!-- </left-smooth> -->
+  <view class="data-list" wx:if="{{nav==1}}">
+    <!-- <left-smooth bind:del='del'> -->
+    <view class='medicine_item active' bindtap='details' data-type='finish' data-id='{{item.subscribe_id}}' wx:for="{{finishlist}}" wx:for-item="item" wx:for-index="index">
+
+      <view class='medicine_img'>
+        <image src='{{item.user_portrait}}'></image>
+      </view>
+      <view class='medicnie-text'>
+        <view class='name-data'>
+          <view class='medicine-tit'>{{item.user_realname}}
+            <icon class='iconfont icon-nan'></icon>
+          </view>
+          <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>联系方式：</view>
+          <view class='style-detail add_detail'>{{item.user_phone}}</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约药品：</view>
+          <view class='style-detail add_detail'>{{item.goods_name}}</view>
+        </view>
+        <!-- <view class='style-item'>
+          <view class='medicine-tips'>药品剂量：</view>
+          <view class='style-detail add_detail'>5ml</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>药品数量：</view>
+          <view class='style-detail add_detail'>X1</view>
+        </view> -->
+        <view class='style-item'>
+          <view class='medicine-tips'>预约诊所：</view>
+          <view class='style-detail add_detail'>{{item.hospital_name}}</view>
+        </view>
+        <view class='style-item'>
+          <view class='medicine-tips'>预约时间：</view>
+          <view class='style-detail add_detail'>{{item.subscribe_reservetime}} </view>
+        </view>
+      </view>
+      <view class='detail'>
+        查看信息
+        <span class='iconfont icon-youjiantou'></span>
+      </view>
+    </view>
+    <nodata title='当前暂无已完成订单' wx:if="{{finishlist.length==0}}"></nodata>
+    <!-- </left-smooth> -->
+    <!-- </view> -->
+  </view>
 </view>
 
 <!-- <view class='mask' wx:if="{{mask}}">

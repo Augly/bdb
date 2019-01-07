@@ -1,4 +1,5 @@
 // pages/clinic/password/password.js
+const app=getApp()
 Page({
 
   /**
@@ -7,12 +8,18 @@ Page({
   data: {
     passwrod:'',
     spassword:'',
+    oldpassword:'',
     tips:false,
     success:false,
   },
   passwrod(e){
     this.setData({
       passwrod: e.detail.value
+    })
+  },
+  getpasswrod(e){
+    this.setData({
+      oldpassword: e.detail.value
     })
   },
   samepass(e) {
@@ -22,13 +29,36 @@ Page({
     console.log(this.data.spassword)
   },
   submit(){
+    if (this.data.oldpassword==''){
+      app.config.mytoast('请输入原密码')
+      return false
+    }
+    if (this.data.passwrod == '') {
+      app.config.mytoast('请输入新密码')
+      return false
+    }
+    if (this.data.spasswrod == '') {
+      app.config.mytoast('请再次输入新密码')
+      return false
+    }
     if (this.data.passwrod != this.data.spassword){
       this.setData({
         tips:true
       })
     }else{
-      this.setData({
-        success:true
+      app.config.ajax('POST', {
+        token: app.globalData.user_token,
+        old_pass: this.data.oldpassword,
+        new_pass:this.data.spasswrod
+      }, 'hospital/user/set_pass', res => {
+        this.setData({
+          success: true
+        })
+        // setTimeout(res=>{
+        //   wx.navigateBack({
+        //     delta: 1,
+        //   },500)
+        // })
       })
     }
   },

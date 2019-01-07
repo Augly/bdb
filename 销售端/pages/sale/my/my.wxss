@@ -19,6 +19,9 @@ page {
 .iconfont {
   font-size: 28rpx;
 }
+.icon-shengribirthday16{
+  font-size: 24rpx;
+}
 
 .icon-gerenyonghutouxiang {
   color: #25c173;

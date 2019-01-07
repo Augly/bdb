@@ -21,7 +21,7 @@
     <view class='itemTitle'>联系人</view>
   </view>
   <view class='right'>
-    <input class='itemmintitle' bindinput='nameinput' placeholder='请输入诊所联系人'></input>
+    <input class='itemmintitle' bindinput='nameinput' placeholder='请输入诊所联系人' value='{{name}}'></input>
     <text class='star'>*</text>
   </view>
 </view>
@@ -31,7 +31,7 @@
     <view class='itemTitle'>联系方式</view>
   </view>
   <view class='right'>
-    <input class='itemmintitle' bindinput='wxchat' placeholder='请输入诊所联系方式'></input>
+    <input class='itemmintitle' bindinput='getwxchat' placeholder='请输入诊所联系方式' value='{{wxchat}}'></input>
     <text class='star'>*</text>
   </view>
 </view>
@@ -41,13 +41,13 @@
     <view class='itemTitle'>诊所名称</view>
   </view>
   <view class='right'>
-    <view class='itemmintitle'>天津医院</view>
+    <view class='itemmintitle'>{{hname}}</view>
   </view>
 </view>
 <view class='item'>
   <view class='left'>
     <span class='iconfont icon-dizhi'></span>
-    <view class='itemTitle'>详细地址</view>
+    <view class='itemTitle'>{{adder}}</view>
   </view>
   <view class='right'>
     <view class='itemmintitle'>天津南开</view>

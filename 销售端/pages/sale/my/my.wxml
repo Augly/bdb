@@ -20,13 +20,13 @@
   <i class='iconfont icon-xiangji' bindtap='changesA'></i>
 </view>
 <view class='avtarWrap'>
-  <image src='{{avtar}}' class='avater'></image>
+  <image src='{{imgUrl}}{{sell_portrait}}' class='avater'></image>
 </view>
 
 <view class='title'>
   请输入您的姓名
 </view>
-<view class='mintitle'>saqd15a151as5</view>
+<view class='mintitle'>{{name}}</view>
 
 <view class='list'>
   <view class='item'>
@@ -35,7 +35,7 @@
       <view class='itemTitle'>我的昵称</view>
     </view>
     <view class='right'>
-      <input class='name' placeholder='请输入您的姓名' placeholder-style="color:#999999;" bindinput='nameinput'></input>
+      <input class='name' placeholder='请输入您的姓名' placeholder-style="color:#999999;" bindinput='nameinput' value='{{name}}'></input>
       <!-- <view class='itemmintitle'></view> -->
     </view>
     <view class='star'>*</view>
@@ -46,8 +46,8 @@
       <view class='itemTitle'>性别</view>
     </view>
     <view class='right'>
-      <view class='sex {{sex==1?"selectSex":""}}' data-sex='1' bindtap='select_sex'>男</view>
-      <view class='sex {{sex==2?"selectSex":""}}' data-sex='2' bindtap='select_sex'>女</view>
+      <view class='sex {{sexindex==1?"selectSex":""}}' data-sex='1' bindtap='select_sex'>男</view>
+      <view class='sex {{sexindex==2?"selectSex":""}}' data-sex='2' bindtap='select_sex'>女</view>
     </view>
   </view>
   <view class='item'>
@@ -56,7 +56,7 @@
       <view class='itemTitle'>我的手机</view>
     </view>
     <view class='right'>
-      <input type='number' class='itemmintitle'  bindinput='wxchat'  placeholder-style="color:#999999;"  placeholder='请输入手机号'></input>
+      <input type='number' class='itemmintitle'  bindinput='getPhone'  placeholder-style="color:#999999;"  placeholder='请输入手机号' value='{{phone}}'></input>
     </view>
     <view class='star'>*</view>
   </view>
@@ -66,7 +66,7 @@
       <view class='itemTitle'>我的年龄</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的年龄（岁）'></input>
+      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的年龄（岁）' bindinput='getAge' value='{{age}}' ></input>
     </view>
   </view>
   <view class='item'>
@@ -75,18 +75,18 @@
       <view class='itemTitle'>我的邮箱</view>
     </view>
     <view class='right'>
-      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的邮箱'></input>
+      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的邮箱' bindinput='getEmail' value='{{email}}'></input>
     </view>
   </view>
 
-  <view class='item' bindtap=''>
+  <view class='item'>
     <view class='left'>
       <span class='iconfont icon-weixin'></span>
       <view class='itemTitle'>我的微信</view>
     </view>
     <view class='right'>
       <!-- <span class='iconfont icon-jiantou'></span> -->
-      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的微信'></input>
+      <input class='itemmintitle' placeholder-style="color:#999999;"  placeholder='请输入您的微信' bindinput='getWechat' value="{{wxchat}}"></input>
     <view class='star'>*</view>
     </view>
   </view>
@@ -96,6 +96,6 @@
   保 存 修 改 信 息
 </view>
 
-<view class='tuichu' bindtap=''>
+<view class='tuichu' bindtap='out'>
 退 出 登 陆
 </view>

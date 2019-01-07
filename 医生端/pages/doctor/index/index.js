@@ -1,12 +1,15 @@
 // pages/doctor/index/index.js
+const app=getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    unread:0,
     info_popup:false,
-    mask:true,
+    imgurl: app.ImageHost,
+    mask:false,
     avtar: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
   },
 //消息页面
@@ -20,9 +23,30 @@ Page({
       url: '/pages/doctor/my/my',
     })
   },
+  //获取个人信息
+  getUserInfo() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+    }, 'doctor/user/doctor_info', res => {
+      this.setData({
+        mask: res.data.data.doctor_sex == 0 ? true : false,
+        userInfo: res.data.data
+      })
+    })
+  },
+  //获取未读消息
+  // gitUnread() {
+  //   app.config.ajax('POST', {
+  //     token: app.globalData.user_token
+  //   }, 'user/index/unread_count', res => {
+  //     this.setData({
+  //       unread: res.data.data.unread
+  //     })
+  //   })
+  // },
   sure() {
-    wx.switchTab({
-      url: '/pages/doctor/my/my',
+    wx.navigateTo({
+      url: '/pages/doctor/write/write',
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },
@@ -46,7 +70,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.getStorage({
+      key: 'user_token',
+      success: res => {
+        app.globalData.user_token = res.data
+        this.getUserInfo()
+      },
+      fail: res => {
+        app.globalData.user_token = ''
+        wx.redirectTo({
+          url: '/pages/doctor/login/login',
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      },
+      complete: function (res) { },
+    })
   },
 
   /**
