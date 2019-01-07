@@ -52,7 +52,7 @@ Page({
       success: res=>{
         console.log(res.windowWidth)
         this.setData({
-          myHeight: res.windowHeight - (res.windowWidth/750*188)
+          myHeight: res.windowHeight - (res.windowWidth/750*190)
         })
       },
       fail: function(res) {},

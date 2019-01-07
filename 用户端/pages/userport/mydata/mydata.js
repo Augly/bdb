@@ -181,25 +181,25 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.showNavigationBarLoading()
-
-    if (this.data.statusType=='ready'){
-      this.getreadyList()
-    } else if (this.data.statusType == 'finish'){
-      this.getfinishList()
-    }else{
-      this.getwarnList()
-    }
-    wx.hideNavigationBarLoading()
-    // 停止下拉动作
-    wx.stopPullDownRefresh()
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showNavigationBarLoading()
 
+    if (this.data.statusType == 'ready') {
+      this.getreadyList()
+    } else if (this.data.statusType == 'finish') {
+      this.getfinishList()
+    } else {
+      this.getwarnList()
+    }
+    wx.hideNavigationBarLoading()
+    // 停止下拉动作
+    wx.stopPullDownRefresh()
   },
 
   /**
