@@ -21,9 +21,13 @@ Page({
       token: app.globalData.user_token,
       page: this.data.page
     }, 'doctor/user/my_message', res => {
+      let s = this.data.list
       if (res.data.data.length > 0) {
         this.setData({
-          list: res.data.data,
+          list: s.concat(res.data.data.map(item => {
+            item.message_createtime = app.config.timeForm(item.message_createtime).btTime
+            return item
+          })),
           page: 1 + this.data.page
         })
       } else {

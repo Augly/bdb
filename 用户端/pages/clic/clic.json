@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "选择诊所",
+  "navigationBarTitleText": "诊所列表",
   "usingComponents": {
     "left-smooth": "/components/left-smooth/left-smooth",
     "nodata": "/components/nodata/nodata"

@@ -263,6 +263,7 @@ page {
 
 .goods-num {
   margin-left: 24rpx;
+  width: 420rpx;
 }
 
 .goods_title {
@@ -293,6 +294,7 @@ page {
 }
 
 .goods-tips {
+
   font-size: 24rpx;
   font-family: MicrosoftYaHei;
   /* font-weight: bold; */

@@ -20,6 +20,7 @@ Page({
     timeIndex:0,
     price:0,
     params:null,
+    imgurl: app.ImageHost
   },
   //选择星期
   selectData(e){
@@ -124,6 +125,16 @@ Page({
     })
     this.getPrice()
   },
+  gitdetail(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      goods_id: this.data.goods_id
+    }, 'user/goods/goods_info', res => {
+      this.setData({
+        info: res.data.data
+      })
+    })
+  },
   // 药品计量
   getmetering(){
     app.config.ajax('POST', {
@@ -184,9 +195,19 @@ Page({
       success: false,
       data_popup:false
     })
-    // wx.reLaunch({
-    //   url: '/pages/userport/mydata/mydata',
-    // })
+
+  },
+  closeAll(){
+    this.setData({
+      mask: false,
+      info_popup: false,
+      show_choose: false,
+      success: false,
+      data_popup: false
+    })
+    wx.redirectTo({
+      url: '/pages/userport/mydata/mydata',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -204,6 +225,7 @@ Page({
   onReady: function () {
     this.getmetering()
     this.getParams()
+    this.gitdetail()
   },
   getPrice(){
     let s = Number(this.data.ml[this.data.ml_num].goods_metering_price)

@@ -7,13 +7,13 @@ Page({
    */
   data: {
     imhUrl: app.ImageHost,
-    user_portrait:'',
-    name: '测试',  //姓名
-    phone: '17633369350',  //手机号
-    age: '',  //年龄
+    user_portrait: '',
+    name: '测试', //姓名
+    phone: '17633369350', //手机号
+    age: '', //年龄
     email: '', //邮箱 
     sex: 1,
-    height:0,
+    height: 0,
   },
   //获取个人信息
   getUserInfo() {
@@ -31,29 +31,29 @@ Page({
     })
   },
   //修改个人信息
-  saveUserInfo(){
+  saveUserInfo() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       realname: this.data.name,
       age: this.data.age,
-      sex:this.data.sex,
+      sex: this.data.sex,
       email: this.data.email,
       portrait: this.data.user_portrait,
     }, 'user/user/user_info_update', res => {
-      app.config.mytoast('修改资料成功，即将返回',res=>{
+      app.config.mytoast('修改资料成功，即将返回', res => {
         wx.navigateBack({
           delta: 1,
         })
       })
     })
   },
-  getHeight(e){
+  getHeight(e) {
     console.log(e.detail.height)
     this.setData({
       height: 20
     })
   },
-  burHeight(){
+  burHeight() {
     this.setData({
       height: 0
     })
@@ -65,10 +65,9 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: (res) => {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-       app.config.ajax(
-          'img',
-          {
-            token:app.globalData.user_token
+        app.config.ajax(
+          'img', {
+            token: app.globalData.user_token
           },
           'user/user/upload_img',
           res => {
@@ -76,8 +75,8 @@ Page({
               user_portrait: res.data.path
             })
           },
-          res => { },
-          res => { },
+          res => {},
+          res => {},
           res.tempFilePaths[0]
         )
       }

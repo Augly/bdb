@@ -10,6 +10,7 @@ Page({
     mask:false,
     page:1,
     id:'',
+    imgurl: app.ImageHost,
     finishlist:[],
     readylist:[],
     warnList:[],

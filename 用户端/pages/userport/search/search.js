@@ -46,7 +46,7 @@ Page({
       disId: e.currentTarget.dataset.id,
       otherList: this.data.citylist[e.currentTarget.dataset.index].second
     })
-    this.getList()
+    // this.getList()
   },
   /**
    * 生命周期函数--监听页面加载
@@ -78,6 +78,12 @@ Page({
       'user/hospital/district_list',
       res => {
         console.log(res)
+        for (let s = 0; s < res.data.data.length; s++) {
+          res.data.data[s].second.unshift({
+            district_name: '全部',
+            district_id: ''
+          })
+        }
         this.setData({
           citylist: res.data.data,
           otherList: res.data.data[0].second

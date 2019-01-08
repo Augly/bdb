@@ -15,12 +15,18 @@ Page({
     imgUrl: app.ImageHost,
     cendellist:[],
     finishlist:[],
-    readylist:[]
+    readylist:[],
+    key:''
   },
   // 拨打电话
-  telnum(){
+  telnum(e){
     wx.makePhoneCall({
-      phoneNumber: '15698542346',
+      phoneNumber: e.currentTarget.dataset.tel,
+    })
+  },
+  getValue(e){
+    this.setData({
+      key:e.detail.value
     })
   },
   // 诊所中心
@@ -72,9 +78,8 @@ Page({
     })
   },
   go_groder(e){
-    // console.log(e.currentTarget.dataset.style)
     wx.navigateTo({
-      url: '/pages/clinic/order_detail/order_detail?style='+e.currentTarget.dataset.style,
+      url: '/pages/clinic/order_detail/order_detail?style=' + e.currentTarget.dataset.style + '&id=' + e.currentTarget.dataset.id,
     })
   },
   dataed(){
@@ -99,7 +104,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getreadylist()
+    wx.getStorage({
+      key: 'user_token',
+      success: res => {
+        app.globalData.user_token = res.data
+        this.getreadylist()
+      },
+      fail: res => {
+        app.globalData.user_token = ''
+        wx.redirectTo({
+          url: '/pages/userport/login/login',
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      },
+      complete: function (res) { },
+    })
+   
   },
 
   /**
@@ -129,30 +151,51 @@ Page({
   onUnload: function () {
 
   },
+  getlist(){
+    if(this.data.nav==1){
+      this.getreadylist()
+    } else if (this.data.nav == 1){
+      this.finishlist()
+    }else{
+      this.cendellist()
+    }
+  },
   getreadylist(){
     app.config.ajax('POST',{
-      token:app.globalData.user_token
+      token:app.globalData.user_token,
+      key:this.data.key
     },'hospital/index/my_subscribe',res=>{
       this.setData({
-        readylist:res.data.data
+        readylist:res.data.data.map(item=>{
+          item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
+          return item
+        })
       })
     })
   },
   getfinishlist(){
     app.config.ajax('POST', {
-      token: app.globalData.user_token
+      token: app.globalData.user_token,
+      key: this.data.key
     }, 'hospital/index/my_subscribe_complete', res => {
       this.setData({
-        finishlist: res.data.data
+        finishlist: res.data.data.map(item => {
+          item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
+          return item
+        })
       })
     })
   },
   getcendellist(){
     app.config.ajax('POST', {
-      token: app.globalData.user_token
+      token: app.globalData.user_token,
+      key: this.data.key
     }, 'hospital/index/my_subscribe_cancel', res => {
       this.setData({
-        cendellist: res.data.data
+        cendellist: res.data.data.map(item => {
+          item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
+          return item
+        })
       })
     })
   },

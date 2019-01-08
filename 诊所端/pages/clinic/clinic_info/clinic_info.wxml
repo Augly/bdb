@@ -47,10 +47,10 @@
 <view class='item'>
   <view class='left'>
     <span class='iconfont icon-dizhi'></span>
-    <view class='itemTitle'>{{adder}}</view>
+    <view class='itemTitle'>详细地址</view>
   </view>
   <view class='right'>
-    <view class='itemmintitle'>天津南开</view>
+    <view class='itemmintitle'>{{adder}}</view>
   </view>
 </view>
 </view>

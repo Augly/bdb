@@ -1,30 +1,54 @@
 // pages/userport/message/message.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    page: 1,
+    list: []
+  },
 
-  },
-  // 诊所中心
-  go_center() {
-    wx.navigateTo({
-      url: '/pages/clinic/center/center',
-    })
-  },
-  tointroduce(){
-    wx.navigateTo({
-      url: '/pages/clinic/search/search',
-    })
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      page: this.data.page
+    }, 'hospital/user/my_message ', res => {
+      let s = this.data.list
+      console.log(s)
+      if (res.data.data.length > 0) {
+        this.setData({
+          list: s.concat(res.data.data.map(item => {
+            item.message_createtime = app.config.timeForm(item.message_createtime).btTime
+            return item
+          })),
+          page: 1 + this.data.page
+        })
+        console.log(this.data.list)
+      }else {
+        app.config.mytoast('暂无更多数据')
+      }
+    })
   },
-
+  getData() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      page: this.data.page
+    }, 'hospital/user/my_message', res => {
+      if (res.data.data.length > 0) {
+        this.setData({
+          list: res.data.data,
+          page: 1 + this.data.page
+        })
+      } else {
+        app.config.mytoast('暂无更多数据')
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -57,7 +81,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    this.getData()
 
+    wx.hideNavigationBarLoading()
+    // 停止下拉动作
+    wx.stopPullDownRefresh()
   },
 
   /**

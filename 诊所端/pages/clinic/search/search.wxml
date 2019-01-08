@@ -1,7 +1,7 @@
 <view class='seach'>
   <view class='searchGroup'>
     <view class="banner-search">
-      <input class="banner-input" placeholder="请输入您要搜索的患者姓名" placeholder-class="banner-input-placeholder" bindinput='getValue'></input>
+      <input class="banner-input" placeholder="请输入您要搜索的患者姓名" placeholder-class="banner-input-placeholder" bindinput='getValue' confirm-type='search' bindconfirm="getlist" value='{{key}}'></input>
       <!-- <images class='ercode'></images> -->
     </view>
     <icon class='iconfont icon-saoma' bindtap='saoCode'></icon>
@@ -35,7 +35,7 @@
   <view class='{{nav==1?"show":"hide"}} allwrap'>
     <block wx:for='{{readylist}}' wx:key=''>
       <view>
-        <view class='data-item' data-style='0' bindtap='go_groder'>
+        <view class='data-item' data-style='0' bindtap='go_groder' data-id='{{item.subscribe_id}}'>
           <view class='item-img'>
             <image src='{{imgUrl}}{{item.user_portrait}}'></image>
           </view>
@@ -86,7 +86,7 @@
       <view class='wrap_width'>
         <view class='width_one'>
           <left-smooth bind:del='del_cancle'>
-            <view class='data-item' data-style='1' bindtap='go_groder'>
+            <view class='data-item' data-style='1' bindtap='go_groder' data-id='{{item.subscribe_id}}'>
               <view class='time'>已完成</view>
               <!-- <view class='item-finish'>已完成</view  > -->
               <view class='item-img'>
@@ -119,7 +119,7 @@
                     <view class='num-detail'>{{item.subscribe_reservetime}}</view>
                   </view>
                 </view>
-                <view class='text-item tel-num' catchtap='telnum'>
+                <view class='text-item tel-num' catchtap='telnum' data-tel='{{item.user_phone}}'>
                   <i class='iconfont icon-dianhua1'></i>
                   <text>{{item.user_phone}}</text>
                 </view>
@@ -138,7 +138,7 @@
       <view class='wrap_width'>
         <view class='width_one'>
           <left-smooth bind:del='del'>
-            <view class='data-item' data-style='2' bindtap='go_groder'>
+            <view class='data-item' data-style='2' bindtap='go_groder' data-id='{{item.subscribe_id}}'>
               <view class='time'>已取消</view>
               <!-- <view class='item-finish'>已完成</view> -->
               <view class='item-img'>
@@ -171,7 +171,7 @@
                     <view class='num-detail'>{{item.subscribe_reservetime}}</view>
                   </view>
                 </view>
-                <view class='text-item tel-num' catchtap='telnum'>
+                <view class='text-item tel-num' catchtap='telnum' data-tel='{{item.user_phone}}'>
                   <i class='iconfont icon-dianhua1'></i>
                   <text>{{item.user_phone}}</text>
                 </view>

@@ -27,10 +27,19 @@ Page({
       username: this.data.phone,
       password: this.data.password
     }, 'hospital/login/hospital_login', res => {
-      console.log(res)
-      wx.switchTab({
-        url: '/pages/clinic/search/search',
+      app.globalData.user_token = res.data.data.hospital_admin_token
+      wx.setStorage({
+        key: 'user_token',
+        data: res.data.data.hospital_admin_token,
+        success: function (res) {
+          wx.switchTab({
+            url: '/pages/clinic/search/search',
+          })
+        },
+        fail: function (res) { },
+        complete: function (res) { },
       })
+     
     })
   },
   login_btn(){

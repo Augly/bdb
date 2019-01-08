@@ -1,43 +1,22 @@
-<view class='container'>
+<!-- <view class='container'> -->
 
-  <view class='message'>
+  <view class='message' wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
     <view class='message-item'>
       <view class='message-icon'>
         <view class='messgae-img'>
           <image src='/images/message.png'></image>
         </view>
-        <view class='message-tit'>预约成功信息通知</view>
-      </view>
-      <view class='finish'>预约通知：用户卢小兵在天津市北辰医院预约的免疫球蛋白已经预约成功；请尽快与其联系！联系方 式：18659854164
-      </view>
-      <view class='time'>2018-6-29</view>
-      <!-- <view class='message-detail'>
-        <view class='message-detail-tit'>
-          诊所：
-        </view>
-        <view class='message-detail-text'>
-          天津市儿童医院
-        </view>
+        <view class='message-tit'>{{item.message_title}}</view>
       </view>
       <view class='message-detail'>
         <view class='message-detail-tit'>
-          看诊医生：
-        </view>
-        <view class='message-detail-text'>
-          王晶
+          {{item.message_content}}
         </view>
       </view>
-      <view class='message-detail'>
-        <view class='message-detail-tit'>
-          看诊日期：
-        </view>
-        <view class='message-detail-text'>
-          2018-6-29
-        </view>
-      </view> -->
+      <view class='date'>{{item.message_createtime}}</view>
     </view>
   </view>
 
+<!-- </view> -->
 
-
-</view>
+<nodata title='当前暂无通知消息'  wx:if="{{list.length==0}}"></nodata>

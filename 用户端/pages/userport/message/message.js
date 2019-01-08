@@ -1,13 +1,13 @@
 // pages/userport/message/message.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    page:1,
-    list:[]
+    page: 1,
+    list: []
   },
 
   /**
@@ -16,19 +16,22 @@ Page({
   onLoad: function (options) {
     this.getData()
   },
-  getData(){
+  getData() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       page: this.data.page
     }, 'user/user/my_message', res => {
-      let s=this.data.list
+      let s = this.data.list
+      console.log(s)
       if (res.data.data.length > 0) {
         this.setData({
-          list: s.concat(res.data.data.map(item=>{
+          list: s.concat(res.data.data.map(item => {
             item.message_createtime = app.config.timeForm(item.message_createtime).btTime
+            return item
           })),
           page: 1 + this.data.page
         })
+        console.log(this.data.list)
       } else {
         app.config.mytoast('暂无更多数据')
       }
@@ -79,8 +82,8 @@ Page({
    */
   onReachBottom: function () {
     this.setData({
-      page:1,
-      list:[]
+      page: 1,
+      list: []
     })
     this.getData()
   },

@@ -2,7 +2,7 @@
 <view class='mask {{mask?"show":"hide"}}'>
   <!-- 预约成功 -->
   <view class='success-popup {{success?"show":"hide"}}'>
-    <view class='time-close' bindtap='close'>
+    <view class='time-close' bindtap='closeAll'>
       <image src='/images/tuichu.png'></image>
     </view>
     <view class='success-text'>预约成功</view>
@@ -56,17 +56,17 @@
     </view>
     <view class='goods-info'>
       <view class='goods-img'>
-        <image src='/images/1.png'></image>
+        <image src='{{imgurl}}{{info.goods_surface}}'></image>
       </view>
       <view class='goods-num'>
         <view class='goods_title'>
-          <view class='title'>免疫球蛋白</view>
+          <view class='title'>{{info.goods_name}}</view>
           <view class='goods-price'>
-            <text>￥</text>600.0
+            <text>￥</text>{{price}}
           </view>
         </view>
         <view class='goods-tips'>
-          原装正品，医药科技
+          {{info.goods_brief}}
         </view>
       </view>
     </view>
@@ -91,13 +91,13 @@
 </view>
 
 <view class='medicine-pic'>
-  <image src='/images/1.png'></image>
+  <image src='{{imgurl}}{{info.goods_surface}}'></image>
 </view>
 <view class='medicine-wrap'>
   <view class='tit'>
-    升级版大含量福欣宝免疫球蛋白元大牌标淳针剂5ml/瓶6瓶装免疫球蛋白
+   {{info.goods_name}}
   </view>
-  <view class='details'>免疫疗法已成为治疗癌症和其他免疫系统疾病的有前景的方法。免疫检查点阻断和过继细胞转移是两种常用的方法。R＆d Systems提供的蛋白质，抗体，酶联免疫吸附</view>
+  <view class='details'>{{info.goods_brief}}</view>
 </view>
 
 <view class='style_item' bindtap='show_data'>

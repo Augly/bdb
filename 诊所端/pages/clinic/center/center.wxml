@@ -19,5 +19,5 @@
   </view>
 </view>
 
-<view class='sing-out'>退 出 登 录</view>
+<view class='sing-out' bindtap='out'>退 出 登 录</view>
 

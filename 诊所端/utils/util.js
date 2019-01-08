@@ -272,7 +272,7 @@ function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
           if (res.data.code == -1) {
             wx.clearStorage('user_token')
             wx.redirectTo({
-              url: '/pages/sale/login/login',
+              url: '/pages/clinic/login/login',
               success: function (res) { },
               fail: function (res) { },
               complete: function (res) { },

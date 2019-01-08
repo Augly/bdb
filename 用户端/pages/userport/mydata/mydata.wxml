@@ -16,7 +16,7 @@
 <view class="data-list {{statusType=='ready'?'show':'hide'}}">
   <view class='medicine_item' bindtap='tofinish' data-type='ready' wx:for="{{readylist}}" wx:for-item="item" wx:for-inde="index" data-id='{{item.subscribe_id}}'>
     <view class='medicine_img'>
-      <image src='{{item.goods_surface}}'></image>
+      <image src='{{imgurl}}{{item.goods_surface}}'></image>
     </view>
     <view class='medicnie-text'>
       <view class='medicine-tit'>{{item.goods_name}}</view>
@@ -57,7 +57,7 @@
   <left-smooth bind:del='finishdel' wx:for="{{finishlist}}" wx:for-item="item" wx:for-inde="index"  myid="{{item.subscribe_id}}">
     <view class='medicine_item' bindtap='tofinish' data-type='finish' data-id='{{item.subscribe_id}}'>
     <view class='medicine_img'>
-      <image src='{{item.goods_surface}}'></image>
+      <image src='{{imgurl}}{{item.goods_surface}}'></image>
     </view>
     <view class='medicnie-text'>
       <view class='medicine-tit'>{{item.goods_name}}</view>
@@ -99,7 +99,7 @@
   <!-- <left-smooth bind:del='waitIngdel' wx:for="{{warnList}}" wx:for-item="item" wx:for-inde="index" myid="{{item.subscribe_id}}"> -->
     <view class='medicine_item' bindtap='tofinish' data-type='waitIng' wx:for="{{warnList}}" wx:for-item="item" wx:for-inde="index" data-id='{{item.subscribe_id}}'>
     <view class='medicine_img'>
-      <image src='{{item.goods_surface}}'></image>
+      <image src='{{imgurl}}{{item.goods_surface}}'></image>
     </view>
     <view class='medicnie-text'>
       <view class='medicine-tit'>{{item.goods_name}}</view>

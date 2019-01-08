@@ -67,7 +67,7 @@ Page({
       token: app.globalData.user_token,
     }, 'user/user/user_info', res => {
       this.setData({
-        mask: res.data.data.user_sex == 0?true:false,
+        mask: res.data.data.user_isrevised == 1?true:false,
         userInfo: res.data.data
       })
     })

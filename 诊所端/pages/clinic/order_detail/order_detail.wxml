@@ -6,19 +6,19 @@
         选择药品
       </view>
       <view class='item-list'>
-        <view class='itme-btn {{classify === index ?"active": ""}}' bindtap='item_btn' data-classify="{{index}}" wx:for='{{btn_list}}'>{{item}}</view>
+        <view class='itme-btn {{classify === index ?"active": ""}}' bindtap='item_btn' data-classify="{{index}}" wx:for='{{btn_list}}'>{{item.goods_name}}</view>
       </view>
     </view>
     <view class='choose-item'>
       <view class='item-tit'>
-        选择药品
+        选择计量
       </view>
       <view class='item-list'>
-        <view class='itme-btn {{num_nav === index ?"numactive": ""}}' bindtap='num_btn' data-classify="{{index}}" wx:for='{{num_list}}'>{{item}}</view>
+        <view class='itme-btn {{num_nav === index ?"numactive": ""}}' bindtap='num_btn' data-classify="{{index}}" wx:for='{{num_list}}'>{{item.goods_metering_name}}</view>
       </view>
     </view>
     <view class='choose-num'>
-      <view class='item-tit'>选择规格</view>
+      <view class='item-tit'>选择数量</view>
       <view class='stepper'>
         <text class='{{minusStatus}}' type='number' bindtap='bindMinus'>-</text>
         <input bindinput='bindManual' value='{{num}}'></input>
@@ -41,7 +41,29 @@
   </view>
 
   <!-- 选择时间 -->
-  <view class='time {{time_popup?"show":"hide"}}'>
+  <view class='date-popup {{data_popup?"show":"hide"}}'>
+  <view class='time-close' bindtap='close'>
+    <image src='/images/tuichu.png'></image>
+  </view>
+  <view class='popup_tit'>选择时间</view>
+  <view class='data-list'>
+    <view class='data-item  {{dataIndex==index?"active":""}}' wx:for="{{dataList}}" wx:for-index="index" wx:for-item="item" bindtap='selectData' data-index='{{index}}'>
+      <view>{{item.mon}}</view>
+      <view>{{item.date}}</view>
+    </view>
+  </view>
+
+  <view class='data-time'>
+    <block wx:for='{{time}}' wx:key='' wx:for-index="index" wx:for-item="item">
+      <view class='time-item {{index==timeIndex?"timeActive":""}}' bindtap='selectTime' data-index='{{index}}'>
+        {{item}}
+      </view>
+    </block>
+  </view>
+
+  <view class='time-submit' bindtap='submit'>确认</view>
+</view>
+  <!-- <view class='time {{time_popup?"show":"hide"}}'>
     <view class='choose-item'>
       <view class='item-tit'>
         选择预约时间
@@ -56,12 +78,14 @@
         <icon class='iconfont icon-chenggong'></icon>
         确认选择</view>
     </view>
-  </view>
+  </view> -->
 </view>
 
 
+
+
 <view class='info-img'>
-  <image src='/images/11.png'></image>
+  <image src='{{imgUrl}}{{info.user_portrait}}'></image>
 </view>
 
 <view class='info-item'>
@@ -91,34 +115,34 @@
 </view>
 <view class='info-item'>
   <view class='info-tit'>预约时间：</view>
-  <view class='info-text'>{{data_time}}</view>
+  <view class='info-text'>{{info.subscribe_reservetime}}</view>
 </view>
 <!-- 已取消进入显示完成时间 -->
 <view class='{{!style?"show":"hide"}}'>
   <view class='info-item '>
     <view class='info-tit'>{{time_text}}：</view>
-    <view class='info-text'>2018-09-06 10:00</view>
+    <view class='info-text'>{{info.subscribe_paytime}}</view>
   </view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>订单状态：</view>
-  <view class='info-text'>已完成</view>
+  <view class='info-text'>{{time_text==''?'已预约':time_text=='完成时间'?'已完成':'已取消'}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>药品名称：</view>
-  <view class='info-text'>免疫球蛋白</view>
+  <view class='info-text'>{{info.goods_name}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>药品规格：</view>
-  <view class='info-text'>5ml</view>
+  <view class='info-text'>{{info.goods_metering_name}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>药品数量：</view>
-  <view class='info-text'>6</view>
+  <view class='info-text'>{{info.subscribe_goodsnum}}</view>
 </view>
 <view class='info-item'>
   <view class='info-tit'>总价金额：</view>
-  <view class='info-text'>600元</view>
+  <view class='info-text'>{{info.subscribe_amount}}元</view>
 </view>
 <!-- <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
   <view class='info-item'>
@@ -146,16 +170,16 @@
 </view> -->
 <view class='{{style?"show":"hide"}}'>
   <view class='footer'>
-    <picker bindchange="bindPickerChange" data-value="{{array[index]}}" range="{{array}}">
-      <view class='icon'>
+    <!-- <picker bindchange="bindPickerChange" data-value="{{array[index]}}" range="{{array}}"> -->
+      <view class='icon' bindtap='changesTime'>
         <icon class='iconfont icon-dingdan'></icon>
         <text>修改预约时间</text>
       </view>
-    </picker>
+    <!-- </picker> -->
 
-    <view class='btn' bindtap='submit'>
+    <view class='btn' bindtap='submitAll'>
       立即预约
     </view>
   </view>
 </view>
-<success wrap="{{delSuccess}}" notice="预约成功"></success>
+<success wrap="{{delSuccess}}" notice="预约成功" bind:close="sclose"></success>
