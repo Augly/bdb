@@ -1,5 +1,5 @@
 <view class="banner-search">
-  <input class="banner-input"   placeholder="请输入您要搜索的诊所" placeholder-class="banner-input-placeholder" bindinput='getValue' value='{{key}}' type='text' confirm-type='search'  bindconfirm="getList"></input>
+  <input class="banner-input"   placeholder="请输入您要搜索的诊所" placeholder-class="banner-input-placeholder" bindinput='getValue' value='{{key}}' type='text' confirm-type='search'  bindconfirm="suresearch"></input>
 </view>
 
 <view class='choose'>
