@@ -31,7 +31,7 @@
   </view>
   <view class='item' bindtap='go_message'>
     <view class='left'>
-        <view class='dit' wx:if="{{unread==0}}"></view>
+        <view class='dit' wx:if="{{unread!=0}}"></view>
       <span class='iconfont icon-lingdang'></span>
       <view class='itemTitle'>信息通知</view>
     </view>

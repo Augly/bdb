@@ -23,6 +23,13 @@ Page({
       url: '/pages/doctor/my/my',
     })
   },
+  getCode(){
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+    }, 'doctor/index/get_qrcode', res => {
+      console.log(res)
+    })
+  },
   //获取个人信息
   getUserInfo() {
     app.config.ajax('POST', {
@@ -32,18 +39,19 @@ Page({
         mask: res.data.data.doctor_sex == 0 ? true : false,
         userInfo: res.data.data
       })
+      // this.getCode()
     })
   },
   //获取未读消息
-  // gitUnread() {
-  //   app.config.ajax('POST', {
-  //     token: app.globalData.user_token
-  //   }, 'user/index/unread_count', res => {
-  //     this.setData({
-  //       unread: res.data.data.unread
-  //     })
-  //   })
-  // },
+  gitUnread() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token
+    }, 'doctor/index/unread_count', res => {
+      this.setData({
+        unread: res.data.data.unread
+      })
+    })
+  },
   sure() {
     wx.navigateTo({
       url: '/pages/doctor/write/write',
@@ -75,6 +83,7 @@ Page({
       success: res => {
         app.globalData.user_token = res.data
         this.getUserInfo()
+        this.gitUnread()
       },
       fail: res => {
         app.globalData.user_token = ''

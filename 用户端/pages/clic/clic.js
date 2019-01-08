@@ -11,17 +11,15 @@ Page({
     key: '',
     id: '',
     disId: '',
-    cityIndex: 0,
+    cityIndex: -1,
     citylist: [],
     otherList: [],
-    otherIndex: 0,
+    otherIndex: -1,
     medicine_list: []
   },
   sale_medicine(e) {
     wx.navigateTo({
-      url: `/pages/userport/introduce/introduce?hosId=${
-        e.currentTarget.dataset.id
-      }`
+      url: `/pages/userport/introduce/introduce?hosId=${e.currentTarget.dataset.id}`
     })
   },
   suresearch() {
@@ -51,19 +49,19 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    this.setData({
-      id: options.id
-    })
+  onLoad: function (options) {
+    // this.setData({
+    //   id: options.id
+    // })
     wx.getSystemInfo({
       success: res => {
         console.log(res.windowWidth)
         this.setData({
-          myHeight: res.windowHeight - (res.windowWidth / 750) * 188
+          myHeight: res.windowHeight - (res.windowWidth / 750) * 190
         })
       },
-      fail: function(res) {},
-      complete: function(res) {}
+      fail: function (res) { },
+      complete: function (res) { }
     })
     this.getdis()
     this.getList()
@@ -91,7 +89,7 @@ Page({
       'POST',
       {
         token: app.globalData.user_token,
-        key: '',
+        key: this.data.key,
         longitude: app.globalData.user_Location.longitude,
         latitude: app.globalData.user_Location.latitude,
         district_id: this.data.disId
@@ -130,35 +128,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+  onReady: function () { },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+  onShow: function () { },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+  onHide: function () { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+  onUnload: function () { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {}
+  onShareAppMessage: function () { }
 })

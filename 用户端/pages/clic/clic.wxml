@@ -34,7 +34,7 @@
 <view class='mask' style='height:{{myHeight}}px;bottom:0;' wx:if="{{choose}}">
 <view class='maskWrap' >
     <scroll-view scroll-y class='firstItem'>
-    <view class='item {{index==cityIndex?"itemActive":""}}' wx:for="{{citylist}}" wx:for-index="index" wx:for-item="item" bindtap='citySelect' data-index='{{index}}'>
+    <view class='item {{index==cityIndex?"itemActive":""}}' wx:for="{{citylist}}" wx:for-index="index" wx:for-item="item" bindtap='citySelect' data-index='{{index}}' data-id='{{item.district_id}}'>
       {{item.district_name}}
     </view>
   </scroll-view>

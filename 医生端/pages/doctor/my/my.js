@@ -28,7 +28,7 @@ Page({
   gitUnread() {
     app.config.ajax('POST', {
       token: app.globalData.user_token
-    }, 'user/index/unread_count', res => {
+    }, 'doctor/index/unread_count', res => {
       this.setData({
         unread: res.data.data.unread
       })
@@ -78,6 +78,7 @@ Page({
       this.setData({
         userInfo: res.data.data
       })
+      this.gitUnread()
     })
   },
   /**
