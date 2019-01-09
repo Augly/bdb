@@ -31,6 +31,7 @@ Page({
           },
           'sell/user/upload_img',
           res => {
+            app.config.mytoast('上传图片成功!')
             this.setData({
               sell_portrait: res.data.path
             })
@@ -51,7 +52,7 @@ Page({
       this.setData({
         name: res.data.data.sell_realname,
         phone: res.data.data.sell_phone,
-        sex: res.data.data.sell_sex,
+        sexindex: res.data.data.sell_sex,
         age: res.data.data.sell_age,
         wxchat: res.data.data.sell_wechat,
         email: res.data.data.sell_email,

@@ -6,14 +6,14 @@
 <view class='content'>
   <view class="data-list" wx:if="{{nav==0}}">
     <!-- <left-smooth bind:del='del'> -->
-    <view class='medicine_item active' bindtap='details' data-id='{{item.subscribe_id}}' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+    <view class='medicine_item active' bindtap='details' data-type='已预约' data-id='{{item.subscribe_id}}' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
       <view class='medicine_img'>
-        <image src='{{item.user_portrait}}'></image>
+        <image src='{{imgUrl}}{{item.user_portrait}}'></image>
       </view>
       <view class='medicnie-text'>
         <view class='name-data'>
-          <view class='medicine-tit'>{{item.user_realname}}
-            <icon class='iconfont icon-nan'></icon>
+          <view class='medicine-tit'>{{item.user_realname==''?'未填写':item.user_realname}}
+            <icon class='iconfont {{item.user_sex==1?"icon-nan":"icon-nv"}}'></icon>
           </view>
           <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
         </view>
@@ -48,22 +48,22 @@
         <span class='iconfont icon-youjiantou'></span>
       </view>
     </view>
-    <nodata title='当前暂无已预约订单' wx:if="{{cendellist.length==0}}"></nodata>
+    <nodata title='当前暂无已预约订单' wx:if="{{list.length==0}}"></nodata>
   </view>
   <!-- </left-smooth> -->
 
   <view class="data-list" wx:if="{{nav==2}}">
     <!-- <left-smooth bind:del='del'> -->
-    <view class='medicine_item active' bindtap='details' data-type='cendel' data-id='{{item.subscribe_id}}' wx:for="{{cendellist}}" wx:for-item="item" wx:for-index="index">
+    <view class='medicine_item active' bindtap='details' data-type='已取消' data-id='{{item.subscribe_id}}' wx:for="{{cendellist}}" wx:for-item="item" wx:for-index="index">
       <view class='del' catchtap='del' data-id='{{item.subscribe_id}}'>删 除</view>
 
       <view class='medicine_img'>
-        <image src='{{item.user_portrait}}'></image>
+        <image src='{{imgUrl}}{{item.user_portrait}}'></image>
       </view>
       <view class='medicnie-text'>
         <view class='name-data'>
-          <view class='medicine-tit'>{{item.user_realname}}
-            <icon class='iconfont icon-nan'></icon>
+          <view class='medicine-tit'>{{item.user_realname==''?'未填写':item.user_realname}}
+            <icon class='iconfont {{item.user_sex==1?"icon-nan":"icon-nv"}}'></icon>
           </view>
           <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
         </view>
@@ -102,15 +102,15 @@
   </view>
   <view class="data-list" wx:if="{{nav==1}}">
     <!-- <left-smooth bind:del='del'> -->
-    <view class='medicine_item active' bindtap='details' data-type='finish' data-id='{{item.subscribe_id}}' wx:for="{{finishlist}}" wx:for-item="item" wx:for-index="index">
+    <view class='medicine_item active' bindtap='details' data-type='已完成' data-id='{{item.subscribe_id}}' wx:for="{{finishlist}}" wx:for-item="item" wx:for-index="index">
 
       <view class='medicine_img'>
-        <image src='{{item.user_portrait}}'></image>
+        <image src='{{imgUrl}}{{item.user_portrait}}'></image>
       </view>
       <view class='medicnie-text'>
         <view class='name-data'>
-          <view class='medicine-tit'>{{item.user_realname}}
-            <icon class='iconfont icon-nan'></icon>
+          <view class='medicine-tit'>{{item.user_realname==''?'未填写':item.user_realname}}
+           <icon class='iconfont {{item.user_sex==1?"icon-nan":"icon-nv"}}'></icon>
           </view>
           <!-- <view class='medicine-data'>2018-04-06 10:00</view> -->
         </view>

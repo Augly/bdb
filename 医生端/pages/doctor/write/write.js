@@ -24,7 +24,6 @@ Page({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: (res) => {
-        console.log(app.globalData.user_token)
         app.config.ajax(
           'img',
           {
@@ -32,10 +31,11 @@ Page({
           },
           'doctor/user/upload_img',
           res => {
-            app.config.toast('图片上传成功!')
+            app.config.mytoast('图片上传成功!')
             this.setData({
               doctor_portrait: res.data.path
             })
+            console.log()
           },
           res => { },
           res => { },
@@ -53,7 +53,7 @@ Page({
       this.setData({
         name: res.data.data.doctor_realname,
         phone: res.data.data.doctor_phone,
-        sex: res.data.data.doctor_sex,
+        sexindex: res.data.data.doctor_sex,
         age: res.data.data.doctor_age,
         wxchat: res.data.data.doctor_wechat,
         email: res.data.data.doctor_email,
@@ -67,7 +67,7 @@ Page({
       token: app.globalData.user_token,
       realname: this.data.name,
       age: this.data.age,
-      sex: this.data.sex,
+      sex: this.data.sexindex,
       email: this.data.email,
       portrait: this.data.doctor_portrait,
       wechat: this.data.wxchat

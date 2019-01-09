@@ -24,9 +24,9 @@
 </view>
 
 <view class='title'>
-  请输入您的姓名
+  {{name==''?'请输入您的姓名':name}}
 </view>
-<view class='mintitle'>{{name}}</view>
+<view class='mintitle'>{{wxchat==''?'请填写您的微信号':wxchat}}</view>
 
 <view class='list'>
   <view class='item'>

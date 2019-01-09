@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "邀请的预约",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
       "usingComponents": {
         "left-smooth": "/components/left-smooth/left-smooth",
         "toast": "/components/toast/toast",

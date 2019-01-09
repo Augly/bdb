@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgUrl: app.ImageHost,
     avtar: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
   },
   go_index(){
@@ -39,7 +40,10 @@ Page({
       token:app.globalData.user_token
     },'sell/user/my_doctor',res=>{
       this.setData({
-        doctorlist:res.data.data
+        doctorlist:res.data.data.map(item=>{
+          item.doctor_createtime = app.config.timeForm(item.doctor_createtime).btTime
+          return item
+        })
       })
     })
   },

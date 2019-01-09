@@ -36,7 +36,7 @@ Page({
       token: app.globalData.user_token,
     }, 'doctor/user/doctor_info', res => {
       this.setData({
-        mask: res.data.data.doctor_sex == 0 ? true : false,
+        mask: res.data.data.user_isrevised == 1? true : false,
         userInfo: res.data.data
       })
       // this.getCode()

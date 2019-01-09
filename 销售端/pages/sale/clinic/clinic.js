@@ -9,7 +9,7 @@ Page({
     list: [],
     null_list: false,
     array: [],
-    page:0,
+    page:1,
     index: 0,
     date: '2019-01-01',
     datetwo: '2019-01-01',
@@ -19,13 +19,21 @@ Page({
     this.setData({
       index: e.detail.value
     })
+    this.setData({
+      page: 1,
+      list: []
+    })
     this.gitData()
   },
   bindDateChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value,
-      datetwo: e.detail.value
+      // datetwo: e.detail.value
+    })
+    this.setData({
+      page: 1,
+      list: []
     })
     this.gitData()
   },
@@ -34,12 +42,20 @@ Page({
     this.setData({
       datetwo: e.detail.value
     })
+    this.setData({
+      page: 1,
+      list: []
+    })
     this.gitData()
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      date: app.config.timeForm(new Date().getTime() / 1000).btTime,
+      datetwo: app.config.timeForm(new Date().getTime() / 1000).btTime
+    })
     this.gitArray()
   },
   gitData() {
@@ -50,12 +66,13 @@ Page({
       goods_id: this.data.array[this.data.index].goods_id,
       page: this.data.page   //商品id
     }, 'sell/index/statement_hospital', res => {
+      let l = this.data.list
       if (res.data.data.length > 0) {
         this.setData({
-          list: res.data.data,
+          list: l.concat(res.data.data),
           page: 1 + this.data.page
         })
-      } else {
+      }  else {
         app.config.mytoast('暂无更多数据')
       }
     })
@@ -64,8 +81,13 @@ Page({
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'sell/index/goods_list', res => {
+      let s = res.data.data
+      s.unshift({
+        goods_id: '',
+        goods_name: "全部"
+      })
       this.setData({
-        array: res.data.data
+        array: s
       })
       this.gitData()
     })
@@ -102,19 +124,25 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    wx.showNavigationBarLoading()
+    this.setData({
+      page: 1,
+      list: []
+    })
     this.gitData()
-
-    wx.hideNavigationBarLoading()
-    // 停止下拉动作
-    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showNavigationBarLoading()
+    this.gitData()
 
+    setTimeout(res => {
+      wx.hideNavigationBarLoading()
+      // 停止下拉动作
+      wx.stopPullDownRefresh()
+    }, 1000)
   },
 
   /**

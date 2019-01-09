@@ -1,29 +1,28 @@
-<view class='sale-nav'>
-  <picker mode="date" value="{{date}}"   bindchange="bindDateChange">
-    <view class='nav-item'>
-      {{date}}
-      <i class='iconfont icon-xiala'></i>
-    </view>
-  </picker>
+<view class='top'>
+  <view class='sale-nav'>
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+      <view class='nav-item'>
+        {{date}}
+        <i class='iconfont icon-xiala'></i>
+      </view>
+    </picker>
 
-  <view class='and'>至</view>
-  <picker mode="date" value="{{datetwo}}" start="{{date}}"  bindchange="bindTwoDateChange">
-    <view class='nav-item'>
-      {{datetwo}}
-      <i class='iconfont icon-xiala'></i>
-    </view>
-  </picker>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='goods_name'>
-    <view class='nav-item'>
-      <view class='item_mintitle'>{{array[index].goods_name}}</view>
-      
-      <i class='iconfont icon-xiala'></i>
-    </view>
-  </picker>
+    <view class='and'>至</view>
+    <picker mode="date" value="{{datetwo}}" start="{{date}}" bindchange="bindTwoDateChange">
+      <view class='nav-item'>
+        {{datetwo}}
+        <i class='iconfont icon-xiala'></i>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" range-key='goods_name'>
+      <view class='nav-item'>
+        <view class='item_mintitle'>{{array[index].goods_name}}</view>
 
-</view>
+        <i class='iconfont icon-xiala'></i>
+      </view>
+    </picker>
 
-<view class='list'>
+  </view>
   <view class='list-tit'>
     <view class='tit-item text-left'>
       医生姓名
@@ -41,6 +40,21 @@
       数量
     </view>
   </view>
+
+
+
+
+  <!-- <view class='{{null_list?"show":"hide"}}'>
+    <view class='null '>
+      <view class='null-img'>
+      <image src='/images/null.png'></image>
+      </view>
+      当前还没有任何信息哦~
+    </view>
+  </view> -->
+
+</view>
+<view class='list'>
   <block wx:for='{{list}}' wx:key=''>
     <view class='list-item'>
       <view class='details text-left'>
@@ -60,13 +74,6 @@
       </view>
     </view>
   </block>
-  <!-- <view class='{{null_list?"show":"hide"}}'>
-    <view class='null '>
-      <view class='null-img'>
-      <image src='/images/null.png'></image>
-      </view>
-      当前还没有任何信息哦~
-    </view>
-  </view> -->
-  <nodata title='当前暂无任何信息'  wx:if="{{list.length==0}}"></nodata>
 </view>
+
+<nodata title='当前暂无任何信息' wx:if="{{list.length==0}}"></nodata>

@@ -78,22 +78,28 @@ Page({
   },
 
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
   onPullDownRefresh: function () {
-    wx.showNavigationBarLoading()
+    this.setData({
+      page: 1,
+      list: []
+    })
     this.getData()
-
-    wx.hideNavigationBarLoading()
-    // 停止下拉动作
-    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    wx.showNavigationBarLoading()
+    this.getData()
 
+    setTimeout(res => {
+      wx.hideNavigationBarLoading()
+      // 停止下拉动作
+      wx.stopPullDownRefresh()
+    }, 1000)
   },
 
   /**

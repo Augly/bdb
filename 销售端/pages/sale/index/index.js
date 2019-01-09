@@ -20,7 +20,7 @@ Page({
       token: app.globalData.user_token,
     }, 'sell/user/sell_info', res => {
       this.setData({
-        mask: res.data.data.sell_sex==0?true:false,
+        mask: res.data.data.user_isrevised==1?true:false,
       })
     })
   },
@@ -109,7 +109,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.getStorage({
+      key: 'user_token',
+      success: res => {
+        app.globalData.user_token = res.data
+        this.getUserInfo()
+      },
+      fail: res => {
+        
+      },
+      complete: function (res) { },
+    })
   },
 
   /**

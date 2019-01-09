@@ -6,7 +6,7 @@
 
 <view class='info-list'>
 <view class='info-item'>医生姓名：<text>{{info.doctor_realname}}</text></view>
-<view class='info-item'>医生性别：<text>{{info.doctor_sex==1?'男':'女'}}</text></view>
+<view class='info-item'>医生性别：<text>{{info.doctor_sex==0?'未知':info.doctor_sex==1?'男':'女'}}</text></view>
 <view class='info-item'>医生年龄：<text>{{info.doctor_age}}</text></view>
 <view class='info-item'>微信：<text>{{info.doctor_wechat}}</text></view>
 <view class='info-item'>手机号：<text>{{info.doctor_phone}}</text></view>

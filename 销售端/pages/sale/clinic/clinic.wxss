@@ -1,11 +1,16 @@
-.sale-nav {
+.top {
+  width: 100%;
   position: fixed;
   top: 0;
+  overflow: hidden;
+}
+
+.sale-nav {
+  box-sizing: border-box;
+  padding: 0rpx 10rpx;
   display: flex;
   align-items: center;
   height: 87rpx;
-  box-sizing: border-box;
-  padding: 0rpx 10rpx;
   border-bottom: 3rpx solid rgba(99, 223, 197, 1);
 }
 
@@ -28,7 +33,8 @@
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
 }
-.nav-item .icon-xiala{
+
+.nav-item .icon-xiala {
   font-size: 22rpx;
   margin-left: 10rpx;
 }
@@ -37,12 +43,16 @@
   border-right: 4rpx solid #999;
   /* border-left: 4rpx solid #999; */
 }
+
 .list{
-  margin-top: 88rpx;
+  margin-top: 176rpx;
 }
+
 .list-tit {
+  width: 100%;
   display: flex;
-  padding: 33rpx 28rpx;
+  box-sizing: border-box;
+  padding: 33rpx 22rpx;
 }
 
 .tit-item {
@@ -50,7 +60,7 @@
   font-family: PingFang-SC-Bold;
   font-weight: bold;
   color: rgba(153, 153, 153, 1);
-  width: 246rpx;
+  width: 235rpx;
 }
 
 .text-left {
@@ -64,12 +74,14 @@
 .text-right {
   text-align: right;
 }
-.item_mintitle{
-   width: 130rpx;
- white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+
+.item_mintitle {
+  width: 130rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 .list-item {
   display: flex;
   padding: 15rpx 28rpx;

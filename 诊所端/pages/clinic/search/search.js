@@ -113,7 +113,7 @@ Page({
       fail: res => {
         app.globalData.user_token = ''
         wx.redirectTo({
-          url: '/pages/userport/login/login',
+          url: '/pages/clinic/login/login',
           success: function (res) { },
           fail: function (res) { },
           complete: function (res) { },

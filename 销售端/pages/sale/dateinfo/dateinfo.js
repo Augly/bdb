@@ -28,6 +28,7 @@ Page({
       token: app.globalData.user_token,
       doctor_id:options.id
     }, 'sell/user/my_doctor_info', res => {
+      res.data.data.doctor_createtime = app.config.timeForm(res.data.data.doctor_createtime).btTime
       this.setData({
         info: res.data.data
       })

@@ -9,6 +9,7 @@ Page({
     mask:false,
     delSuccess:false,
     nav:0,
+    imgUrl: app.ImageHost,
     page:1,
     list:[],
     finishlist:[],
@@ -34,29 +35,24 @@ Page({
     this.setData({
       mask:!this.data.mask,
       id: e.currentTarget.dataset.id
-    })
-    //缺删除接口
-    // app.config.ajax('POST', {
-    //   token: app.globalData.user_token,
-    //   page: this.data.page
-    // }, 'doctor/user/my_subscribe', res => {
-    //   if (res.data.data.length > 0) {
-    //     this.setData({
-    //       list: res.data.data,
-    //       page: 1 + this.data.page
-    //     })
-    //   } else {
-    //     app.config.mytoast('暂无更多数据')
-    //   }
-    // })
+    })    
   },
   surecendel(e) {
+    
     console.log(e.detail.id)
-    this.setData({
-      mask: false,
-      delSuccess: true
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      subscribe_id:this.data.id
+    }, 'doctor/user/subscribe_del', res => {
+      this.setData({
+        mask: false,
+        delSuccess: true,
+        page:1,
+        cendellist:[]
+      })
+      this.getcendel()
     })
-    this.getcendel()
+    
   },
   details(e){
     wx.navigateTo({
@@ -67,7 +63,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getData()
   },
   //预约列表
   getData(){
@@ -75,9 +71,13 @@ Page({
       token: app.globalData.user_token,
       page: this.data.page
     }, 'doctor/user/my_subscribe', res => {
+      let s = this.data.list
       if (res.data.data.length > 0) {
         this.setData({
-          list: res.data.data,
+          list: s.concat(res.data.data.map(item => {
+            item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
+            return item
+          })),
           page: 1 + this.data.page
         })
       } else {
@@ -91,9 +91,13 @@ Page({
       token: app.globalData.user_token,
       page: this.data.page
     }, 'doctor/user/my_subscribe_complete', res => {
+      let s = this.data.finishlist
       if (res.data.data.length > 0) {
         this.setData({
-          finishlist: res.data.data,
+          finishlist: s.concat(res.data.data.map(item => {
+            item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
+            return item
+          })),
           page: 1 + this.data.page
         })
       } else {
@@ -107,9 +111,13 @@ Page({
       token: app.globalData.user_token,
       page: this.data.page
     }, 'doctor/user/my_subscribe_cancel', res => {
+      let s = this.data.cendellist
       if (res.data.data.length > 0) {
         this.setData({
-          cendellist: res.data.data,
+          cendellist: s.concat(res.data.data.map(item => {
+            item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
+            return item
+          })),
           page: 1 + this.data.page
         })
       } else {
@@ -149,6 +157,24 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    this.setData({
+      list: [],
+      finishlist: [],
+      cendellist: []
+    })
+    if (this.data.nav == 0) {
+      this.getData()
+    } else if (this.data.nav == 1) {
+      this.getfinish()
+    } else {
+      this.getcendel()
+    }
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
     wx.showNavigationBarLoading()
     if (this.data.nav == 0) {
       this.getData()
@@ -157,17 +183,11 @@ Page({
     } else {
       this.getcendel()
     }
-    wx.hideNavigationBarLoading()
-    // 停止下拉动作
-    wx.stopPullDownRefresh()
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+    setTimeout(res=>{
+      wx.hideNavigationBarLoading()
+      // 停止下拉动作
+      wx.stopPullDownRefresh()
+    },1000)
   },
 
   /**
