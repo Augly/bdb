@@ -45,7 +45,7 @@
       </view>
     </view>
     <view class='history-imgs'>
-      <block wx:key='' wx:for="{{history}}" wx:for-index="index" wx:for-item="item" wx:key=''>
+      <block  wx:for="{{history}}" wx:for-index="index" wx:for-item="item" wx:key=''>
         <view class='history-img' bindtap="toyyed" data-id='{{item.subscribe_id}}'>
           <image class='history-img-item' src='{{imgUrl}}{{item.goods_surface}}'></image>
           <view class='history-tit'>{{item.goods_name}}</view>
