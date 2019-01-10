@@ -6,7 +6,7 @@
 <view class='content'>
   <view class="data-list" wx:if="{{nav==0}}">
     <!-- <left-smooth bind:del='del'> -->
-    <view class='medicine_item active' bindtap='details' data-type='已预约' data-id='{{item.subscribe_id}}' wx:for="{{list}}" wx:for-item="item" wx:for-index="index">
+    <view class='medicine_item active' bindtap='details' data-type='已预约' data-id='{{item.subscribe_id}}' wx:for="{{list}}" wx:key='' wx:for-item="item" wx:for-index="index">
       <view class='medicine_img'>
         <image src='{{imgUrl}}{{item.user_portrait}}'></image>
       </view>

@@ -1,6 +1,6 @@
 <!-- <view class='container'> -->
 
-  <view class='message' wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+  <view class='message' wx:key='' wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
     <view class='message-item'>
       <view class='message-icon'>
         <view class='messgae-img'>

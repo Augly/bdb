@@ -1,6 +1,6 @@
 <view class='person-list'>
   <!-- <left-smooth bind:del='del'> -->
-    <view class='person-item' bindtap='details' wx:for="{{doctorlist}}" wx:for-item="item" wx:for-index="index" data-id="{{item.doctor_id}}">
+    <view class='person-item' bindtap='details' wx:for="{{doctorlist}}" wx:key='' wx:for-item="item" wx:for-index="index" data-id="{{item.doctor_id}}">
       <view class='person-img'>
         <image src='{{imgUrl}}{{item.doctor_portrait}}'></image>
       </view>
