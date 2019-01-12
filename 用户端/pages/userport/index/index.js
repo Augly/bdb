@@ -42,7 +42,7 @@ Page({
   // 历史列表
   go_list() {
     wx.navigateTo({
-      url: '/pages/userport/mydata/mydata?type=finish'
+      url: '/pages/userport/mydata/mydata?type=ready'
     })
   },
   tores() {

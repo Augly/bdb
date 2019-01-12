@@ -6,10 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '/images/4.png',
-      '/images/5.png'
-    ],
+    imgUrls: [''],
     imgUrl: app.ImageHost,
     indicatorDots: false,
     autoplay: false,
@@ -46,7 +43,7 @@ Page({
       hospital_id: this.data.hosId   //诊所id
     }, 'user/hospital/hospital_info', res => {
       this.setData({
-        imgUrls: [res.data.data.hospital_patternmaking],
+        imgUrls: [this.data.imgUrl+res.data.data.hospital_patternmaking],
         info:res.data.data
       })
     })
@@ -62,12 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.setNavigationBarTitle({
-      title: '领医介绍',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
-    })
+    
   },
 
   /**
