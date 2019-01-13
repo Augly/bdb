@@ -238,7 +238,7 @@ function getData(e, name) {
 function ajax(Type, params, url, successData, errorData, completeData, imgurl) {
   var methonType = "application/json";
   //访问的主域名
-  var https = "http://lingyistore.dazhu-ltd.cn/"
+  var https = "https://lingyistore.dazhu-ltd.cn/"
   if (Type === 'PUT') {
     methonType = "application/x-www-form-urlencoded"
   }
