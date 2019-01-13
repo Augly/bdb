@@ -168,6 +168,7 @@ Page({
     app.config.ajax(
       'POST',
       {
+        sell_id: app.globalData.sell_id,
         phone: this.data.phone,
         code: this.data.code
       },
@@ -215,6 +216,12 @@ Page({
   onLoad: function(options) {
     var that = this
     this.drawPic(that)
+    if (options.scene != undefined && options.scene != null) {
+      const url = decodeURIComponent(options.scene).split('=')
+
+        app.globalData.sell_id = url[1]
+      
+    }
   },
 
   /**

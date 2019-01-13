@@ -1,4 +1,4 @@
-<view class='headGroup'>
+ <view class='headGroup'>
   <view class='tabBar'>
     <view class="tabItem {{statusType=='ready'?'tabActive':''}}" bindtap='ready'>
       已预约
@@ -47,7 +47,7 @@
       <view class='date'>
         {{item.subscribe_createtime}}
       </view>
-      <icon class='iconfont icon-saoma' catchtap='go_code'></icon>
+      <icon class='iconfont icon-saoma' catchtap='go_code' data-id='{{item.subscribe_id}}'></icon>
     </view>
   </view>
   <nodata title='当前暂无已预约订单'  wx:if="{{readylist.length==0}}"></nodata>

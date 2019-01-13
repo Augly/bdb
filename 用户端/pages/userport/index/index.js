@@ -97,7 +97,22 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function (options) {
+    if (options.scene != undefined && options.scene != null) {
+      const url = decodeURIComponent(options.scene).split('=')
+      if (app.globalData.doctor_id != url[1]){
+        app.globalData.doctor_id = url[1]
+        wx.redirectTo({
+          url: '/pages/userport/login/login',
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }else{
+        app.globalData.doctor_id = url[1]
+      }
+    }
+  },
   //获取首页轮播图
   gitBanner() {
     app.config.ajax(

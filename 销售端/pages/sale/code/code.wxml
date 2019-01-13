@@ -4,6 +4,6 @@
   <view class='text-tips'>Invitation qr code</view>
 </view>
   <view class='code'>
-    <image src='/images/code.png'></image>
+    <image src='{{imgurl}}{{sellImg}}'></image>
   </view>
 </view>

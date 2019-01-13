@@ -111,7 +111,7 @@ page {
 }
 
 .person-code {
-  width: 333rpx;
+  width: 308rpx;
   height: 308rpx;
   margin-top: 45rpx;
 }

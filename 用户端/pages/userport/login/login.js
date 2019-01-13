@@ -168,6 +168,7 @@ Page({
     app.config.ajax(
       'POST',
       {
+        doctor_id:app.globalData.doctor_id,
         phone: this.data.phone,
         code: this.data.code
       },

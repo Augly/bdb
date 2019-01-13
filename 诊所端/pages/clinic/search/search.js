@@ -65,7 +65,9 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       scanType: [],
-      success: function(res) {},
+      success: function(res) {
+        console.log(res)
+      },
       fail: function(res) {},
       complete: function(res) {},
     })

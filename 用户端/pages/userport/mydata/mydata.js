@@ -17,9 +17,9 @@ Page({
     delSuccess:false,
   },
   // 二维码
-  go_code(){
+  go_code(e){
     wx.navigateTo({
-      url: '/pages/userport/code/code',
+      url: '/pages/userport/code/code?id=' + e.currentTarget.dataset.id,
     })
   },
   // 已完成详情

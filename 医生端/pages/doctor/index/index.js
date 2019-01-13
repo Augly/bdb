@@ -9,8 +9,9 @@ Page({
     unread:0,
     info_popup:false,
     imgurl: app.ImageHost,
+    img:'http://lingyistore.dazhu-ltd.cn/public/uploads',
     mask:false,
-    avtar: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
+    doctorImg:''
   },
 //消息页面
   toMessges(){
@@ -28,6 +29,9 @@ Page({
       token: app.globalData.user_token,
     }, 'doctor/index/get_qrcode', res => {
       console.log(res)
+      this.setData({
+        doctorImg:res.data.data
+      })
     })
   },
   //获取个人信息
@@ -39,7 +43,7 @@ Page({
         mask: res.data.data.user_isrevised == 1? true : false,
         userInfo: res.data.data
       })
-      // this.getCode()
+      this.getCode()
     })
   },
   //获取未读消息

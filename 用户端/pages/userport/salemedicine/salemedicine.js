@@ -44,7 +44,7 @@ Page({
       token: app.globalData.user_token,
       hospital_id: this.data.hosId,
       goods_id: this.data.goods_id,
-      doctor_id:1,
+      // doctor_id:1,
       goods_metering_id: this.data.ml[this.data.ml_num].goods_metering_id,
       reservetime: time1.getTime(),
       goodsnum:this.data.num

@@ -20,7 +20,7 @@
     <view class='person-name'>医生姓名：{{userInfo.doctor_realname==''?'暂未填写姓名':userInfo.doctor_realname}}</view>
     <view class='person-id'>ID:{{userInfo.doctor_wechat==''?'暂未填写微信号':userInfo.doctor_wechat}}</view>
     <view class='person-code'>
-      <image src='/images/code.png'></image>
+      <image src='{{imgurl}}{{doctorImg}}'></image>
     </view>
     <view class='person-tips'>我以真心、关心、耐心、换您放心、安心、舒心、</view>
   </view>
