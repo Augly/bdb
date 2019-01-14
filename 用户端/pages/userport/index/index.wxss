@@ -211,7 +211,11 @@ white-space: nowrap;
 .history-null{
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+.hide{
+  display: none;
 }
 .history-null-img{
   /* width:87rpx; */

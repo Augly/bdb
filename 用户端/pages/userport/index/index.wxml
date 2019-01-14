@@ -53,15 +53,14 @@
         </view>
       </block>
       <!-- 列表如果未空显示下面 -->
-      <view class='{{history.length==0?"":"hide"}}'>
-        <view class='history-null'>
+
+        <view class='{{history.length==0?"history-null":"hide"}}'>
           <view class='history-null-img'>
             <i class='iconfont icon-kong'></i>
           </view>
-          <view class='history-null-text'>您还没有历史预约哦~</view>
+          <view class='history-null-text'>您还没有预约药品哦~~</view>
         </view>
-      </view>
     </view>
   </view>
 </view>
-<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='前 往'></toast>
+<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='前 往' showcha="{{false}}"></toast>

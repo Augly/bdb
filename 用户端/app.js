@@ -71,7 +71,7 @@ App({
 
   },
   globalData: {
-    doctor_id:'',
+    doctor_id:'1',
     user_token: '',     //用户token
     user_Location:null  //用户地理位置
   }

@@ -24,7 +24,7 @@ Page({
   toyyed(e) {
     wx.navigateTo({
       url:
-        '/pages/userport/finish/finish?type=finish&id=' +
+        '/pages/userport/finish/finish?type=ready&id=' +
         e.currentTarget.dataset.id,
       success: function(res) {},
       fail: function(res) {},

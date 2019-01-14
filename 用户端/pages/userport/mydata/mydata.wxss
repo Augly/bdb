@@ -38,7 +38,7 @@
 }
 
 .data-list {
-  margin-top: 130rpx;
+  padding-top: 130rpx;
 }
 
 .medicine_item {

@@ -32,4 +32,4 @@
   </view>
 </view>
 
-<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='前 往'></toast>
+<toast wrap="{{mask}}" title="请完成信息填写" minTitle="你还未填写重要信息，请前往个人中心填写重要信息" bind:sure='sure' sureTitle='前 往' showcha="{{false}}"></toast>

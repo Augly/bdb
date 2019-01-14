@@ -46,7 +46,7 @@ Page({
       goods_id: this.data.goods_id,
       // doctor_id:1,
       goods_metering_id: this.data.ml[this.data.ml_num].goods_metering_id,
-      reservetime: time1.getTime(),
+      reservetime: time1.getTime()/1000,
       goodsnum:this.data.num
     }, 'user/reserve/reserve', res => {
       console.log(res)

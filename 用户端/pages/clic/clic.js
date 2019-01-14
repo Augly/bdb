@@ -1,4 +1,3 @@
-// pages/userport/search/search.js
 const app = getApp()
 Page({
   /**
@@ -21,6 +20,11 @@ Page({
     wx.navigateTo({
       url: `/pages/userport/introduce/introduce?hosId=${e.currentTarget.dataset.id}`
     })
+    // wx.navigateTo({
+    //   url: `/pages/userport/salemedicine/salemedicine?medicine=${
+    //     this.data.id
+    //     }&hosId=${e.currentTarget.dataset.id}`
+    // })
   },
   suresearch() {
     this.setData({
@@ -44,15 +48,18 @@ Page({
       disId: e.currentTarget.dataset.id,
       otherList: this.data.citylist[e.currentTarget.dataset.index].second
     })
-    // this.getList()
+    if (e.currentTarget.dataset.index == 0) {
+      this.getList()
+    }
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      id: options.id
-    })
+    // this.setData({
+    //   id: options.id
+    // })
     wx.getSystemInfo({
       success: res => {
         console.log(res.windowWidth)
@@ -75,13 +82,11 @@ Page({
       },
       'user/hospital/district_list',
       res => {
-        console.log(res)
-        for (let s = 0; s < res.data.data.length; s++) {
-          res.data.data[s].second.unshift({
-            district_name: '全部',
-            district_id: ''
-          })
-        }
+        res.data.data.unshift({
+          district_name: '全部',
+          district_id: '',
+          second: []
+        })
         this.setData({
           citylist: res.data.data,
           otherList: res.data.data[0].second

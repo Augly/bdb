@@ -8,6 +8,10 @@ Component({
       type:Boolean,
       value:false,
     },
+    showcha:{
+      type: Boolean,
+      value: true,
+    },
     title:{
       type:String,
       value:''

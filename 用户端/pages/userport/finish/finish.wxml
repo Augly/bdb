@@ -13,7 +13,7 @@
     <view class='cancle-tit'>
       <view class='title'>{{info.goods_name}}</view>
       <view class='price'>
-        <text>￥</text>{{info.subscribe_goodsprice}}</view>
+        <text>￥</text>{{info.allPrice}}</view>
     </view>
     <view class='cancle-tips'>{{info.goods_brief}}</view>
   </view>
@@ -32,7 +32,11 @@
   <view class='cancle-deta'>预约药品</view>
   <view class='cancle-data-detail'>{{info.goods_name}}</view>
 </view>
-
+<view class='cancle-item'>
+  <span class='iconfont icon-jiaqian'></span>
+  <view class='cancle-deta'>药品价格</view>
+  <view class='cancle-data-detail'>{{info.subscribe_goodsprice}} 元</view>
+</view>
 <view class='cancle-item'>
   <span class='iconfont icon-jiliang'></span>
   <view class='cancle-deta'>预约剂量</view>
@@ -59,7 +63,7 @@
 <view class='cancle-item' wx:if="{{type!='ready'}}">
   <span class='iconfont icon-yiwanchengdingdan'></span>
   <view class='cancle-deta'>{{type=='waitIng'?'取消时间':'完成时间'}}</view>
-  <view class='cancle-data-detail'>{{type=='waitIng'?info.subscribe_canceltime:subscribe_paytime}}</view>
+  <view class='cancle-data-detail'>{{type=='waitIng'?info.subscribe_canceltime:info.subscribe_paytime}}</view>
 </view>
 <view class='cancle-item'>
   <span class='iconfont icon-xiadan'></span>

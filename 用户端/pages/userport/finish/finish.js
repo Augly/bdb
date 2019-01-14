@@ -15,6 +15,7 @@ Page({
       token: app.globalData.user_token,
       subscribe_id:this.data.id   //预约id
     }, 'user/user/subscribe_info', res => {
+      res.data.data.allPrice = Number(res.data.data.subscribe_goodsprice) * res.data.data.subscribe_goodsnum
       res.data.data.subscribe_canceltime = app.config.timeForm(res.data.data.subscribe_canceltime).btTime
       res.data.data.subscribe_createtime = app.config.timeForm(res.data.data.subscribe_createtime).btTime
       res.data.data.subscribe_reservetime = app.config.timeForm(res.data.data.subscribe_reservetime).btTime

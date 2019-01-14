@@ -21,7 +21,7 @@ Page({
     wx.navigateTo({
       url: `/pages/userport/salemedicine/salemedicine?medicine=${
         this.data.id
-      }&hosId=${e.currentTarget.dataset.id}`
+        }&hosId=${e.currentTarget.dataset.id}`
     })
   },
   suresearch() {
@@ -44,14 +44,17 @@ Page({
     this.setData({
       cityIndex: e.currentTarget.dataset.index,
       disId: e.currentTarget.dataset.id,
+      otherIndex: -1,
       otherList: this.data.citylist[e.currentTarget.dataset.index].second
     })
-    // this.getList()
+    if (e.currentTarget.dataset.index == 0) {
+      this.getList()
+    }
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.setData({
       id: options.id
     })
@@ -62,8 +65,8 @@ Page({
           myHeight: res.windowHeight - (res.windowWidth / 750) * 190
         })
       },
-      fail: function(res) {},
-      complete: function(res) {}
+      fail: function (res) { },
+      complete: function (res) { }
     })
     this.getdis()
     this.getList()
@@ -78,12 +81,11 @@ Page({
       'user/hospital/district_list',
       res => {
         console.log(res)
-        for (let s = 0; s < res.data.data.length; s++) {
-          res.data.data[s].second.unshift({
-            district_name: '全部',
-            district_id: ''
-          })
-        }
+        res.data.data.unshift({
+          district_name: '全部',
+          district_id: '',
+          second: []
+        })
         this.setData({
           citylist: res.data.data,
           otherList: res.data.data[0].second
@@ -136,35 +138,35 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {},
+  onReady: function () { },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {},
+  onShow: function () { },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {},
+  onHide: function () { },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {},
+  onUnload: function () { },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+  onPullDownRefresh: function () { },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {},
+  onReachBottom: function () { },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {}
+  onShareAppMessage: function () { }
 })

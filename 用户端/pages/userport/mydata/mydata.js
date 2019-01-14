@@ -130,21 +130,24 @@ Page({
   ready() {
     this.setData({
       statusType: 'ready',
-      page:1
+      page:1,
+      readylist: []
     })
     this.getreadyList()
   },
   finish() {
     this.setData({
       statusType: 'finish',
-      page: 1
+      page: 1,
+      finishlist: [],
     })
     this.getfinishList()
   },
   waitIng() {
     this.setData({
       statusType: 'waitIng',
-      page: 1
+      page: 1,
+      warnList: [],
     })
     this.getwarnList()
   },
@@ -159,6 +162,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.setData({
+      page:1,
+      readylist: [],
+    })
     this.getreadyList()
     // this.getwarnList()
     // this.getfinishList()
@@ -182,6 +189,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+
     this.setData({
       page:1
     })
@@ -192,14 +201,17 @@ Page({
     } else {
       this.getwarnList()
     }
+    setTimeout(()=>{
+      wx.hideNavigationBarLoading()
+      // 停止下拉动作
+      wx.stopPullDownRefresh()
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    wx.showNavigationBarLoading()
-
     if (this.data.statusType == 'ready') {
       this.getreadyList()
     } else if (this.data.statusType == 'finish') {
@@ -207,9 +219,7 @@ Page({
     } else {
       this.getwarnList()
     }
-    wx.hideNavigationBarLoading()
-    // 停止下拉动作
-    wx.stopPullDownRefresh()
+   
   },
 
   /**

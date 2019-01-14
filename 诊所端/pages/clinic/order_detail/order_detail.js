@@ -1,5 +1,5 @@
 // pages/clinic/order_detail/order_detail.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -9,28 +9,28 @@ Page({
     time: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
     mask: false,
     imgUrl: app.ImageHost,
-    array: ['2018-10-11 10:00', '2018-10-11 10:00','2018-10-11 10:00'],
-    index:0,
+    array: ['2018-10-11 10:00', '2018-10-11 10:00', '2018-10-11 10:00'],
+    index: 0,
     arraytwo: ['50ml', '100ml'],
     indextwo: 0,
-    arraythree: [1, 2,3,4,5,6,7,8,9,10],
+    arraythree: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     indexthree: 0,
-    style:false,
-    time_text:'',
+    style: false,
+    time_text: '',
     btn_list: ['人血白蛋白', '免疫球蛋白', '人血白蛋白', '免疫球蛋白'],
     num_list: ['50ml', '100ml', '150ml', '200ml'],
-    classify:'',
-    num_nav:'',
-    num:1,
-    success_popup:false,
-    choose_popup:false,
-    time_popup:false,
-    data_time:'2018-09-06 10:00',
+    classify: '',
+    num_nav: '',
+    num: 1,
+    success_popup: false,
+    choose_popup: false,
+    time_popup: false,
+    data_time: '2018-09-06 10:00',
     delSuccess: false,
     dataIndex: 0,
     timeIndex: 0,
   },
-  changesTime(){
+  changesTime() {
     this.setData({
       mask: true,
       data_popup: true
@@ -52,7 +52,7 @@ Page({
       dataIndex: e.currentTarget.dataset.index
     })
   },
-  sclose(){
+  sclose() {
     wx.navigateBack({
       delta: 1,
     })
@@ -72,10 +72,15 @@ Page({
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: this.data.info.subscribe_id,
-      reservetime: time1.getTime(),
+      reservetime: time1.getTime() / 1000,
     }, 'hospital/index/subscribe_update_reservetime', res => {
+      let info = this.data.info
+      info.subscribe_reservetime = app.config.timeForm(time1.getTime() / 1000).btTime
+      this.setData({
+        info: info
+      })
       app.config.mytoast('修改预约时间成功')
-     this.close()
+      this.close()
     })
 
   },
@@ -109,10 +114,10 @@ Page({
   submitAll() {
     this.setData({
       mask: true,
-      choose_popup:true 
+      choose_popup: true
     })
   },
-  getAlist(){
+  getAlist() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'hospital/index/goods_list', res => {
@@ -131,14 +136,14 @@ Page({
       })
     })
   },
-  choose_cancle(){
+  choose_cancle() {
     this.setData({
       mask: false,
       choose_popup: false,
-      success_popup:false,
+      success_popup: false,
     })
   },
-  submit_date(){
+  submit_date() {
     var time = this.data.dataList[this.data.dataIndex].more + '-' + this.data.time[this.data.timeIndex]
     time = time.replace(/-/g, ':').replace(' ', ':');
     time = time.split(':');
@@ -148,13 +153,14 @@ Page({
       subscribe_id: this.data.info.subscribe_id,
       goods_id: this.data.goods_id,
       goods_metering_id: this.data.goods_metering_id,
-      reservetime: time1.getTime(),
+      reservetime: time1.getTime() / 1000,
       goods_num: this.data.num
     }, 'hospital/index/subscribe_update', res => {
       // this.setData({
       //   mask: false,
       //   success_popup: false,
       // })
+
       this.setData({
         mask: false,
         delSuccess: true,
@@ -162,9 +168,9 @@ Page({
       })
 
     })
-    
+
   },
-  time_btn(){
+  time_btn() {
     this.setData({
       mask: false,
       success_popup: false,
@@ -172,7 +178,7 @@ Page({
       choose_popup: false
     })
   },
-  change_time(){
+  change_time() {
     this.setData({
       mask: true,
       time_popup: true,
@@ -276,13 +282,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     // 根据页面传值判断是否显示底部按钮
-    var styles  = options.style
-    if(styles==0){
+    var styles = options.style
+    if (styles == 0) {
       this.setData({
-        style:true,
-        time_text:''
+        style: true,
+        time_text: ''
       })
     } else if (styles == 1) {
       this.setData({
@@ -295,15 +301,15 @@ Page({
         time_text: '取消时间'
       })
     }
-     this.gitData()
+    this.gitData()
     this.setData({
-      id:options.id
+      id: options.id
     })
     this.getAlist()
-    
+
     this.getData()
   },
-  getData(){
+  getData() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: this.data.id
@@ -313,7 +319,7 @@ Page({
       res.data.data.subscribe_reservetime = app.config.timeForm(res.data.data.subscribe_reservetime).btTime
       res.data.data.subscribe_paytime = app.config.timeForm(res.data.data.subscribe_paytime).btTime
       this.setData({
-        info:res.data.data,
+        info: res.data.data,
         goods_id: res.data.data.goods_id,
         goods_metering_id: res.data.data.goods_metering_id
       })
@@ -323,49 +329,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })
