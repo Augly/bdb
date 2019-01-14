@@ -20,7 +20,7 @@ Page({
       token: app.globalData.user_token,
     }, 'sell/user/sell_info', res => {
       this.setData({
-        mask: res.data.data.user_isrevised==1?true:false,
+        mask: res.data.data.sell_isrevised==1?true:false,
       })
     })
   },
