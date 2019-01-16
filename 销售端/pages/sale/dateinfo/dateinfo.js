@@ -14,10 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      doctor_id: options.id
+    })
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       doctor_id: options.id
     }, 'sell/user/my_doctor_info', res => {
+      res.data.data[0].doctor_createtime = app.config.timeForm(res.data.data[0].doctor_createtime).btTime
       this.setData({
         info: res.data.data[0]
       })
@@ -45,7 +49,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.data.doctor_id && this.data.doctor_id != undefined && this.data.doctor_id!=null){
+      app.config.ajax('POST', {
+        token: app.globalData.user_token,
+        doctor_id: this.data.doctor_id
+      }, 'sell/user/my_doctor_info', res => {
+        res.data.data[0].doctor_createtime = app.config.timeForm(res.data.data[0].doctor_createtime).btTime
+        this.setData({
+          info: res.data.data[0]
+        })
+      })
+    }
   },
 
   /**

@@ -2,7 +2,7 @@
   <image src='{{imgUrl}}{{info.doctor_portrait}}'></image>
 </view>
 <view class='name'>{{info.doctor_realname}}</view>
-<view class='id'>ID:{{info.doctor_id}}</view>
+<!-- <view class='id'>ID:{{info.doctor_id}}</view> -->
 
 <view class='info-list'>
 <view class='info-item'>医生姓名：<text>{{info.doctor_realname}}</text></view>

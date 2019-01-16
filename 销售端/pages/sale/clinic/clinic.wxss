@@ -103,7 +103,7 @@
   font-weight: bold;
   width: 246rpx;
   color: rgba(51, 51, 51, 1);
-  line-height: 26rpx;
+  line-height: 35rpx;
 }
 
 .null {

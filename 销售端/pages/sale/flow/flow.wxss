@@ -93,7 +93,7 @@
   font-family: PingFang-SC-Bold;
   font-weight: bold;
   color: rgba(31, 123, 255, 1);
-  line-height: 26rpx;
+  line-height: 35rpx;
   width: 246rpx;
 }
 
