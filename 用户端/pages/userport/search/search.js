@@ -107,7 +107,10 @@ Page({
       'user/hospital/hospital_list',
       res => {
         this.setData({
-          medicine_list: res.data.data
+          medicine_list: res.data.data.map(item => {
+            item.distance = parseInt(item.distance) / 1000
+            return item
+          })
         })
       }
     )

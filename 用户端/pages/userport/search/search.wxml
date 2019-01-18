@@ -25,7 +25,7 @@
         <image src='{{imgUrl}}{{item.hospital_patternmaking}}'></image>
       </view>
       <view class='medicnie-text'>
-        <view class='medicine-tit'>{{item.hospital_name}}</view>
+        <view class='medicine-tit'><view class='name'>{{item.hospital_name}}</view> <span>{{item.distance>0?item.distance+'km':item.distance*1000+'m'}}</span></view>
         <view class='medicine-tips'>电话：{{item.hospital_phone}}</view>
         <view class='medicine-tips'>地址：{{item.hospital_address}}</view>
       </view>

@@ -85,7 +85,7 @@
 .medicine_img {
   width: 178rpx;
   height: 138rpx;
-  margin-right: 68rpx;
+  margin-right: 35rpx;
 }
 
 .medicnie-text {
@@ -97,12 +97,25 @@
 .medicine-tit {
   font-size: 30rpx;
   color: rgba(51, 51, 51, 1);
-  width: 430rpx;
+  width: 478rpx;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
+.medicine-tit .name{
+  width: 350rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.medicine-tit span{
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: rgba(153, 153, 153, 1);
+}
 .medicine-tips {
   font-size: 24rpx;
   color: rgba(153, 153, 153, 1);
