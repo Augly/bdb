@@ -27,10 +27,10 @@
       </view>
     </view>
     <view class='medicine-imgs'>
-      <view class='medicine-img' wx:key='' wx:for="{{goodsList}}" wx:for-item="item" wx:for-index="index">
+      <view class='medicine-img' wx:key='' wx:for="{{goodsList}}" wx:for-item="item" wx:for-index="index" bindtap='toclic' data-id='{{item.goods_id}}'>
         <view class='mskt'></view>
         <image src='{{imgUrl}}{{item.goods_surface}}'></image>
-        <view class='medicine-img-btn' bindtap='toclic' data-id='{{item.goods_id}}'>{{item.goods_name}}</view>
+        <view class='medicine-img-btn'>{{item.goods_name}}</view>
       </view>
     </view>
   </view>
