@@ -14,12 +14,12 @@ Page({
   },
   sure(e) {
     console.log(e)
-    // wx.switchTab({
-    //   url: '/pages/userport/my/my',
-    //   success: function (res) {},
-    //   fail: function (res) {},
-    //   complete: function (res) {},
-    // })
+    wx.switchTab({
+      url: '/pages/userport/my/my',
+      success: function (res) {},
+      fail: function (res) {},
+      complete: function (res) {},
+    })
   },
   toyyed(e) {
     wx.navigateTo({
