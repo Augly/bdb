@@ -53,7 +53,6 @@
         </view>
       </block>
       <!-- 列表如果未空显示下面 -->
-
         <view class='{{history.length==0?"history-null":"hide"}}'>
           <view class='history-null-img'>
             <i class='iconfont icon-kong'></i>

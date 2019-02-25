@@ -116,18 +116,27 @@ page {
 }
 .medicine-imgs{
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0rpx 6rpx;
 }
 .medicine-img{
-  width: 375rpx;
-  height: 375rpx;
+  width: 366rpx;
+  height: 366rpx;
+  border-radius:20rpx;
   position: relative;
+  overflow: hidden;
   
 }
 .mskt{
   width: 100%;
   height: 100%;
   position: absolute;
-  background:linear-gradient(30deg,rgba(0,0,0,1) 0%,rgba(240,240,240,0) 100%);
+  box-sizing: border-box;
+  opacity: 0.5;
+  box-shadow:inset 0rpx 3rpx 27rpx 0rpx rgba(0, 0, 0, 0.59);
+  background:linear-gradient(30deg,rgba(0,0,0,0.5) 0%,rgba(240,240,240,0) 100%);
 }
 .medicine-img-btn{
   font-size:24rpx;
@@ -140,7 +149,7 @@ page {
   height: 51rpx;
   line-height: 51rpx;
   text-align: center;
-  bottom: 20rpx;
+  bottom: 14rpx;
   left: 20rpx;
   position: absolute;
 }
@@ -148,11 +157,17 @@ page {
 
 .history-imgs{
   display: flex;
-  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0rpx 20rpx;
+  /* justify-content: space-between; */
 }
 .history-img{
   width: 190rpx;
-  text-align: center
+  text-align: center;
+  margin-right: 68rpx;
+}
+.history-img:nth-child(3){
+  margin-right: 0rpx;
 }
 .history-img-item{
   width: 100%;
