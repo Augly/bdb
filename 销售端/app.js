@@ -1,7 +1,7 @@
 const config = require('./utils/util.js')
 App({
   //app.js
-  lanhu: 'http://www.kiss-me.top/lingyi/',
+  lanhu: 'http://mywx.zzvlm.com/lingyi/',
   RequestHost: 'https://lingyiil.dazhu-ltd.cn/program',
   ImageHost: 'http://lingyistore.dazhu-ltd.cn/public/uploads/',
   config: config,

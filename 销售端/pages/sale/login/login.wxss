@@ -14,7 +14,7 @@ page {
   background-position: 0 0;
   margin-top: 0rpx;
   overflow: hidden;
-  background-image: url("http://www.kiss-me.top/user/banner.png");
+  background-image: url("http://mywx.zzvlm.com/user/banner.png");
 }
 
 .text {

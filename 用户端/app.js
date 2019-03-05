@@ -1,7 +1,7 @@
 const config = require('./utils/util.js')
 App({
   //app.js
-  lanhu: 'http://www.kiss-me.top/lingyi/',
+  lanhu: 'http://mywx.zzvlm.com/lingyi/',
   RequestHost: 'https://lingyiil.dazhu-ltd.cn/program',
   ImageHost: 'http://lingyistore.dazhu-ltd.cn/public/uploads/',
   config: config,
@@ -18,19 +18,19 @@ App({
   onShow: function (options) {
     wx.authorize({
       scope: 'scope.userLocation',
-      success: res=>{
+      success: res => {
         wx.getLocation({
           type: 'wgs84',
           altitude: false,
-          success:res=>{
-            this.globalData.user_Location=res
+          success: res => {
+            this.globalData.user_Location = res
           },
-          fail: res=> {
+          fail: res => {
 
           },
-          complete: res=>{
+          complete: res => {
 
-           },
+          },
         })
       },
       fail: function (res) {
@@ -47,13 +47,13 @@ App({
     })
     wx.getStorage({
       key: 'user_token',
-      success: res=>{
-        this.globalData.user_token=res.data
+      success: res => {
+        this.globalData.user_token = res.data
       },
-      fail:res=>{
+      fail: res => {
         this.globalData.user_token = ''
       },
-      complete: function(res) {},
+      complete: function (res) { },
     })
   },
 
@@ -71,8 +71,8 @@ App({
 
   },
   globalData: {
-    doctor_id:'1',
+    doctor_id: '1',
     user_token: '',     //用户token
-    user_Location:null  //用户地理位置
+    user_Location: null  //用户地理位置
   }
 })
