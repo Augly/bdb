@@ -216,11 +216,11 @@ Page({
   onLoad: function(options) {
     var that = this
     this.drawPic(that)
+    console.log(options.scene)
     if (options.scene != undefined && options.scene != null) {
       const url = decodeURIComponent(options.scene).split('=')
-
         app.globalData.sell_id = url[1]
-      
+        console.log(url)
     }
   },
 
@@ -257,5 +257,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {}
+  // onShareAppMessage: function() {}
 })
