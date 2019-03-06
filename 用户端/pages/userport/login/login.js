@@ -218,8 +218,7 @@ Page({
     console.log(options.scene)
     if (options.scene != undefined && options.scene != null) {
       const url = decodeURIComponent(options.scene).split('=')
-      app.globalData.sell_id = url[1]
-      console.log(url)
+      app.globalData.doctor_id = url[1]
     }
   },
 
