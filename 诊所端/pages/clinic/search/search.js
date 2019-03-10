@@ -67,6 +67,11 @@ Page({
       scanType: [],
       success: function(res) {
         console.log(res)
+        if (res.errMsg =="scanCode:ok"){
+          const url = decodeURIComponent(res.path).split('=')
+          // app.globalData.sell_id = url[1]
+          console.log(url)
+        }
       },
       fail: function(res) {},
       complete: function(res) {},
