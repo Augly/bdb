@@ -67,17 +67,17 @@ Page({
       scanType: [],
       success: function(res) {
         if (res.errMsg == "scanCode:ok") {
-          console.log(res)
-          const url = decodeURIComponent(res.path).split('?')
+          const url = decodeURIComponent(res.path).split('?scene=')[1]
           let arr=url.split('&')
           let obj=new Object()
           for(let s=0;s<arr.length;s++){
-            let item=arr[s]
+            let item=arr[s].split('=')
             obj[item[0]]=item[1]
           }
-          console.log(url)
+          console.log(obj)
+          let style = parseInt(obj['status'])-1
           wx.navigateTo({
-            url: '/pages/clinic/order_detail/order_detail?style=' + obj['status'] + '&id=' + obj['subscribe_id'],
+            url: '/pages/clinic/order_detail/order_detail?style=' + style + '&id=' + obj['subscribe_id'],
           })
         }
       },

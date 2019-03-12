@@ -284,24 +284,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const url = decodeURIComponent(res.path).split('?')
-    let arr = url.split('&')
-    let obj = new Object()
-    for (let s = 0; s < arr.length; s++) {
-      let item = arr[s]
-      obj[item[0]] = item[1]
-    }
-    console.log(url)
     if (options.scene != undefined && options.scene != null) {
-      const url = decodeURIComponent(options.scene).split('?')
+      const url = decodeURIComponent(options.scene)
       let arr = url.split('&')
       let obj = new Object()
       for (let s = 0; s < arr.length; s++) {
-        let item = arr[s]
+        let item = arr[s].split('=')
         obj[item[0]] = item[1]
       }
       // 根据页面传值判断是否显示底部按钮
-      let styles = obj['status']
+      let styles = parseInt(obj['status'])-1
       if (styles == 0) {
         this.setData({
           style: true,
@@ -324,6 +316,7 @@ Page({
     }else{
       // 根据页面传值判断是否显示底部按钮
       let styles = options.style
+      console.log(styles)
       if (styles == 0) {
         this.setData({
           style: true,

@@ -125,10 +125,10 @@ Page({
       app.config.mytoast('请输入您的年龄')
       return false
     }
-    if (this.data.email == '') {
-      app.config.mytoast('请输入您的邮箱')
-      return false
-    }
+    // if (this.data.email == '') {
+    //   app.config.mytoast('请输入您的邮箱')
+    //   return false
+    // }
     this.saveUserInfo()
     // if (this.data.wxchat==''||this.data.name==''){
     //   this.setData({
