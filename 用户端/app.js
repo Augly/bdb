@@ -36,14 +36,14 @@ App({
       fail: function (res) {
         config.mytoast('系统检测到您已拒绝地理位置授权,为了您的体验,即将跳往授权页面', res => {
           wx.openSetting({
-            success: function (res) { },
-            fail: function (res) { },
-            complete: function (res) { },
+            success: function (res) {},
+            fail: function (res) {},
+            complete: function (res) {},
           })
         })
 
       },
-      complete: function (res) { },
+      complete: function (res) {},
     })
     wx.getStorage({
       key: 'user_token',
@@ -53,7 +53,7 @@ App({
       fail: res => {
         this.globalData.user_token = ''
       },
-      complete: function (res) { },
+      complete: function (res) {},
     })
   },
 
@@ -72,7 +72,7 @@ App({
   },
   globalData: {
     doctor_id: '',
-    user_token: '',     //用户token
-    user_Location: null  //用户地理位置
+    user_token: '', //用户token
+    user_Location: null //用户地理位置
   }
 })

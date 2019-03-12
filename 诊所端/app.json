@@ -1,25 +1,25 @@
 {
-  "pages":[
+  "pages": [
     "pages/clinic/search/search",
     "pages/clinic/password/password",
     "pages/clinic/order_detail/order_detail",
     "pages/clinic/clinic_info/clinic_info",
-    
-    
+
+
     "pages/clinic/login/login",
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     "pages/clinic/center/center",
     "pages/clinic/message/message"
   ],
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",
-    "navigationBarTextStyle": "",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
@@ -27,9 +27,8 @@
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#63DFC4",
-    "borderStyle": "write",
-    "list": [
-      {
+    "borderStyle": "white",
+    "list": [{
         "selectedIconPath": "/images/inform.png",
         "iconPath": "/images/@inform.png",
         "pagePath": "pages/clinic/message/message",

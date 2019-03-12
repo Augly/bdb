@@ -15,14 +15,14 @@
     "pages/userport/search/search",
     "pages/clic/clic"
   ],
-    "permission": {
-      "scope.userLocation": {
-        "desc": "将通过您的地理为止给您推荐最近的诊所列表"
-      }
-    },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "将通过您的地理为止给您推荐最近的诊所列表"
+    }
+  },
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",
-    "navigationBarTextStyle": "",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
@@ -30,9 +30,8 @@
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#63DFC4",
-    "borderStyle": "write",
-    "list": [
-      {
+    "borderStyle": "white",
+    "list": [{
         "selectedIconPath": "/images/4@2x.png",
         "iconPath": "/images/4.4@2x.png",
         "pagePath": "pages/userport/index/index",
@@ -41,9 +40,9 @@
       {
         "selectedIconPath": "/images/33@2x.png",
         "iconPath": "/images/3@2x.png",
-        
+
         "pagePath": "pages/clic/clic",
-        
+
         "text": "医务中心"
       },
       {

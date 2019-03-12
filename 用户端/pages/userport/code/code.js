@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     this.getCode(options.id)
   },
-  getCode (id) {
+  getCode(id) {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: id
