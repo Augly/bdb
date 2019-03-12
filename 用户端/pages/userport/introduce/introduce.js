@@ -1,5 +1,5 @@
 // pages/introduce/introduce.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -12,17 +12,17 @@ Page({
     autoplay: false,
     interval: 1000,
     duration: 800,
-    info:null
+    info: null
   },
 
   // 首页
-  index() {
+  index () {
     wx.navigateTo({
       url: '/pages/userport/index/index',
     })
   },
   // 跳转我的
-  my() {
+  my () {
     wx.navigateTo({
       url: '/pages/userport/my/my',
     })
@@ -37,14 +37,14 @@ Page({
     this.getInfo()
   },
   //获取诊所详情
-  getInfo(){
+  getInfo () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       hospital_id: this.data.hosId   //诊所id
     }, 'user/hospital/hospital_info', res => {
       this.setData({
-        imgUrls: [this.data.imgUrl+res.data.data.hospital_patternmaking],
-        info:res.data.data
+        imgUrls: [this.data.imgUrl + res.data.data.hospital_patternmaking],
+        info: res.data.data
       })
     })
   },
@@ -52,14 +52,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
@@ -93,5 +93,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

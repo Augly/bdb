@@ -215,10 +215,12 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-    console.log(options.scene)
+    this.drawPic(that)
     if (options.scene != undefined && options.scene != null) {
       const url = decodeURIComponent(options.scene).split('=')
+      console.log(url)
       app.globalData.doctor_id = url[1]
+
     }
   },
 
@@ -258,5 +260,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  //onShareAppMessage: function() {}
+  ////onShareAppMessage: function () { }
 })

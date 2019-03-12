@@ -1,5 +1,5 @@
 // pages/doctor/dateinfo/dateinfo.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -7,7 +7,7 @@ Page({
    */
   data: {
     imgUrl: app.ImageHost,
-    type:'',
+    type: '',
     avtar: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
   },
 
@@ -15,22 +15,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(options.type){
+    if (options.type) {
       this.setData({
-        type:options.type,
-        id:options.id
+        type: options.type,
+        id: options.id
       })
     }
-    app.config.ajax('POST',{
-      token:app.globalData.user_token,
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
       subscribe_id: options.id
-    },'doctor/user/my_subscribe_info',res=>{
+    }, 'doctor/user/my_subscribe_info', res => {
       res.data.data.subscribe_canceltime = app.config.timeForm(res.data.data.subscribe_canceltime).btTime
       res.data.data.subscribe_createtime = app.config.timeForm(res.data.data.subscribe_createtime).btTime
       res.data.data.subscribe_reservetime = app.config.timeForm(res.data.data.subscribe_reservetime).btTime
       res.data.data.subscribe_paytime = app.config.timeForm(res.data.data.subscribe_paytime).btTime
       this.setData({
-        info:res.data.data
+        info: res.data.data
       })
     })
   },
@@ -80,5 +80,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

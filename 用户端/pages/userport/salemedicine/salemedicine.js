@@ -1,42 +1,42 @@
 // pages/userport/salemedicine/salemedicine.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    mask:false,
-    infoPopup:false,
-    data_popup:false,
-    show_choose:false,
-    success:false,
+    mask: false,
+    infoPopup: false,
+    data_popup: false,
+    show_choose: false,
+    success: false,
     time: ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'],
     ml: [],
     num: 1,
     minusStatus: 'disable',
-    ml_num:0,
-    dataIndex:0,
-    timeIndex:0,
-    price:0,
-    params:null,
+    ml_num: 0,
+    dataIndex: 0,
+    timeIndex: 0,
+    price: 0,
+    params: null,
     imgurl: app.ImageHost
   },
   //选择星期
-  selectData(e){
+  selectData (e) {
     this.setData({
-      dataIndex:e.currentTarget.dataset.index
+      dataIndex: e.currentTarget.dataset.index
     })
   },
   //选择时间
-  selectTime(e){
+  selectTime (e) {
     this.setData({
       timeIndex: e.currentTarget.dataset.index
     })
   },
   // 确认预约
-  submit(){
-    var time = this.data.dataList[this.data.dataIndex].more +'-'+ this.data.time[this.data.timeIndex]
+  submit () {
+    var time = this.data.dataList[this.data.dataIndex].more + '-' + this.data.time[this.data.timeIndex]
     time = time.replace(/-/g, ':').replace(' ', ':');
     time = time.split(':');
     var time1 = new Date(parseInt(time[0]), (parseInt(time[1]) - 1), parseInt(time[2]), parseInt(time[3]), parseInt(time[4]), 0);
@@ -46,8 +46,8 @@ Page({
       goods_id: this.data.goods_id,
       // doctor_id:1,
       goods_metering_id: this.data.ml[this.data.ml_num].goods_metering_id,
-      reservetime: time1.getTime()/1000,
-      goodsnum:this.data.num
+      reservetime: time1.getTime() / 1000,
+      goodsnum: this.data.num
     }, 'user/reserve/reserve', res => {
       console.log(res)
       this.setData({
@@ -56,9 +56,9 @@ Page({
         infoPopup: false
       })
     })
-    
+
   },
-  GetDateStr(AddDayCount) {
+  GetDateStr (AddDayCount) {
     var dd = new Date();
     dd.setDate(dd.getDate() + AddDayCount);//获取AddDayCount天后的日期
     let y = dd.getFullYear();
@@ -75,7 +75,7 @@ Page({
     }
   },
   //获取今天为起点得往后七天日期星期
-  gitData() {
+  gitData () {
     let datalist = []
     for (let s = 0; s < 7; s++) {
       datalist.push(this.GetDateStr(s))
@@ -85,9 +85,9 @@ Page({
     })
   },
   // 选择计量
-  choose_ml(e){
+  choose_ml (e) {
     this.setData({
-      ml_num:e.currentTarget.dataset.index
+      ml_num: e.currentTarget.dataset.index
     })
     this.getPrice()
   },
@@ -125,7 +125,7 @@ Page({
     })
     this.getPrice()
   },
-  gitdetail(){
+  gitdetail () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       goods_id: this.data.goods_id
@@ -136,7 +136,7 @@ Page({
     })
   },
   // 药品计量
-  getmetering(){
+  getmetering () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       goods_id: this.data.goods_id
@@ -146,10 +146,10 @@ Page({
       })
       this.getPrice()
     })
-    
+
   },
   // 药品参数
-  getParams() {
+  getParams () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       goods_id: this.data.goods_id
@@ -159,45 +159,45 @@ Page({
       })
     })
   },
-  info_popup(){
+  info_popup () {
     this.setData({
-      mask:true,
-      infoPopup:true,
-      success:false
+      mask: true,
+      infoPopup: true,
+      success: false
     })
   },
   // 时间参数
-  show_data(){
+  show_data () {
     this.setData({
-      mask:true,
-      data_popup:true
+      mask: true,
+      data_popup: true
     })
   },
-  submit_data(){
+  submit_data () {
     this.setData({
       mask: true,
       data_popup: true,
     })
   },
   // 选择规格
-  show_choose(){
+  show_choose () {
     this.setData({
       mask: true,
       show_choose: true
     })
   },
   // 关闭全部弹窗
-  close(){
+  close () {
     this.setData({
-      mask:false,
-      info_popup:false,
-      show_choose:false,
+      mask: false,
+      info_popup: false,
+      show_choose: false,
       success: false,
-      data_popup:false
+      data_popup: false
     })
 
   },
-  closeAll(){
+  closeAll () {
     this.setData({
       mask: false,
       info_popup: false,
@@ -227,7 +227,7 @@ Page({
     this.getParams()
     this.gitdetail()
   },
-  getPrice(){
+  getPrice () {
     let s = Number(this.data.ml[this.data.ml_num].goods_metering_price)
     this.setData({
       price: s * this.data.num
@@ -271,5 +271,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

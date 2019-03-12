@@ -213,12 +213,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this
     this.drawPic(that)
     if (options.scene != undefined && options.scene != null) {
       const url = decodeURIComponent(options.scene).split('=')
+
         app.globalData.sell_id = url[1]
+      
     }
   },
 
@@ -255,5 +257,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  // onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

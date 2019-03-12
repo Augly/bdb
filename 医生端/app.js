@@ -71,7 +71,7 @@ App({
 
   },
   globalData: {
-    sell_id: '',
+    sell_id: '1',
     user_token: '',     //用户token
   }
 })

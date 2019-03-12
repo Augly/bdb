@@ -1,5 +1,5 @@
 // pages/userport/code/code.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     this.getCode(options.id)
   },
-  getCode(id) {
+  getCode (id) {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: id
@@ -71,5 +71,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

@@ -1,5 +1,5 @@
 // pages/sale/salelist/salelist.js
-const app = getApp()
+const app=getApp()
 Page({
 
   /**
@@ -7,12 +7,12 @@ Page({
    */
   data: {
     list: [],
-    null_list: false,
+    null_list:false,
     array: [],
     index: 0,
     date: '2019-01-01',
     datetwo: '2019-01-01',
-    page: 1
+    page:1
   },
   bindPickerChange(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -32,8 +32,8 @@ Page({
       // datetwo: e.detail.value
     })
     this.setData({
-      page: 1,
-      list: []
+      page:1,
+      list:[]
     })
     this.gitData()
   },
@@ -51,12 +51,12 @@ Page({
   gitData() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
-      start_date: this.data.date, //开始时间，
-      end_date: this.data.datetwo, //结束时间，
+      start_date: this.data.date,   //开始时间，
+      end_date: this.data.datetwo,   //结束时间，
       goods_id: this.data.array[this.data.index].goods_id,
-      page: this.data.page //商品id
+      page: this.data.page   //商品id
     }, 'sell/index/statement_doctor', res => {
-      let l = this.data.list
+      let l=this.data.list
       if (res.data.data.length > 0) {
         this.setData({
           list: l.concat(res.data.data),
@@ -87,7 +87,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this.setData({
       date: app.config.timeForm(new Date().getTime() / 1000).btTime,
       datetwo: app.config.timeForm(new Date().getTime() / 1000).btTime
@@ -98,28 +98,28 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
@@ -151,5 +151,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  //onShareAppMessage: function() {}
+  // onShareAppMessage: function() {
+
+  // }
 })

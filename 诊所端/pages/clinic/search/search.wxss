@@ -163,6 +163,8 @@ color:rgba(20,150,217,1);
   width: 82rpx;
   height: 82rpx;
   margin-right: 29rpx;
+  border-radius:50%;
+  overflow: hidden; 
 }
 .text{
   width: 580rpx;

@@ -1,5 +1,5 @@
 // pages/userport/my/my.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -7,9 +7,9 @@ Page({
    */
   data: {
     imgUrl: app.ImageHost,
-    unread:0,
+    unread: 0,
   },
-  changesA() {
+  changesA () {
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -25,7 +25,7 @@ Page({
 
   },
   //获取未读消息
-  gitUnread() {
+  gitUnread () {
     app.config.ajax('POST', {
       token: app.globalData.user_token
     }, 'doctor/index/unread_count', res => {
@@ -35,7 +35,7 @@ Page({
     })
   },
   //退出登陆
-  out() {
+  out () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'doctor/user/login_out', res => {
@@ -50,28 +50,28 @@ Page({
     })
 
   },
-  mydata(){
+  mydata () {
     wx.navigateTo({
       url: '/pages/doctor/date/date',
     })
   },
-  go_message(){
+  go_message () {
     wx.navigateTo({
       url: '/pages/doctor/message/message',
     })
   },
-  index(){
+  index () {
     wx.navigateTo({
       url: '/pages/doctor/index/index',
     })
   },
-  info(){
+  info () {
     wx.navigateTo({
       url: '/pages/doctor/write/write',
     })
   },
   //获取个人信息
-  getUserInfo() {
+  getUserInfo () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'doctor/user/doctor_info', res => {
@@ -133,5 +133,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

@@ -1,5 +1,5 @@
 // pages/userport/mydata/mydata.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -7,37 +7,37 @@ Page({
    */
   data: {
     statusType: 'ready',
-    mask:false,
-    page:1,
-    id:'',
+    mask: false,
+    page: 1,
+    id: '',
     imgurl: app.ImageHost,
-    finishlist:[],
-    readylist:[],
-    warnList:[],
-    delSuccess:false,
+    finishlist: [],
+    readylist: [],
+    warnList: [],
+    delSuccess: false,
   },
   // 二维码
-  go_code(e){
+  go_code (e) {
     wx.navigateTo({
       url: '/pages/userport/code/code?id=' + e.currentTarget.dataset.id,
     })
   },
   // 已完成详情
-  tofinish(e){
+  tofinish (e) {
     wx.navigateTo({
       url: '/pages/userport/finish/finish?type=' + e.currentTarget.dataset.type + '&id=' + e.currentTarget.dataset.id,
     })
   },
   // 删除已取消
-  waitIngdel(e){
+  waitIngdel (e) {
     this.setData({
-      id:e.detail.myid,
+      id: e.detail.myid,
       mask: true,
       del: true
     })
   },
   //删除已完成
-  finishdel(e) {
+  finishdel (e) {
     this.setData({
       id: e.detail.myid,
       mask: true,
@@ -45,7 +45,7 @@ Page({
     })
   },
   //确认删除
-  sure(e){
+  sure (e) {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: this.data.id
@@ -61,17 +61,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if(options.type){
+    if (options.type) {
       this.setData({
         statusType: options.type,
       });
     }
   },
   //获取我的已预约列表
-  getreadyList(){
+  getreadyList () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
-      page:this.data.page
+      page: this.data.page
     }, 'user/user/my_subscribe', res => {
       if (res.data.data.length > 0) {
         this.setData({
@@ -88,7 +88,7 @@ Page({
     })
   },
   //获取我的已完成列表
-  getfinishList() {
+  getfinishList () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       page: this.data.page
@@ -108,12 +108,12 @@ Page({
     })
   },
   //获取我的已取消列表
-  getwarnList() {
+  getwarnList () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       page: this.data.page
     }, 'user/user/my_subscribe_cancel', res => {
-      if (res.data.data.length>0){
+      if (res.data.data.length > 0) {
         this.setData({
           page: 1 + this.data.page,
           warnList: res.data.data.map(item => {
@@ -122,20 +122,20 @@ Page({
             return item
           })
         })
-      }else{
+      } else {
         app.config.mytoast('暂无更多数据')
       }
     })
   },
-  ready() {
+  ready () {
     this.setData({
       statusType: 'ready',
-      page:1,
+      page: 1,
       readylist: []
     })
     this.getreadyList()
   },
-  finish() {
+  finish () {
     this.setData({
       statusType: 'finish',
       page: 1,
@@ -143,7 +143,7 @@ Page({
     })
     this.getfinishList()
   },
-  waitIng() {
+  waitIng () {
     this.setData({
       statusType: 'waitIng',
       page: 1,
@@ -163,7 +163,7 @@ Page({
    */
   onShow: function () {
     this.setData({
-      page:1,
+      page: 1,
       readylist: [],
     })
     this.getreadyList()
@@ -192,7 +192,7 @@ Page({
     wx.showNavigationBarLoading()
 
     this.setData({
-      page:1
+      page: 1
     })
     if (this.data.statusType == 'ready') {
       this.getreadyList()
@@ -201,7 +201,7 @@ Page({
     } else {
       this.getwarnList()
     }
-    setTimeout(()=>{
+    setTimeout(() => {
       wx.hideNavigationBarLoading()
       // 停止下拉动作
       wx.stopPullDownRefresh()
@@ -219,11 +219,11 @@ Page({
     } else {
       this.getwarnList()
     }
-   
+
   },
 
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

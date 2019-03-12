@@ -1,53 +1,53 @@
 // pages/doctor/index/index.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    unread:0,
-    info_popup:false,
+    unread: 0,
+    info_popup: false,
     imgurl: app.ImageHost,
-    img:'http://lingyistore.dazhu-ltd.cn/public/uploads',
-    mask:false,
-    doctorImg:''
+    img: 'http://lingyistore.dazhu-ltd.cn/public/uploads',
+    mask: false,
+    doctorImg: ''
   },
-//消息页面
-  toMessges(){
+  //消息页面
+  toMessges () {
     wx.navigateTo({
       url: '/pages/doctor/message/message',
     })
   },
-  my(){
+  my () {
     wx.navigateTo({
       url: '/pages/doctor/my/my',
     })
   },
-  getCode(){
+  getCode () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'doctor/index/get_qrcode', res => {
       console.log(res)
       this.setData({
-        doctorImg:res.data.data
+        doctorImg: res.data.data
       })
     })
   },
   //获取个人信息
-  getUserInfo() {
+  getUserInfo () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'doctor/user/doctor_info', res => {
       this.setData({
-        mask: res.data.data.doctor_isrevised == 1? true : false,
+        mask: res.data.data.doctor_isrevised == 1 ? true : false,
         userInfo: res.data.data
       })
       this.getCode()
     })
   },
   //获取未读消息
-  gitUnread() {
+  gitUnread () {
     app.config.ajax('POST', {
       token: app.globalData.user_token
     }, 'doctor/index/unread_count', res => {
@@ -56,7 +56,7 @@ Page({
       })
     })
   },
-  sure() {
+  sure () {
     wx.navigateTo({
       url: '/pages/doctor/write/write',
       success: function (res) { },
@@ -133,5 +133,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

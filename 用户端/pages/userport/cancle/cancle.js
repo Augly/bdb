@@ -1,15 +1,15 @@
 // pages/userport/cancle/cancle.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    del_success:false,
+    del_success: false,
   },
   //我的预约详情
-  getData(){
+  getData () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: ''   //预约id
@@ -19,12 +19,12 @@ Page({
       })
     })
   },
-  cancle(){
+  cancle () {
     this.setData({
-      del_success:true
+      del_success: true
     })
   },
-  close_success(){
+  close_success () {
     this.setData({
       del_success: false
     })
@@ -84,5 +84,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

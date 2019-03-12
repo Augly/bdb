@@ -11,6 +11,7 @@ Page({
     imgUrl: app.ImageHost,
     array: ['2018-10-11 10:00', '2018-10-11 10:00', '2018-10-11 10:00'],
     index: 0,
+    info:null,
     arraytwo: ['50ml', '100ml'],
     indextwo: 0,
     arraythree: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -283,30 +284,68 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 根据页面传值判断是否显示底部按钮
-    var styles = options.style
-    if (styles == 0) {
+    const url = decodeURIComponent(res.path).split('?')
+    let arr = url.split('&')
+    let obj = new Object()
+    for (let s = 0; s < arr.length; s++) {
+      let item = arr[s]
+      obj[item[0]] = item[1]
+    }
+    console.log(url)
+    if (options.scene != undefined && options.scene != null) {
+      const url = decodeURIComponent(options.scene).split('?')
+      let arr = url.split('&')
+      let obj = new Object()
+      for (let s = 0; s < arr.length; s++) {
+        let item = arr[s]
+        obj[item[0]] = item[1]
+      }
+      // 根据页面传值判断是否显示底部按钮
+      let styles = obj['status']
+      if (styles == 0) {
+        this.setData({
+          style: true,
+          time_text: ''
+        })
+      } else if (styles == 1) {
+        this.setData({
+          style: false,
+          time_text: '完成时间'
+        })
+      } else if (styles == 2) {
+        this.setData({
+          style: false,
+          time_text: '取消时间'
+        })
+      }
       this.setData({
-        style: true,
-        time_text: ''
+        id: obj['subscribe_id']
       })
-    } else if (styles == 1) {
+    }else{
+      // 根据页面传值判断是否显示底部按钮
+      let styles = options.style
+      if (styles == 0) {
+        this.setData({
+          style: true,
+          time_text: ''
+        })
+      } else if (styles == 1) {
+        this.setData({
+          style: false,
+          time_text: '完成时间'
+        })
+      } else if (styles == 2) {
+        this.setData({
+          style: false,
+          time_text: '取消时间'
+        })
+      }
       this.setData({
-        style: false,
-        time_text: '完成时间'
-      })
-    } else if (styles == 2) {
-      this.setData({
-        style: false,
-        time_text: '取消时间'
+        id: options.id
       })
     }
     this.gitData()
-    this.setData({
-      id: options.id
-    })
     this.getAlist()
-
     this.getData()
   },
   getData() {
@@ -314,16 +353,25 @@ Page({
       token: app.globalData.user_token,
       subscribe_id: this.data.id
     }, 'hospital/index/subscribe_info', res => {
-      res.data.data.subscribe_canceltime = app.config.timeForm(res.data.data.subscribe_canceltime).btTime
-      res.data.data.subscribe_createtime = app.config.timeForm(res.data.data.subscribe_createtime).btTime
-      res.data.data.subscribe_reservetime = app.config.timeForm(res.data.data.subscribe_reservetime).btTime
-      res.data.data.subscribe_paytime = app.config.timeForm(res.data.data.subscribe_paytime).btTime
-      this.setData({
-        info: res.data.data,
-        goods_id: res.data.data.goods_id,
-        goods_metering_id: res.data.data.goods_metering_id
-      })
-      this.getBlist()
+      if(res.data.code==1){
+        res.data.data.subscribe_canceltime = app.config.timeForm(res.data.data.subscribe_canceltime).btTime
+        res.data.data.subscribe_createtime = app.config.timeForm(res.data.data.subscribe_createtime).btTime
+        res.data.data.subscribe_reservetime = app.config.timeForm(res.data.data.subscribe_reservetime).btTime
+        res.data.data.subscribe_paytime = app.config.timeForm(res.data.data.subscribe_paytime).btTime
+        this.setData({
+          info: res.data.data,
+          goods_id: res.data.data.goods_id,
+          goods_metering_id: res.data.data.goods_metering_id
+        })
+        this.getBlist()
+      }else{
+        app.config.mytoast('该诊所下暂无此用户下单,请扫描其它诊所,即将返回预约列表页')
+        setTimeout(()=>{
+          wx.switchTab({
+            url: 'pages/clinic/search/search',
+          })
+        },2000)
+      }
     })
   },
   /**
@@ -371,5 +419,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

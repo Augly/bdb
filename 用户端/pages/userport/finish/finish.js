@@ -1,5 +1,5 @@
 // pages/userport/cancle/cancle.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -10,10 +10,10 @@ Page({
     imgUrl: app.ImageHost
   },
   //我的预约详情
-  getData() {
+  getData () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
-      subscribe_id:this.data.id   //预约id
+      subscribe_id: this.data.id   //预约id
     }, 'user/user/subscribe_info', res => {
       res.data.data.allPrice = Number(res.data.data.subscribe_goodsprice) * res.data.data.subscribe_goodsnum
       res.data.data.subscribe_canceltime = app.config.timeForm(res.data.data.subscribe_canceltime).btTime
@@ -25,18 +25,18 @@ Page({
       })
     })
   },
-  cancle() {
+  cancle () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       subscribe_id: this.data.id   //预约id
     }, 'user/reserve/cancel', res => {
       this.setData({
         del_success: true,
-        type:'waitIng'
+        type: 'waitIng'
       })
     })
   },
-  close_success() {
+  close_success () {
     this.setData({
       del_success: false
     })
@@ -49,8 +49,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      type:options.type,
-      id:options.id
+      type: options.type,
+      id: options.id
     })
   },
 
@@ -99,5 +99,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

@@ -18,7 +18,7 @@ Page({
     imgUrl: app.ImageHost,
     doctor_portrait: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1544422030851&di=6f08e3e4bb29548302a95f5c4892f79c&imgtype=jpg&src=http%3A%2F%2Fimg2.imgtn.bdimg.com%2Fit%2Fu%3D2177114997%2C30575453%26fm%3D214%26gp%3D0.jpg'
   },
-  changesA() {
+  changesA () {
     wx.chooseImage({
       count: 1,
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -46,7 +46,7 @@ Page({
 
   },
   //获取个人信息
-  getUserInfo() {
+  getUserInfo () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
     }, 'doctor/user/doctor_info', res => {
@@ -62,7 +62,7 @@ Page({
     })
   },
   //修改个人信息
-  saveUserInfo() {
+  saveUserInfo () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       realname: this.data.name,
@@ -80,33 +80,33 @@ Page({
     })
   },
   // 选择性别
-  select_sex(e) {
+  select_sex (e) {
     this.setData({
       sexindex: e.currentTarget.dataset.sex
     })
   },
-  nameinput(e) {
+  nameinput (e) {
     this.setData({
       name: e.detail.value
     })
   },
-  getwxchat(e) {
+  getwxchat (e) {
     this.setData({
       wxchat: e.detail.value
     })
   },
-  getAge(e) {
+  getAge (e) {
     this.setData({
       age: e.detail.value
     })
   },
-  getEmail(e) {
+  getEmail (e) {
     this.setData({
       email: e.detail.value
     })
-    
+
   },
-  save() {
+  save () {
     if (this.data.name == '') {
       this.setData({
         mask: true,
@@ -143,7 +143,7 @@ Page({
     //   })
     // }
   },
-  close() {
+  close () {
     this.setData({
       mask: false,
       success: false,
@@ -202,5 +202,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

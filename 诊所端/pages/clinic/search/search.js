@@ -1,36 +1,36 @@
 // pages/userport/search/search.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    choose:true,
-    medicine_list:3,
-    nav:1,
+    choose: true,
+    medicine_list: 3,
+    nav: 1,
     mask: false,
-    cendelmask:false,
+    cendelmask: false,
     delSuccess: false,
     imgUrl: app.ImageHost,
-    cendellist:[],
-    finishlist:[],
-    readylist:[],
-    key:''
+    cendellist: [],
+    finishlist: [],
+    readylist: [],
+    key: ''
   },
   // 拨打电话
-  telnum(e){
+  telnum(e) {
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.tel,
     })
   },
-  getValue(e){
+  getValue(e) {
     this.setData({
-      key:e.detail.value
+      key: e.detail.value
     })
   },
   // 诊所中心
-  go_center(){
+  go_center() {
     wx.navigateTo({
       url: '/pages/clinic/center/center',
     })
@@ -41,7 +41,7 @@ Page({
       mask: true
     })
   },
-  del_cancle(){
+  del_cancle() {
     this.setData({
       mask: true
     })
@@ -61,16 +61,24 @@ Page({
       delSuccess: true
     })
   },
-  saoCode(){
+  saoCode() {
     wx.scanCode({
       onlyFromCamera: true,
       scanType: [],
       success: function(res) {
-        console.log(res)
-        if (res.errMsg =="scanCode:ok"){
-          const url = decodeURIComponent(res.path).split('=')
-          // app.globalData.sell_id = url[1]
+        if (res.errMsg == "scanCode:ok") {
+          console.log(res)
+          const url = decodeURIComponent(res.path).split('?')
+          let arr=url.split('&')
+          let obj=new Object()
+          for(let s=0;s<arr.length;s++){
+            let item=arr[s]
+            obj[item[0]]=item[1]
+          }
           console.log(url)
+          wx.navigateTo({
+            url: '/pages/clinic/order_detail/order_detail?style=' + obj['status'] + '&id=' + obj['subscribe_id'],
+          })
         }
       },
       fail: function(res) {},
@@ -79,19 +87,19 @@ Page({
   },
 
 
-  go_message(){
+  go_message() {
     wx.navigateTo({
       url: '/pages/clinic/message/message',
     })
   },
-  go_groder(e){
+  go_groder(e) {
     wx.navigateTo({
       url: '/pages/clinic/order_detail/order_detail?style=' + e.currentTarget.dataset.style + '&id=' + e.currentTarget.dataset.id,
     })
   },
-  dataed(){
+  dataed() {
     this.setData({
-      nav:1
+      nav: 1
     })
     this.getreadylist()
   },
@@ -101,7 +109,7 @@ Page({
     })
     this.getfinishlist()
   },
-  cancle(){
+  cancle() {
     this.setData({
       nav: 3
     })
@@ -110,7 +118,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     wx.getStorage({
       key: 'user_token',
       success: res => {
@@ -121,27 +129,27 @@ Page({
         app.globalData.user_token = ''
         wx.redirectTo({
           url: '/pages/clinic/login/login',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
         })
       },
-      complete: function (res) { },
+      complete: function(res) {},
     })
-   
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     this.setData({
       nav: 1
     })
@@ -151,39 +159,39 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
-  getlist(){
-    if(this.data.nav==1){
+  getlist() {
+    if (this.data.nav == 1) {
       this.getreadylist()
-    } else if (this.data.nav == 1){
+    } else if (this.data.nav == 1) {
       this.finishlist()
-    }else{
+    } else {
       this.cendellist()
     }
   },
-  getreadylist(){
-    app.config.ajax('POST',{
-      token:app.globalData.user_token,
-      key:this.data.key
-    },'hospital/index/my_subscribe',res=>{
+  getreadylist() {
+    app.config.ajax('POST', {
+      token: app.globalData.user_token,
+      key: this.data.key
+    }, 'hospital/index/my_subscribe', res => {
       this.setData({
-        readylist:res.data.data.map(item=>{
+        readylist: res.data.data.map(item => {
           item.subscribe_reservetime = app.config.timeForm(item.subscribe_reservetime).btTime
           return item
         })
       })
     })
   },
-  getfinishlist(){
+  getfinishlist() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       key: this.data.key
@@ -196,7 +204,7 @@ Page({
       })
     })
   },
-  getcendellist(){
+  getcendellist() {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       key: this.data.key
@@ -212,19 +220,21 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  // onShareAppMessage: function() {
+
+  // }
 })

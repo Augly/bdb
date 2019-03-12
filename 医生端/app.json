@@ -17,7 +17,7 @@
   ],
   "window": {
     "navigationBarBackgroundColor": "#63DFC5",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "",
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
@@ -25,7 +25,7 @@
   "tabBar": {
     "color": "#999999",
     "selectedColor": "#63DFC4",
-    "borderStyle": "white",
+    "borderStyle": "write",
     "list": [
       {
         "selectedIconPath": "/images/home.png",

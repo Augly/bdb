@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     this.getData()
   },
-  getData() {
+  getData () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
       page: this.data.page
@@ -92,5 +92,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })

@@ -8,31 +8,31 @@ Page({
   data: {
     imgUrl: app.ImageHost,
     medicine_list: [{
-        title: '升级版大含量福欣宝免疫球蛋白元大牌',
+      title: '升级版大含量福欣宝免疫球蛋白元大牌',
 
-      },
-      {
-        title: '升级版大含量福欣宝免疫球蛋白元大牌',
+    },
+    {
+      title: '升级版大含量福欣宝免疫球蛋白元大牌',
 
-      },
-      {
-        title: '升级版大含量福欣宝免疫球蛋白元大牌',
+    },
+    {
+      title: '升级版大含量福欣宝免疫球蛋白元大牌',
 
-      }
+    }
     ],
     key: ''
   },
   //获取搜索内容
-  getValue(e) {
+  getValue (e) {
     this.setData({
       key: e.detail.value
     })
   },
   //获取药品列表
-  gitlist() {
+  gitlist () {
     app.config.ajax('POST', {
       token: app.globalData.user_token,
-      key:this.data.key
+      key: this.data.key
     }, 'user/goods/goods_list', res => {
       this.setData({
         list: res.data.data
@@ -40,7 +40,7 @@ Page({
     })
   },
   // 跳转搜索页面
-  choose_search(e) {
+  choose_search (e) {
     console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
       url: '/pages/userport/search/search?id=' + e.currentTarget.dataset.id,
@@ -98,5 +98,5 @@ Page({
   /**
    * 用户点击右上角分享
    */
-//onShareAppMessage: function() {}
+  //onShareAppMessage: function () { }
 })
