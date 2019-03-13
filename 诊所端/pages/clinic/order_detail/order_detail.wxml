@@ -178,11 +178,11 @@
       <!-- </picker> -->
 
       <view class='btn' bindtap='submitAll'>
-        立即预约
+        确 认 预 约
       </view>
     </view>
   </view>
 
 
 </view>
-<success wrap="{{delSuccess}}" notice="预约成功" bind:close="sclose"></success>
+<success wrap="{{delSuccess}}" notice="预约确认成功" bind:close="sclose"></success>
